@@ -1,18 +1,28 @@
 """
-SDE / Fresher Job Opening Monitor
-----------------------------------
+SDE / Fresher Job & Internship Opening Monitor
+------------------------------------------------
 Checks career pages of companies listed in companies.json for new
-fresher / SDE-relevant job postings, and emails a digest of anything new.
+fresher/SDE-relevant job and internship postings inside India, and emails
+a formatted digest of anything new.
+
+Filters applied (see README for exact rules and known limitations):
+  1. India-based only (explicit location match required)
+  2. Fresher-eligible / entry-level (0-2 yrs) language
+  3. Excludes postings that explicitly name a different graduating batch
+  4. Company-level CTC >= 12 LPA (from companies.json, since individual
+     postings rarely list exact pay)
+  5. Both jobs and internships included (internship stipend can't be
+     reliably scraped, so those are flagged "verify on page")
 
 Strategy per company:
   1. Try known ATS JSON APIs (Greenhouse, Lever, SmartRecruiters) using
      slug hints or guessed slugs. These give exact, reliable job titles.
   2. If no API works, fall back to rendering the careers page with a
      headless browser (handles JS-heavy sites) and scanning the visible
-     text for fresher/SDE-relevant lines, plus detecting page changes.
+     text for relevant lines.
 
 State (state.json) tracks what's already been reported so you only get
-notified about genuinely new postings / changes.
+notified about genuinely new postings.
 """
 
 import json
@@ -30,6 +40,7 @@ import requests
 STATE_FILE = "state.json"
 COMPANIES_FILE = "companies.json"
 REQUEST_TIMEOUT = 15
+MAX_YEARS_EXPERIENCE = 2
 
 FRESHER_KEYWORDS = [
     "sde", "sde-1", "sde 1", "sde i ", "software engineer", "software developer",
@@ -40,18 +51,15 @@ FRESHER_KEYWORDS = [
     "early-in-career", "engineer i ", "engineer i,", "engineer, new grad",
 ]
 
+INTERN_KEYWORDS = ["intern", "internship"]
+
 EXCLUDE_KEYWORDS = [
     "senior", "sr.", "sr ", "staff", "principal", "lead ", "manager",
     "director", "architect", "sde-2", "sde-3", "sde ii", "sde iii",
-    "sde 2", "sde 3", "5+ years", "6+ years", "7+ years", "8+ years",
-    "10+ years", "vp,", "head of", "distinguished",
+    "sde 2", "sde 3", "vp,", "head of", "distinguished",
 ]
 
-# Derived from the candidate's resume (skills / stack / focus areas).
-# A title matching these — even if it doesn't say "fresher"/"SDE" outright —
-# is flagged as a resume-fit role (e.g. "React Developer", "Backend Engineer",
-# "Full Stack Engineer") so genuinely relevant openings aren't missed just
-# because the job title itself doesn't say "new grad".
+# From the candidate's resume: MERN stack, JS, REST APIs, DSA/CP background.
 SKILL_KEYWORDS = [
     "full stack", "full-stack", "fullstack", "mern", "react", "node.js",
     "nodejs", "node ", "javascript", "backend", "back-end", "back end",
@@ -61,7 +69,6 @@ SKILL_KEYWORDS = [
     "python developer", "c++ developer", "dsa", "data structures",
     "competitive programming",
 ]
-
 
 INDIA_KEYWORDS = [
     "india", "bangalore", "bengaluru", "hyderabad", "pune", "gurgaon",
@@ -95,8 +102,7 @@ def is_india_location(location_str):
 
 
 def classify(title):
-    """Return a set of reason tags for why this title is relevant, or
-    an empty set if it should be skipped entirely."""
+    """Return a set of reason tags, or empty set if not relevant at all."""
     t = title.lower()
     if any(x in t for x in EXCLUDE_KEYWORDS):
         return set()
@@ -108,6 +114,44 @@ def classify(title):
     return reasons
 
 
+def is_internship(text):
+    t = text.lower()
+    return any(k in t for k in INTERN_KEYWORDS)
+
+
+def required_years(text):
+    """Extract minimum years of experience required, or None if unstated."""
+    t = text.lower()
+    m = re.search(r"(\d+)\s*\+\s*years?", t)
+    if m:
+        return int(m.group(1))
+    m = re.search(r"(\d+)\s*(?:-|to)\s*(\d+)\s*years?", t)
+    if m:
+        return int(m.group(1))
+    return None
+
+
+def passes_all_filters(text, company, is_intern):
+    """Applies the fresher-eligibility filter only. No batch-year matching
+    (most postings never state one) and no CTC filtering (most postings
+    never state pay, so this can't be checked reliably) — just: is this
+    something a 0-2 year fresher could actually apply to?"""
+    yrs = required_years(text)
+    if yrs is not None and yrs > MAX_YEARS_EXPERIENCE:
+        return False
+    return True
+
+
+def is_valid_public_link(url):
+    """Returns False for URLs that are raw API endpoints rather than an
+    actual page a person can open and apply from (e.g. api.smartrecruiters.com
+    JSON endpoints). Returns True for genuine public job/career pages."""
+    if not url:
+        return False
+    bad_domains = ["api.smartrecruiters.com", "api.lever.co", "boards-api.greenhouse.io"]
+    return not any(d in url for d in bad_domains)
+
+
 def slugify(name):
     name = re.sub(r"\(.*?\)", "", name)
     name = re.sub(r"[^a-zA-Z0-9]+", "-", name).strip("-").lower()
@@ -116,10 +160,7 @@ def slugify(name):
 
 def guessed_slugs(name):
     base = slugify(name)
-    candidates = [base]
-    # common variants
-    candidates.append(base.split("-")[0])
-    candidates.append(base.replace("-", ""))
+    candidates = [base, base.split("-")[0], base.replace("-", "")]
     seen = []
     for c in candidates:
         if c and c not in seen:
@@ -140,6 +181,7 @@ def try_greenhouse(slug):
                     "title": j["title"],
                     "url": j.get("absolute_url", ""),
                     "location": (j.get("location") or {}).get("name", ""),
+                    "posted_date": (j.get("updated_at") or "")[:10],
                 }
                 for j in jobs
             ]
@@ -152,15 +194,23 @@ def try_lever(slug):
     if r.status_code == 200:
         data = r.json()
         if isinstance(data, list) and data:
-            return [
-                {
+            jobs = []
+            for j in data:
+                created_ms = j.get("createdAt")
+                posted = ""
+                if created_ms:
+                    try:
+                        posted = time.strftime("%Y-%m-%d", time.gmtime(created_ms / 1000))
+                    except Exception:
+                        posted = ""
+                jobs.append({
                     "id": f"lever-{j['id']}",
                     "title": j.get("text", ""),
                     "url": j.get("hostedUrl", ""),
                     "location": (j.get("categories") or {}).get("location", ""),
-                }
-                for j in data
-            ]
+                    "posted_date": posted,
+                })
+            return jobs
     return None
 
 
@@ -177,18 +227,28 @@ def try_smartrecruiters(slug):
                 loc_str = ", ".join(
                     str(v) for v in (loc.get("city"), loc.get("region"), loc.get("country")) if v
                 )
+                # The list endpoint's "ref" is an internal API URL, not a
+                # page a person can open. Try to resolve the real public
+                # apply page from the full posting detail; if that fails,
+                # leave url blank so the email falls back to Job ID only.
+                public_url = ""
+                try:
+                    detail = requests.get(j.get("ref", ""), timeout=REQUEST_TIMEOUT).json()
+                    public_url = detail.get("applyUrl") or detail.get("postingUrl") or ""
+                except Exception:
+                    public_url = ""
                 jobs.append({
                     "id": f"sr-{j['id']}",
                     "title": j.get("name", ""),
-                    "url": j.get("ref", ""),
+                    "url": public_url,
                     "location": loc_str,
+                    "posted_date": (j.get("releasedDate") or "")[:10],
                 })
             return jobs
     return None
 
 
 def fetch_api_jobs(company):
-    """Try ATS APIs. Returns list of job dicts, or None if none worked."""
     slugs = company.get("slugs") or []
     slugs = slugs + [s for s in guessed_slugs(company["name"]) if s not in slugs]
     for slug in slugs:
@@ -204,7 +264,7 @@ def fetch_api_jobs(company):
 
 def fetch_generic(company):
     """Render the careers page with a headless browser and scan text.
-    Returns (matched_lines, page_hash) or (None, None) on failure.
+    Returns (list_of_item_dicts, page_hash) or (None, None) on failure.
     """
     try:
         from playwright.sync_api import sync_playwright
@@ -224,24 +284,31 @@ def fetch_generic(company):
         return None, None
 
     lines = [l.strip() for l in text.split("\n") if l.strip()]
-    matches = []
+    items = []
     for i, l in enumerate(lines):
         if len(l) >= 150:
             continue
         reasons = classify(l)
-        if not reasons:
+        intern = is_internship(l)
+        if not reasons and not intern:
             continue
-        # look at this line plus the next couple lines for a location hint
-        # (career pages often show location right after/near the title)
-        nearby = " ".join(lines[i:i + 3]).lower()
-        if any(k in nearby for k in NON_INDIA_KEYWORDS):
+        nearby = " ".join(lines[i:i + 3])
+        nearby_lower = nearby.lower()
+        if not any(k in nearby_lower for k in INDIA_KEYWORDS):
+            continue  # require explicit India mention nearby
+        if not passes_all_filters(nearby_lower, company, intern):
             continue
-        if not any(k in nearby for k in INDIA_KEYWORDS):
-            reasons.add("location unverified")
-        matches.append(f"{l} [{'/'.join(sorted(reasons))}]")
-    matches = sorted(set(matches))
+        items.append({
+            "id": hashlib.sha1(l.encode("utf-8", errors="ignore")).hexdigest()[:10],
+            "title": l,
+            "url": url,  # company's careers page (not a specific-job deep link)
+            "location": "India (unspecified city)",
+            "is_intern": intern,
+            "reasons": sorted(reasons) if reasons else ["internship"],
+            "posted_date": "",
+        })
     content_hash = hashlib.sha256(text.encode("utf-8", errors="ignore")).hexdigest()
-    return matches, content_hash
+    return items, content_hash
 
 
 def load_json(path, default):
@@ -256,7 +323,70 @@ def save_json(path, data):
         json.dump(data, f, indent=2)
 
 
-def send_email(digest_html, digest_text):
+def build_email(findings):
+    """findings: list of dicts with company, category, ctc, item(dict)."""
+    intro = "Prince Singh has sent something for you:"
+
+    text_lines = [intro, ""]
+    html_rows = []
+
+    for f in findings:
+        item = f["item"]
+        role = item["title"]
+        company = f["company"]
+        location = item.get("location") or "India"
+        job_id = item["id"]
+        package = f["ctc"] or "Not listed"
+        if item.get("is_intern"):
+            package = f"{package} (internship — verify exact stipend on page)"
+        timeline = item.get("posted_date") or "No info about timeline"
+        if timeline != "No info about timeline":
+            timeline = f"Listed on {timeline} — closing date not published; apply as soon as possible"
+
+        link = item.get("url", "")
+        has_link = is_valid_public_link(link)
+
+        text_lines.append(
+            f"Company: {company}\n"
+            f"Location: {location}\n"
+            f"Job ID: {job_id}\n"
+            f"Role: {role}\n"
+            f"Package: {package}\n"
+            f"Timeline: {timeline}\n"
+            + (f"Apply: {link}\n" if has_link else "Apply link: not available — search manually using the Job ID and Role above.\n")
+        )
+
+        apply_html = (
+            f'<a href="{link}" style="display:inline-block; margin-top:10px; padding:8px 16px; background:#2563eb; color:#ffffff; text-decoration:none; border-radius:6px; font-size:13px; font-weight:bold;">Apply Now</a>'
+            if has_link else
+            '<div style="margin-top:10px; font-size:13px; color:#b91c1c;">Apply link not available — search manually using the Job ID and Role.</div>'
+        )
+
+        html_rows.append(f"""
+        <div style="border:1px solid #e2e2e2; border-radius:10px; padding:16px 20px; margin-bottom:14px; font-family:Arial,Helvetica,sans-serif;">
+          <div style="font-size:16px; font-weight:bold; color:#1a1a1a; margin-bottom:6px;">{company}</div>
+          <table style="width:100%; font-size:14px; color:#333;">
+            <tr><td style="padding:2px 0; width:110px; color:#777;">Location</td><td>{location}</td></tr>
+            <tr><td style="padding:2px 0; color:#777;">Job ID</td><td>{job_id}</td></tr>
+            <tr><td style="padding:2px 0; color:#777;">Role</td><td>{role}</td></tr>
+            <tr><td style="padding:2px 0; color:#777;">Package</td><td>{package}</td></tr>
+            <tr><td style="padding:2px 0; color:#777;">Timeline</td><td>{timeline}</td></tr>
+          </table>
+          {apply_html}
+        </div>
+        """)
+
+    digest_text = "\n".join(text_lines)
+    digest_html = f"""
+    <div style="font-family:Arial,Helvetica,sans-serif; max-width:640px; margin:0 auto;">
+      <p style="font-size:16px; color:#1a1a1a; font-weight:bold;">{intro}</p>
+      {''.join(html_rows)}
+    </div>
+    """
+    return digest_text, digest_html
+
+
+def send_email(digest_html, digest_text, count):
     host = os.environ.get("SMTP_SERVER", "smtp.gmail.com")
     port = int(os.environ.get("SMTP_PORT", "465"))
     user = os.environ["EMAIL_ADDRESS"]
@@ -264,7 +394,7 @@ def send_email(digest_html, digest_text):
     to_addr = os.environ.get("EMAIL_TO", user)
 
     msg = MIMEMultipart("alternative")
-    msg["Subject"] = "New fresher / SDE / skills-match openings found"
+    msg["Subject"] = f"Prince Singh has sent something for you: {count} new opening(s)"
     msg["From"] = user
     msg["To"] = to_addr
     msg.attach(MIMEText(digest_text, "plain"))
@@ -279,74 +409,68 @@ def main():
     companies = load_json(COMPANIES_FILE, [])
     state = load_json(STATE_FILE, {})
 
-    findings = []  # list of (company_name, category, careers_url, [new items])
+    findings = []  # list of {company, category, ctc, item}
 
     for company in companies:
         name = company["name"]
         prev = state.get(name, {"seen_ids": [], "hash": None})
-        new_items = []
 
         jobs = fetch_api_jobs(company)
         if jobs is not None:
             relevant = []
             for j in jobs:
                 reasons = classify(j["title"])
-                if not reasons:
+                intern = is_internship(j["title"])
+                if not reasons and not intern:
                     continue
-                india_check = is_india_location(j.get("location", ""))
-                if india_check is False:
-                    continue  # explicitly a non-India location, skip
-                if india_check is None:
-                    reasons.add("location unverified")
-                j["reasons"] = sorted(reasons)
+                if is_india_location(j.get("location", "")) is not True:
+                    continue
+                if not passes_all_filters(j["title"], company, intern):
+                    continue
+                j["reasons"] = sorted(reasons) if reasons else ["internship"]
+                j["is_intern"] = intern
                 relevant.append(j)
+
             seen_ids = set(prev.get("seen_ids", []))
             for j in relevant:
                 if j["id"] not in seen_ids:
-                    tag = "/".join(j["reasons"])
-                    loc = f" ({j['location']})" if j.get("location") else ""
-                    new_items.append(f"[{tag}] {j['title']}{loc} — {j['url']}")
+                    findings.append({
+                        "company": name,
+                        "category": company.get("category", ""),
+                        "ctc": company.get("ctc"),
+                        "item": j,
+                    })
             state[name] = {"seen_ids": [j["id"] for j in relevant], "hash": None, "mode": "api"}
         else:
-            matches, content_hash = fetch_generic(company)
-            if matches is not None:
+            items, content_hash = fetch_generic(company)
+            if items is not None:
                 prev_hash = prev.get("hash")
-                if content_hash != prev_hash and matches:
-                    new_items = [f"(page changed) {m}" for m in matches]
+                if content_hash != prev_hash:
+                    for it in items:
+                        findings.append({
+                            "company": name,
+                            "category": company.get("category", ""),
+                            "ctc": company.get("ctc"),
+                            "item": it,
+                        })
                 state[name] = {"seen_ids": [], "hash": content_hash, "mode": "generic"}
             else:
-                # couldn't check this company at all this run; keep old state
                 state[name] = prev
                 state[name]["mode"] = "failed"
-
-        if new_items:
-            findings.append((name, company.get("category", ""), company["careers_url"], new_items))
 
         time.sleep(1)  # be polite to servers
 
     save_json(STATE_FILE, state)
 
     if not findings:
-        print("No new fresher/SDE openings found this run.")
+        print("No new matching openings found this run.")
         return
 
-    # Build email
-    text_lines = ["New SDE / Fresher openings found:\n"]
-    html_parts = ["<h2>New SDE / Fresher openings</h2>"]
-    for name, category, url, items in findings:
-        text_lines.append(f"\n{name} ({category}) — {url}")
-        html_parts.append(f"<h3>{name} <small>({category})</small></h3><ul>")
-        for it in items:
-            text_lines.append(f"  - {it}")
-            html_parts.append(f"<li>{it}</li>")
-        html_parts.append("</ul>")
-
-    digest_text = "\n".join(text_lines)
-    digest_html = "".join(html_parts)
+    digest_text, digest_html = build_email(findings)
 
     try:
-        send_email(digest_html, digest_text)
-        print(f"Email sent with {sum(len(f[3]) for f in findings)} new listing(s) across {len(findings)} companies.")
+        send_email(digest_html, digest_text, len(findings))
+        print(f"Email sent with {len(findings)} new listing(s).")
     except Exception as e:
         print(f"Failed to send email: {e}", file=sys.stderr)
         print(digest_text)
