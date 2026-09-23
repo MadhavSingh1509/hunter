@@ -1,0 +1,527 @@
+[
+  {
+    "name": "Microsoft",
+    "category": "Big Tech",
+    "ctc": "30-44 LPA",
+    "careers_url": "https://careers.microsoft.com",
+    "slugs": []
+  },
+  {
+    "name": "Amazon",
+    "category": "Big Tech",
+    "ctc": "28-36 LPA",
+    "careers_url": "https://www.amazon.jobs",
+    "slugs": []
+  },
+  {
+    "name": "Adobe",
+    "category": "Big Tech",
+    "ctc": "24-32 LPA",
+    "careers_url": "https://www.adobe.com/careers.html",
+    "slugs": []
+  },
+  {
+    "name": "Google",
+    "category": "Big Tech",
+    "ctc": "30-45 LPA",
+    "careers_url": "https://careers.google.com",
+    "slugs": []
+  },
+  {
+    "name": "Apple",
+    "category": "Big Tech",
+    "ctc": "20-35 LPA",
+    "careers_url": "https://www.apple.com/careers",
+    "slugs": []
+  },
+  {
+    "name": "Uber",
+    "category": "Big Tech",
+    "ctc": "20-30 LPA",
+    "careers_url": "https://www.uber.com/careers",
+    "slugs": []
+  },
+  {
+    "name": "Walmart Global Tech",
+    "category": "Big Tech",
+    "ctc": "18-26 LPA",
+    "careers_url": "https://careers.walmart.com/global-tech",
+    "slugs": []
+  },
+  {
+    "name": "Salesforce",
+    "category": "Big Tech",
+    "ctc": "18-26 LPA",
+    "careers_url": "https://careers.salesforce.com",
+    "slugs": []
+  },
+  {
+    "name": "ServiceNow",
+    "category": "Big Tech",
+    "ctc": "18-26 LPA",
+    "careers_url": "https://careers.servicenow.com",
+    "slugs": []
+  },
+  {
+    "name": "Oracle",
+    "category": "Big Tech",
+    "ctc": "14-20 LPA",
+    "careers_url": "https://www.oracle.com/careers",
+    "slugs": []
+  },
+  {
+    "name": "SAP Labs",
+    "category": "Big Tech",
+    "ctc": "16-22 LPA",
+    "careers_url": "https://jobs.sap.com",
+    "slugs": []
+  },
+  {
+    "name": "VMware / Broadcom",
+    "category": "Big Tech",
+    "ctc": "16-22 LPA",
+    "careers_url": "https://careers.broadcom.com",
+    "slugs": []
+  },
+  {
+    "name": "Cisco",
+    "category": "Big Tech",
+    "ctc": "18-26 LPA",
+    "careers_url": "https://jobs.cisco.com",
+    "slugs": []
+  },
+  {
+    "name": "Juniper Networks",
+    "category": "Big Tech",
+    "ctc": "16-22 LPA",
+    "careers_url": "https://careers.juniper.net",
+    "slugs": []
+  },
+  {
+    "name": "Arista Networks",
+    "category": "Big Tech",
+    "ctc": "16-22 LPA",
+    "careers_url": "https://www.arista.com/en/company/careers",
+    "slugs": []
+  },
+  {
+    "name": "Nutanix",
+    "category": "Big Tech",
+    "ctc": "16-22 LPA",
+    "careers_url": "https://www.nutanix.com/company/careers",
+    "slugs": [
+      "nutanix"
+    ]
+  },
+  {
+    "name": "Dell Technologies",
+    "category": "Big Tech",
+    "ctc": "15-20 LPA",
+    "careers_url": "https://jobs.dell.com",
+    "slugs": []
+  },
+  {
+    "name": "NVIDIA",
+    "category": "Big Tech",
+    "ctc": "20-30 LPA",
+    "careers_url": "https://www.nvidia.com/en-us/about-nvidia/careers",
+    "slugs": []
+  },
+  {
+    "name": "Qualcomm",
+    "category": "Big Tech",
+    "ctc": "18-25 LPA",
+    "careers_url": "https://www.qualcomm.com/company/careers",
+    "slugs": []
+  },
+  {
+    "name": "Intuit",
+    "category": "Big Tech",
+    "ctc": "18-26 LPA",
+    "careers_url": "https://www.intuit.com/careers",
+    "slugs": []
+  },
+  {
+    "name": "Atlassian",
+    "category": "Big Tech",
+    "ctc": "18-26 LPA",
+    "careers_url": "https://www.atlassian.com/company/careers",
+    "slugs": [
+      "atlassian"
+    ]
+  },
+  {
+    "name": "Akamai",
+    "category": "Big Tech",
+    "ctc": "16-22 LPA",
+    "careers_url": "https://www.akamai.com/careers",
+    "slugs": []
+  },
+  {
+    "name": "Rubrik",
+    "category": "Big Tech",
+    "ctc": "16-22 LPA",
+    "careers_url": "https://www.rubrik.com/company/careers",
+    "slugs": [
+      "rubrik"
+    ]
+  },
+  {
+    "name": "Splunk",
+    "category": "Big Tech",
+    "ctc": "16-22 LPA",
+    "careers_url": "https://www.splunk.com/en_us/careers.html",
+    "slugs": []
+  },
+  {
+    "name": "Palo Alto Networks",
+    "category": "Big Tech",
+    "ctc": "18-25 LPA",
+    "careers_url": "https://jobs.paloaltonetworks.com",
+    "slugs": [
+      "paloaltonetworks"
+    ]
+  },
+  {
+    "name": "CrowdStrike",
+    "category": "Big Tech",
+    "ctc": "18-25 LPA",
+    "careers_url": "https://www.crowdstrike.com/careers",
+    "slugs": [
+      "crowdstrike"
+    ]
+  },
+  {
+    "name": "Visa",
+    "category": "Fintech/Payments",
+    "ctc": "18-26 LPA",
+    "careers_url": "https://usa.visa.com/careers.html",
+    "slugs": []
+  },
+  {
+    "name": "Mastercard",
+    "category": "Fintech/Payments",
+    "ctc": "18-24 LPA",
+    "careers_url": "https://careers.mastercard.com",
+    "slugs": []
+  },
+  {
+    "name": "PayPal",
+    "category": "Fintech/Payments",
+    "ctc": "18-24 LPA",
+    "careers_url": "https://careers.pypl.com",
+    "slugs": []
+  },
+  {
+    "name": "American Express",
+    "category": "Fintech/Payments",
+    "ctc": "15-20 LPA",
+    "careers_url": "https://www.americanexpress.com/en-us/careers",
+    "slugs": []
+  },
+  {
+    "name": "Fiserv",
+    "category": "Fintech/Payments",
+    "ctc": "15-20 LPA",
+    "careers_url": "https://www.fiserv.com/en/about-fiserv/careers.html",
+    "slugs": []
+  },
+  {
+    "name": "FIS",
+    "category": "Fintech/Payments",
+    "ctc": "15-20 LPA",
+    "careers_url": "https://jobs.fisglobal.com",
+    "slugs": []
+  },
+  {
+    "name": "Stripe",
+    "category": "Fintech/Payments",
+    "ctc": "20-28 LPA",
+    "careers_url": "https://stripe.com/jobs",
+    "slugs": [
+      "stripe"
+    ]
+  },
+  {
+    "name": "Goldman Sachs (Tech)",
+    "category": "Banking/Finance Tech",
+    "ctc": "15-22 LPA",
+    "careers_url": "https://www.goldmansachs.com/careers",
+    "slugs": []
+  },
+  {
+    "name": "JPMorgan Chase (Tech)",
+    "category": "Banking/Finance Tech",
+    "ctc": "15-20 LPA",
+    "careers_url": "https://careers.jpmorgan.com",
+    "slugs": []
+  },
+  {
+    "name": "Morgan Stanley (Tech)",
+    "category": "Banking/Finance Tech",
+    "ctc": "15-20 LPA",
+    "careers_url": "https://www.morganstanley.com/careers",
+    "slugs": []
+  },
+  {
+    "name": "Citi (Tech)",
+    "category": "Banking/Finance Tech",
+    "ctc": "15-18 LPA",
+    "careers_url": "https://jobs.citi.com",
+    "slugs": []
+  },
+  {
+    "name": "Deutsche Bank (Tech)",
+    "category": "Banking/Finance Tech",
+    "ctc": "15-18 LPA",
+    "careers_url": "https://careers.db.com",
+    "slugs": []
+  },
+  {
+    "name": "Barclays (Tech)",
+    "category": "Banking/Finance Tech",
+    "ctc": "15-18 LPA",
+    "careers_url": "https://search.jobs.barclays",
+    "slugs": []
+  },
+  {
+    "name": "Wells Fargo (Tech)",
+    "category": "Banking/Finance Tech",
+    "ctc": "15-18 LPA",
+    "careers_url": "https://www.wellsfargojobs.com",
+    "slugs": []
+  },
+  {
+    "name": "Nomura",
+    "category": "Banking/Finance Tech",
+    "ctc": "15-18 LPA",
+    "careers_url": "https://www.nomura.com/careers",
+    "slugs": []
+  },
+  {
+    "name": "Flipkart",
+    "category": "Indian Product/Unicorn",
+    "ctc": "15-25 LPA",
+    "careers_url": "https://www.flipkartcareers.com",
+    "slugs": []
+  },
+  {
+    "name": "Zomato",
+    "category": "Indian Product/Unicorn",
+    "ctc": "16-22 LPA",
+    "careers_url": "https://www.zomato.com/careers",
+    "slugs": []
+  },
+  {
+    "name": "Swiggy",
+    "category": "Indian Product/Unicorn",
+    "ctc": "16-22 LPA",
+    "careers_url": "https://careers.swiggy.com",
+    "slugs": []
+  },
+  {
+    "name": "Razorpay",
+    "category": "Indian Product/Unicorn",
+    "ctc": "15-20 LPA",
+    "careers_url": "https://razorpay.com/jobs",
+    "slugs": [
+      "razorpay"
+    ]
+  },
+  {
+    "name": "CRED",
+    "category": "Indian Product/Unicorn",
+    "ctc": "18-25 LPA",
+    "careers_url": "https://careers.cred.club",
+    "slugs": [
+      "cred"
+    ]
+  },
+  {
+    "name": "PhonePe",
+    "category": "Indian Product/Unicorn",
+    "ctc": "16-22 LPA",
+    "careers_url": "https://www.phonepe.com/careers",
+    "slugs": []
+  },
+  {
+    "name": "Freshworks",
+    "category": "Indian Product/Unicorn",
+    "ctc": "15-20 LPA",
+    "careers_url": "https://www.freshworks.com/company/careers",
+    "slugs": []
+  },
+  {
+    "name": "Postman",
+    "category": "Indian Product/Unicorn",
+    "ctc": "16-22 LPA",
+    "careers_url": "https://www.postman.com/company/careers",
+    "slugs": [
+      "postman"
+    ]
+  },
+  {
+    "name": "BrowserStack",
+    "category": "Indian Product/Unicorn",
+    "ctc": "16-22 LPA",
+    "careers_url": "https://www.browserstack.com/careers",
+    "slugs": [
+      "browserstack"
+    ]
+  },
+  {
+    "name": "Zoho",
+    "category": "Indian Product/Unicorn",
+    "ctc": "6-12 LPA",
+    "careers_url": "https://www.zoho.com/careers.html",
+    "slugs": []
+  },
+  {
+    "name": "Groww",
+    "category": "Indian Product/Unicorn",
+    "ctc": "15-20 LPA",
+    "careers_url": "https://groww.in/careers",
+    "slugs": [
+      "groww"
+    ]
+  },
+  {
+    "name": "Meesho",
+    "category": "Indian Product/Unicorn",
+    "ctc": "15-20 LPA",
+    "careers_url": "https://careers.meesho.com",
+    "slugs": [
+      "meesho"
+    ]
+  },
+  {
+    "name": "Zerodha",
+    "category": "Indian Product/Unicorn",
+    "ctc": "15-20 LPA",
+    "careers_url": "https://zerodha.com/careers",
+    "slugs": []
+  },
+  {
+    "name": "Paytm",
+    "category": "Indian Product/Unicorn",
+    "ctc": "12-18 LPA",
+    "careers_url": "https://paytm.com/careers",
+    "slugs": []
+  },
+  {
+    "name": "PolicyBazaar",
+    "category": "Indian Product/Unicorn",
+    "ctc": "12-18 LPA",
+    "careers_url": "https://www.policybazaar.com/careers",
+    "slugs": []
+  },
+  {
+    "name": "Slice",
+    "category": "Indian Product/Unicorn",
+    "ctc": "15-20 LPA",
+    "careers_url": "https://sliceit.com/careers",
+    "slugs": []
+  },
+  {
+    "name": "Jupiter",
+    "category": "Indian Product/Unicorn",
+    "ctc": "15-20 LPA",
+    "careers_url": "https://jupiter.money/careers",
+    "slugs": []
+  },
+  {
+    "name": "Fi Money",
+    "category": "Indian Product/Unicorn",
+    "ctc": "15-20 LPA",
+    "careers_url": "https://fi.money/careers",
+    "slugs": []
+  },
+  {
+    "name": "Synopsys",
+    "category": "Semiconductor/Hardware",
+    "ctc": "15-20 LPA",
+    "careers_url": "https://www.synopsys.com/careers.html",
+    "slugs": []
+  },
+  {
+    "name": "Cadence",
+    "category": "Semiconductor/Hardware",
+    "ctc": "15-20 LPA",
+    "careers_url": "https://www.cadence.com/en_US/home/company/careers.html",
+    "slugs": []
+  },
+  {
+    "name": "Texas Instruments",
+    "category": "Semiconductor/Hardware",
+    "ctc": "14-18 LPA",
+    "careers_url": "https://careers.ti.com",
+    "slugs": []
+  },
+  {
+    "name": "Micron",
+    "category": "Semiconductor/Hardware",
+    "ctc": "15-20 LPA",
+    "careers_url": "https://careers.micron.com",
+    "slugs": []
+  },
+  {
+    "name": "AMD",
+    "category": "Semiconductor/Hardware",
+    "ctc": "16-22 LPA",
+    "careers_url": "https://careers.amd.com",
+    "slugs": []
+  },
+  {
+    "name": "Intel",
+    "category": "Semiconductor/Hardware",
+    "ctc": "15-20 LPA",
+    "careers_url": "https://jobs.intel.com",
+    "slugs": []
+  },
+  {
+    "name": "Samsung R&D",
+    "category": "Semiconductor/Hardware",
+    "ctc": "12-18 LPA",
+    "careers_url": "https://www.samsung.com/in/careers",
+    "slugs": []
+  },
+  {
+    "name": "Icertis",
+    "category": "Enterprise SaaS",
+    "ctc": "15-20 LPA",
+    "careers_url": "https://www.icertis.com/company/careers",
+    "slugs": []
+  },
+  {
+    "name": "Innovaccer",
+    "category": "Enterprise SaaS",
+    "ctc": "15-20 LPA",
+    "careers_url": "https://innovaccer.com/careers",
+    "slugs": [
+      "innovaccer"
+    ]
+  },
+  {
+    "name": "Chargebee",
+    "category": "Enterprise SaaS",
+    "ctc": "15-20 LPA",
+    "careers_url": "https://www.chargebee.com/careers",
+    "slugs": [
+      "chargebee"
+    ]
+  },
+  {
+    "name": "Darwinbox",
+    "category": "Enterprise SaaS",
+    "ctc": "12-18 LPA",
+    "careers_url": "https://darwinbox.com/careers",
+    "slugs": []
+  },
+  {
+    "name": "Highradius",
+    "category": "Enterprise SaaS",
+    "ctc": "12-18 LPA",
+    "careers_url": "https://www.highradius.com/careers",
+    "slugs": []
+  }
+]
