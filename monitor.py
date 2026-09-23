@@ -43,20 +43,37 @@ REQUEST_TIMEOUT = 15
 MAX_YEARS_EXPERIENCE = 2
 
 FRESHER_KEYWORDS = [
-    "sde", "sde-1", "sde 1", "sde i ", "software engineer", "software developer",
+    "sde", "sde-1", "sde 1", "sde i ", "swe", "swe-1", "swe 1", "swe i ",
+    "software engineer", "software developer", "software development engineer",
     "software engineer i", "new grad", "new graduate", "graduate engineer",
     "campus hire", "fresher", "entry level", "entry-level", "early career",
     "early in career", "associate software", "associate engineer",
     "university grad", "college hire", "class of 20", "early talent",
     "early-in-career", "engineer i ", "engineer i,", "engineer, new grad",
+    "engineer trainee", "graduate engineer trainee", "programmer analyst",
+    "member of technical staff", "software engineer trainee",
+    "systems engineer", "software systems engineer", "associate systems engineer",
+    "site reliability engineer", "platform engineer", "cloud engineer",
 ]
 
 INTERN_KEYWORDS = ["intern", "internship"]
 
+# Departments/functions this candidate is NOT looking for, even if a title
+# happens to also contain an engineering-sounding word.
+DEPARTMENT_EXCLUDE_KEYWORDS = [
+    "human resources", "hr executive", "hr manager", "hr generalist",
+    "recruiter", "recruitment", "talent acquisition", "sales executive",
+    "sales manager", "marketing", "finance", "accounting", "accountant",
+    "customer support", "customer success", "business development",
+    "legal counsel", "administrative", "office coordinator",
+    "product manager", "program manager", "project manager",
+    "business analyst", "data entry", "operations executive",
+]
+
+# Plain "senior" etc. words that always mean not-junior, regardless of level number.
 EXCLUDE_KEYWORDS = [
     "senior", "sr.", "sr ", "staff", "principal", "lead ", "manager",
-    "director", "architect", "sde-2", "sde-3", "sde ii", "sde iii",
-    "sde 2", "sde 3", "vp,", "head of", "distinguished",
+    "director", "architect", "vp,", "head of", "distinguished",
 ]
 
 # From the candidate's resume: MERN stack, JS, REST APIs, DSA/CP background.
@@ -65,10 +82,29 @@ SKILL_KEYWORDS = [
     "nodejs", "node ", "javascript", "backend", "back-end", "back end",
     "frontend", "front-end", "front end", "web developer", "web development",
     "rest api", "restful", "mongodb", "express.js", "express js",
-    "software developer", "sde", "application developer", "java developer",
-    "python developer", "c++ developer", "dsa", "data structures",
-    "competitive programming",
+    "software developer", "sde", "swe", "application developer",
+    "java developer", "python developer", "c++ developer", "dsa",
+    "data structures", "competitive programming", "systems engineer",
 ]
+
+
+def seniority_level(text):
+    """Detect an explicit numeric/roman seniority level like 'SDE II',
+    'SDE-3', 'Software Engineer II', 'L4'. Returns an int level, or None
+    if no level is stated (title just says e.g. 'Software Engineer')."""
+    t = text.lower()
+    roman = {"i": 1, "ii": 2, "iii": 3, "iv": 4, "v": 5}
+    m = re.search(
+        r"\b(?:sde|swe|software (?:development )?engineer|engineer)"
+        r"[\s\-]*([1-5]|i|ii|iii|iv|v)\b", t,
+    )
+    if m:
+        val = m.group(1)
+        return int(val) if val.isdigit() else roman.get(val)
+    m = re.search(r"\bl([2-9])\b", t)  # internal grade codes like L4, L5 (L1 = junior, excluded from this check)
+    if m:
+        return int(m.group(1))
+    return None
 
 INDIA_KEYWORDS = [
     "india", "bangalore", "bengaluru", "hyderabad", "pune", "gurgaon",
@@ -101,10 +137,26 @@ def is_india_location(location_str):
     return None
 
 
+def is_excluded(text):
+    """True if this title should never be shown, regardless of whether
+    it's a job or an internship — too senior, or not an engineering role."""
+    t = text.lower()
+    if any(x in t for x in EXCLUDE_KEYWORDS):
+        return True
+    if any(x in t for x in DEPARTMENT_EXCLUDE_KEYWORDS):
+        return True
+    if re.search(r"\bhr\b", t):
+        return True
+    level = seniority_level(t)
+    if level is not None and level >= 2:
+        return True  # SDE-II/III, Engineer II, L4+, etc. — too senior
+    return False
+
+
 def classify(title):
     """Return a set of reason tags, or empty set if not relevant at all."""
     t = title.lower()
-    if any(x in t for x in EXCLUDE_KEYWORDS):
+    if is_excluded(t):
         return set()
     reasons = set()
     if any(k in t for k in FRESHER_KEYWORDS):
@@ -288,6 +340,8 @@ def fetch_generic(company):
     for i, l in enumerate(lines):
         if len(l) >= 150:
             continue
+        if is_excluded(l):
+            continue
         reasons = classify(l)
         intern = is_internship(l)
         if not reasons and not intern:
@@ -323,11 +377,19 @@ def save_json(path, data):
         json.dump(data, f, indent=2)
 
 
+CUSTOM_MESSAGE = (
+    "Hey, it's Prince! I built this little bot to track fresh openings "
+    "across companies so you don't have to check 70+ career pages by hand. "
+    "Everything below is new since the last check — go apply before someone "
+    "else does. All the best! 🚀"
+)
+
+
 def build_email(findings):
     """findings: list of dicts with company, category, ctc, item(dict)."""
     intro = "Prince Singh has sent something for you:"
 
-    text_lines = [intro, ""]
+    text_lines = [intro, CUSTOM_MESSAGE, ""]
     html_rows = []
 
     for f in findings:
@@ -379,7 +441,8 @@ def build_email(findings):
     digest_text = "\n".join(text_lines)
     digest_html = f"""
     <div style="font-family:Arial,Helvetica,sans-serif; max-width:640px; margin:0 auto;">
-      <p style="font-size:16px; color:#1a1a1a; font-weight:bold;">{intro}</p>
+      <p style="font-size:16px; color:#1a1a1a; font-weight:bold; margin-bottom:4px;">{intro}</p>
+      <p style="font-size:14px; color:#444; margin-top:0; margin-bottom:20px; line-height:1.5;">{CUSTOM_MESSAGE}</p>
       {''.join(html_rows)}
     </div>
     """
@@ -419,6 +482,8 @@ def main():
         if jobs is not None:
             relevant = []
             for j in jobs:
+                if is_excluded(j["title"]):
+                    continue
                 reasons = classify(j["title"])
                 intern = is_internship(j["title"])
                 if not reasons and not intern:
