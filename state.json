@@ -6,7 +6,7 @@
   },
   "Amazon": {
     "seen_ids": [],
-    "hash": "bb0dd9e42cfd43a0592f39ea627d847a5067c50034fb057775f0975e1c5376d9",
+    "hash": "3448707724fd370f7ae616b8b66100b8669cb1632c39d538d9c47ed0a58579a8",
     "mode": "generic"
   },
   "Adobe": {
@@ -22,7 +22,7 @@
   "Apple": {
     "seen_ids": [],
     "hash": "3e36aa4a05c78bb9c424e2446fa7041d117ec3db8e416e3362b30925c8270e39",
-    "mode": "generic"
+    "mode": "failed"
   },
   "Uber": {
     "seen_ids": [],
@@ -36,7 +36,7 @@
   },
   "Salesforce": {
     "seen_ids": [],
-    "hash": "d84496ad2ff869d64fe47e7d61b8a33dafcfe52d8dff113308da27dfbcf1f578",
+    "hash": "df00b173a4cb524187249583ee84762d15209829285be2236df26ef7e53d9512",
     "mode": "generic"
   },
   "ServiceNow": {
@@ -51,7 +51,7 @@
   },
   "SAP Labs": {
     "seen_ids": [],
-    "hash": "dbab57a09f8a7462fc8e62138be21c8b843a3f998a1f1451675c45efc0449b04",
+    "hash": "6eec942cf863c23d495beeeca0f1990cd80ae22c42461998fd82d7ae052355bb",
     "mode": "generic"
   },
   "VMware / Broadcom": {
@@ -61,7 +61,7 @@
   },
   "Cisco": {
     "seen_ids": [],
-    "hash": "0c079346149d1fde823786679b1f507a4a15061f57394a1b22351edb025c7e76",
+    "hash": "cca11bb4d2e34fdf2e759a7bbcbc5cd1643b3536a1086d886fdcf7d74df0506c",
     "mode": "generic"
   },
   "Juniper Networks": {
@@ -81,12 +81,12 @@
   },
   "Nutanix": {
     "seen_ids": [],
-    "hash": "918b7b0aa2452235d5cbbc8df4553be79da5df16ea35ee23dc9bc6c838829d38",
+    "hash": "475e449c987a1ceff1af2725c54039daeafdbcece6d0a9af2947c65a5f522a48",
     "mode": "generic"
   },
   "Dell Technologies": {
     "seen_ids": [],
-    "hash": "c2c745e65c14bd4f28181b4b8d6a6e0808005a2684090aa01b36fb332128cc2a",
+    "hash": "bfaaea35053ad1d9aa7ce831b2eab28465eae82a2211a2642159b65021ad3e76",
     "mode": "generic"
   },
   "NVIDIA": {
@@ -111,7 +111,7 @@
   },
   "Akamai": {
     "seen_ids": [],
-    "hash": "1b5af25ca6c2afeb9c1defb4f29870da8f2667e6810dd53cdd80fb25ebf378b1",
+    "hash": "1b0b2f184da9dbf0c5cc9e91fb2d63a8d7462550b3cfc86372cc063052700362",
     "mode": "generic"
   },
   "Rubrik": {
@@ -126,12 +126,12 @@
   },
   "Splunk": {
     "seen_ids": [],
-    "hash": "77096ee6e3d7e0ddef25dfe4a45b64804b09b687e7fb4da76c2a13f7949738b5",
+    "hash": "96ab3cd98f13d92b5b6af09d316a8523737d1c484e9cedd37be8de32a16f14a1",
     "mode": "generic"
   },
   "Palo Alto Networks": {
     "seen_ids": [],
-    "hash": "3ba72f1f2bb262d61d601deb66da386409d2daa485ba841600d44b3c0cad7080",
+    "hash": "10a5206b4fbabaeefe7fe57f537dc810702bd33231323eeb5d3e40272c00ba8e",
     "mode": "generic"
   },
   "CrowdStrike": {
@@ -146,7 +146,7 @@
   },
   "Mastercard": {
     "seen_ids": [],
-    "hash": "b02587fbb45e6977c7eeb32f8b5bd0e9c34b8c70a3921a2e1d969874822f9fd7",
+    "hash": "520b2e6d52347f151ff79d92d55f2c484aeca9c182016e5043d252892b68ac81",
     "mode": "generic"
   },
   "PayPal": {
@@ -205,7 +205,7 @@
   },
   "Barclays (Tech)": {
     "seen_ids": [],
-    "hash": "4a523a10bf8b46f7e88fb0b142563be4877e2130f2910cd7d3fb0ba4ca22c009",
+    "hash": "9f17d410333f22378db2c81a71da98ae481602e797eef636f94ebc5b19f6686e",
     "mode": "generic"
   },
   "Wells Fargo (Tech)": {
@@ -316,38 +316,38 @@
   },
   "Synopsys": {
     "seen_ids": [],
-    "hash": "97dd78513d60d04632c66f42df6fa31613fbfefcf30a6757fff491c8b8d4fbc1",
+    "hash": "c8d42a55864be337b6e877de93202bdc826563fdebcbb97a6e19b190d0a31186",
     "mode": "generic"
   },
   "Cadence": {
     "seen_ids": [],
-    "hash": "19abc66a7228bb67f52506af5ea06e17ce114dc1f21604dc6f5f6e9f40cd86e6",
+    "hash": "095db3c58dc1a1f7a8660925573919e37197144328d501fdf25ac8a5de745b30",
     "mode": "generic"
   },
   "Texas Instruments": {
     "seen_ids": [],
-    "hash": "6ae310ae742b1c230b67b81c3e6c40cc4eabd4b9c29bfe0af46a0a3b663a6154",
+    "hash": "1cdad62d8aba8855b32c4f56391e2b8f8a4d953ed0d6a21e86179d369a022cb2",
     "mode": "generic"
   },
   "Micron": {
     "seen_ids": [],
-    "hash": "9ec4d569476571d618c0ba4d4530dc9ca772e26e21483382fafc1e4733bd4968",
+    "hash": "2cdeb9eb8324b540ebe1adc404ab3faa707abac327967f232e13265c79bba639",
     "mode": "generic"
   },
   "AMD": {
     "seen_ids": [],
-    "hash": "2373e6899404c423ee81b552b1c2ea2897b9693e8f64828561c7c7f4457502bc",
+    "hash": "ba179cf3622e7d02dc5ec2e8910a6541289cc8b3a9c09cda763d40ec58cb0e5c",
     "mode": "generic"
   },
   "Intel": {
     "seen_ids": [],
-    "hash": "3921877332a8da7831bf84fe7c9249437f299ee5dd225fd605e4bfa8fd2c744d",
+    "hash": "95a078be2018a7097c2a3b6c41eb0bfa475c3a97c3dbc0d5afe185a32c1f59ae",
     "mode": "generic"
   },
   "Samsung R&D": {
     "seen_ids": [],
     "hash": "ff6ee35a326f8a015640be75010d805fc5aeadbd3aefea771685e086ba4d04c0",
-    "mode": "generic"
+    "mode": "failed"
   },
   "Icertis": {
     "seen_ids": [],
@@ -366,14 +366,13 @@
   },
   "Darwinbox": {
     "seen_ids": [],
-    "hash": "f2ba76a1787f3448737222cd1cf4f7cf28a8baa7978822597f0c59fa452e8372",
-    "mode": "failed"
+    "hash": "b68757d92c4fe87fdf74ee5d3c88c8d566588e43b5ac7ee88c0059cbc437561f",
+    "mode": "generic"
   },
   "Highradius": {
     "seen_ids": [
-      "gh-7608628003",
-      "gh-7107816003",
-      "gh-7511610003"
+      "gh-7511610003",
+      "gh-7107816003"
     ],
     "hash": null,
     "mode": "api"
