@@ -6,7 +6,7 @@
   },
   "Amazon": {
     "seen_ids": [],
-    "hash": "b149e62ff07bdbce1dfbf512d03ff819789c8dd42c01c320561f96b61b0ce06f",
+    "hash": "c476f3dc96061773b04e5f3fbe5236b185743a21151ded6cdc22d1b466c3e050",
     "mode": "generic"
   },
   "Adobe": {
@@ -36,7 +36,7 @@
   },
   "Salesforce": {
     "seen_ids": [],
-    "hash": "d1c0d5e57f7ec07db7ab171982eb6d336bb57c95fdb0138fe7475e155e004b19",
+    "hash": "fee4d73756424ea84207107f50e38d45fffac8d5899e822933e28ab036e583b1",
     "mode": "generic"
   },
   "ServiceNow": {
@@ -81,12 +81,12 @@
   },
   "Nutanix": {
     "seen_ids": [],
-    "hash": "45be11392bce45b1f4df1a2a22465c8777e5145cad800d0f6d6606b81b4a27fb",
+    "hash": "0e4f80a6321e2adca44fe47331c53c97d99ecba3dea6dac94b5e6b3690e0c3fe",
     "mode": "generic"
   },
   "Dell Technologies": {
     "seen_ids": [],
-    "hash": "e314de2fa42114103cbde72177197c9913414a2b4736a5fca933c9f59371a225",
+    "hash": "f2a5f835ab42722cd6d33cb32ccacdde544791f4096127fbf6c7ec4b22fb1e51",
     "mode": "generic"
   },
   "NVIDIA": {
@@ -106,12 +106,12 @@
   },
   "Atlassian": {
     "seen_ids": [],
-    "hash": "ec2871c14f80bbfbbe689af035631185d2aac39eff6f81f4c3532bef156d0bea",
+    "hash": "dee6207d15dd53c06293878a1c722525d3f8fa28ab129b73341bac356fba5447",
     "mode": "generic"
   },
   "Akamai": {
     "seen_ids": [],
-    "hash": "0e575587dfe4309275b979d1d8c5f23bf59bb5e8ea03156ae57c4ee18a53a1dd",
+    "hash": "a38de0ad5036cb134966b731f21f8c54c1b4872de6ac32731cbef31ce6879441",
     "mode": "generic"
   },
   "Rubrik": {
@@ -131,13 +131,13 @@
   },
   "Palo Alto Networks": {
     "seen_ids": [],
-    "hash": "cab463c8251fb25d57dad6431f472e3af74f681a4c3720f3e24578133d43133d",
+    "hash": "41719cc46f094d66426d19fc7892967fe683b5cf3b47ebaddc8a129a048b5e6f",
     "mode": "generic"
   },
   "CrowdStrike": {
     "seen_ids": [],
     "hash": "76f7890a62f01c3d3d51a056b3adf5f47f1e5afe04a162b217a00699383eddad",
-    "mode": "generic"
+    "mode": "failed"
   },
   "Visa": {
     "seen_ids": [],
@@ -146,7 +146,7 @@
   },
   "Mastercard": {
     "seen_ids": [],
-    "hash": "8ea76a61e0932c9fe85d981079aa44bf5aa74f1fdb94d747b8a44aa5df7bbd1e",
+    "hash": "b85cc39d621996894ab55b9c47dc51c920d0a68472117c2a0448d44691aa0206",
     "mode": "generic"
   },
   "PayPal": {
@@ -307,7 +307,7 @@
   "Jupiter": {
     "seen_ids": [],
     "hash": "322103169bbf9cb95cfb6ef875181af97f35989c6481192ae660da8080baac3c",
-    "mode": "failed"
+    "mode": "generic"
   },
   "Fi Money": {
     "seen_ids": [],
@@ -316,27 +316,27 @@
   },
   "Synopsys": {
     "seen_ids": [],
-    "hash": "9a057233b2bb70f47dc7834d251fd41270181621204839050006e86695194bff",
+    "hash": "626ae9aba60408d34ae32a48c80b9dabfe081042168bf0990340887559f750cc",
     "mode": "generic"
   },
   "Cadence": {
     "seen_ids": [],
-    "hash": "19abc66a7228bb67f52506af5ea06e17ce114dc1f21604dc6f5f6e9f40cd86e6",
+    "hash": "f23d126ec9dd7b79ad55eb075a7d83a30c8a44aff3a2f78202b685547ef8ccbe",
     "mode": "generic"
   },
   "Texas Instruments": {
     "seen_ids": [],
-    "hash": "a4f46e66563b02588a03ca6134814036a1f5b1a03c5778bdb52ee5aa923ffded",
+    "hash": "080d219628764f00e8d839760d07000f31f0b40b5ef23e80ef773674a5cf1b4f",
     "mode": "generic"
   },
   "Micron": {
     "seen_ids": [],
-    "hash": "7b859bf666644b390304808e82697288eca43579b979a18fbc65f8a64c615dce",
+    "hash": "019b7b9b50cbb2104183bed274e76d83ca7829b9de72db47b440728e4e8470b4",
     "mode": "generic"
   },
   "AMD": {
     "seen_ids": [],
-    "hash": "4f371e62033706ec4f81644de2bd6742f75cbaa5cd7a2e7ba2f825fd458c4b2b",
+    "hash": "7cf644fedc89de60b079f29d75909efd2ceacdea7a86c349b7d2701f7135e227",
     "mode": "generic"
   },
   "Intel": {
@@ -347,7 +347,7 @@
   "Samsung R&D": {
     "seen_ids": [],
     "hash": "ff6ee35a326f8a015640be75010d805fc5aeadbd3aefea771685e086ba4d04c0",
-    "mode": "generic"
+    "mode": "failed"
   },
   "Icertis": {
     "seen_ids": [],
@@ -367,12 +367,12 @@
   "Darwinbox": {
     "seen_ids": [],
     "hash": "15ef1386020af051fe6941692c0c9c982b4ac7d3177ee728648564d60244243d",
-    "mode": "generic"
+    "mode": "failed"
   },
   "Highradius": {
     "seen_ids": [
-      "gh-7107816003",
-      "gh-7511610003"
+      "gh-7511610003",
+      "gh-7107816003"
     ],
     "hash": null,
     "mode": "api"
