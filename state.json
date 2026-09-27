@@ -6,7 +6,7 @@
   },
   "Amazon": {
     "seen_ids": [],
-    "hash": "025f44c0f93c42994f6692d1554d2187ce54ae6d3defae4cb3219f8a757ffe26",
+    "hash": "31388e52aba2cafb9e2c6f578603501f76adbf5e6ca385c564a151e653f584fb",
     "mode": "generic"
   },
   "Adobe": {
@@ -36,7 +36,7 @@
   },
   "Salesforce": {
     "seen_ids": [],
-    "hash": "37490dee9301da269ee0d91dfe083d5800a80dfead41beb783f61a31e4528f6d",
+    "hash": "23c728a734ea0e3335dbb81b1b54247d2e00cabaed8ba518a452f6b13e54d7d4",
     "mode": "generic"
   },
   "ServiceNow": {
@@ -81,12 +81,12 @@
   },
   "Nutanix": {
     "seen_ids": [],
-    "hash": "f654041a5f441f4654022ae506ec6416dd6305242ea4a4d01383b6fda4c8e780",
+    "hash": "5b4d795f7d06cdfd0b72f19242a506a45c56c003fdf0f1ed6f893616aad5965c",
     "mode": "generic"
   },
   "Dell Technologies": {
     "seen_ids": [],
-    "hash": "f2a5f835ab42722cd6d33cb32ccacdde544791f4096127fbf6c7ec4b22fb1e51",
+    "hash": "b54a2bf184f25aee010f4a1f4421c4a702d367cfaa280b1db989874552044c38",
     "mode": "generic"
   },
   "NVIDIA": {
@@ -106,12 +106,12 @@
   },
   "Atlassian": {
     "seen_ids": [],
-    "hash": "ec2871c14f80bbfbbe689af035631185d2aac39eff6f81f4c3532bef156d0bea",
+    "hash": "dee6207d15dd53c06293878a1c722525d3f8fa28ab129b73341bac356fba5447",
     "mode": "generic"
   },
   "Akamai": {
     "seen_ids": [],
-    "hash": "1e98702a9b52f584ebe543275d670ed4bab7be9d735d8c3773dc3130898ddf96",
+    "hash": "014b732cb0737951640a47b91beec2737574018712e253174ad18f9743ae946f",
     "mode": "generic"
   },
   "Rubrik": {
@@ -131,13 +131,13 @@
   },
   "Palo Alto Networks": {
     "seen_ids": [],
-    "hash": "5fc5801604a721daaed7b3fa7e36a62b7e6dea3db5c70354866fb24460d79df3",
+    "hash": "6f16b6be8d6fcee6d6a4ab4d0c05a85de5913cbc2b965cacc6d3762f725c7741",
     "mode": "generic"
   },
   "CrowdStrike": {
     "seen_ids": [],
     "hash": "76f7890a62f01c3d3d51a056b3adf5f47f1e5afe04a162b217a00699383eddad",
-    "mode": "generic"
+    "mode": "failed"
   },
   "Visa": {
     "seen_ids": [],
@@ -146,7 +146,7 @@
   },
   "Mastercard": {
     "seen_ids": [],
-    "hash": "1daa92526de205ab4cfffc27267624dd4a8441e0bf35259c095acdbcb32c1e6a",
+    "hash": "a882bff004550b3613ccf5d2d8d6275047cf0eee7014495e6d9206220b9acb7b",
     "mode": "generic"
   },
   "PayPal": {
@@ -195,8 +195,8 @@
   },
   "Citi (Tech)": {
     "seen_ids": [],
-    "hash": "814f6f84ab867024094cbac696d2a70f1f29ae4b9fca1bb475ff8f97be0aa652",
-    "mode": "failed"
+    "hash": "11dce3720336a8193c11db0aced00b5a7df84d4406f3b4ff6b6f9ce928cc1fe4",
+    "mode": "generic"
   },
   "Deutsche Bank (Tech)": {
     "seen_ids": [],
@@ -205,7 +205,7 @@
   },
   "Barclays (Tech)": {
     "seen_ids": [],
-    "hash": "b487dea3b96a909ddefde22566186b967fcc4f58133346268ac88b64d3024f71",
+    "hash": "22c1538cf6e2dc258834a57bcbf85cbb26f0844ed5da5f1a20765716f8859055",
     "mode": "generic"
   },
   "Wells Fargo (Tech)": {
@@ -321,7 +321,7 @@
   },
   "Cadence": {
     "seen_ids": [],
-    "hash": "19abc66a7228bb67f52506af5ea06e17ce114dc1f21604dc6f5f6e9f40cd86e6",
+    "hash": "095db3c58dc1a1f7a8660925573919e37197144328d501fdf25ac8a5de745b30",
     "mode": "generic"
   },
   "Texas Instruments": {
@@ -331,17 +331,17 @@
   },
   "Micron": {
     "seen_ids": [],
-    "hash": "ead1153571bff913c1efb0650b9281feb3d24d24d700e11717be62adab6f03bf",
+    "hash": "28828c316beaa43d11ad9d4e6df8068f591c88186d63b365ea493e9ac18313d8",
     "mode": "generic"
   },
   "AMD": {
     "seen_ids": [],
-    "hash": "e7855c7228559d4c6783343e47fbbe4ac74c175f0d66d06e7521f9a99e441bc6",
+    "hash": "8aef9ff1a2a6ca3ceeab08b52b005088fce60cab5261e8722edc3e66de5be11c",
     "mode": "generic"
   },
   "Intel": {
     "seen_ids": [],
-    "hash": "b747906a1e381e977089d68f49b698f345ce912350244f888946ef5487d167e8",
+    "hash": "660d5c2562159433ad7b3b2f8e91f74cdca0c343bd88a45068479410d440e007",
     "mode": "generic"
   },
   "Samsung R&D": {
@@ -356,7 +356,7 @@
   },
   "Innovaccer": {
     "seen_ids": [],
-    "hash": "650a58ebff111d455dad9fc1df0dacfe0cea81ff2ae5c3f0e01949fccbfe6c79",
+    "hash": "f08069ace0122564aa15a6240d57554e4a9442804834f69f20d2a2ab32dd1e05",
     "mode": "generic"
   },
   "Chargebee": {
