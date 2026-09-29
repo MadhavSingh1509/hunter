@@ -6,7 +6,7 @@
   },
   "Amazon": {
     "seen_ids": [],
-    "hash": "84df46c4d759cbe5b8b16d82f5e0cb46a2df2be9cbae90fff3d72a70a2945410",
+    "hash": "31388e52aba2cafb9e2c6f578603501f76adbf5e6ca385c564a151e653f584fb",
     "mode": "generic"
   },
   "Adobe": {
@@ -36,7 +36,7 @@
   },
   "Salesforce": {
     "seen_ids": [],
-    "hash": "b60a5344de3a7a81d02edef32ea3644612536bb65b41813abaa0ac1f7d6d3a15",
+    "hash": "1908ae986669dbc629e062579699c4e74321febba77bc3783033bee8c539cff4",
     "mode": "generic"
   },
   "ServiceNow": {
@@ -51,7 +51,7 @@
   },
   "SAP Labs": {
     "seen_ids": [],
-    "hash": "d62b57d0aecf91253aac55f0d39cbb7e70838b38191157425f4fe464ce5739ee",
+    "hash": "f1218b62136fe41f0b8fabdb5e94c5bbcfeb3220124a22b74686428a385b3941",
     "mode": "generic"
   },
   "VMware / Broadcom": {
@@ -81,12 +81,12 @@
   },
   "Nutanix": {
     "seen_ids": [],
-    "hash": "0b48fc94d66244de273601729bd350305a371dbc47dd1f8c2a051354db3306e3",
+    "hash": "8bee05adc185562e6f2d6c4d29901b4c894919b97ae70aaf22fd1f6ae93744a8",
     "mode": "generic"
   },
   "Dell Technologies": {
     "seen_ids": [],
-    "hash": "b54a2bf184f25aee010f4a1f4421c4a702d367cfaa280b1db989874552044c38",
+    "hash": "fc3db4efdf7da6ed964ce491e903e0ef5b38c0f37e9539a136c07339d1d823ee",
     "mode": "generic"
   },
   "NVIDIA": {
@@ -106,12 +106,12 @@
   },
   "Atlassian": {
     "seen_ids": [],
-    "hash": "dee6207d15dd53c06293878a1c722525d3f8fa28ab129b73341bac356fba5447",
+    "hash": "ec2871c14f80bbfbbe689af035631185d2aac39eff6f81f4c3532bef156d0bea",
     "mode": "generic"
   },
   "Akamai": {
     "seen_ids": [],
-    "hash": "32f25e9f7446fc0bfd5c8ff9337d932768421babd6972dd5c08501c6e92c8465",
+    "hash": "ae529d3ea4b40581439821596852debdce36e2522767d6bbff3108df92079cd8",
     "mode": "generic"
   },
   "Rubrik": {
@@ -130,12 +130,12 @@
   },
   "Palo Alto Networks": {
     "seen_ids": [],
-    "hash": "10a5206b4fbabaeefe7fe57f537dc810702bd33231323eeb5d3e40272c00ba8e",
+    "hash": "54af68d8dcb8b36a300ae5eaa9150687aec0b4c69e28ec572e11a0248cd57f2b",
     "mode": "generic"
   },
   "CrowdStrike": {
     "seen_ids": [],
-    "hash": "76f7890a62f01c3d3d51a056b3adf5f47f1e5afe04a162b217a00699383eddad",
+    "hash": "dc069a8aa950319e1c19aa25229eb3f5b3ec2373e6c415b52e68704ba3d33aa6",
     "mode": "generic"
   },
   "Visa": {
@@ -145,7 +145,7 @@
   },
   "Mastercard": {
     "seen_ids": [],
-    "hash": "58f6e4e27fde2b81189291cb6375c1a829bfa60a4d3c6b5950757c490a01ccdc",
+    "hash": "cfb6e930aa2d60f69654982b651f749cd37f49d77fc7f2a54f75e2c79c2b372a",
     "mode": "generic"
   },
   "PayPal": {
@@ -264,7 +264,7 @@
   },
   "Zoho": {
     "seen_ids": [],
-    "hash": "1f32c92ad35b13efdeaeb2f6e5e8e5e692bdcbcdb851e6e03ae328a58f4c5a99",
+    "hash": "24cb9a243e703f433b055a02c5a3440340ecb35987843e3967476f8fd2b9a59b",
     "mode": "generic"
   },
   "Groww": {
@@ -315,13 +315,13 @@
   },
   "Synopsys": {
     "seen_ids": [],
-    "hash": "8b3f80600f9545c450e046c79c1c6dd1711561026e54874d73ba1d2ecbbd9c13",
+    "hash": "a1538f4b77024849f07923a7f821249ad36f0b9fd74aa56d7b45c8c6dbe82741",
     "mode": "generic"
   },
   "Cadence": {
     "seen_ids": [],
     "hash": "19abc66a7228bb67f52506af5ea06e17ce114dc1f21604dc6f5f6e9f40cd86e6",
-    "mode": "generic"
+    "mode": "failed"
   },
   "Texas Instruments": {
     "seen_ids": [],
@@ -330,12 +330,12 @@
   },
   "Micron": {
     "seen_ids": [],
-    "hash": "354c0b683484a953a7799644be263081f667c0a0b4a9936afcba2957eb6e09c5",
+    "hash": "0f230760a3b5fbec1859e7daf9e52eee64effd1b3a19d7041a22dfe7427bed4e",
     "mode": "generic"
   },
   "AMD": {
     "seen_ids": [],
-    "hash": "3082ea380a04d50162121649af4b0e6e84f2a5c51684f80b69063339ab9c8d72",
+    "hash": "bf675c847491c52d9164b010d767333c0fac6cd042a6f4ab0aea3790c2a82da1",
     "mode": "generic"
   },
   "Intel": {
@@ -355,7 +355,7 @@
   },
   "Innovaccer": {
     "seen_ids": [],
-    "hash": "f08069ace0122564aa15a6240d57554e4a9442804834f69f20d2a2ab32dd1e05",
+    "hash": "650a58ebff111d455dad9fc1df0dacfe0cea81ff2ae5c3f0e01949fccbfe6c79",
     "mode": "generic"
   },
   "Chargebee": {
@@ -366,7 +366,7 @@
   "Darwinbox": {
     "seen_ids": [],
     "hash": "b68757d92c4fe87fdf74ee5d3c88c8d566588e43b5ac7ee88c0059cbc437561f",
-    "mode": "generic"
+    "mode": "failed"
   },
   "Highradius": {
     "seen_ids": [
