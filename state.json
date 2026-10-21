@@ -6,12 +6,12 @@
   },
   "Amazon": {
     "seen_ids": [],
-    "hash": "ca1ea8b6011052f0d257c5f8ee92104838dfe8f029fb87f4a5ed7eb88efc4596",
+    "hash": "eb6e184713ccf1afb2ac5759bd743f9e7597facb37b9b0235b751105f1ef0149",
     "mode": "generic"
   },
   "Adobe": {
     "seen_ids": [],
-    "hash": "e26230a8426475da02aeadfa4fe7d2b2413a3b004294ca9f2c6b3536c05201f8",
+    "hash": "5a09656de55c3bab174142db2f2bb68c90ea18e82372c56cf27c075eff0d017f",
     "mode": "generic"
   },
   "Google": {
@@ -21,7 +21,7 @@
   },
   "Apple": {
     "seen_ids": [],
-    "hash": "13f91f1117e22ec2bc852ded38dcbce717207a7252b1c564991e9a095a3523f7",
+    "hash": "5284c0c2e38c8f8113357873980efba254700ee49ff443b91f058fe629d3d811",
     "mode": "generic"
   },
   "Uber": {
@@ -36,7 +36,7 @@
   },
   "Salesforce": {
     "seen_ids": [],
-    "hash": "e7215366d6f67c3c1a9721b13ee9cdea15665c189d085a67ebdea8f1b6fb55fe",
+    "hash": "3c7db875ff5741f0740b03702ac7121141d7a0a7600ebf8ed8e63b295b06fefb",
     "mode": "generic"
   },
   "ServiceNow": {
@@ -51,7 +51,7 @@
   },
   "SAP Labs": {
     "seen_ids": [],
-    "hash": "16acfa5733f8d38721b8fb7c0c664c4bb3d30fab92dc90ee2414b02a40ae4d41",
+    "hash": "f7b6716da85b68e7909d238a5224ed6accac17e0eb2c4c8ecd2cb0c3f219796b",
     "mode": "generic"
   },
   "VMware / Broadcom": {
@@ -74,30 +74,29 @@
       "sr-744000154008074",
       "sr-744000150304670",
       "sr-744000150058443",
-      "sr-744000146960659",
-      "sr-744000143091750"
+      "sr-744000146960659"
     ],
     "hash": null,
     "mode": "api"
   },
   "Nutanix": {
     "seen_ids": [],
-    "hash": "b9597ebd0bf47a892560db14774d80a24b5645574b75f077c933837f2aa6a2cc",
+    "hash": "bda8032fe53029565c04b2c7d334f06bee451fbabbb8b1181bd861feb6ddfbab",
     "mode": "generic"
   },
   "Dell Technologies": {
     "seen_ids": [],
-    "hash": "f310901d0512577b412dd3c13dc08ebb68791bfb3972c59fa0ab2dd8a8af8dbb",
+    "hash": "b4a905bb7346e6c16975f67ea384e41a47c6c1c2abebcadb6b758dd0b7b961e5",
     "mode": "generic"
   },
   "NVIDIA": {
     "seen_ids": [],
-    "hash": "c6e8f4a50b64b59eee96ab23c4c3e04054ba0b1223c5e297bd88d48671d65663",
+    "hash": "33c20a76f15517c81d5ab4ed3917ee7a41e69a9c2e34617ea3cd9d931d098108",
     "mode": "generic"
   },
   "Qualcomm": {
     "seen_ids": [],
-    "hash": "5b8329f6bbc382b29053152f0dd1722046b2cd20ee89427cb00322e7abb696ae",
+    "hash": "7eb362529e8882e93f7372006e7174ac563d8b630d390397b0ae8c584e5f3279",
     "mode": "generic"
   },
   "Intuit": {
@@ -112,7 +111,7 @@
   },
   "Akamai": {
     "seen_ids": [],
-    "hash": "ce328ffc7eea2c6d4f0f79db8e1ccb5bae2e27828502f33d1ad267fd92ed6c55",
+    "hash": "e866f5d62a387c1951797829ebe8e2fec2fa8a93c1b47de75a489f4be37dc9db",
     "mode": "generic"
   },
   "Rubrik": {
@@ -132,7 +131,7 @@
   },
   "Palo Alto Networks": {
     "seen_ids": [],
-    "hash": "a44494392c204cb384081036a1dcc04b13b961194689d545cbb37db216c995fb",
+    "hash": "cd8c03e5991ae8fe1574f14c2ed585ca0836aec3b14bb1812a25afa4815eaafe",
     "mode": "generic"
   },
   "CrowdStrike": {
@@ -147,7 +146,7 @@
   },
   "Mastercard": {
     "seen_ids": [],
-    "hash": "9d0ae30061816868942345962317a22e3d69bf5bd3766aacfc0ccad25a87fc5a",
+    "hash": "7f0c01a593662256e2757f5893824089788a169621d2ae6dcd8da5fe3bc9a0e0",
     "mode": "generic"
   },
   "PayPal": {
@@ -187,7 +186,7 @@
   },
   "JPMorgan Chase (Tech)": {
     "seen_ids": [],
-    "hash": "7418508449ee5c78b2283e26c1dbbd26e1251ba9cd93c4e63d0594a55dbc293a",
+    "hash": "43cca2fc57c07b7c194ad0f95c8be73ae42a76150e0ac9d8a30f8ee6651b69b8",
     "mode": "generic"
   },
   "Morgan Stanley (Tech)": {
@@ -207,7 +206,7 @@
   },
   "Barclays (Tech)": {
     "seen_ids": [],
-    "hash": "08a560e59a8b831e9392894e113bdb53c8982e10bfa3faec0a5919f961cd09a4",
+    "hash": "60ea02a9899e684b41bdc4455b447e7c94a7d9e8c9ad17293cd575060b6dc63b",
     "mode": "generic"
   },
   "Wells Fargo (Tech)": {
@@ -257,7 +256,7 @@
   },
   "Postman": {
     "seen_ids": [],
-    "hash": "829f82a3cbbbc7e0154d90981a9bb6f922fa1d1c327ff0c49c114b1867021bbf",
+    "hash": "b80f7b0134b1b34924c04d19d04e3f09e3e73d40f203a97120bcf67d6cf95bdb",
     "mode": "generic"
   },
   "BrowserStack": {
@@ -267,7 +266,7 @@
   },
   "Zoho": {
     "seen_ids": [],
-    "hash": "54b09ca4622871d271e0a6b3baf15f21bf4b654831af0823c8e042b8fb50f18d",
+    "hash": "72fbcc57cb322ef8bbb6790c0c5b3e1e09516644a1cf491a7eb5b22d412742e2",
     "mode": "generic"
   },
   "Groww": {
@@ -317,12 +316,12 @@
   },
   "Synopsys": {
     "seen_ids": [],
-    "hash": "2b9b61278d585b801c5112d103776bc4084107fd2e5519ec54887a132e27e1a7",
+    "hash": "2d0eb2e9e703e3deadd4c91217441ec1042a3642a30df15276b08136105663af",
     "mode": "generic"
   },
   "Cadence": {
     "seen_ids": [],
-    "hash": "095db3c58dc1a1f7a8660925573919e37197144328d501fdf25ac8a5de745b30",
+    "hash": "0154fe142e2ac501b430b132955df97864bb1e10d8b8fad2259fb6d1a94d9252",
     "mode": "generic"
   },
   "Texas Instruments": {
@@ -332,12 +331,12 @@
   },
   "Micron": {
     "seen_ids": [],
-    "hash": "cadb6950c5f6bba3b9ddec95fa7bcd7f546f64976aba55ab9b75301435ce615d",
+    "hash": "76d3d9ec1956932ed5fe0ec702f067d591b79f2db38e56a437e601602761bab9",
     "mode": "generic"
   },
   "AMD": {
     "seen_ids": [],
-    "hash": "4fabafbcd3fd328fcc9f78ade9ceb0494189887c169f4454825b5ee6e5c40e2a",
+    "hash": "041926bc3b733ec33f134659c6ba3ae71d8ab8488533125cd9e0627f9122f8c8",
     "mode": "generic"
   },
   "Intel": {
@@ -347,8 +346,8 @@
   },
   "Samsung R&D": {
     "seen_ids": [],
-    "hash": "30e56e4f17f5ecef92d754b7e20897721560b441af827e44bee4b030cfde2153",
-    "mode": "failed"
+    "hash": "8afc1187347e8b4714a93e108eecfffa469656c4eff007d75d9ad2651fe04086",
+    "mode": "generic"
   },
   "Icertis": {
     "seen_ids": [],
@@ -357,7 +356,7 @@
   },
   "Innovaccer": {
     "seen_ids": [],
-    "hash": "650a58ebff111d455dad9fc1df0dacfe0cea81ff2ae5c3f0e01949fccbfe6c79",
+    "hash": "f08069ace0122564aa15a6240d57554e4a9442804834f69f20d2a2ab32dd1e05",
     "mode": "generic"
   },
   "Chargebee": {
