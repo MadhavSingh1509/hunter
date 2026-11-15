@@ -1,115 +1,110 @@
-# SDE / Fresher Job Opening Monitor
+# HUNTER 2.0 — Personal Job Hunting Assistant
 
-Checks the career pages of the 71 companies from your tracker every 12 hours
-and emails **princeutube007@gmail.com** a digest whenever a new opening
-appears that's either (a) fresher/SDE-level, or (b) a strong match for your
-resume's skill set — even if the title doesn't say "fresher".
+Hunter 2.0 transforms simple keyword-based job alerting into an intelligent, deterministic qualification and verification system.
 
-## How it works
+Its core objective: **Find real, active job opportunities that you are genuinely eligible for, and deliver direct official application links.**
 
-- For companies on **Greenhouse, Lever, or SmartRecruiters** (many startups
-  and mid-size tech cos use these), it queries their public job APIs
-  directly — fast, and gives you exact job titles and links.
-- For everyone else (Workday, custom React career sites, etc.), it renders
-  the page with a headless browser and scans the visible text for relevant
-  keywords, and flags it whenever the page content changes.
-  This is best-effort: it can't always tell "new job" from "any page edit",
-  so those alerts are worth a quick manual glance.
-- It remembers what it already told you (`state.json`) so you don't get
-  repeat notifications for the same posting.
+---
 
-## Two ways a listing gets flagged
+## Key Highlights in Hunter 2.0
 
-Each alert is tagged so you know why it showed up:
+1. **Centralized Candidate Profile (`candidate_profile.json`)**
+   - Degree: B.Tech in Electrical Engineering (EE).
+   - Strict 0-year professional experience filter (personal MERN and DSA projects are distinguished from mandatory professional employment).
+   - Configurable graduation batch and location preferences.
 
-- **`[fresher/SDE]`** — title contains fresher/entry-level/new-grad/SDE-1
-  style language (e.g. "SDE-1", "New Grad Software Engineer").
-- **`[skills match]`** — title matches your resume's stack even without
-  "fresher" in the name (e.g. "React Developer", "Backend Engineer",
-  "Full Stack Developer", "MERN Stack Engineer", "Node.js Developer").
-  This is based on your resume: MERN stack (React/Node/Express/MongoDB),
-  JavaScript, REST APIs, C++/Java/Python, DSA/competitive programming.
-  A listing can carry both tags at once.
-- **`[location unverified]`** — added when the listing's location couldn't
-  be confidently identified as India or not-India. It's still included
-  (rather than silently dropped) since many postings don't tag location
-  cleanly — just double-check that one before applying.
+2. **10-Stage Deterministic Qualification Engine (`qualification_engine.py`)**
+   - **Stage 1 (Discovery)**: Official ATS APIs (Greenhouse, Lever, SmartRecruiters, Ashby) and career portals.
+   - **Stage 2 (Title Classification)**: Tier 1 primary targets (SDE, Software Engineer, Backend/Full Stack/Frontend, etc.) and Tier 2 targets (GET software track, QA Automation, Internships). Rejects non-dev, sales, HR, and core electrical roles.
+   - **Stage 3 (Experience Analysis)**: Rejects mandatory 2+ years requirements. Flags 0–2 years as borderline.
+   - **Stage 4 (Educational Eligibility)**: Verifies that Electrical Engineering is eligible (accepts any engineering branch / EE explicit; rejects CSE/IT-only restrictions and mandatory Master's degrees).
+   - **Stage 5 (Location Analysis)**: Enforces India location (rejects foreign roles in US/UK/Singapore).
+   - **Stage 6 (Description & Skills Alignment)**: Analyzes skills (C++, Java, Python, JS, React, Node, Express, Mongo, SQL, DSA, REST APIs) and rejects work-auth restrictions.
+   - **Stage 7 (Graduation Year & Internship Filter)**: Validates batch year (e.g. 2026) and student eligibility.
+   - **Stage 8 (Scoring & Rejection Gates)**: Transparent 100-point scoring. Mandatory rejection gates (Experience, Branch, Batch, Location, Closed status) override scoring.
+   - **Stage 9 (Deduplication)**: Eliminates repeated alerts across 12-hour runs.
+   - **Stage 10 (Email Delivery)**: Sends verified opportunities with match breakdown and direct apply links.
 
-## India-only filtering
+3. **Authenticity & Application Verification (`authenticity_verifier.py`)**
+   - Verifies that listings are currently active and not expired, filled, or closed (404/410 checks and closure notice parsing).
+   - Provides direct links to official ATS application forms.
 
-Roles clearly located outside India (e.g. "USA", "London", "Singapore",
-"Remote - US") are automatically filtered out and never emailed to you.
-Roles that mention an Indian city (Bangalore, Hyderabad, Pune, Gurgaon,
-Noida, etc.) or "India" are included normally. To adjust the city/country
-lists, edit `INDIA_KEYWORDS` and `NON_INDIA_KEYWORDS` in `monitor.py`.
+4. **Integrated Application Tracker (`tracker.py` & `application_tracker.py`)**
+   - Tracks your application pipeline: `Interested` &rarr; `Applied` &rarr; `Online Assessment` &rarr; `Interview Scheduled` &rarr; `Selected/Rejected`.
+   - Maintains `job_tracker.json` and auto-exports to `applications.csv`.
 
-To tune this further (add/remove skills), edit `SKILL_KEYWORDS` in
-`monitor.py`.
+---
 
-## One-time setup (about 10 minutes)
+## CLI Usage
 
-### 1. Create a GitHub repo
-Create a new **private** repo (e.g. `sde-fresher-monitor`) and push these
-files to it (`companies.json`, `monitor.py`, `requirements.txt`,
-`state.json`, `.github/workflows/job_monitor.yml`).
-
+### View Tracked Applications
 ```bash
-git init
-git add .
-git commit -m "Initial commit"
-git branch -M main
-git remote add origin https://github.com/<your-username>/sde-fresher-monitor.git
-git push -u origin main
+python tracker.py list
 ```
 
-### 2. Create a Gmail App Password (if using Gmail)
-Regular Gmail passwords won't work with SMTP. Create an app password:
-1. Go to https://myaccount.google.com/apppasswords
-2. Generate a 16-character app password for "Mail"
-3. Save it — you'll need it in step 3.
+### Mark a Job as Applied
+```bash
+python tracker.py apply <job_id> "Applied via referral"
+```
 
-(Using Outlook/another provider? Just use its SMTP host/port instead —
-see step 3.)
+### Update Status
+```bash
+python tracker.py status <job_id> "Online Assessment" "OA link received"
+python tracker.py status <job_id> "Interview Scheduled" "Round 1 on Monday"
+```
 
-### 3. Add GitHub Secrets
-In your repo: **Settings → Secrets and variables → Actions → New repository secret**.
-Add these:
+### Export to CSV
+```bash
+python tracker.py export
+```
 
-| Secret name      | Value                                      |
-|-------------------|---------------------------------------------|
-| `EMAIL_ADDRESS`   | The Gmail address the alert is sent *from*  |
-| `EMAIL_PASSWORD`  | The 16-character app password from step 2   |
-| `EMAIL_TO`        | `princeutube007@gmail.com`                  |
-| `SMTP_SERVER`     | `smtp.gmail.com` (or your provider's SMTP host) |
-| `SMTP_PORT`       | `465`                                        |
+### Run Test Suite (36 Automated Tests)
+```bash
+pytest -v
+```
 
-### 4. Test it
-Go to the **Actions** tab in your repo → "SDE Fresher Job Monitor" →
-**Run workflow** (manual trigger). Check the run logs, and check your inbox.
+### Run Monitor Manually
+```bash
+python monitor.py
+```
 
-That's it — it will now run automatically every 12 hours.
+---
 
-## Customizing
+## Configuration (`candidate_profile.json`)
 
-- **Add/remove companies**: edit `companies.json`.
-- **Change keywords**: edit `FRESHER_KEYWORDS` / `EXCLUDE_KEYWORDS` in
-  `monitor.py` to tune what counts as "fresher/SDE relevant".
-- **Change frequency**: edit the `cron` line in
-  `.github/workflows/job_monitor.yml` (currently every 12 hours).
-- **Improve accuracy for a specific company**: if you know a company uses
-  Greenhouse/Lever/SmartRecruiters and its exact slug (visible in its
-  careers URL, e.g. `boards.greenhouse.io/<slug>`), add it to the `slugs`
-  list for that company in `companies.json` — this skips the guesswork and
-  the less-reliable generic fallback entirely.
+You can edit your candidate profile, target categories, or scoring weights anytime in `candidate_profile.json` without modifying application code:
 
-## Known limitations
+```json
+{
+  "candidate": {
+    "name": "Madhav Singh",
+    "degree": "B.Tech",
+    "branch": "Electrical Engineering",
+    "graduation_year": 2026,
+    "experience_years_max": 0,
+    "location_country": "India"
+  }
+}
+```
 
-- Some companies (Workday-based ones especially — Cisco, Dell, Intel, etc.)
-  are hard to scrape reliably even with a headless browser, since job
-  boards load dynamically behind search/filter UI. For these, treat alerts
-  as "something changed, go check" rather than an exact job list.
-- If a company's careers page blocks automated browsers, that company will
-  simply show no results — it won't break the rest of the run.
-- Free GitHub Actions has generous limits for a private repo at this scale
-  (2 runs/day, ~71 quick checks each), so this should stay well within the
-  free tier.
+You can also override graduation year via the environment variable `HUNTER_GRADUATION_YEAR`.
+
+---
+
+## GitHub Actions & Automation
+
+The repository runs automatically every 12 hours via GitHub Actions (`.github/workflows/job_monitor.yml`).
+
+### Required GitHub Secrets:
+Set these under **Settings &rarr; Secrets and variables &rarr; Actions &rarr; Repository secrets**:
+
+| Secret Name | Value |
+|---|---|
+| `EMAIL_ADDRESS` | Your Gmail address |
+| `EMAIL_PASSWORD` | 16-character Google App Password |
+| `EMAIL_TO` | Target recipient email address |
+| `SMTP_SERVER` | `smtp.gmail.com` |
+| `SMTP_PORT` | `465` |
+
+### Persistence Across GitHub Actions Runs:
+The workflow automatically commits updated `state.json`, `job_tracker.json`, and `applications.csv` back to your GitHub repository with `[skip ci]`, ensuring history and application statuses survive ephemeral GitHub Actions runners.

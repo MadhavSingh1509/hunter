@@ -1,0 +1,72 @@
+{
+  "candidate": {
+    "name": "Madhav Singh",
+    "degree": "B.Tech",
+    "branch": "Electrical Engineering",
+    "branch_aliases": ["EE", "Electrical", "Electrical Engineering", "EEE", "Electrical and Electronics"],
+    "candidate_type": "Fresher",
+    "graduation_year": 2026,
+    "eligible_graduation_years": [2025, 2026],
+    "experience_years_max": 0,
+    "has_professional_software_experience": false,
+    "location_country": "India",
+    "preferred_locations": [
+      "India", "Bangalore", "Bengaluru", "Hyderabad", "Pune", "Gurgaon", "Gurugram",
+      "Noida", "Delhi", "Delhi NCR", "Mumbai", "Chennai", "Kolkata", "Remote"
+    ],
+    "work_arrangements": ["onsite", "hybrid", "remote"],
+    "technical_skills": [
+      "C++", "Java", "Python", "JavaScript", "HTML", "CSS", "React.js",
+      "Node.js", "Express.js", "MongoDB", "SQL", "Data Structures and Algorithms",
+      "REST APIs", "Git", "GitHub"
+    ],
+    "experience_summary": "Built MERN-stack projects, solved DSA problems. No full-time software industry employment (personal projects != professional work experience)."
+  },
+  "target_categories": {
+    "tier_1_primary": [
+      "Software Development Engineer",
+      "SDE",
+      "Software Engineer",
+      "Associate Software Engineer",
+      "Junior Software Developer",
+      "Backend Developer",
+      "Full Stack Developer",
+      "Frontend Developer",
+      "Graduate Software Engineer",
+      "Software Engineer I",
+      "Entry-Level Developer"
+    ],
+    "tier_2_secondary": [
+      "Graduate Engineer Trainee",
+      "Application Developer",
+      "Python Developer",
+      "Java Developer",
+      "QA Automation Engineer",
+      "Software Development Intern",
+      "Backend Engineering Intern",
+      "Full Stack Engineering Intern"
+    ],
+    "excluded_roles": [
+      "Senior", "Sr.", "Sr ", "Staff", "Principal", "Lead ", "Manager", "Director", "Architect", "VP", "Head of", "Distinguished",
+      "SDE-2", "SDE-3", "SDE II", "SDE III", "SDE 2", "SDE 3", "Engineer II", "Engineer III", "L4", "L5", "L6",
+      "Sales", "Business Development", "Customer Support", "Technical Support", "HR", "Human Resources", "Recruiter", "Marketing",
+      "Finance", "Accounting", "Legal", "Operations Executive", "Product Manager", "Program Manager"
+    ],
+    "excluded_core_electrical": [
+      "Substation", "Power Systems", "Transformer", "Switchgear", "Electrician", "Lineman", "High Voltage",
+      "Power Plant", "Site Engineer (Electrical)", "Maintenance Technician", "Wiring"
+    ]
+  },
+  "scoring_weights": {
+    "role_relevance": 25,
+    "experience_eligibility": 20,
+    "educational_eligibility": 20,
+    "graduation_year_eligibility": 15,
+    "technical_skill_alignment": 10,
+    "location_and_work_arrangement": 10
+  },
+  "thresholds": {
+    "verified_match_min_score": 75,
+    "potential_match_min_score": 50
+  }
+}
