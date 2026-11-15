@@ -9,7 +9,7 @@ import json
 import time
 import hashlib
 import re
-from typing import List, Dict, Any, Tuple
+from typing import List, Dict, Any, Tuple, Optional
 
 from config import load_candidate_profile
 from qualification_engine import QualificationEngine, JobPosting, QualificationResult

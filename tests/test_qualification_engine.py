@@ -513,3 +513,15 @@ def test_36_closed_listing_page_detection():
     snippet = "Thank you for your interest. This position is no longer accepting applications."
     matched = any(re.search(p, snippet.lower()) for p in CLOSED_PAGE_INDICATORS)
     assert matched is True
+
+
+# 37. Pipeline modules import sanity test
+def test_37_pipeline_modules_import():
+    import monitor
+    import ats_providers
+    import email_sender
+    import application_tracker
+    import config
+    import tracker
+    assert hasattr(monitor, "run_pipeline")
+
