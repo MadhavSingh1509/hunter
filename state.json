@@ -2,16 +2,16 @@
   "Microsoft": {
     "seen_ids": [],
     "hash": "2ebbb5de6f645d0dc24141abf79537cfcd8d3a67d75ed73d6c0a9c44a16d58af",
-    "mode": "failed"
+    "mode": "generic"
   },
   "Amazon": {
     "seen_ids": [],
-    "hash": "bb0dd9e42cfd43a0592f39ea627d847a5067c50034fb057775f0975e1c5376d9",
+    "hash": "3448707724fd370f7ae616b8b66100b8669cb1632c39d538d9c47ed0a58579a8",
     "mode": "generic"
   },
   "Adobe": {
     "seen_ids": [],
-    "hash": "7af9ed6243455d0e9dfa1d93343aa7c7f2a77c0a75d1c64bc7bac95dc5f697aa",
+    "hash": "c41ccb1045915881274a355a58bedbbdfba895fc5257a3d8d4f6665fb99bca50",
     "mode": "generic"
   },
   "Google": {
@@ -36,7 +36,7 @@
   },
   "Salesforce": {
     "seen_ids": [],
-    "hash": "2b6bf383544e7b6f9dc107fcac42f9fc8ff0f1c91c8489afb56eefc86fc41905",
+    "hash": "481ddf14be35601be321e41a5a906abf388f6a0a3b68580ac1187b9ffa800ef1",
     "mode": "generic"
   },
   "ServiceNow": {
@@ -51,7 +51,7 @@
   },
   "SAP Labs": {
     "seen_ids": [],
-    "hash": "c4328e46b47d85625149491524c8799f289e443a583b6fd6d20c8cc21b673548",
+    "hash": "a306774674831353aff62e1fa73466e6bea6be96d71f99d10b03da774f92bc91",
     "mode": "generic"
   },
   "VMware / Broadcom": {
@@ -89,7 +89,7 @@
   },
   "Dell Technologies": {
     "seen_ids": [],
-    "hash": "60f1f6bb947137d0da3d4c5e2b731435a2424103e4b2ba2bdbf62d4fc991e9d9",
+    "hash": "61d73bc6812a9b6f98159f941b812a3b35aea86eba8084246167edc483d7c3f9",
     "mode": "generic"
   },
   "NVIDIA": {
@@ -114,7 +114,7 @@
   },
   "Akamai": {
     "seen_ids": [],
-    "hash": "5319630eadb3e69d45c1892a0713efcf1bc8522a749f88b83a0d1b15966bc133",
+    "hash": "47da00b62a0d03378eb9d5df514d3e2d804360c9d0d1dde619613f59adfb451e",
     "mode": "generic"
   },
   "Rubrik": {
@@ -131,12 +131,12 @@
   },
   "Splunk": {
     "seen_ids": [],
-    "hash": "683005d5801d5d21bfdcc8d91adfc85ffa898f3c8e12e87b906373b7febe9c39",
+    "hash": "7cced8bbae1d99ef572a2fcf63fe251ba35cfce3a8efdca21d172190e6704b0c",
     "mode": "generic"
   },
   "Palo Alto Networks": {
     "seen_ids": [],
-    "hash": "f5389f9e6ef1e9db90ff100c447a4d565ebf53dc5903d352b688ad6cddc9de00",
+    "hash": "449e1bb25db6a5478dcc35455d22b8f05274511351c0272bfbda71f9e11b3b54",
     "mode": "generic"
   },
   "CrowdStrike": {
@@ -151,7 +151,7 @@
   },
   "Mastercard": {
     "seen_ids": [],
-    "hash": "4ec7ab16720783e64c5cfc38243a2e9b5e4b1e1255ef9f9a0c3cc4d39779ec19",
+    "hash": "4df2487e9a7d7d7d35b5653ccfece9e6dbaa49467ef29b9bcb171b8150c711e0",
     "mode": "generic"
   },
   "PayPal": {
@@ -162,7 +162,7 @@
   "American Express": {
     "seen_ids": [],
     "hash": "02efa85661565f90ffc11a919a9a9d894c3c9814e930324180f55ba57b54a81e",
-    "mode": "failed"
+    "mode": "generic"
   },
   "Fiserv": {
     "seen_ids": [],
@@ -232,8 +232,8 @@
   },
   "Zomato": {
     "seen_ids": [],
-    "hash": "9c20d1d045b6970e2ee925560ac902f90562864f13cff82681ce8dea8714ada3",
-    "mode": "failed"
+    "hash": "3f6021bfe5f109d6bac89325fae19572a8110bacf3490e28374d1b5180bdd3c8",
+    "mode": "generic"
   },
   "Swiggy": {
     "seen_ids": [
@@ -328,7 +328,7 @@
   "Cadence": {
     "seen_ids": [],
     "hash": "0ff3bf906809ea7000f041b72669a81d546bd1a40fa2ff8729f42c784232b6a3",
-    "mode": "generic"
+    "mode": "failed"
   },
   "Texas Instruments": {
     "seen_ids": [],
@@ -337,23 +337,23 @@
   },
   "Micron": {
     "seen_ids": [],
-    "hash": "59e6de9135386df772825ac0940c9d49723e540e7485961875b7816b4e56cfa6",
+    "hash": "6b37ed6e126e60326e7f366afff76172e4abf6bcfa646a3e406306cd8af5028c",
     "mode": "generic"
   },
   "AMD": {
     "seen_ids": [],
-    "hash": "d55537d3bebad63fe4ab02cd6282c98defbc1df0387cf2478b5791c6098eed50",
+    "hash": "b88b8a744de4773e87f4098fb6e3f3f9a33a3a40d5b8e1b4e77c7f0719daddb6",
     "mode": "generic"
   },
   "Intel": {
     "seen_ids": [],
-    "hash": "60964189e3b81fb9792dcade3fcbcd0758f2b95e3e466113bb2e71d66eba271d",
+    "hash": "10f92e105476be8aaf051d4ce608065c5c722febe9fcc5e63895d2295f00f182",
     "mode": "generic"
   },
   "Samsung R&D": {
     "seen_ids": [],
     "hash": "eac3d21894233dfac2df7c23126d71db251a3435a32adca11c568d5bdf27d0d2",
-    "mode": "failed"
+    "mode": "generic"
   },
   "Icertis": {
     "seen_ids": [],
