@@ -4,7 +4,7 @@
     "emailed_ids": [],
     "hash": "2ebbb5de6f645d0dc24141abf79537cfcd8d3a67d75ed73d6c0a9c44a16d58af",
     "mode": "generic",
-    "last_checked": "2026-11-15 07:02:02"
+    "last_checked": "2026-11-15 18:36:50"
   },
   "Amazon": {
     "seen_ids": [],
@@ -16,65 +16,65 @@
   "Adobe": {
     "seen_ids": [],
     "emailed_ids": [],
-    "hash": "505e1965c50648d545ba6b8bf457b764832df71b15163c8d033e76dec97d2244",
+    "hash": "4eb5f0d418eeca15028d9eabeafa866d856dee7f7e7139a12b927c57f1695dec",
     "mode": "generic",
-    "last_checked": "2026-11-15 07:02:10"
+    "last_checked": "2026-11-15 18:36:58"
   },
   "Google": {
     "seen_ids": [],
     "emailed_ids": [],
     "hash": "ec2e883d68247a80ee79c9452df55b714445cf75e9e6926dffcda12320b59f06",
     "mode": "generic",
-    "last_checked": "2026-11-15 07:02:26"
+    "last_checked": "2026-11-15 18:37:02"
   },
   "Apple": {
     "seen_ids": [],
     "emailed_ids": [],
     "hash": "13f91f1117e22ec2bc852ded38dcbce717207a7252b1c564991e9a095a3523f7",
     "mode": "generic",
-    "last_checked": "2026-11-15 07:02:30"
+    "last_checked": "2026-11-15 18:37:06"
   },
   "Uber": {
     "seen_ids": [],
     "emailed_ids": [],
     "hash": null,
     "mode": "api",
-    "last_checked": "2026-11-15 07:02:32"
+    "last_checked": "2026-11-15 18:37:07"
   },
   "Walmart Global Tech": {
     "seen_ids": [],
     "emailed_ids": [],
     "hash": "694bad9825be7c53bdfca57c45234ae03a3241d5527f143da9bb58b9128180af",
     "mode": "generic",
-    "last_checked": "2026-11-15 07:02:38"
+    "last_checked": "2026-11-15 18:37:13"
   },
   "Salesforce": {
     "seen_ids": [],
     "emailed_ids": [],
-    "hash": "490f101adb4e51dda145ff6e2ff70194cf00928fe4ab29855bd3356ff016d80f",
+    "hash": "b7f7d75f23cad11aa44dc5d05b37d500da4f1e7565978d8a04101fe9faeb9e3b",
     "mode": "generic",
-    "last_checked": "2026-11-15 07:02:42"
+    "last_checked": "2026-11-15 18:37:16"
   },
   "ServiceNow": {
     "seen_ids": [],
     "emailed_ids": [],
     "hash": null,
     "mode": "api",
-    "last_checked": "2026-11-15 07:03:30"
+    "last_checked": "2026-11-15 18:38:03"
   },
   "Oracle": {
     "seen_ids": [],
     "emailed_ids": [],
     "hash": "b87e9d1faac5649c58d853a49c455a11a62772f22b6922367746f1499017dd5e",
     "mode": "generic",
-    "last_checked": "2026-11-15 07:03:34"
+    "last_checked": "2026-11-15 18:38:07"
   },
   "SAP Labs": {
     "seen_ids": [],
     "emailed_ids": [],
-    "hash": "0bbb5595da7b661da7476ab4f4dfc0f380cf6e2ea810846b643e4753f374cdc1",
+    "hash": "56018de156d5a951ca8535ea9d448b8d8007a42231f8eb0a4dde676ef9406391",
     "mode": "generic",
-    "last_checked": "2026-11-15 07:03:40"
+    "last_checked": "2026-11-15 18:38:24"
   },
   "VMware / Broadcom": {
     "seen_ids": [],
@@ -84,9 +84,9 @@
   "Cisco": {
     "seen_ids": [],
     "emailed_ids": [],
-    "hash": "a35d8cba6c1b1a93b1849e6e27dc6d540d13f1609ff6fd5c73f0103420ef07b2",
+    "hash": "98724985cb38b3999422025d03c0759261b66b1195a1face7fdb716c2f2793ca",
     "mode": "generic",
-    "last_checked": "2026-11-15 07:04:02"
+    "last_checked": "2026-11-15 18:38:32"
   },
   "Juniper Networks": {
     "seen_ids": [],
@@ -95,137 +95,137 @@
   },
   "Arista Networks": {
     "seen_ids": [
+      "sr-744000146960659",
+      "sr-744000158051849",
       "sr-744000160116794",
       "sr-744000159085630",
-      "sr-744000150058443",
       "sr-744000157964409",
-      "sr-744000146960659",
       "sr-744000161218939",
-      "sr-744000158051849"
+      "sr-744000150058443"
     ],
     "emailed_ids": [],
     "hash": null,
     "mode": "api",
-    "last_checked": "2026-11-15 07:05:00"
+    "last_checked": "2026-11-15 18:39:30"
   },
   "Nutanix": {
     "seen_ids": [],
     "emailed_ids": [],
     "hash": "935131779382c2fb268d1ba30d6a8e011391178b34eb8e4281a0f92c41d75219",
     "mode": "generic",
-    "last_checked": "2026-11-15 07:05:05"
+    "last_checked": "2026-11-15 18:39:35"
   },
   "Dell Technologies": {
     "seen_ids": [],
     "emailed_ids": [],
-    "hash": "a218ceb6f4153486a2a9a8d7e4cea1f92c8d6c7595bcc02cc7112d12fac4e52a",
+    "hash": "bf521658f41b4e6944095410898f901766a2e014a15b0b54a164b56bb4564ea3",
     "mode": "generic",
-    "last_checked": "2026-11-15 07:05:12"
+    "last_checked": "2026-11-15 18:39:41"
   },
   "NVIDIA": {
     "seen_ids": [],
     "emailed_ids": [],
     "hash": "c6e8f4a50b64b59eee96ab23c4c3e04054ba0b1223c5e297bd88d48671d65663",
     "mode": "generic",
-    "last_checked": "2026-11-15 07:05:17"
+    "last_checked": "2026-11-15 18:39:45"
   },
   "Qualcomm": {
     "seen_ids": [],
     "emailed_ids": [],
     "hash": "5b8329f6bbc382b29053152f0dd1722046b2cd20ee89427cb00322e7abb696ae",
     "mode": "generic",
-    "last_checked": "2026-11-15 07:05:20"
+    "last_checked": "2026-11-15 18:39:49"
   },
   "Intuit": {
     "seen_ids": [],
     "emailed_ids": [],
-    "hash": "b245f038f141956e8cab91011f97da1b56f6794a8befa20900a1b222c978e62f",
+    "hash": "72062e442a70ac2f511bedda26b8cd7bc3c9621d3553f5f04d6242da34b81622",
     "mode": "generic",
-    "last_checked": "2026-11-15 07:05:32"
+    "last_checked": "2026-11-15 18:39:54"
   },
   "Atlassian": {
     "seen_ids": [],
     "emailed_ids": [],
     "hash": "891dd7b3bf2144ea878bc0d64b7826f8da35c11b0eb15e4a0fe2a0ec33fb6239",
     "mode": "generic",
-    "last_checked": "2026-11-15 07:05:36"
+    "last_checked": "2026-11-15 18:39:58"
   },
   "Akamai": {
     "seen_ids": [],
     "emailed_ids": [],
-    "hash": "eeb8a111e53e0f87877eed1f8d5ab74442b9bc96dc9a0506c69dfbb735d6283a",
+    "hash": "25987320c43d814518d664d7fefc1884ddc5cdb46fe281ad9b381a8c6685bdcb",
     "mode": "generic",
-    "last_checked": "2026-11-15 07:05:40"
+    "last_checked": "2026-11-15 18:40:02"
   },
   "Rubrik": {
     "seen_ids": [
-      "gh-7956918",
-      "gh-8345283",
-      "gh-8166514",
-      "gh-8327940",
       "gh-8377184",
-      "gh-8166537"
+      "gh-7956918",
+      "gh-8166514",
+      "gh-8345283",
+      "gh-8166537",
+      "gh-8327940"
     ],
     "emailed_ids": [],
     "hash": null,
     "mode": "api",
-    "last_checked": "2026-11-15 07:05:44"
+    "last_checked": "2026-11-15 18:40:06"
   },
   "Splunk": {
     "seen_ids": [],
     "emailed_ids": [],
-    "hash": "236819a3efbd97b7e466089e23aefa09ae6844adf457baea62eabbc52e866491",
+    "hash": "16ae34905bfe6a5f9a16629a9968320602a6bd55f26165077b3e2bfe62e98550",
     "mode": "generic",
-    "last_checked": "2026-11-15 07:05:47"
+    "last_checked": "2026-11-15 18:40:10"
   },
   "Palo Alto Networks": {
     "seen_ids": [],
     "emailed_ids": [],
     "hash": "1db616ff374489f6703916be84180ec047c1e02ad41993f1aede8742fb7f48ef",
     "mode": "generic",
-    "last_checked": "2026-11-15 07:05:55"
+    "last_checked": "2026-11-15 18:40:18"
   },
   "CrowdStrike": {
     "seen_ids": [],
     "emailed_ids": [],
     "hash": "e975475966737790fca601f7146c23aaca0e3eb250855aef8d24ed5e485a76db",
     "mode": "generic",
-    "last_checked": "2026-11-15 07:06:00"
+    "last_checked": "2026-11-15 18:40:23"
   },
   "Visa": {
     "seen_ids": [],
     "emailed_ids": [],
-    "hash": "5cc81468c01951d9176c0b70be44b08c62affd6634ecbb6dbe1a3a10b8e022d6",
+    "hash": "f16ca768192ae58f83b68d61f5d83d3ee2eefaf3c64ee45636bcfe5a558a4d8c",
     "mode": "generic",
-    "last_checked": "2026-11-15 07:06:03"
+    "last_checked": "2026-11-15 18:40:27"
   },
   "Mastercard": {
     "seen_ids": [],
     "emailed_ids": [],
-    "hash": "23caf5bf9333f09972d026004feeb5a6fdfc9c01976b085d713973434e9c0015",
+    "hash": "a5c018e2995ecc05e271cc074ed1c83b38d13a0b708f5f95516bcc03b1287b87",
     "mode": "generic",
-    "last_checked": "2026-11-15 07:06:08"
+    "last_checked": "2026-11-15 18:40:44"
   },
   "PayPal": {
     "seen_ids": [],
     "emailed_ids": [],
     "hash": "8ac456fe9bffb7c6c19f2d013492aa9de32bc3fe4255949b167257e6e8a3151a",
     "mode": "generic",
-    "last_checked": "2026-11-15 07:06:14"
+    "last_checked": "2026-11-15 18:41:01"
   },
   "American Express": {
     "seen_ids": [],
     "emailed_ids": [],
     "hash": "02efa85661565f90ffc11a919a9a9d894c3c9814e930324180f55ba57b54a81e",
     "mode": "generic",
-    "last_checked": "2026-11-15 07:06:23"
+    "last_checked": "2026-11-15 18:41:08"
   },
   "Fiserv": {
     "seen_ids": [],
     "emailed_ids": [],
-    "hash": "1b729a2efb6e7db9ca04f753834c1f9afceb347ca9e08f50c635604a026980be",
+    "hash": "cda4460de0f6ba25681e5b520232fae2eab4097df2a8a69537cb57d91d5b81c6",
     "mode": "generic",
-    "last_checked": "2026-11-15 07:06:28"
+    "last_checked": "2026-11-15 18:41:12"
   },
   "FIS": {
     "seen_ids": [],
@@ -234,51 +234,51 @@
   },
   "Stripe": {
     "seen_ids": [
+      "gh-8130922",
       "gh-8202299",
-      "gh-8260982",
-      "gh-7895284",
       "gh-8130927",
-      "gh-7543868",
-      "gh-6567104",
       "gh-7618977",
-      "gh-8234357",
+      "gh-7895284",
+      "gh-8260982",
+      "gh-8131144",
       "gh-8212319",
-      "gh-8185012",
       "gh-8384567",
+      "gh-6606581",
+      "gh-7895287",
+      "gh-8226890",
+      "gh-8031833",
       "gh-7396679",
       "gh-8353949",
       "gh-8209970",
-      "gh-8031833",
-      "gh-8131144",
-      "gh-8353516",
+      "gh-7235875",
       "gh-8118929",
-      "gh-6606581",
-      "gh-8226890",
-      "gh-8130807",
-      "gh-8130922",
-      "gh-7895287",
-      "gh-7235875"
+      "gh-8353516",
+      "gh-8234357",
+      "gh-6567104",
+      "gh-7543868",
+      "gh-8185012",
+      "gh-8130807"
     ],
     "emailed_ids": [
       "gh-8031833"
     ],
     "hash": null,
     "mode": "api",
-    "last_checked": "2026-11-15 07:07:24"
+    "last_checked": "2026-11-15 18:42:15"
   },
   "Goldman Sachs (Tech)": {
     "seen_ids": [],
     "emailed_ids": [],
     "hash": "632b03c9d5bf3ad14d73d3def340d01e803f468579aa0063eb3c1775cb134638",
     "mode": "generic",
-    "last_checked": "2026-11-15 07:07:29"
+    "last_checked": "2026-11-15 18:42:33"
   },
   "JPMorgan Chase (Tech)": {
     "seen_ids": [],
     "emailed_ids": [],
     "hash": "a20e9ea4cef248bfb9b093ad6b963fb841b3768b0c3d1e12cf5a69e026022702",
     "mode": "generic",
-    "last_checked": "2026-11-15 07:07:35"
+    "last_checked": "2026-11-15 18:42:39"
   },
   "Morgan Stanley (Tech)": {
     "seen_ids": [],
@@ -292,7 +292,7 @@
     "emailed_ids": [],
     "hash": "962fcb9745c00c4b0c9fbba07a73e43b8b1092e330ded47483f5f316a6f00f24",
     "mode": "generic",
-    "last_checked": "2026-11-15 07:07:44"
+    "last_checked": "2026-11-15 18:42:50"
   },
   "Deutsche Bank (Tech)": {
     "seen_ids": [],
@@ -304,21 +304,21 @@
     "emailed_ids": [],
     "hash": "2c3cf09cef022126fbfe45a812ad080346eb5f87611a409b5b87b447fa9808b8",
     "mode": "generic",
-    "last_checked": "2026-11-15 07:07:56"
+    "last_checked": "2026-11-15 18:43:03"
   },
   "Wells Fargo (Tech)": {
     "seen_ids": [],
     "emailed_ids": [],
     "hash": "ac5539b14ad6a6884efb496305a491db8979b0185afbf1610e5748de953281f3",
     "mode": "generic",
-    "last_checked": "2026-11-15 07:08:01"
+    "last_checked": "2026-11-15 18:43:08"
   },
   "Nomura": {
     "seen_ids": [],
     "emailed_ids": [],
     "hash": "88ecb6ad9dc29cad7128153d38db7e029056f83cc20235d9adcb63f336d1986b",
     "mode": "generic",
-    "last_checked": "2026-11-15 07:08:11"
+    "last_checked": "2026-11-15 18:43:15"
   },
   "Flipkart": {
     "seen_ids": [],
@@ -339,70 +339,70 @@
     "emailed_ids": [],
     "hash": null,
     "mode": "api",
-    "last_checked": "2026-11-15 07:09:31"
+    "last_checked": "2026-11-15 18:44:36"
   },
   "Razorpay": {
     "seen_ids": [],
     "emailed_ids": [],
     "hash": "88ffaa9995066819e47e01cc270efedd887c2a54f738c3c8ced98149a198ddc3",
     "mode": "generic",
-    "last_checked": "2026-11-15 07:09:35"
+    "last_checked": "2026-11-15 18:44:40"
   },
   "CRED": {
     "seen_ids": [],
     "emailed_ids": [],
     "hash": null,
     "mode": "api",
-    "last_checked": "2026-11-15 07:09:36"
+    "last_checked": "2026-11-15 18:44:41"
   },
   "PhonePe": {
     "seen_ids": [],
     "emailed_ids": [],
     "hash": "26efad0e7fe5b341718a9b7dc76ac0530c9992d8bd0723e73f7fa6f81395130c",
     "mode": "generic",
-    "last_checked": "2026-11-15 07:09:40"
+    "last_checked": "2026-11-15 18:44:46"
   },
   "Freshworks": {
     "seen_ids": [],
     "emailed_ids": [],
     "hash": null,
     "mode": "api",
-    "last_checked": "2026-11-15 07:10:32"
+    "last_checked": "2026-11-15 18:45:31"
   },
   "Postman": {
     "seen_ids": [],
     "emailed_ids": [],
     "hash": "f64fad257b319f0277b8bbd67bb9753c6466613e021261d548f8300873c9ac2b",
     "mode": "generic",
-    "last_checked": "2026-11-15 07:10:37"
+    "last_checked": "2026-11-15 18:45:36"
   },
   "BrowserStack": {
     "seen_ids": [],
     "emailed_ids": [],
-    "hash": "ffeb13810a7f4838d24051fbf5bcf29db822d1af31efdc157c779a3cd8e656d9",
+    "hash": "3b99b635754d10349d69cf13c34cb9e2e640bcad78ab321eef3fb57a672d7b8d",
     "mode": "generic",
-    "last_checked": "2026-11-15 07:10:41"
+    "last_checked": "2026-11-15 18:45:40"
   },
   "Zoho": {
     "seen_ids": [],
     "emailed_ids": [],
-    "hash": "9ff6b99d0f0f52c9a79e245688a885e4568e22110a4bab7caa77574bd6657d6f",
+    "hash": "44f016612dc1e5433dd0c6cb8141e26834229acbff13728254df2ff61d8a72db",
     "mode": "generic",
-    "last_checked": "2026-11-15 07:10:45"
+    "last_checked": "2026-11-15 18:45:44"
   },
   "Groww": {
     "seen_ids": [],
     "emailed_ids": [],
     "hash": null,
     "mode": "api",
-    "last_checked": "2026-11-15 07:10:45"
+    "last_checked": "2026-11-15 18:45:45"
   },
   "Meesho": {
     "seen_ids": [],
     "emailed_ids": [],
     "hash": null,
     "mode": "api",
-    "last_checked": "2026-11-15 07:10:46"
+    "last_checked": "2026-11-15 18:45:46"
   },
   "Zerodha": {
     "seen_ids": [],
@@ -417,21 +417,21 @@
     "emailed_ids": [],
     "hash": null,
     "mode": "api",
-    "last_checked": "2026-11-15 07:10:52"
+    "last_checked": "2026-11-15 18:45:52"
   },
   "PolicyBazaar": {
     "seen_ids": [],
     "emailed_ids": [],
-    "hash": "76df410b4d0044c004c711020269ad348c245d9066a69bb5242d640c4e853987",
+    "hash": "7423aecf1d2cdfd2a53b7f647b5e394a66871829bb666330ff05440b29a95eeb",
     "mode": "generic",
-    "last_checked": "2026-11-15 07:10:54"
+    "last_checked": "2026-11-15 18:45:56"
   },
   "Slice": {
     "seen_ids": [],
     "emailed_ids": [],
     "hash": null,
     "mode": "api",
-    "last_checked": "2026-11-15 07:10:55"
+    "last_checked": "2026-11-15 18:45:57"
   },
   "Jupiter": {
     "seen_ids": [],
@@ -443,21 +443,21 @@
     "emailed_ids": [],
     "hash": null,
     "mode": "api",
-    "last_checked": "2026-11-15 07:11:07"
+    "last_checked": "2026-11-15 18:46:04"
   },
   "Synopsys": {
     "seen_ids": [],
     "emailed_ids": [],
-    "hash": "9d4c48c95bd38a463832ee939821b4cc82a0f5088e8d84b2eea5fbcbf5765d8d",
+    "hash": "a748e33606ccbe9897fb5ceab60dd84f3ca8d84eb7b7b03a56a436da6f37b8c3",
     "mode": "generic",
-    "last_checked": "2026-11-15 07:11:12"
+    "last_checked": "2026-11-15 18:46:09"
   },
   "Cadence": {
     "seen_ids": [],
     "emailed_ids": [],
-    "hash": "0d821123c02b363cb5222d1958c7f03a104cbab9dc77ffaff9a675908fb37b62",
+    "hash": "3c786060a04398fa1186b02f780ca1c42481438ac483510a95db1ec3527e8b76",
     "mode": "generic",
-    "last_checked": "2026-11-15 07:11:16"
+    "last_checked": "2026-11-15 18:46:12"
   },
   "Texas Instruments": {
     "seen_ids": [],
@@ -469,16 +469,16 @@
   "Micron": {
     "seen_ids": [],
     "emailed_ids": [],
-    "hash": "6b37ed6e126e60326e7f366afff76172e4abf6bcfa646a3e406306cd8af5028c",
+    "hash": "214015cba57892db8ebcc31fd4936f94790b046b88178eafd7c024cd20356b92",
     "mode": "generic",
-    "last_checked": "2026-11-15 07:11:30"
+    "last_checked": "2026-11-15 18:46:23"
   },
   "AMD": {
     "seen_ids": [],
     "emailed_ids": [],
-    "hash": "d3821ca5842bf8c7b9359df9538954b30965738b0e3998c69e9ec1234612794c",
+    "hash": "105d54bfcd0389444477ed8f671093912ced59d54fd98aef11e8239883d491db",
     "mode": "generic",
-    "last_checked": "2026-11-15 07:11:34"
+    "last_checked": "2026-11-15 18:46:28"
   },
   "Intel": {
     "seen_ids": [],
@@ -492,7 +492,7 @@
     "emailed_ids": [],
     "hash": "eac3d21894233dfac2df7c23126d71db251a3435a32adca11c568d5bdf27d0d2",
     "mode": "generic",
-    "last_checked": "2026-11-15 07:11:44"
+    "last_checked": "2026-11-15 18:46:41"
   },
   "Icertis": {
     "seen_ids": [],
@@ -504,21 +504,21 @@
     "emailed_ids": [],
     "hash": "f08069ace0122564aa15a6240d57554e4a9442804834f69f20d2a2ab32dd1e05",
     "mode": "generic",
-    "last_checked": "2026-11-15 07:11:52"
+    "last_checked": "2026-11-15 18:46:50"
   },
   "Chargebee": {
     "seen_ids": [],
     "emailed_ids": [],
     "hash": "9c636bc7ba5cea8f801a66b0ef38d3516a75cc2e103e34c2753d20628aa5a8e2",
     "mode": "generic",
-    "last_checked": "2026-11-15 07:11:56"
+    "last_checked": "2026-11-15 18:46:54"
   },
   "Darwinbox": {
     "seen_ids": [],
     "emailed_ids": [],
     "hash": "38e27d6f63aba40d7ad00f50a91b0da8ff4784f2e2148d7b0e587a963436b974",
     "mode": "generic",
-    "last_checked": "2026-11-15 07:12:03"
+    "last_checked": "2026-11-15 18:47:00"
   },
   "Highradius": {
     "seen_ids": [
@@ -528,6 +528,6 @@
     "emailed_ids": [],
     "hash": null,
     "mode": "api",
-    "last_checked": "2026-11-15 07:12:06"
+    "last_checked": "2026-11-15 18:47:03"
   }
 }
