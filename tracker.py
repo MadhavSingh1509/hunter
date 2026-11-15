@@ -71,6 +71,19 @@ def main():
         else:
             print(f"Job ID '{job_id}' not found.")
 
+    elif args[0] == "add":
+        if len(args) < 4:
+            print("Usage: python tracker.py add <company> <title> <url> [match_score] [job_id]")
+            sys.exit(1)
+        company = args[1]
+        title = args[2]
+        url = args[3]
+        score = int(args[4]) if len(args) > 4 and args[4].isdigit() else 80
+        import hashlib
+        job_id = args[5] if len(args) > 5 else f"manual-{hashlib.sha1((company + title).encode()).hexdigest()[:8]}"
+        tracker.record_job(job_id=job_id, company=company, title=title, url=url, match_score=score, status="Interested")
+        print(f"Added '{title}' at '{company}' with Job ID '{job_id}' to tracker.")
+
     elif args[0] == "export":
         out_path = args[1] if len(args) > 1 else None
         tracker.export_csv(out_path)
