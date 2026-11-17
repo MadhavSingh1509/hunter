@@ -60,7 +60,9 @@
     "category": "Big Tech",
     "ctc": "18-26 LPA",
     "careers_url": "https://careers.servicenow.com",
-    "slugs": []
+    "slugs": [
+      "servicenow"
+    ]
   },
   {
     "name": "Oracle",
@@ -102,7 +104,9 @@
     "category": "Big Tech",
     "ctc": "16-22 LPA",
     "careers_url": "https://www.arista.com/en/company/careers",
-    "slugs": []
+    "slugs": [
+      "aristanetworks"
+    ]
   },
   {
     "name": "Nutanix",
@@ -317,7 +321,9 @@
     "category": "Indian Product/Unicorn",
     "ctc": "16-22 LPA",
     "careers_url": "https://careers.swiggy.com",
-    "slugs": []
+    "slugs": [
+      "swiggy"
+    ]
   },
   {
     "name": "Razorpay",
@@ -349,7 +355,9 @@
     "category": "Indian Product/Unicorn",
     "ctc": "15-20 LPA",
     "careers_url": "https://www.freshworks.com/company/careers",
-    "slugs": []
+    "slugs": [
+      "freshworks"
+    ]
   },
   {
     "name": "Postman",
@@ -406,7 +414,9 @@
     "category": "Indian Product/Unicorn",
     "ctc": "12-18 LPA",
     "careers_url": "https://paytm.com/careers",
-    "slugs": []
+    "slugs": [
+      "paytm"
+    ]
   },
   {
     "name": "PolicyBazaar",
@@ -420,7 +430,9 @@
     "category": "Indian Product/Unicorn",
     "ctc": "15-20 LPA",
     "careers_url": "https://sliceit.com/careers",
-    "slugs": []
+    "slugs": [
+      "slice"
+    ]
   },
   {
     "name": "Jupiter",
@@ -522,6 +534,8 @@
     "category": "Enterprise SaaS",
     "ctc": "12-18 LPA",
     "careers_url": "https://www.highradius.com/careers",
-    "slugs": []
+    "slugs": [
+      "highradius"
+    ]
   }
 ]

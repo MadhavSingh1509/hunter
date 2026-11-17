@@ -1,7 +1,6 @@
 """
 Hunter 2.0 Email Alert System
-Builds and sends responsive HTML email digests for verified job opportunities.
-Adheres strictly to the user's requested layout, match scores, explanations, and direct apply buttons.
+Builds and sends responsive HTML email digests for verified and potential job opportunities.
 """
 
 import os
@@ -22,12 +21,15 @@ def build_email_digest(
     """
     potential_matches = potential_matches or []
     count = len(verified_matches)
+    pot_count = len(potential_matches)
 
-    if count == 0:
+    # Case 1: Absolutely nothing found
+    if count == 0 and pot_count == 0:
         subject = "HUNTER | 0 Verified Job Opportunities Worth Applying For"
         plain_text = (
             "No verified matching opportunities found in this scan. "
-            "Hunter will continue monitoring career portals every 12 hours."
+            "Hunter evaluated active openings across company career pages and filtered out irrelevant roles. "
+            "Hunter will continue monitoring and notify you as soon as eligible positions appear."
         )
         html_body = f"""
         <!DOCTYPE html>
@@ -38,9 +40,9 @@ def build_email_digest(
             <div style="font-size:24px; font-weight:bold; color:#0f172a; margin-bottom:8px;">HUNTER 2.0</div>
             <div style="font-size:14px; color:#64748b; margin-bottom:24px;">Automated Career Portal Monitoring</div>
             <div style="padding:20px; background:#f1f5f9; border-radius:8px; font-size:15px; color:#334155; line-height:1.6;">
-              <strong>No verified matching opportunities found in this scan.</strong><br>
-              Hunter evaluated active openings across company career pages and filtered out irrelevant roles, strict experience gates, and closed listings.<br><br>
-              Hunter will continue monitoring and notify you as soon as eligible positions appear.
+              <strong>No new matching opportunities found in this scan.</strong><br>
+              Hunter evaluated active openings across company career pages and filtered out senior, non-engineering, or conflicting roles.<br><br>
+              Hunter will continue monitoring and alert you immediately when new eligible positions open.
             </div>
           </div>
         </body>
@@ -48,17 +50,22 @@ def build_email_digest(
         """
         return subject, plain_text, html_body
 
-    subject = f"HUNTER | {count} Verified Job {'Opportunity' if count == 1 else 'Opportunities'} Worth Applying For"
+    # Case 2: Only potential matches found (0 new verified)
+    if count == 0 and pot_count > 0:
+        subject = f"HUNTER | {pot_count} Potential Opportunities for Review (0 Direct Verified)"
+    else:
+        subject = f"HUNTER | {count} Verified Job {'Opportunity' if count == 1 else 'Opportunities'} Worth Applying For"
 
     # Plain text version
     pt_lines = [
-        f"HUNTER 2.0 — {count} Verified Job Opportunities Worth Applying For\n",
-        "The following opportunities satisfy all mandatory eligibility criteria, have been verified active, and provide direct application links.\n",
+        f"HUNTER 2.0 Job Alert\n",
+        f"Verified Direct Matches: {count} | Potential Opportunities: {pot_count}\n",
         "=" * 60
     ]
 
     html_cards = []
 
+    # Format Verified Matches
     for res in verified_matches:
         job = res.job
         exp_data = res.details.get("experience", {})
@@ -66,7 +73,6 @@ def build_email_digest(
         grad_data = res.details.get("grad_year", {})
         matched_skills = res.details.get("matched_skills", [])
 
-        # Format details
         exp_text = "0–1 years (Fresher eligible)" if exp_data.get("is_freshers_explicit") else "0-1 years"
         if exp_data.get("is_borderline"):
             exp_text = "0-2 years (Borderline)"
@@ -81,18 +87,14 @@ def build_email_digest(
         skills_text = ", ".join(matched_skills[:6]) if matched_skills else "General Problem Solving, Programming"
         posted_date = job.posted_date or "Recently posted"
 
-        # Highlights
-        highlights = res.match_highlights
-        if not highlights:
-            highlights = [
-                "Freshers explicitly accepted",
-                "Electrical Engineering graduates eligible",
-                "Application verified currently open",
-                "Direct official application portal"
-            ]
+        highlights = res.match_highlights or [
+            "Freshers explicitly accepted",
+            "Electrical Engineering graduates eligible",
+            "Application verified currently open",
+            "Direct official application portal"
+        ]
 
-        # Plain text card
-        pt_lines.append(f"\nCOMPANY: {job.company}")
+        pt_lines.append(f"\n[VERIFIED MATCH] COMPANY: {job.company}")
         pt_lines.append(f"POSITION: {job.title}")
         pt_lines.append(f"LOCATION: {job.location or 'India'}")
         pt_lines.append(f"JOB TYPE: {job.job_type}")
@@ -109,7 +111,6 @@ def build_email_digest(
         pt_lines.append(f"APPLY DIRECTLY: {job.url}\n")
         pt_lines.append("-" * 60)
 
-        # HTML Card
         hl_items = "".join(f"<li style='margin-bottom:4px; color:#334155;'>{h}</li>" for h in highlights)
 
         card_html = f"""
@@ -155,26 +156,47 @@ def build_email_digest(
         """
         html_cards.append(card_html)
 
-    # Potential matches section
+    # Format Potential Matches Section
     potential_section_html = ""
     if potential_matches:
-        pt_lines.append("\nPOTENTIAL OPPORTUNITIES (Requires quick manual review):\n")
+        pt_lines.append("\nPOTENTIAL OPPORTUNITIES (Candidate Review Recommended):\n")
         pot_cards = []
-        for pres in potential_matches[:5]:
+        for pres in potential_matches:
             pjob = pres.job
-            pt_lines.append(f"- {pjob.company} | {pjob.title} (Score: {pres.score}/100)")
-            pt_lines.append(f"  Link: {pjob.url}")
-            for u in pres.uncertain_flags:
-                pt_lines.append(f"  Note: {u}")
+            flags_str = "; ".join(pres.uncertain_flags) if pres.uncertain_flags else "Requires manual eligibility check"
+            pt_lines.append(f"- {pjob.company} | {pjob.title} ({pjob.location or 'Unspecified'}) [Score: {pres.score}/100]")
+            pt_lines.append(f"  Apply: {pjob.url}")
+            pt_lines.append(f"  Note: {flags_str}\n")
+
             pot_cards.append(f"""
-            <div style="padding:10px 14px; border:1px solid #cbd5e1; border-radius:6px; margin-bottom:8px; font-size:13px;">
-              <strong>{pjob.company}</strong> — <a href="{pjob.url}" style="color:#2563eb; text-decoration:none;">{pjob.title}</a> (Score: {pres.score}/100)<br>
-              <span style="color:#b45309; font-size:12px;">{'; '.join(pres.uncertain_flags)}</span>
+            <div style="padding:14px 18px; border:1px solid #e2e8f0; border-radius:8px; margin-bottom:12px; background:#f8fafc;">
+              <div style="display:flex; justify-content:space-between; align-items:center;">
+                <div>
+                  <strong style="font-size:15px; color:#0f172a;">{pjob.title}</strong> — <span style="color:#475569; font-weight:600;">{pjob.company}</span>
+                  <div style="font-size:12px; color:#64748b; margin-top:2px;">Location: {pjob.location or 'Unspecified'} | Job ID: <code>{pjob.job_id}</code></div>
+                </div>
+                <div style="text-align:right;">
+                  <span style="background:#e0f2fe; color:#0369a1; font-weight:bold; font-size:13px; padding:3px 8px; border-radius:6px;">{pres.score}/100</span>
+                </div>
+              </div>
+              <div style="color:#b45309; font-size:12px; margin-top:8px; line-height:1.4;">
+                <strong>Review Note:</strong> {flags_str}
+              </div>
+              <div style="margin-top:10px;">
+                <a href="{pjob.url}" target="_blank" style="color:#2563eb; font-size:13px; font-weight:bold; text-decoration:none;">
+                  View & Apply &rarr;
+                </a>
+              </div>
             </div>
             """)
+
+        title_heading = "Potential Opportunities for Review" if count == 0 else "Additional Opportunities for Review"
         potential_section_html = f"""
-        <div style="margin-top:28px; padding-top:20px; border-top:1px dashed #cbd5e1;">
-          <h3 style="font-size:16px; color:#475569; margin-bottom:10px;">Potential Opportunities (Review Needed)</h3>
+        <div style="margin-top:28px; padding-top:20px; border-top:2px dashed #cbd5e1;">
+          <h3 style="font-size:17px; color:#1e293b; margin-bottom:6px;">{title_heading} ({pot_count})</h3>
+          <p style="font-size:13px; color:#64748b; margin-top:0; margin-bottom:16px;">
+            These positions matched software developer criteria, but require a quick manual glance (e.g. location or batch details unstated):
+          </p>
           {''.join(pot_cards)}
         </div>
         """
@@ -188,12 +210,12 @@ def build_email_digest(
         <div style="background:#0f172a; color:#ffffff; padding:24px; border-radius:12px 12px 0 0; text-align:center;">
           <h1 style="margin:0; font-size:22px; font-weight:800; letter-spacing:0.02em;">HUNTER 2.0</h1>
           <p style="margin:6px 0 0 0; font-size:14px; color:#94a3b8;">
-            {count} Verified Opportunities Filtered for Your Profile
+            {count} Verified Direct Matches • {pot_count} Potential Opportunities
           </p>
         </div>
         <div style="background:#ffffff; padding:24px; border-radius:0 0 12px 12px; border:1px solid #e2e8f0; border-top:none;">
           <p style="font-size:14px; color:#475569; line-height:1.6; margin-top:0; margin-bottom:20px;">
-            Hi Madhav, here are the latest opportunities that satisfied all mandatory qualification checks (B.Tech EE eligible, 0-1 years fresher experience, active official application link).
+            Hi Madhav, here is the latest job digest evaluated against your profile (B.Tech EE, 0–1 years experience).
           </p>
           {''.join(html_cards)}
           {potential_section_html}
