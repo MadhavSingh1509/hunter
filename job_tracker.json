@@ -26,7 +26,7 @@
     "match_score": 87.0,
     "score_reasons_json": "{\"role_relevance\": {\"score\": 25.0, \"reason\": \"Direct title match: 'software engineer'\"}, \"degree_eligibility\": {\"score\": 18.0, \"reason\": \"Accepts B.Tech / Bachelor's in engineering without branch restrictions\"}, \"graduation_eligibility\": {\"score\": 15.0, \"reason\": \"Explicitly mentions eligible graduation batch 2027\"}, \"experience_eligibility\": {\"score\": 15.0, \"reason\": \"Explicitly accepts 0-1 years / freshers / interns\"}, \"location_eligibility\": {\"score\": 5.0, \"reason\": \"Location unstated or unverified\"}, \"skills_match\": {\"score\": 4.0, \"matched_skills\": [\"Java\", \"JavaScript\"]}, \"employment_type\": {\"score\": 5.0, \"type\": \"Full-time\"}}",
     "eligibility_notes": "Review required: Location unverified",
-    "notification_status": "NOTIFIED",
+    "notification_status": "PENDING",
     "first_discovered_at": "2026-11-17T11:20:41.434268",
     "last_seen_at": "2026-11-17T05:57:53.387106"
   },
@@ -57,7 +57,7 @@
     "match_score": 87.0,
     "score_reasons_json": "{\"role_relevance\": {\"score\": 25.0, \"reason\": \"Direct title match: 'software engineer'\"}, \"degree_eligibility\": {\"score\": 18.0, \"reason\": \"Accepts B.Tech / Bachelor's in engineering without branch restrictions\"}, \"graduation_eligibility\": {\"score\": 15.0, \"reason\": \"Explicitly mentions eligible graduation batch 2027\"}, \"experience_eligibility\": {\"score\": 15.0, \"reason\": \"Explicitly accepts 0-1 years / freshers / interns\"}, \"location_eligibility\": {\"score\": 5.0, \"reason\": \"Location unstated or unverified\"}, \"skills_match\": {\"score\": 4.0, \"matched_skills\": [\"Java\", \"JavaScript\"]}, \"employment_type\": {\"score\": 5.0, \"type\": \"Full-time\"}}",
     "eligibility_notes": "Review required: Location unverified",
-    "notification_status": "NOTIFIED",
+    "notification_status": "PENDING",
     "first_discovered_at": "2026-11-17T11:20:41.406803",
     "last_seen_at": "2026-11-17T05:57:53.351401"
   },
@@ -88,7 +88,7 @@
     "match_score": 87.0,
     "score_reasons_json": "{\"role_relevance\": {\"score\": 25.0, \"reason\": \"Direct title match: 'software development engineer'\"}, \"degree_eligibility\": {\"score\": 18.0, \"reason\": \"Accepts B.Tech / Bachelor's in engineering without branch restrictions\"}, \"graduation_eligibility\": {\"score\": 8.0, \"reason\": \"Graduation batch unstated (compatible with 2026 batch)\"}, \"experience_eligibility\": {\"score\": 15.0, \"reason\": \"Explicitly accepts 0-1 years / freshers / interns\"}, \"location_eligibility\": {\"score\": 10.0, \"reason\": \"Location verified in India: 'Bengaluru'\"}, \"skills_match\": {\"score\": 6.0, \"matched_skills\": [\"Java\", \"JavaScript\", \"React\"]}, \"employment_type\": {\"score\": 5.0, \"type\": \"Full-time\"}}",
     "eligibility_notes": "Verified Fresher Software/AI Match (Score 87.0/100)",
-    "notification_status": "NOTIFIED",
+    "notification_status": "PENDING",
     "first_discovered_at": "2026-11-17T11:18:39.840714",
     "last_seen_at": "2026-11-17T14:14:04.570431"
   },
@@ -119,7 +119,7 @@
     "match_score": 87.0,
     "score_reasons_json": "{\"role_relevance\": {\"score\": 25.0, \"reason\": \"Direct title match: 'software development engineer'\"}, \"degree_eligibility\": {\"score\": 18.0, \"reason\": \"Accepts B.Tech / Bachelor's in engineering without branch restrictions\"}, \"graduation_eligibility\": {\"score\": 8.0, \"reason\": \"Graduation batch unstated (compatible with 2026 batch)\"}, \"experience_eligibility\": {\"score\": 15.0, \"reason\": \"Explicitly accepts 0-1 years / freshers / interns\"}, \"location_eligibility\": {\"score\": 10.0, \"reason\": \"Location verified in India: 'Bengaluru'\"}, \"skills_match\": {\"score\": 6.0, \"matched_skills\": [\"Java\", \"JavaScript\", \"React\"]}, \"employment_type\": {\"score\": 5.0, \"type\": \"Full-time\"}}",
     "eligibility_notes": "Verified Fresher Software/AI Match (Score 87.0/100)",
-    "notification_status": "NOTIFIED",
+    "notification_status": "PENDING",
     "first_discovered_at": "2026-11-17T11:18:39.821399",
     "last_seen_at": "2026-11-17T14:14:04.564396"
   },
@@ -150,7 +150,7 @@
     "match_score": 86.0,
     "score_reasons_json": "{\"role_relevance\": {\"score\": 25.0, \"reason\": \"Matches standard Software/AI engineering title pattern\"}, \"degree_eligibility\": {\"score\": 20.0, \"reason\": \"Degree criteria explicitly accepts Electrical Engineering / related engineering disciplines\"}, \"graduation_eligibility\": {\"score\": 8.0, \"reason\": \"Graduation batch unstated (compatible with 2026 batch)\"}, \"experience_eligibility\": {\"score\": 8.0, \"reason\": \"Experience requirements unstated\"}, \"location_eligibility\": {\"score\": 10.0, \"reason\": \"Location verified in India: 'Bengaluru'\"}, \"skills_match\": {\"score\": 10.0, \"matched_skills\": [\"JavaScript\", \"HTML\", \"CSS\", \"React\", \"React.js\", \"REST APIs\", \"Git\", \"GitHub\"]}, \"employment_type\": {\"score\": 5.0, \"type\": \"Full-time\"}}",
     "eligibility_notes": "Review required: Graduation batch unstated, Exact years of experience unstated",
-    "notification_status": "NOTIFIED",
+    "notification_status": "PENDING",
     "first_discovered_at": "2026-11-17T11:21:33.546136",
     "last_seen_at": "2026-11-17T14:14:26.275780"
   },
@@ -181,7 +181,7 @@
     "match_score": 86.0,
     "score_reasons_json": "{\"role_relevance\": {\"score\": 25.0, \"reason\": \"Direct title match: 'software engineer'\"}, \"degree_eligibility\": {\"score\": 10.0, \"reason\": \"Specific engineering branch requirements are unstated\"}, \"graduation_eligibility\": {\"score\": 15.0, \"reason\": \"Explicitly mentions eligible graduation batch 2027\"}, \"experience_eligibility\": {\"score\": 15.0, \"reason\": \"Explicitly accepts 0-1 years / freshers / interns\"}, \"location_eligibility\": {\"score\": 10.0, \"reason\": \"Location verified in India: 'Bangalore'\"}, \"skills_match\": {\"score\": 6.0, \"matched_skills\": [\"C\", \"Java\", \"Python\"]}, \"employment_type\": {\"score\": 5.0, \"type\": \"Full-time\"}}",
     "eligibility_notes": "Review required: Degree requirements unstated",
-    "notification_status": "NOTIFIED",
+    "notification_status": "PENDING",
     "first_discovered_at": "2026-11-17T11:20:18.585315",
     "last_seen_at": "2026-11-17T14:14:11.763294"
   },
@@ -212,7 +212,7 @@
     "match_score": 85.0,
     "score_reasons_json": "{\"role_relevance\": {\"score\": 25.0, \"reason\": \"Direct title match: 'software engineer'\"}, \"degree_eligibility\": {\"score\": 18.0, \"reason\": \"Accepts B.Tech / Bachelor's in engineering without branch restrictions\"}, \"graduation_eligibility\": {\"score\": 8.0, \"reason\": \"Graduation batch unstated (compatible with 2026 batch)\"}, \"experience_eligibility\": {\"score\": 15.0, \"reason\": \"Explicitly accepts 0-1 years / freshers / interns\"}, \"location_eligibility\": {\"score\": 10.0, \"reason\": \"Location verified in India: 'Bengaluru'\"}, \"skills_match\": {\"score\": 4.0, \"matched_skills\": [\"Java\", \"JavaScript\"]}, \"employment_type\": {\"score\": 5.0, \"type\": \"Full-time\"}}",
     "eligibility_notes": "Verified Fresher Software/AI Match (Score 85.0/100)",
-    "notification_status": "NOTIFIED",
+    "notification_status": "PENDING",
     "first_discovered_at": "2026-11-17T11:20:40.970536",
     "last_seen_at": "2026-11-17T14:14:12.793434"
   },
@@ -243,7 +243,7 @@
     "match_score": 85.0,
     "score_reasons_json": "{\"role_relevance\": {\"score\": 25.0, \"reason\": \"Direct title match: 'software development engineer'\"}, \"degree_eligibility\": {\"score\": 18.0, \"reason\": \"Accepts B.Tech / Bachelor's in engineering without branch restrictions\"}, \"graduation_eligibility\": {\"score\": 8.0, \"reason\": \"Graduation batch unstated (compatible with 2026 batch)\"}, \"experience_eligibility\": {\"score\": 15.0, \"reason\": \"Explicitly accepts 0-1 years / freshers / interns\"}, \"location_eligibility\": {\"score\": 10.0, \"reason\": \"Location verified in India: 'Hyderabad'\"}, \"skills_match\": {\"score\": 4.0, \"matched_skills\": [\"C\", \"Java\"]}, \"employment_type\": {\"score\": 5.0, \"type\": \"Full-time\"}}",
     "eligibility_notes": "Verified Fresher Software/AI Match (Score 85.0/100)",
-    "notification_status": "NOTIFIED",
+    "notification_status": "PENDING",
     "first_discovered_at": "2026-11-17T11:18:40.633191",
     "last_seen_at": "2026-11-17T14:14:04.841382"
   },
@@ -274,7 +274,7 @@
     "match_score": 83.0,
     "score_reasons_json": "{\"role_relevance\": {\"score\": 25.0, \"reason\": \"Direct title match: 'software engineer'\"}, \"degree_eligibility\": {\"score\": 18.0, \"reason\": \"Accepts B.Tech / Bachelor's in engineering without branch restrictions\"}, \"graduation_eligibility\": {\"score\": 15.0, \"reason\": \"Explicitly mentions eligible graduation batch 2027\"}, \"experience_eligibility\": {\"score\": 15.0, \"reason\": \"Explicitly accepts 0-1 years / freshers / interns\"}, \"location_eligibility\": {\"score\": 5.0, \"reason\": \"Location unstated or unverified\"}, \"skills_match\": {\"score\": 0.0, \"matched_skills\": []}, \"employment_type\": {\"score\": 5.0, \"type\": \"Full-time\"}}",
     "eligibility_notes": "Review required: Location unverified",
-    "notification_status": "NOTIFIED",
+    "notification_status": "PENDING",
     "first_discovered_at": "2026-11-17T11:20:41.288986",
     "last_seen_at": "2026-11-17T05:57:53.360783"
   },
@@ -305,7 +305,7 @@
     "match_score": 83.0,
     "score_reasons_json": "{\"role_relevance\": {\"score\": 25.0, \"reason\": \"Direct title match: 'software development engineer'\"}, \"degree_eligibility\": {\"score\": 18.0, \"reason\": \"Accepts B.Tech / Bachelor's in engineering without branch restrictions\"}, \"graduation_eligibility\": {\"score\": 8.0, \"reason\": \"Graduation batch unstated (compatible with 2026 batch)\"}, \"experience_eligibility\": {\"score\": 15.0, \"reason\": \"Explicitly accepts 0-1 years / freshers / interns\"}, \"location_eligibility\": {\"score\": 10.0, \"reason\": \"Location verified in India: 'Bengaluru'\"}, \"skills_match\": {\"score\": 2.0, \"matched_skills\": [\"C\"]}, \"employment_type\": {\"score\": 5.0, \"type\": \"Full-time\"}}",
     "eligibility_notes": "Verified Fresher Software/AI Match (Score 83.0/100)",
-    "notification_status": "NOTIFIED",
+    "notification_status": "PENDING",
     "first_discovered_at": "2026-11-17T11:18:40.612001",
     "last_seen_at": "2026-11-17T14:14:04.836354"
   },
@@ -336,7 +336,7 @@
     "match_score": 83.0,
     "score_reasons_json": "{\"role_relevance\": {\"score\": 25.0, \"reason\": \"Direct title match: 'software development engineer'\"}, \"degree_eligibility\": {\"score\": 18.0, \"reason\": \"Accepts B.Tech / Bachelor's in engineering without branch restrictions\"}, \"graduation_eligibility\": {\"score\": 8.0, \"reason\": \"Graduation batch unstated (compatible with 2026 batch)\"}, \"experience_eligibility\": {\"score\": 15.0, \"reason\": \"Explicitly accepts 0-1 years / freshers / interns\"}, \"location_eligibility\": {\"score\": 10.0, \"reason\": \"Location verified in India: 'Bengaluru'\"}, \"skills_match\": {\"score\": 2.0, \"matched_skills\": [\"C\"]}, \"employment_type\": {\"score\": 5.0, \"type\": \"Full-time\"}}",
     "eligibility_notes": "Verified Fresher Software/AI Match (Score 83.0/100)",
-    "notification_status": "NOTIFIED",
+    "notification_status": "PENDING",
     "first_discovered_at": "2026-11-17T11:18:40.565285",
     "last_seen_at": "2026-11-17T14:14:04.814925"
   },
@@ -367,7 +367,7 @@
     "match_score": 83.0,
     "score_reasons_json": "{\"role_relevance\": {\"score\": 25.0, \"reason\": \"Direct title match: 'software development engineer'\"}, \"degree_eligibility\": {\"score\": 18.0, \"reason\": \"Accepts B.Tech / Bachelor's in engineering without branch restrictions\"}, \"graduation_eligibility\": {\"score\": 8.0, \"reason\": \"Graduation batch unstated (compatible with 2026 batch)\"}, \"experience_eligibility\": {\"score\": 15.0, \"reason\": \"Explicitly accepts 0-1 years / freshers / interns\"}, \"location_eligibility\": {\"score\": 10.0, \"reason\": \"Location verified in India: 'Bengaluru'\"}, \"skills_match\": {\"score\": 2.0, \"matched_skills\": [\"Python\"]}, \"employment_type\": {\"score\": 5.0, \"type\": \"Full-time\"}}",
     "eligibility_notes": "Verified Fresher Software/AI Match (Score 83.0/100)",
-    "notification_status": "NOTIFIED",
+    "notification_status": "PENDING",
     "first_discovered_at": "2026-11-17T11:18:39.954166",
     "last_seen_at": "2026-11-17T14:14:04.610105"
   },
@@ -398,7 +398,7 @@
     "match_score": 81.0,
     "score_reasons_json": "{\"role_relevance\": {\"score\": 25.0, \"reason\": \"Direct title match: 'software development engineer'\"}, \"degree_eligibility\": {\"score\": 18.0, \"reason\": \"Accepts B.Tech / Bachelor's in engineering without branch restrictions\"}, \"graduation_eligibility\": {\"score\": 8.0, \"reason\": \"Graduation batch unstated (compatible with 2026 batch)\"}, \"experience_eligibility\": {\"score\": 15.0, \"reason\": \"Explicitly accepts 0-1 years / freshers / interns\"}, \"location_eligibility\": {\"score\": 10.0, \"reason\": \"Location verified in India: 'Gurugram'\"}, \"skills_match\": {\"score\": 0.0, \"matched_skills\": []}, \"employment_type\": {\"score\": 5.0, \"type\": \"Full-time\"}}",
     "eligibility_notes": "Verified Fresher Software/AI Match (Score 81.0/100)",
-    "notification_status": "NOTIFIED",
+    "notification_status": "PENDING",
     "first_discovered_at": "2026-11-17T11:18:40.336904",
     "last_seen_at": "2026-11-17T14:14:04.735169"
   },
@@ -429,7 +429,7 @@
     "match_score": 81.0,
     "score_reasons_json": "{\"role_relevance\": {\"score\": 25.0, \"reason\": \"Direct title match: 'software development engineer'\"}, \"degree_eligibility\": {\"score\": 18.0, \"reason\": \"Accepts B.Tech / Bachelor's in engineering without branch restrictions\"}, \"graduation_eligibility\": {\"score\": 8.0, \"reason\": \"Graduation batch unstated (compatible with 2026 batch)\"}, \"experience_eligibility\": {\"score\": 15.0, \"reason\": \"Explicitly accepts 0-1 years / freshers / interns\"}, \"location_eligibility\": {\"score\": 10.0, \"reason\": \"Location verified in India: 'Bengaluru'\"}, \"skills_match\": {\"score\": 0.0, \"matched_skills\": []}, \"employment_type\": {\"score\": 5.0, \"type\": \"Full-time\"}}",
     "eligibility_notes": "Verified Fresher Software/AI Match (Score 81.0/100)",
-    "notification_status": "NOTIFIED",
+    "notification_status": "PENDING",
     "first_discovered_at": "2026-11-17T11:18:40.193332",
     "last_seen_at": "2026-11-17T14:14:04.686875"
   },
@@ -460,7 +460,7 @@
     "match_score": 81.0,
     "score_reasons_json": "{\"role_relevance\": {\"score\": 25.0, \"reason\": \"Direct title match: 'software development engineer'\"}, \"degree_eligibility\": {\"score\": 18.0, \"reason\": \"Accepts B.Tech / Bachelor's in engineering without branch restrictions\"}, \"graduation_eligibility\": {\"score\": 8.0, \"reason\": \"Graduation batch unstated (compatible with 2026 batch)\"}, \"experience_eligibility\": {\"score\": 15.0, \"reason\": \"Explicitly accepts 0-1 years / freshers / interns\"}, \"location_eligibility\": {\"score\": 10.0, \"reason\": \"Location verified in India: 'Hyderabad'\"}, \"skills_match\": {\"score\": 0.0, \"matched_skills\": []}, \"employment_type\": {\"score\": 5.0, \"type\": \"Full-time\"}}",
     "eligibility_notes": "Verified Fresher Software/AI Match (Score 81.0/100)",
-    "notification_status": "NOTIFIED",
+    "notification_status": "PENDING",
     "first_discovered_at": "2026-11-17T11:18:40.170451",
     "last_seen_at": "2026-11-17T14:14:04.682337"
   },
@@ -491,7 +491,7 @@
     "match_score": 81.0,
     "score_reasons_json": "{\"role_relevance\": {\"score\": 25.0, \"reason\": \"Direct title match: 'software development engineer'\"}, \"degree_eligibility\": {\"score\": 18.0, \"reason\": \"Accepts B.Tech / Bachelor's in engineering without branch restrictions\"}, \"graduation_eligibility\": {\"score\": 8.0, \"reason\": \"Graduation batch unstated (compatible with 2026 batch)\"}, \"experience_eligibility\": {\"score\": 15.0, \"reason\": \"Explicitly accepts 0-1 years / freshers / interns\"}, \"location_eligibility\": {\"score\": 10.0, \"reason\": \"Location verified in India: 'Chennai'\"}, \"skills_match\": {\"score\": 0.0, \"matched_skills\": []}, \"employment_type\": {\"score\": 5.0, \"type\": \"Full-time\"}}",
     "eligibility_notes": "Verified Fresher Software/AI Match (Score 81.0/100)",
-    "notification_status": "NOTIFIED",
+    "notification_status": "PENDING",
     "first_discovered_at": "2026-11-17T11:18:40.134045",
     "last_seen_at": "2026-11-17T14:14:04.676062"
   },
@@ -522,7 +522,7 @@
     "match_score": 81.0,
     "score_reasons_json": "{\"role_relevance\": {\"score\": 25.0, \"reason\": \"Direct title match: 'software development engineer'\"}, \"degree_eligibility\": {\"score\": 18.0, \"reason\": \"Accepts B.Tech / Bachelor's in engineering without branch restrictions\"}, \"graduation_eligibility\": {\"score\": 8.0, \"reason\": \"Graduation batch unstated (compatible with 2026 batch)\"}, \"experience_eligibility\": {\"score\": 15.0, \"reason\": \"Explicitly accepts 0-1 years / freshers / interns\"}, \"location_eligibility\": {\"score\": 10.0, \"reason\": \"Location verified in India: 'Hyderabad'\"}, \"skills_match\": {\"score\": 0.0, \"matched_skills\": []}, \"employment_type\": {\"score\": 5.0, \"type\": \"Full-time\"}}",
     "eligibility_notes": "Verified Fresher Software/AI Match (Score 81.0/100)",
-    "notification_status": "NOTIFIED",
+    "notification_status": "PENDING",
     "first_discovered_at": "2026-11-17T11:18:40.076616",
     "last_seen_at": "2026-11-17T14:14:04.658980"
   },
@@ -553,7 +553,7 @@
     "match_score": 81.0,
     "score_reasons_json": "{\"role_relevance\": {\"score\": 25.0, \"reason\": \"Direct title match: 'software development engineer'\"}, \"degree_eligibility\": {\"score\": 18.0, \"reason\": \"Accepts B.Tech / Bachelor's in engineering without branch restrictions\"}, \"graduation_eligibility\": {\"score\": 8.0, \"reason\": \"Graduation batch unstated (compatible with 2026 batch)\"}, \"experience_eligibility\": {\"score\": 15.0, \"reason\": \"Explicitly accepts 0-1 years / freshers / interns\"}, \"location_eligibility\": {\"score\": 10.0, \"reason\": \"Location verified in India: 'Bengaluru'\"}, \"skills_match\": {\"score\": 0.0, \"matched_skills\": []}, \"employment_type\": {\"score\": 5.0, \"type\": \"Full-time\"}}",
     "eligibility_notes": "Verified Fresher Software/AI Match (Score 81.0/100)",
-    "notification_status": "NOTIFIED",
+    "notification_status": "PENDING",
     "first_discovered_at": "2026-11-17T11:18:40.051964",
     "last_seen_at": "2026-11-17T14:14:04.651279"
   },
@@ -584,7 +584,7 @@
     "match_score": 81.0,
     "score_reasons_json": "{\"role_relevance\": {\"score\": 25.0, \"reason\": \"Direct title match: 'software development engineer'\"}, \"degree_eligibility\": {\"score\": 18.0, \"reason\": \"Accepts B.Tech / Bachelor's in engineering without branch restrictions\"}, \"graduation_eligibility\": {\"score\": 8.0, \"reason\": \"Graduation batch unstated (compatible with 2026 batch)\"}, \"experience_eligibility\": {\"score\": 15.0, \"reason\": \"Explicitly accepts 0-1 years / freshers / interns\"}, \"location_eligibility\": {\"score\": 10.0, \"reason\": \"Location verified in India: 'Hyderabad'\"}, \"skills_match\": {\"score\": 0.0, \"matched_skills\": []}, \"employment_type\": {\"score\": 5.0, \"type\": \"Full-time\"}}",
     "eligibility_notes": "Verified Fresher Software/AI Match (Score 81.0/100)",
-    "notification_status": "NOTIFIED",
+    "notification_status": "PENDING",
     "first_discovered_at": "2026-11-17T11:18:39.895482",
     "last_seen_at": "2026-11-17T14:14:04.590015"
   },
@@ -615,7 +615,7 @@
     "match_score": 81.0,
     "score_reasons_json": "{\"role_relevance\": {\"score\": 25.0, \"reason\": \"Direct title match: 'software development engineer'\"}, \"degree_eligibility\": {\"score\": 18.0, \"reason\": \"Accepts B.Tech / Bachelor's in engineering without branch restrictions\"}, \"graduation_eligibility\": {\"score\": 8.0, \"reason\": \"Graduation batch unstated (compatible with 2026 batch)\"}, \"experience_eligibility\": {\"score\": 15.0, \"reason\": \"Explicitly accepts 0-1 years / freshers / interns\"}, \"location_eligibility\": {\"score\": 10.0, \"reason\": \"Location verified in India: 'Hyderabad'\"}, \"skills_match\": {\"score\": 0.0, \"matched_skills\": []}, \"employment_type\": {\"score\": 5.0, \"type\": \"Full-time\"}}",
     "eligibility_notes": "Verified Fresher Software/AI Match (Score 81.0/100)",
-    "notification_status": "NOTIFIED",
+    "notification_status": "PENDING",
     "first_discovered_at": "2026-11-17T11:18:39.740119",
     "last_seen_at": "2026-11-17T14:14:04.531634"
   },
@@ -646,7 +646,7 @@
     "match_score": 81.0,
     "score_reasons_json": "{\"role_relevance\": {\"score\": 25.0, \"reason\": \"Direct title match: 'software development engineer'\"}, \"degree_eligibility\": {\"score\": 18.0, \"reason\": \"Accepts B.Tech / Bachelor's in engineering without branch restrictions\"}, \"graduation_eligibility\": {\"score\": 8.0, \"reason\": \"Graduation batch unstated (compatible with 2026 batch)\"}, \"experience_eligibility\": {\"score\": 15.0, \"reason\": \"Explicitly accepts 0-1 years / freshers / interns\"}, \"location_eligibility\": {\"score\": 10.0, \"reason\": \"Location verified in India: 'Hyderabad'\"}, \"skills_match\": {\"score\": 0.0, \"matched_skills\": []}, \"employment_type\": {\"score\": 5.0, \"type\": \"Full-time\"}}",
     "eligibility_notes": "Verified Fresher Software/AI Match (Score 81.0/100)",
-    "notification_status": "NOTIFIED",
+    "notification_status": "PENDING",
     "first_discovered_at": "2026-11-17T11:18:39.722106",
     "last_seen_at": "2026-11-17T14:14:04.526850"
   },
@@ -677,7 +677,7 @@
     "match_score": 81.0,
     "score_reasons_json": "{\"role_relevance\": {\"score\": 25.0, \"reason\": \"Direct title match: 'software development engineer'\"}, \"degree_eligibility\": {\"score\": 18.0, \"reason\": \"Accepts B.Tech / Bachelor's in engineering without branch restrictions\"}, \"graduation_eligibility\": {\"score\": 8.0, \"reason\": \"Graduation batch unstated (compatible with 2026 batch)\"}, \"experience_eligibility\": {\"score\": 15.0, \"reason\": \"Explicitly accepts 0-1 years / freshers / interns\"}, \"location_eligibility\": {\"score\": 10.0, \"reason\": \"Location verified in India: 'Hyderabad'\"}, \"skills_match\": {\"score\": 0.0, \"matched_skills\": []}, \"employment_type\": {\"score\": 5.0, \"type\": \"Full-time\"}}",
     "eligibility_notes": "Verified Fresher Software/AI Match (Score 81.0/100)",
-    "notification_status": "NOTIFIED",
+    "notification_status": "PENDING",
     "first_discovered_at": "2026-11-17T11:18:39.704618",
     "last_seen_at": "2026-11-17T14:14:04.521925"
   },
@@ -708,7 +708,7 @@
     "match_score": 81.0,
     "score_reasons_json": "{\"role_relevance\": {\"score\": 25.0, \"reason\": \"Direct title match: 'software development engineer'\"}, \"degree_eligibility\": {\"score\": 18.0, \"reason\": \"Accepts B.Tech / Bachelor's in engineering without branch restrictions\"}, \"graduation_eligibility\": {\"score\": 8.0, \"reason\": \"Graduation batch unstated (compatible with 2026 batch)\"}, \"experience_eligibility\": {\"score\": 15.0, \"reason\": \"Explicitly accepts 0-1 years / freshers / interns\"}, \"location_eligibility\": {\"score\": 10.0, \"reason\": \"Location verified in India: 'Hyderabad'\"}, \"skills_match\": {\"score\": 0.0, \"matched_skills\": []}, \"employment_type\": {\"score\": 5.0, \"type\": \"Full-time\"}}",
     "eligibility_notes": "Verified Fresher Software/AI Match (Score 81.0/100)",
-    "notification_status": "NOTIFIED",
+    "notification_status": "PENDING",
     "first_discovered_at": "2026-11-17T11:18:39.597626",
     "last_seen_at": "2026-11-17T14:14:04.479995"
   },
@@ -739,7 +739,7 @@
     "match_score": 81.0,
     "score_reasons_json": "{\"role_relevance\": {\"score\": 25.0, \"reason\": \"Direct title match: 'software development engineer'\"}, \"degree_eligibility\": {\"score\": 18.0, \"reason\": \"Accepts B.Tech / Bachelor's in engineering without branch restrictions\"}, \"graduation_eligibility\": {\"score\": 8.0, \"reason\": \"Graduation batch unstated (compatible with 2026 batch)\"}, \"experience_eligibility\": {\"score\": 15.0, \"reason\": \"Explicitly accepts 0-1 years / freshers / interns\"}, \"location_eligibility\": {\"score\": 10.0, \"reason\": \"Location verified in India: 'Bengaluru'\"}, \"skills_match\": {\"score\": 0.0, \"matched_skills\": []}, \"employment_type\": {\"score\": 5.0, \"type\": \"Full-time\"}}",
     "eligibility_notes": "Verified Fresher Software/AI Match (Score 81.0/100)",
-    "notification_status": "NOTIFIED",
+    "notification_status": "PENDING",
     "first_discovered_at": "2026-11-17T11:18:39.573266",
     "last_seen_at": "2026-11-17T14:14:04.475273"
   },
@@ -770,7 +770,7 @@
     "match_score": 81.0,
     "score_reasons_json": "{\"role_relevance\": {\"score\": 25.0, \"reason\": \"Direct title match: 'software development engineer'\"}, \"degree_eligibility\": {\"score\": 18.0, \"reason\": \"Accepts B.Tech / Bachelor's in engineering without branch restrictions\"}, \"graduation_eligibility\": {\"score\": 8.0, \"reason\": \"Graduation batch unstated (compatible with 2026 batch)\"}, \"experience_eligibility\": {\"score\": 15.0, \"reason\": \"Explicitly accepts 0-1 years / freshers / interns\"}, \"location_eligibility\": {\"score\": 10.0, \"reason\": \"Location verified in India: 'Hyderabad'\"}, \"skills_match\": {\"score\": 0.0, \"matched_skills\": []}, \"employment_type\": {\"score\": 5.0, \"type\": \"Full-time\"}}",
     "eligibility_notes": "Verified Fresher Software/AI Match (Score 81.0/100)",
-    "notification_status": "NOTIFIED",
+    "notification_status": "PENDING",
     "first_discovered_at": "2026-11-17T11:18:39.554065",
     "last_seen_at": "2026-11-17T14:14:04.470455"
   },
@@ -801,7 +801,7 @@
     "match_score": 81.0,
     "score_reasons_json": "{\"role_relevance\": {\"score\": 25.0, \"reason\": \"Direct title match: 'software development engineer'\"}, \"degree_eligibility\": {\"score\": 18.0, \"reason\": \"Accepts B.Tech / Bachelor's in engineering without branch restrictions\"}, \"graduation_eligibility\": {\"score\": 8.0, \"reason\": \"Graduation batch unstated (compatible with 2026 batch)\"}, \"experience_eligibility\": {\"score\": 15.0, \"reason\": \"Explicitly accepts 0-1 years / freshers / interns\"}, \"location_eligibility\": {\"score\": 10.0, \"reason\": \"Location verified in India: 'Bengaluru'\"}, \"skills_match\": {\"score\": 0.0, \"matched_skills\": []}, \"employment_type\": {\"score\": 5.0, \"type\": \"Full-time\"}}",
     "eligibility_notes": "Verified Fresher Software/AI Match (Score 81.0/100)",
-    "notification_status": "NOTIFIED",
+    "notification_status": "PENDING",
     "first_discovered_at": "2026-11-17T09:47:04.412426",
     "last_seen_at": "2026-11-17T14:14:04.870297"
   },
@@ -832,7 +832,7 @@
     "match_score": 80.0,
     "score_reasons_json": "{\"role_relevance\": {\"score\": 25.0, \"reason\": \"Direct title match: 'software engineer'\"}, \"degree_eligibility\": {\"score\": 18.0, \"reason\": \"Accepts B.Tech / Bachelor's in engineering without branch restrictions\"}, \"graduation_eligibility\": {\"score\": 8.0, \"reason\": \"Graduation batch unstated (compatible with 2026 batch)\"}, \"experience_eligibility\": {\"score\": 15.0, \"reason\": \"Explicitly accepts 0-1 years / freshers / interns\"}, \"location_eligibility\": {\"score\": 5.0, \"reason\": \"Location unstated or unverified\"}, \"skills_match\": {\"score\": 4.0, \"matched_skills\": [\"Java\", \"JavaScript\"]}, \"employment_type\": {\"score\": 5.0, \"type\": \"Full-time\"}}",
     "eligibility_notes": "Review required: Graduation batch unstated, Location unverified",
-    "notification_status": "NOTIFIED",
+    "notification_status": "PENDING",
     "first_discovered_at": "2026-11-17T11:20:41.059662",
     "last_seen_at": "2026-11-17T05:57:53.265595"
   },
@@ -863,7 +863,7 @@
     "match_score": 80.0,
     "score_reasons_json": "{\"role_relevance\": {\"score\": 25.0, \"reason\": \"Matches standard Software/AI engineering title pattern\"}, \"degree_eligibility\": {\"score\": 18.0, \"reason\": \"Accepts B.Tech / Bachelor's in engineering without branch restrictions\"}, \"graduation_eligibility\": {\"score\": 8.0, \"reason\": \"Graduation batch unstated (compatible with 2026 batch)\"}, \"experience_eligibility\": {\"score\": 8.0, \"reason\": \"Experience requirements unstated\"}, \"location_eligibility\": {\"score\": 10.0, \"reason\": \"Location verified in India: 'Bangalore'\"}, \"skills_match\": {\"score\": 6.0, \"matched_skills\": [\"C\", \"Python\", \"Data Structures and Algorithms\"]}, \"employment_type\": {\"score\": 5.0, \"type\": \"Full-time\"}}",
     "eligibility_notes": "Review required: Graduation batch unstated, Exact years of experience unstated",
-    "notification_status": "NOTIFIED",
+    "notification_status": "PENDING",
     "first_discovered_at": "2026-11-17T11:20:23.288331",
     "last_seen_at": "2026-11-17T14:14:12.380039"
   },
@@ -894,7 +894,7 @@
     "match_score": 80.0,
     "score_reasons_json": "{\"role_relevance\": {\"score\": 25.0, \"reason\": \"Direct title match: 'software engineer'\"}, \"degree_eligibility\": {\"score\": 18.0, \"reason\": \"Accepts B.Tech / Bachelor's in engineering without branch restrictions\"}, \"graduation_eligibility\": {\"score\": 8.0, \"reason\": \"Graduation batch unstated (compatible with 2026 batch)\"}, \"experience_eligibility\": {\"score\": 15.0, \"reason\": \"Explicitly accepts 0-1 years / freshers / interns\"}, \"location_eligibility\": {\"score\": 5.0, \"reason\": \"Location unstated or unverified\"}, \"skills_match\": {\"score\": 4.0, \"matched_skills\": [\"C\", \"Java\"]}, \"employment_type\": {\"score\": 5.0, \"type\": \"Full-time\"}}",
     "eligibility_notes": "Review required: Graduation batch unstated, Location unverified",
-    "notification_status": "NOTIFIED",
+    "notification_status": "PENDING",
     "first_discovered_at": "2026-11-17T11:20:18.845912",
     "last_seen_at": "2026-11-17T05:57:47.146820"
   },
@@ -925,7 +925,7 @@
     "match_score": 80.0,
     "score_reasons_json": "{\"role_relevance\": {\"score\": 25.0, \"reason\": \"Direct title match: 'software engineer'\"}, \"degree_eligibility\": {\"score\": 18.0, \"reason\": \"Accepts B.Tech / Bachelor's in engineering without branch restrictions\"}, \"graduation_eligibility\": {\"score\": 15.0, \"reason\": \"Explicitly mentions eligible graduation batch 2026\"}, \"experience_eligibility\": {\"score\": 8.0, \"reason\": \"Experience requirements unstated\"}, \"location_eligibility\": {\"score\": 5.0, \"reason\": \"Location unstated or unverified\"}, \"skills_match\": {\"score\": 4.0, \"matched_skills\": [\"C\", \"Java\"]}, \"employment_type\": {\"score\": 5.0, \"type\": \"Full-time\"}}",
     "eligibility_notes": "Review required: Exact years of experience unstated, Location unverified",
-    "notification_status": "NOTIFIED",
+    "notification_status": "PENDING",
     "first_discovered_at": "2026-11-17T11:19:48.823376",
     "last_seen_at": "2026-11-17T05:57:39.883765"
   },
@@ -956,7 +956,7 @@
     "match_score": 79.0,
     "score_reasons_json": "{\"role_relevance\": {\"score\": 25.0, \"reason\": \"Direct title match: 'software engineer'\"}, \"degree_eligibility\": {\"score\": 20.0, \"reason\": \"Degree criteria explicitly accepts Electrical Engineering / related engineering disciplines\"}, \"graduation_eligibility\": {\"score\": 8.0, \"reason\": \"Graduation batch unstated (compatible with 2026 batch)\"}, \"experience_eligibility\": {\"score\": 8.0, \"reason\": \"Experience requirements unstated\"}, \"location_eligibility\": {\"score\": 5.0, \"reason\": \"Location unstated or unverified\"}, \"skills_match\": {\"score\": 8.0, \"matched_skills\": [\"C\", \"Java\", \"Python\", \"Git\"]}, \"employment_type\": {\"score\": 5.0, \"type\": \"Full-time\"}}",
     "eligibility_notes": "Review required: Graduation batch unstated, Exact years of experience unstated, Location unverified",
-    "notification_status": "NOTIFIED",
+    "notification_status": "PENDING",
     "first_discovered_at": "2026-11-17T11:20:18.750855",
     "last_seen_at": "2026-11-17T05:57:47.113447"
   },
@@ -987,7 +987,7 @@
     "match_score": 78.0,
     "score_reasons_json": "{\"role_relevance\": {\"score\": 25.0, \"reason\": \"Matches standard Software/AI engineering title pattern\"}, \"degree_eligibility\": {\"score\": 18.0, \"reason\": \"Accepts B.Tech / Bachelor's in engineering without branch restrictions\"}, \"graduation_eligibility\": {\"score\": 8.0, \"reason\": \"Graduation batch unstated (compatible with 2026 batch)\"}, \"experience_eligibility\": {\"score\": 8.0, \"reason\": \"Experience requirements unstated\"}, \"location_eligibility\": {\"score\": 8.0, \"reason\": \"Remote position (no explicit non-India restrictions detected)\"}, \"skills_match\": {\"score\": 6.0, \"matched_skills\": [\"Java\", \"Python\", \"GitHub\"]}, \"employment_type\": {\"score\": 5.0, \"type\": \"Full-time\"}}",
     "eligibility_notes": "Review required: Graduation batch unstated, Exact years of experience unstated",
-    "notification_status": "NOTIFIED",
+    "notification_status": "PENDING",
     "first_discovered_at": "2026-11-17T11:21:31.807685",
     "last_seen_at": "2026-11-17T05:58:25.931630"
   },
@@ -1018,7 +1018,7 @@
     "match_score": 78.0,
     "score_reasons_json": "{\"role_relevance\": {\"score\": 25.0, \"reason\": \"Direct title match: 'software engineer'\"}, \"degree_eligibility\": {\"score\": 18.0, \"reason\": \"Accepts B.Tech / Bachelor's in engineering without branch restrictions\"}, \"graduation_eligibility\": {\"score\": 8.0, \"reason\": \"Graduation batch unstated (compatible with 2026 batch)\"}, \"experience_eligibility\": {\"score\": 8.0, \"reason\": \"Experience requirements unstated\"}, \"location_eligibility\": {\"score\": 8.0, \"reason\": \"Remote position (no explicit non-India restrictions detected)\"}, \"skills_match\": {\"score\": 6.0, \"matched_skills\": [\"C\", \"Java\", \"Python\"]}, \"employment_type\": {\"score\": 5.0, \"type\": \"Full-time\"}}",
     "eligibility_notes": "Review required: Graduation batch unstated, Exact years of experience unstated",
-    "notification_status": "NOTIFIED",
+    "notification_status": "PENDING",
     "first_discovered_at": "2026-11-17T11:20:41.605000",
     "last_seen_at": "2026-11-17T05:57:53.441796"
   },
@@ -1049,7 +1049,7 @@
     "match_score": 77.0,
     "score_reasons_json": "{\"role_relevance\": {\"score\": 25.0, \"reason\": \"Direct title match: 'software engineer'\"}, \"degree_eligibility\": {\"score\": 18.0, \"reason\": \"Accepts B.Tech / Bachelor's in engineering without branch restrictions\"}, \"graduation_eligibility\": {\"score\": 8.0, \"reason\": \"Graduation batch unstated (compatible with 2026 batch)\"}, \"experience_eligibility\": {\"score\": 8.0, \"reason\": \"Experience requirements unstated\"}, \"location_eligibility\": {\"score\": 5.0, \"reason\": \"Location unstated or unverified\"}, \"skills_match\": {\"score\": 8.0, \"matched_skills\": [\"Java\", \"Python\", \"Git\", \"GitHub\"]}, \"employment_type\": {\"score\": 5.0, \"type\": \"Full-time\"}}",
     "eligibility_notes": "Review required: Graduation batch unstated, Exact years of experience unstated, Location unverified",
-    "notification_status": "NOTIFIED",
+    "notification_status": "PENDING",
     "first_discovered_at": "2026-11-17T11:20:18.786748",
     "last_seen_at": "2026-11-17T05:57:47.126689"
   },
@@ -1080,7 +1080,7 @@
     "match_score": 76.0,
     "score_reasons_json": "{\"role_relevance\": {\"score\": 25.0, \"reason\": \"Direct title match: 'software engineer'\"}, \"degree_eligibility\": {\"score\": 18.0, \"reason\": \"Accepts B.Tech / Bachelor's in engineering without branch restrictions\"}, \"graduation_eligibility\": {\"score\": 8.0, \"reason\": \"Graduation batch unstated (compatible with 2026 batch)\"}, \"experience_eligibility\": {\"score\": 8.0, \"reason\": \"Experience requirements unstated\"}, \"location_eligibility\": {\"score\": 10.0, \"reason\": \"Location verified in India: 'Pune'\"}, \"skills_match\": {\"score\": 2.0, \"matched_skills\": [\"C\"]}, \"employment_type\": {\"score\": 5.0, \"type\": \"Full-time\"}}",
     "eligibility_notes": "Review required: Graduation batch unstated, Exact years of experience unstated",
-    "notification_status": "NOTIFIED",
+    "notification_status": "PENDING",
     "first_discovered_at": "2026-11-17T11:20:18.667014",
     "last_seen_at": "2026-11-17T14:14:11.775290"
   },
@@ -1111,7 +1111,7 @@
     "match_score": 76.0,
     "score_reasons_json": "{\"role_relevance\": {\"score\": 25.0, \"reason\": \"Direct title match: 'software engineer'\"}, \"degree_eligibility\": {\"score\": 18.0, \"reason\": \"Accepts B.Tech / Bachelor's in engineering without branch restrictions\"}, \"graduation_eligibility\": {\"score\": 8.0, \"reason\": \"Graduation batch unstated (compatible with 2026 batch)\"}, \"experience_eligibility\": {\"score\": 8.0, \"reason\": \"Experience requirements unstated\"}, \"location_eligibility\": {\"score\": 10.0, \"reason\": \"Location verified in India: 'Bangalore'\"}, \"skills_match\": {\"score\": 2.0, \"matched_skills\": [\"C\"]}, \"employment_type\": {\"score\": 5.0, \"type\": \"Full-time\"}}",
     "eligibility_notes": "Review required: Graduation batch unstated, Exact years of experience unstated",
-    "notification_status": "NOTIFIED",
+    "notification_status": "PENDING",
     "first_discovered_at": "2026-11-17T11:20:18.514447",
     "last_seen_at": "2026-11-17T14:14:11.748417"
   },
@@ -1142,7 +1142,7 @@
     "match_score": 76.0,
     "score_reasons_json": "{\"role_relevance\": {\"score\": 25.0, \"reason\": \"Direct title match: 'software engineer'\"}, \"degree_eligibility\": {\"score\": 20.0, \"reason\": \"Degree criteria explicitly accepts Electrical Engineering / related engineering disciplines\"}, \"graduation_eligibility\": {\"score\": 8.0, \"reason\": \"Graduation batch unstated (compatible with 2026 batch)\"}, \"experience_eligibility\": {\"score\": 8.0, \"reason\": \"Experience requirements unstated\"}, \"location_eligibility\": {\"score\": 8.0, \"reason\": \"Remote position (no explicit non-India restrictions detected)\"}, \"skills_match\": {\"score\": 2.0, \"matched_skills\": [\"Java\"]}, \"employment_type\": {\"score\": 5.0, \"type\": \"Full-time\"}}",
     "eligibility_notes": "Review required: Graduation batch unstated, Exact years of experience unstated",
-    "notification_status": "NOTIFIED",
+    "notification_status": "PENDING",
     "first_discovered_at": "2026-11-17T11:19:48.390753",
     "last_seen_at": "2026-11-17T05:57:39.740075"
   },
@@ -1173,7 +1173,7 @@
     "match_score": 76.0,
     "score_reasons_json": "{\"role_relevance\": {\"score\": 25.0, \"reason\": \"Direct title match: 'ai engineer'\"}, \"degree_eligibility\": {\"score\": 20.0, \"reason\": \"Degree criteria explicitly accepts Electrical Engineering / related engineering disciplines\"}, \"graduation_eligibility\": {\"score\": 8.0, \"reason\": \"Graduation batch unstated (compatible with 2026 batch)\"}, \"experience_eligibility\": {\"score\": 8.0, \"reason\": \"Experience requirements unstated\"}, \"location_eligibility\": {\"score\": 10.0, \"reason\": \"Location verified in India: 'India'\"}, \"skills_match\": {\"score\": 0.0, \"matched_skills\": []}, \"employment_type\": {\"score\": 5.0, \"type\": \"Full-time\"}}",
     "eligibility_notes": "Review required: Graduation batch unstated, Exact years of experience unstated",
-    "notification_status": "NOTIFIED",
+    "notification_status": "PENDING",
     "first_discovered_at": "2026-11-17T11:19:40.959585",
     "last_seen_at": "2026-11-17T14:14:10.337728"
   },
@@ -1204,7 +1204,7 @@
     "match_score": 76.0,
     "score_reasons_json": "{\"role_relevance\": {\"score\": 25.0, \"reason\": \"Direct title match: 'ai engineer'\"}, \"degree_eligibility\": {\"score\": 20.0, \"reason\": \"Degree criteria explicitly accepts Electrical Engineering / related engineering disciplines\"}, \"graduation_eligibility\": {\"score\": 8.0, \"reason\": \"Graduation batch unstated (compatible with 2026 batch)\"}, \"experience_eligibility\": {\"score\": 8.0, \"reason\": \"Experience requirements unstated\"}, \"location_eligibility\": {\"score\": 8.0, \"reason\": \"Remote position (no explicit non-India restrictions detected)\"}, \"skills_match\": {\"score\": 2.0, \"matched_skills\": [\"C\"]}, \"employment_type\": {\"score\": 5.0, \"type\": \"Full-time\"}}",
     "eligibility_notes": "Review required: Graduation batch unstated, Exact years of experience unstated",
-    "notification_status": "NOTIFIED",
+    "notification_status": "PENDING",
     "first_discovered_at": "2026-11-17T11:19:37.836451",
     "last_seen_at": "2026-11-17T05:57:35.830163"
   },
@@ -1235,7 +1235,7 @@
     "match_score": 76.0,
     "score_reasons_json": "{\"role_relevance\": {\"score\": 25.0, \"reason\": \"Direct title match: 'software development engineer'\"}, \"degree_eligibility\": {\"score\": 18.0, \"reason\": \"Accepts B.Tech / Bachelor's in engineering without branch restrictions\"}, \"graduation_eligibility\": {\"score\": 8.0, \"reason\": \"Graduation batch unstated (compatible with 2026 batch)\"}, \"experience_eligibility\": {\"score\": 8.0, \"reason\": \"Experience requirements unstated\"}, \"location_eligibility\": {\"score\": 10.0, \"reason\": \"Location verified in India: 'Bengaluru'\"}, \"skills_match\": {\"score\": 2.0, \"matched_skills\": [\"C\"]}, \"employment_type\": {\"score\": 5.0, \"type\": \"Full-time\"}}",
     "eligibility_notes": "Review required: Graduation batch unstated, Exact years of experience unstated",
-    "notification_status": "NOTIFIED",
+    "notification_status": "PENDING",
     "first_discovered_at": "2026-11-17T11:18:40.234199",
     "last_seen_at": "2026-11-17T14:14:04.698385"
   },
@@ -1266,7 +1266,7 @@
     "match_score": 75.0,
     "score_reasons_json": "{\"role_relevance\": {\"score\": 25.0, \"reason\": \"Direct title match: 'software engineer'\"}, \"degree_eligibility\": {\"score\": 20.0, \"reason\": \"Degree criteria explicitly accepts Electrical Engineering / related engineering disciplines\"}, \"graduation_eligibility\": {\"score\": 8.0, \"reason\": \"Graduation batch unstated (compatible with 2026 batch)\"}, \"experience_eligibility\": {\"score\": 8.0, \"reason\": \"Experience requirements unstated\"}, \"location_eligibility\": {\"score\": 5.0, \"reason\": \"Location unstated or unverified\"}, \"skills_match\": {\"score\": 4.0, \"matched_skills\": [\"C\", \"Java\"]}, \"employment_type\": {\"score\": 5.0, \"type\": \"Full-time\"}}",
     "eligibility_notes": "Review required: Graduation batch unstated, Exact years of experience unstated, Location unverified",
-    "notification_status": "NOTIFIED",
+    "notification_status": "PENDING",
     "first_discovered_at": "2026-11-17T11:19:48.438954",
     "last_seen_at": "2026-11-17T05:57:39.771595"
   },
@@ -1297,7 +1297,7 @@
     "match_score": 75.0,
     "score_reasons_json": "{\"role_relevance\": {\"score\": 25.0, \"reason\": \"Direct title match: 'software engineer'\"}, \"degree_eligibility\": {\"score\": 18.0, \"reason\": \"Accepts B.Tech / Bachelor's in engineering without branch restrictions\"}, \"graduation_eligibility\": {\"score\": 8.0, \"reason\": \"Graduation batch unstated (compatible with 2026 batch)\"}, \"experience_eligibility\": {\"score\": 8.0, \"reason\": \"Experience requirements unstated\"}, \"location_eligibility\": {\"score\": 5.0, \"reason\": \"Location unstated or unverified\"}, \"skills_match\": {\"score\": 6.0, \"matched_skills\": [\"C\", \"Java\", \"SQL\"]}, \"employment_type\": {\"score\": 5.0, \"type\": \"Full-time\"}}",
     "eligibility_notes": "Review required: Graduation batch unstated, Exact years of experience unstated, Location unverified",
-    "notification_status": "NOTIFIED",
+    "notification_status": "PENDING",
     "first_discovered_at": "2026-11-17T11:19:48.315154",
     "last_seen_at": "2026-11-17T05:57:39.748686"
   },
@@ -1328,7 +1328,7 @@
     "match_score": 74.0,
     "score_reasons_json": "{\"role_relevance\": {\"score\": 25.0, \"reason\": \"Direct title match: 'software engineer'\"}, \"degree_eligibility\": {\"score\": 10.0, \"reason\": \"Specific engineering branch requirements are unstated\"}, \"graduation_eligibility\": {\"score\": 15.0, \"reason\": \"Explicitly mentions eligible graduation batch 2026\"}, \"experience_eligibility\": {\"score\": 8.0, \"reason\": \"Experience requirements unstated\"}, \"location_eligibility\": {\"score\": 5.0, \"reason\": \"Location unstated or unverified\"}, \"skills_match\": {\"score\": 6.0, \"matched_skills\": [\"C\", \"Java\", \"Python\"]}, \"employment_type\": {\"score\": 5.0, \"type\": \"Full-time\"}}",
     "eligibility_notes": "Review required: Degree requirements unstated, Exact years of experience unstated, Location unverified",
-    "notification_status": "NOTIFIED",
+    "notification_status": "PENDING",
     "first_discovered_at": "2026-11-17T11:19:48.713109",
     "last_seen_at": "2026-11-17T05:57:39.849696"
   },
@@ -1359,7 +1359,7 @@
     "match_score": 74.0,
     "score_reasons_json": "{\"role_relevance\": {\"score\": 25.0, \"reason\": \"Direct title match: 'software engineer'\"}, \"degree_eligibility\": {\"score\": 10.0, \"reason\": \"Specific engineering branch requirements are unstated\"}, \"graduation_eligibility\": {\"score\": 8.0, \"reason\": \"Graduation batch unstated (compatible with 2026 batch)\"}, \"experience_eligibility\": {\"score\": 8.0, \"reason\": \"Experience requirements unstated\"}, \"location_eligibility\": {\"score\": 10.0, \"reason\": \"Location verified in India: 'India'\"}, \"skills_match\": {\"score\": 8.0, \"matched_skills\": [\"C\", \"Python\", \"JavaScript\", \"Git\"]}, \"employment_type\": {\"score\": 5.0, \"type\": \"Full-time\"}}",
     "eligibility_notes": "Review required: Degree requirements unstated, Graduation batch unstated, Exact years of experience unstated",
-    "notification_status": "NOTIFIED",
+    "notification_status": "PENDING",
     "first_discovered_at": "2026-11-17T11:19:27.416505",
     "last_seen_at": "2026-11-17T11:36:25.837838"
   },
@@ -1390,7 +1390,7 @@
     "match_score": 73.0,
     "score_reasons_json": "{\"role_relevance\": {\"score\": 25.0, \"reason\": \"Matches standard Software/AI engineering title pattern\"}, \"degree_eligibility\": {\"score\": 18.0, \"reason\": \"Accepts B.Tech / Bachelor's in engineering without branch restrictions\"}, \"graduation_eligibility\": {\"score\": 8.0, \"reason\": \"Graduation batch unstated (compatible with 2026 batch)\"}, \"experience_eligibility\": {\"score\": 8.0, \"reason\": \"Experience requirements unstated\"}, \"location_eligibility\": {\"score\": 5.0, \"reason\": \"Location unstated or unverified\"}, \"skills_match\": {\"score\": 4.0, \"matched_skills\": [\"C\", \"Python\"]}, \"employment_type\": {\"score\": 5.0, \"type\": \"Full-time\"}}",
     "eligibility_notes": "Review required: Graduation batch unstated, Exact years of experience unstated, Location unverified",
-    "notification_status": "NOTIFIED",
+    "notification_status": "PENDING",
     "first_discovered_at": "2026-11-17T11:20:46.823353",
     "last_seen_at": "2026-11-17T05:57:55.286596"
   },
@@ -1421,7 +1421,7 @@
     "match_score": 73.0,
     "score_reasons_json": "{\"role_relevance\": {\"score\": 25.0, \"reason\": \"Direct title match: 'software engineer'\"}, \"degree_eligibility\": {\"score\": 18.0, \"reason\": \"Accepts B.Tech / Bachelor's in engineering without branch restrictions\"}, \"graduation_eligibility\": {\"score\": 8.0, \"reason\": \"Graduation batch unstated (compatible with 2026 batch)\"}, \"experience_eligibility\": {\"score\": 8.0, \"reason\": \"Experience requirements unstated\"}, \"location_eligibility\": {\"score\": 5.0, \"reason\": \"Location unstated or unverified\"}, \"skills_match\": {\"score\": 4.0, \"matched_skills\": [\"C\", \"Java\"]}, \"employment_type\": {\"score\": 5.0, \"type\": \"Full-time\"}}",
     "eligibility_notes": "Review required: Graduation batch unstated, Exact years of experience unstated, Location unverified",
-    "notification_status": "NOTIFIED",
+    "notification_status": "PENDING",
     "first_discovered_at": "2026-11-17T11:20:18.703680",
     "last_seen_at": "2026-11-17T05:57:47.095882"
   },
@@ -1452,7 +1452,7 @@
     "match_score": 73.0,
     "score_reasons_json": "{\"role_relevance\": {\"score\": 25.0, \"reason\": \"Direct title match: 'software engineer'\"}, \"degree_eligibility\": {\"score\": 18.0, \"reason\": \"Accepts B.Tech / Bachelor's in engineering without branch restrictions\"}, \"graduation_eligibility\": {\"score\": 8.0, \"reason\": \"Graduation batch unstated (compatible with 2026 batch)\"}, \"experience_eligibility\": {\"score\": 8.0, \"reason\": \"Experience requirements unstated\"}, \"location_eligibility\": {\"score\": 5.0, \"reason\": \"Location unstated or unverified\"}, \"skills_match\": {\"score\": 4.0, \"matched_skills\": [\"C\", \"Python\"]}, \"employment_type\": {\"score\": 5.0, \"type\": \"Full-time\"}}",
     "eligibility_notes": "Review required: Graduation batch unstated, Exact years of experience unstated, Location unverified",
-    "notification_status": "NOTIFIED",
+    "notification_status": "PENDING",
     "first_discovered_at": "2026-11-17T11:20:18.628386",
     "last_seen_at": "2026-11-17T05:57:47.069847"
   },
@@ -1483,7 +1483,7 @@
     "match_score": 73.0,
     "score_reasons_json": "{\"role_relevance\": {\"score\": 25.0, \"reason\": \"Direct title match: 'software engineer'\"}, \"degree_eligibility\": {\"score\": 10.0, \"reason\": \"Specific engineering branch requirements are unstated\"}, \"graduation_eligibility\": {\"score\": 8.0, \"reason\": \"Graduation batch unstated (compatible with 2026 batch)\"}, \"experience_eligibility\": {\"score\": 15.0, \"reason\": \"Explicitly accepts 0-1 years / freshers / interns\"}, \"location_eligibility\": {\"score\": 10.0, \"reason\": \"Location verified in India: 'India'\"}, \"skills_match\": {\"score\": 0.0, \"matched_skills\": []}, \"employment_type\": {\"score\": 5.0, \"type\": \"Full-time\"}}",
     "eligibility_notes": "Review required: Degree requirements unstated, Graduation batch unstated",
-    "notification_status": "NOTIFIED",
+    "notification_status": "PENDING",
     "first_discovered_at": "2026-11-17T11:18:25.051351",
     "last_seen_at": "2026-11-17T14:13:59.974395"
   },
@@ -1514,7 +1514,7 @@
     "match_score": 71.0,
     "score_reasons_json": "{\"role_relevance\": {\"score\": 25.0, \"reason\": \"Direct title match: 'software engineer'\"}, \"degree_eligibility\": {\"score\": 18.0, \"reason\": \"Accepts B.Tech / Bachelor's in engineering without branch restrictions\"}, \"graduation_eligibility\": {\"score\": 8.0, \"reason\": \"Graduation batch unstated (compatible with 2026 batch)\"}, \"experience_eligibility\": {\"score\": 8.0, \"reason\": \"Experience requirements unstated\"}, \"location_eligibility\": {\"score\": 5.0, \"reason\": \"Location unstated or unverified\"}, \"skills_match\": {\"score\": 2.0, \"matched_skills\": [\"React\"]}, \"employment_type\": {\"score\": 5.0, \"type\": \"Full-time\"}}",
     "eligibility_notes": "Review required: Graduation batch unstated, Exact years of experience unstated, Location unverified",
-    "notification_status": "NOTIFIED",
+    "notification_status": "PENDING",
     "first_discovered_at": "2026-11-17T11:20:41.541256",
     "last_seen_at": "2026-11-17T05:57:53.424063"
   },
@@ -1545,7 +1545,7 @@
     "match_score": 71.0,
     "score_reasons_json": "{\"role_relevance\": {\"score\": 25.0, \"reason\": \"Direct title match: 'software engineer'\"}, \"degree_eligibility\": {\"score\": 18.0, \"reason\": \"Accepts B.Tech / Bachelor's in engineering without branch restrictions\"}, \"graduation_eligibility\": {\"score\": 8.0, \"reason\": \"Graduation batch unstated (compatible with 2026 batch)\"}, \"experience_eligibility\": {\"score\": 8.0, \"reason\": \"Experience requirements unstated\"}, \"location_eligibility\": {\"score\": 5.0, \"reason\": \"Location unstated or unverified\"}, \"skills_match\": {\"score\": 2.0, \"matched_skills\": [\"Java\"]}, \"employment_type\": {\"score\": 5.0, \"type\": \"Full-time\"}}",
     "eligibility_notes": "Review required: Graduation batch unstated, Exact years of experience unstated, Location unverified",
-    "notification_status": "NOTIFIED",
+    "notification_status": "PENDING",
     "first_discovered_at": "2026-11-17T11:20:41.088604",
     "last_seen_at": "2026-11-17T05:57:53.272470"
   },
@@ -1576,7 +1576,7 @@
     "match_score": 71.0,
     "score_reasons_json": "{\"role_relevance\": {\"score\": 25.0, \"reason\": \"Direct title match: 'frontend engineer'\"}, \"degree_eligibility\": {\"score\": 20.0, \"reason\": \"Degree criteria explicitly accepts Electrical Engineering / related engineering disciplines\"}, \"graduation_eligibility\": {\"score\": 8.0, \"reason\": \"Graduation batch unstated (compatible with 2026 batch)\"}, \"experience_eligibility\": {\"score\": 8.0, \"reason\": \"Experience requirements unstated\"}, \"location_eligibility\": {\"score\": 5.0, \"reason\": \"Location unstated or unverified\"}, \"skills_match\": {\"score\": 0.0, \"matched_skills\": []}, \"employment_type\": {\"score\": 5.0, \"type\": \"Full-time\"}}",
     "eligibility_notes": "Review required: Graduation batch unstated, Exact years of experience unstated, Location unverified",
-    "notification_status": "NOTIFIED",
+    "notification_status": "PENDING",
     "first_discovered_at": "2026-11-17T11:20:34.914832",
     "last_seen_at": "2026-11-17T05:57:50.831076"
   },
@@ -1607,7 +1607,7 @@
     "match_score": 71.0,
     "score_reasons_json": "{\"role_relevance\": {\"score\": 25.0, \"reason\": \"Direct title match: 'backend engineer'\"}, \"degree_eligibility\": {\"score\": 18.0, \"reason\": \"Accepts B.Tech / Bachelor's in engineering without branch restrictions\"}, \"graduation_eligibility\": {\"score\": 8.0, \"reason\": \"Graduation batch unstated (compatible with 2026 batch)\"}, \"experience_eligibility\": {\"score\": 8.0, \"reason\": \"Experience requirements unstated\"}, \"location_eligibility\": {\"score\": 5.0, \"reason\": \"Location unstated or unverified\"}, \"skills_match\": {\"score\": 2.0, \"matched_skills\": [\"Java\"]}, \"employment_type\": {\"score\": 5.0, \"type\": \"Full-time\"}}",
     "eligibility_notes": "Review required: Graduation batch unstated, Exact years of experience unstated, Location unverified",
-    "notification_status": "NOTIFIED",
+    "notification_status": "PENDING",
     "first_discovered_at": "2026-11-17T11:20:32.562620",
     "last_seen_at": "2026-11-17T05:57:49.874762"
   },
@@ -1638,7 +1638,7 @@
     "match_score": 71.0,
     "score_reasons_json": "{\"role_relevance\": {\"score\": 15.0, \"reason\": \"Title is generic but description indicates software engineering responsibilities\"}, \"degree_eligibility\": {\"score\": 18.0, \"reason\": \"Accepts B.Tech / Bachelor's in engineering without branch restrictions\"}, \"graduation_eligibility\": {\"score\": 8.0, \"reason\": \"Graduation batch unstated (compatible with 2026 batch)\"}, \"experience_eligibility\": {\"score\": 15.0, \"reason\": \"Explicitly accepts 0-1 years / freshers / interns\"}, \"location_eligibility\": {\"score\": 10.0, \"reason\": \"Location verified in India: 'Hyderabad'\"}, \"skills_match\": {\"score\": 0.0, \"matched_skills\": []}, \"employment_type\": {\"score\": 5.0, \"type\": \"Full-time\"}}",
     "eligibility_notes": "Review required: Graduation batch unstated",
-    "notification_status": "NOTIFIED",
+    "notification_status": "PENDING",
     "first_discovered_at": "2026-11-17T11:18:39.933597",
     "last_seen_at": "2026-11-17T14:14:04.603880"
   },
@@ -1669,7 +1669,7 @@
     "match_score": 70.0,
     "score_reasons_json": "{\"role_relevance\": {\"score\": 25.0, \"reason\": \"Matches standard Software/AI engineering title pattern\"}, \"degree_eligibility\": {\"score\": 10.0, \"reason\": \"Specific engineering branch requirements are unstated\"}, \"graduation_eligibility\": {\"score\": 8.0, \"reason\": \"Graduation batch unstated (compatible with 2026 batch)\"}, \"experience_eligibility\": {\"score\": 8.0, \"reason\": \"Experience requirements unstated\"}, \"location_eligibility\": {\"score\": 10.0, \"reason\": \"Location verified in India: 'Bangalore'\"}, \"skills_match\": {\"score\": 4.0, \"matched_skills\": [\"Python\", \"SQL\"]}, \"employment_type\": {\"score\": 5.0, \"type\": \"Full-time\"}}",
     "eligibility_notes": "Review required: Degree requirements unstated, Graduation batch unstated, Exact years of experience unstated",
-    "notification_status": "NOTIFIED",
+    "notification_status": "PENDING",
     "first_discovered_at": "2026-11-17T11:20:23.256185",
     "last_seen_at": "2026-11-17T14:14:12.376798"
   },
@@ -1700,7 +1700,7 @@
     "match_score": 70.0,
     "score_reasons_json": "{\"role_relevance\": {\"score\": 25.0, \"reason\": \"Direct title match: 'software engineer'\"}, \"degree_eligibility\": {\"score\": 10.0, \"reason\": \"Specific engineering branch requirements are unstated\"}, \"graduation_eligibility\": {\"score\": 8.0, \"reason\": \"Graduation batch unstated (compatible with 2026 batch)\"}, \"experience_eligibility\": {\"score\": 15.0, \"reason\": \"Explicitly accepts 0-1 years / freshers / interns\"}, \"location_eligibility\": {\"score\": 5.0, \"reason\": \"Location unstated or unverified\"}, \"skills_match\": {\"score\": 2.0, \"matched_skills\": [\"Python\"]}, \"employment_type\": {\"score\": 5.0, \"type\": \"Full-time\"}}",
     "eligibility_notes": "Review required: Degree requirements unstated, Graduation batch unstated, Location unverified",
-    "notification_status": "NOTIFIED",
+    "notification_status": "PENDING",
     "first_discovered_at": "2026-11-17T11:19:27.390409",
     "last_seen_at": "2026-11-17T05:57:35.172378"
   },
@@ -1731,7 +1731,7 @@
     "match_score": 69.0,
     "score_reasons_json": "{\"role_relevance\": {\"score\": 25.0, \"reason\": \"Direct title match: 'software engineer'\"}, \"degree_eligibility\": {\"score\": 18.0, \"reason\": \"Accepts B.Tech / Bachelor's in engineering without branch restrictions\"}, \"graduation_eligibility\": {\"score\": 8.0, \"reason\": \"Graduation batch unstated (compatible with 2026 batch)\"}, \"experience_eligibility\": {\"score\": 8.0, \"reason\": \"Experience requirements unstated\"}, \"location_eligibility\": {\"score\": 5.0, \"reason\": \"Location unstated or unverified\"}, \"skills_match\": {\"score\": 0.0, \"matched_skills\": []}, \"employment_type\": {\"score\": 5.0, \"type\": \"Full-time\"}}",
     "eligibility_notes": "Review required: Graduation batch unstated, Exact years of experience unstated, Location unverified",
-    "notification_status": "NOTIFIED",
+    "notification_status": "PENDING",
     "first_discovered_at": "2026-11-17T11:20:41.501216",
     "last_seen_at": "2026-11-17T05:57:53.410151"
   },
@@ -1762,7 +1762,7 @@
     "match_score": 69.0,
     "score_reasons_json": "{\"role_relevance\": {\"score\": 25.0, \"reason\": \"Direct title match: 'software engineer'\"}, \"degree_eligibility\": {\"score\": 18.0, \"reason\": \"Accepts B.Tech / Bachelor's in engineering without branch restrictions\"}, \"graduation_eligibility\": {\"score\": 8.0, \"reason\": \"Graduation batch unstated (compatible with 2026 batch)\"}, \"experience_eligibility\": {\"score\": 8.0, \"reason\": \"Experience requirements unstated\"}, \"location_eligibility\": {\"score\": 5.0, \"reason\": \"Location unstated or unverified\"}, \"skills_match\": {\"score\": 0.0, \"matched_skills\": []}, \"employment_type\": {\"score\": 5.0, \"type\": \"Full-time\"}}",
     "eligibility_notes": "Review required: Graduation batch unstated, Exact years of experience unstated, Location unverified",
-    "notification_status": "NOTIFIED",
+    "notification_status": "PENDING",
     "first_discovered_at": "2026-11-17T11:20:40.687017",
     "last_seen_at": "2026-11-17T05:57:53.144894"
   },
@@ -1793,7 +1793,7 @@
     "match_score": 69.0,
     "score_reasons_json": "{\"role_relevance\": {\"score\": 25.0, \"reason\": \"Direct title match: 'software engineer'\"}, \"degree_eligibility\": {\"score\": 18.0, \"reason\": \"Accepts B.Tech / Bachelor's in engineering without branch restrictions\"}, \"graduation_eligibility\": {\"score\": 8.0, \"reason\": \"Graduation batch unstated (compatible with 2026 batch)\"}, \"experience_eligibility\": {\"score\": 8.0, \"reason\": \"Experience requirements unstated\"}, \"location_eligibility\": {\"score\": 5.0, \"reason\": \"Location unstated or unverified\"}, \"skills_match\": {\"score\": 0.0, \"matched_skills\": []}, \"employment_type\": {\"score\": 5.0, \"type\": \"Full-time\"}}",
     "eligibility_notes": "Review required: Graduation batch unstated, Exact years of experience unstated, Location unverified",
-    "notification_status": "NOTIFIED",
+    "notification_status": "PENDING",
     "first_discovered_at": "2026-11-17T11:20:35.093211",
     "last_seen_at": "2026-11-17T05:57:50.913214"
   },
@@ -1824,7 +1824,7 @@
     "match_score": 69.0,
     "score_reasons_json": "{\"role_relevance\": {\"score\": 25.0, \"reason\": \"Direct title match: 'backend engineer'\"}, \"degree_eligibility\": {\"score\": 18.0, \"reason\": \"Accepts B.Tech / Bachelor's in engineering without branch restrictions\"}, \"graduation_eligibility\": {\"score\": 8.0, \"reason\": \"Graduation batch unstated (compatible with 2026 batch)\"}, \"experience_eligibility\": {\"score\": 8.0, \"reason\": \"Experience requirements unstated\"}, \"location_eligibility\": {\"score\": 5.0, \"reason\": \"Location unstated or unverified\"}, \"skills_match\": {\"score\": 0.0, \"matched_skills\": []}, \"employment_type\": {\"score\": 5.0, \"type\": \"Full-time\"}}",
     "eligibility_notes": "Review required: Graduation batch unstated, Exact years of experience unstated, Location unverified",
-    "notification_status": "NOTIFIED",
+    "notification_status": "PENDING",
     "first_discovered_at": "2026-11-17T11:20:32.598471",
     "last_seen_at": "2026-11-17T05:57:49.886460"
   },
@@ -1855,7 +1855,7 @@
     "match_score": 68.0,
     "score_reasons_json": "{\"role_relevance\": {\"score\": 15.0, \"reason\": \"Title is generic but description indicates software engineering responsibilities\"}, \"degree_eligibility\": {\"score\": 18.0, \"reason\": \"Accepts B.Tech / Bachelor's in engineering without branch restrictions\"}, \"graduation_eligibility\": {\"score\": 8.0, \"reason\": \"Graduation batch unstated (compatible with 2026 batch)\"}, \"experience_eligibility\": {\"score\": 8.0, \"reason\": \"Experience requirements unstated\"}, \"location_eligibility\": {\"score\": 10.0, \"reason\": \"Location verified in India: 'Bangalore'\"}, \"skills_match\": {\"score\": 4.0, \"matched_skills\": [\"Python\", \"Git\"]}, \"employment_type\": {\"score\": 5.0, \"type\": \"Full-time\"}}",
     "eligibility_notes": "Review required: Graduation batch unstated, Exact years of experience unstated",
-    "notification_status": "NOTIFIED",
+    "notification_status": "PENDING",
     "first_discovered_at": "2026-11-17T11:20:22.802948",
     "last_seen_at": "2026-11-17T14:14:12.347788"
   },
@@ -1886,7 +1886,7 @@
     "match_score": 68.0,
     "score_reasons_json": "{\"role_relevance\": {\"score\": 15.0, \"reason\": \"Title is generic but description indicates software engineering responsibilities\"}, \"degree_eligibility\": {\"score\": 18.0, \"reason\": \"Accepts B.Tech / Bachelor's in engineering without branch restrictions\"}, \"graduation_eligibility\": {\"score\": 8.0, \"reason\": \"Graduation batch unstated (compatible with 2026 batch)\"}, \"experience_eligibility\": {\"score\": 8.0, \"reason\": \"Experience requirements unstated\"}, \"location_eligibility\": {\"score\": 10.0, \"reason\": \"Location verified in India: 'Gurugram'\"}, \"skills_match\": {\"score\": 4.0, \"matched_skills\": [\"C\", \"Java\"]}, \"employment_type\": {\"score\": 5.0, \"type\": \"Full-time\"}}",
     "eligibility_notes": "Review required: Graduation batch unstated, Exact years of experience unstated",
-    "notification_status": "NOTIFIED",
+    "notification_status": "PENDING",
     "first_discovered_at": "2026-11-17T11:18:40.498411",
     "last_seen_at": "2026-11-17T14:14:04.790701"
   },
@@ -1917,7 +1917,7 @@
     "match_score": 67.0,
     "score_reasons_json": "{\"role_relevance\": {\"score\": 25.0, \"reason\": \"Matches standard Software/AI engineering title pattern\"}, \"degree_eligibility\": {\"score\": 10.0, \"reason\": \"Specific engineering branch requirements are unstated\"}, \"graduation_eligibility\": {\"score\": 8.0, \"reason\": \"Graduation batch unstated (compatible with 2026 batch)\"}, \"experience_eligibility\": {\"score\": 8.0, \"reason\": \"Experience requirements unstated\"}, \"location_eligibility\": {\"score\": 5.0, \"reason\": \"Location unstated or unverified\"}, \"skills_match\": {\"score\": 6.0, \"matched_skills\": [\"C\", \"Java\", \"Python\"]}, \"employment_type\": {\"score\": 5.0, \"type\": \"Full-time\"}}",
     "eligibility_notes": "Review required: Degree requirements unstated, Graduation batch unstated, Exact years of experience unstated, Location unverified",
-    "notification_status": "NOTIFIED",
+    "notification_status": "PENDING",
     "first_discovered_at": "2026-11-17T11:20:45.161872",
     "last_seen_at": "2026-11-17T05:57:54.648096"
   },
@@ -1948,7 +1948,7 @@
     "match_score": 67.0,
     "score_reasons_json": "{\"role_relevance\": {\"score\": 25.0, \"reason\": \"Direct title match: 'software engineer'\"}, \"degree_eligibility\": {\"score\": 10.0, \"reason\": \"Specific engineering branch requirements are unstated\"}, \"graduation_eligibility\": {\"score\": 8.0, \"reason\": \"Graduation batch unstated (compatible with 2026 batch)\"}, \"experience_eligibility\": {\"score\": 8.0, \"reason\": \"Experience requirements unstated\"}, \"location_eligibility\": {\"score\": 5.0, \"reason\": \"Location unstated or unverified\"}, \"skills_match\": {\"score\": 6.0, \"matched_skills\": [\"C\", \"Java\", \"Python\"]}, \"employment_type\": {\"score\": 5.0, \"type\": \"Full-time\"}}",
     "eligibility_notes": "Review required: Degree requirements unstated, Graduation batch unstated, Exact years of experience unstated, Location unverified",
-    "notification_status": "NOTIFIED",
+    "notification_status": "PENDING",
     "first_discovered_at": "2026-11-17T11:19:27.406580",
     "last_seen_at": "2026-11-17T05:57:35.185789"
   },
@@ -1979,7 +1979,7 @@
     "match_score": 66.0,
     "score_reasons_json": "{\"role_relevance\": {\"score\": 25.0, \"reason\": \"Direct title match: 'application developer'\"}, \"degree_eligibility\": {\"score\": 10.0, \"reason\": \"Specific engineering branch requirements are unstated\"}, \"graduation_eligibility\": {\"score\": 8.0, \"reason\": \"Graduation batch unstated (compatible with 2026 batch)\"}, \"experience_eligibility\": {\"score\": 8.0, \"reason\": \"Experience requirements unstated\"}, \"location_eligibility\": {\"score\": 10.0, \"reason\": \"Location verified in India: 'India'\"}, \"skills_match\": {\"score\": 0.0, \"matched_skills\": []}, \"employment_type\": {\"score\": 5.0, \"type\": \"Full-time\"}}",
     "eligibility_notes": "Review required: Degree requirements unstated, Graduation batch unstated, Exact years of experience unstated",
-    "notification_status": "NOTIFIED",
+    "notification_status": "PENDING",
     "first_discovered_at": "2026-11-17T14:14:09.534028",
     "last_seen_at": "2026-11-17T14:14:09.534028"
   },
@@ -2010,7 +2010,7 @@
     "match_score": 66.0,
     "score_reasons_json": "{\"role_relevance\": {\"score\": 25.0, \"reason\": \"Direct title match: 'devops engineer'\"}, \"degree_eligibility\": {\"score\": 10.0, \"reason\": \"Specific engineering branch requirements are unstated\"}, \"graduation_eligibility\": {\"score\": 8.0, \"reason\": \"Graduation batch unstated (compatible with 2026 batch)\"}, \"experience_eligibility\": {\"score\": 8.0, \"reason\": \"Experience requirements unstated\"}, \"location_eligibility\": {\"score\": 10.0, \"reason\": \"Location verified in India: 'India'\"}, \"skills_match\": {\"score\": 0.0, \"matched_skills\": []}, \"employment_type\": {\"score\": 5.0, \"type\": \"Full-time\"}}",
     "eligibility_notes": "Review required: Degree requirements unstated, Graduation batch unstated, Exact years of experience unstated",
-    "notification_status": "NOTIFIED",
+    "notification_status": "PENDING",
     "first_discovered_at": "2026-11-17T11:19:09.847154",
     "last_seen_at": "2026-11-17T14:14:09.548415"
   },
@@ -2041,7 +2041,7 @@
     "match_score": 66.0,
     "score_reasons_json": "{\"role_relevance\": {\"score\": 25.0, \"reason\": \"Direct title match: 'devops engineer'\"}, \"degree_eligibility\": {\"score\": 10.0, \"reason\": \"Specific engineering branch requirements are unstated\"}, \"graduation_eligibility\": {\"score\": 8.0, \"reason\": \"Graduation batch unstated (compatible with 2026 batch)\"}, \"experience_eligibility\": {\"score\": 8.0, \"reason\": \"Experience requirements unstated\"}, \"location_eligibility\": {\"score\": 10.0, \"reason\": \"Location verified in India: 'India'\"}, \"skills_match\": {\"score\": 0.0, \"matched_skills\": []}, \"employment_type\": {\"score\": 5.0, \"type\": \"Full-time\"}}",
     "eligibility_notes": "Review required: Degree requirements unstated, Graduation batch unstated, Exact years of experience unstated",
-    "notification_status": "NOTIFIED",
+    "notification_status": "PENDING",
     "first_discovered_at": "2026-11-17T11:19:09.838605",
     "last_seen_at": "2026-11-17T14:14:09.546733"
   },
@@ -2072,7 +2072,7 @@
     "match_score": 66.0,
     "score_reasons_json": "{\"role_relevance\": {\"score\": 25.0, \"reason\": \"Direct title match: 'ai engineer'\"}, \"degree_eligibility\": {\"score\": 10.0, \"reason\": \"Specific engineering branch requirements are unstated\"}, \"graduation_eligibility\": {\"score\": 8.0, \"reason\": \"Graduation batch unstated (compatible with 2026 batch)\"}, \"experience_eligibility\": {\"score\": 8.0, \"reason\": \"Experience requirements unstated\"}, \"location_eligibility\": {\"score\": 10.0, \"reason\": \"Location verified in India: 'India'\"}, \"skills_match\": {\"score\": 0.0, \"matched_skills\": []}, \"employment_type\": {\"score\": 5.0, \"type\": \"Full-time\"}}",
     "eligibility_notes": "Review required: Degree requirements unstated, Graduation batch unstated, Exact years of experience unstated",
-    "notification_status": "NOTIFIED",
+    "notification_status": "PENDING",
     "first_discovered_at": "2026-11-17T11:19:09.828650",
     "last_seen_at": "2026-11-17T14:14:09.545296"
   },
@@ -2103,7 +2103,7 @@
     "match_score": 66.0,
     "score_reasons_json": "{\"role_relevance\": {\"score\": 25.0, \"reason\": \"Matches standard Software/AI engineering title pattern\"}, \"degree_eligibility\": {\"score\": 10.0, \"reason\": \"Specific engineering branch requirements are unstated\"}, \"graduation_eligibility\": {\"score\": 8.0, \"reason\": \"Graduation batch unstated (compatible with 2026 batch)\"}, \"experience_eligibility\": {\"score\": 8.0, \"reason\": \"Experience requirements unstated\"}, \"location_eligibility\": {\"score\": 10.0, \"reason\": \"Location verified in India: 'India'\"}, \"skills_match\": {\"score\": 0.0, \"matched_skills\": []}, \"employment_type\": {\"score\": 5.0, \"type\": \"Full-time\"}}",
     "eligibility_notes": "Review required: Degree requirements unstated, Graduation batch unstated, Exact years of experience unstated",
-    "notification_status": "NOTIFIED",
+    "notification_status": "PENDING",
     "first_discovered_at": "2026-11-17T11:19:09.820133",
     "last_seen_at": "2026-11-17T14:14:09.543974"
   },
@@ -2134,7 +2134,7 @@
     "match_score": 66.0,
     "score_reasons_json": "{\"role_relevance\": {\"score\": 25.0, \"reason\": \"Direct title match: 'software engineer'\"}, \"degree_eligibility\": {\"score\": 10.0, \"reason\": \"Specific engineering branch requirements are unstated\"}, \"graduation_eligibility\": {\"score\": 8.0, \"reason\": \"Graduation batch unstated (compatible with 2026 batch)\"}, \"experience_eligibility\": {\"score\": 8.0, \"reason\": \"Experience requirements unstated\"}, \"location_eligibility\": {\"score\": 10.0, \"reason\": \"Location verified in India: 'India'\"}, \"skills_match\": {\"score\": 0.0, \"matched_skills\": []}, \"employment_type\": {\"score\": 5.0, \"type\": \"Full-time\"}}",
     "eligibility_notes": "Review required: Degree requirements unstated, Graduation batch unstated, Exact years of experience unstated",
-    "notification_status": "NOTIFIED",
+    "notification_status": "PENDING",
     "first_discovered_at": "2026-11-17T11:19:09.810765",
     "last_seen_at": "2026-11-17T14:14:09.542338"
   },
@@ -2165,7 +2165,7 @@
     "match_score": 66.0,
     "score_reasons_json": "{\"role_relevance\": {\"score\": 25.0, \"reason\": \"Direct title match: 'software engineer'\"}, \"degree_eligibility\": {\"score\": 10.0, \"reason\": \"Specific engineering branch requirements are unstated\"}, \"graduation_eligibility\": {\"score\": 8.0, \"reason\": \"Graduation batch unstated (compatible with 2026 batch)\"}, \"experience_eligibility\": {\"score\": 8.0, \"reason\": \"Experience requirements unstated\"}, \"location_eligibility\": {\"score\": 10.0, \"reason\": \"Location verified in India: 'India'\"}, \"skills_match\": {\"score\": 0.0, \"matched_skills\": []}, \"employment_type\": {\"score\": 5.0, \"type\": \"Full-time\"}}",
     "eligibility_notes": "Review required: Degree requirements unstated, Graduation batch unstated, Exact years of experience unstated",
-    "notification_status": "NOTIFIED",
+    "notification_status": "PENDING",
     "first_discovered_at": "2026-11-17T11:19:09.802014",
     "last_seen_at": "2026-11-17T14:14:09.541088"
   },
@@ -2196,7 +2196,7 @@
     "match_score": 66.0,
     "score_reasons_json": "{\"role_relevance\": {\"score\": 25.0, \"reason\": \"Direct title match: 'software engineer'\"}, \"degree_eligibility\": {\"score\": 10.0, \"reason\": \"Specific engineering branch requirements are unstated\"}, \"graduation_eligibility\": {\"score\": 8.0, \"reason\": \"Graduation batch unstated (compatible with 2026 batch)\"}, \"experience_eligibility\": {\"score\": 8.0, \"reason\": \"Experience requirements unstated\"}, \"location_eligibility\": {\"score\": 10.0, \"reason\": \"Location verified in India: 'India'\"}, \"skills_match\": {\"score\": 0.0, \"matched_skills\": []}, \"employment_type\": {\"score\": 5.0, \"type\": \"Full-time\"}}",
     "eligibility_notes": "Review required: Degree requirements unstated, Graduation batch unstated, Exact years of experience unstated",
-    "notification_status": "NOTIFIED",
+    "notification_status": "PENDING",
     "first_discovered_at": "2026-11-17T11:19:09.792689",
     "last_seen_at": "2026-11-17T14:14:09.539877"
   },
@@ -2227,7 +2227,7 @@
     "match_score": 66.0,
     "score_reasons_json": "{\"role_relevance\": {\"score\": 25.0, \"reason\": \"Direct title match: 'software engineer'\"}, \"degree_eligibility\": {\"score\": 10.0, \"reason\": \"Specific engineering branch requirements are unstated\"}, \"graduation_eligibility\": {\"score\": 8.0, \"reason\": \"Graduation batch unstated (compatible with 2026 batch)\"}, \"experience_eligibility\": {\"score\": 8.0, \"reason\": \"Experience requirements unstated\"}, \"location_eligibility\": {\"score\": 10.0, \"reason\": \"Location verified in India: 'India'\"}, \"skills_match\": {\"score\": 0.0, \"matched_skills\": []}, \"employment_type\": {\"score\": 5.0, \"type\": \"Full-time\"}}",
     "eligibility_notes": "Review required: Degree requirements unstated, Graduation batch unstated, Exact years of experience unstated",
-    "notification_status": "NOTIFIED",
+    "notification_status": "PENDING",
     "first_discovered_at": "2026-11-17T11:19:09.783938",
     "last_seen_at": "2026-11-17T14:14:09.538484"
   },
@@ -2258,7 +2258,7 @@
     "match_score": 66.0,
     "score_reasons_json": "{\"role_relevance\": {\"score\": 25.0, \"reason\": \"Direct title match: 'software engineer'\"}, \"degree_eligibility\": {\"score\": 10.0, \"reason\": \"Specific engineering branch requirements are unstated\"}, \"graduation_eligibility\": {\"score\": 8.0, \"reason\": \"Graduation batch unstated (compatible with 2026 batch)\"}, \"experience_eligibility\": {\"score\": 8.0, \"reason\": \"Experience requirements unstated\"}, \"location_eligibility\": {\"score\": 10.0, \"reason\": \"Location verified in India: 'India'\"}, \"skills_match\": {\"score\": 0.0, \"matched_skills\": []}, \"employment_type\": {\"score\": 5.0, \"type\": \"Full-time\"}}",
     "eligibility_notes": "Review required: Degree requirements unstated, Graduation batch unstated, Exact years of experience unstated",
-    "notification_status": "NOTIFIED",
+    "notification_status": "PENDING",
     "first_discovered_at": "2026-11-17T11:19:09.773893",
     "last_seen_at": "2026-11-17T14:14:09.537280"
   },
@@ -2289,7 +2289,7 @@
     "match_score": 66.0,
     "score_reasons_json": "{\"role_relevance\": {\"score\": 25.0, \"reason\": \"Direct title match: 'software engineer'\"}, \"degree_eligibility\": {\"score\": 10.0, \"reason\": \"Specific engineering branch requirements are unstated\"}, \"graduation_eligibility\": {\"score\": 8.0, \"reason\": \"Graduation batch unstated (compatible with 2026 batch)\"}, \"experience_eligibility\": {\"score\": 8.0, \"reason\": \"Experience requirements unstated\"}, \"location_eligibility\": {\"score\": 10.0, \"reason\": \"Location verified in India: 'India'\"}, \"skills_match\": {\"score\": 0.0, \"matched_skills\": []}, \"employment_type\": {\"score\": 5.0, \"type\": \"Full-time\"}}",
     "eligibility_notes": "Review required: Degree requirements unstated, Graduation batch unstated, Exact years of experience unstated",
-    "notification_status": "NOTIFIED",
+    "notification_status": "PENDING",
     "first_discovered_at": "2026-11-17T11:19:09.764185",
     "last_seen_at": "2026-11-17T14:14:09.535980"
   },
@@ -2320,7 +2320,7 @@
     "match_score": 66.0,
     "score_reasons_json": "{\"role_relevance\": {\"score\": 25.0, \"reason\": \"Matches standard Software/AI engineering title pattern\"}, \"degree_eligibility\": {\"score\": 10.0, \"reason\": \"Specific engineering branch requirements are unstated\"}, \"graduation_eligibility\": {\"score\": 8.0, \"reason\": \"Graduation batch unstated (compatible with 2026 batch)\"}, \"experience_eligibility\": {\"score\": 8.0, \"reason\": \"Experience requirements unstated\"}, \"location_eligibility\": {\"score\": 10.0, \"reason\": \"Location verified in India: 'India'\"}, \"skills_match\": {\"score\": 0.0, \"matched_skills\": []}, \"employment_type\": {\"score\": 5.0, \"type\": \"Full-time\"}}",
     "eligibility_notes": "Review required: Degree requirements unstated, Graduation batch unstated, Exact years of experience unstated",
-    "notification_status": "NOTIFIED",
+    "notification_status": "PENDING",
     "first_discovered_at": "2026-11-17T11:19:09.750199",
     "last_seen_at": "2026-11-17T14:14:09.531627"
   },
@@ -2351,7 +2351,7 @@
     "match_score": 65.0,
     "score_reasons_json": "{\"role_relevance\": {\"score\": 15.0, \"reason\": \"Title is generic but description indicates software engineering responsibilities\"}, \"degree_eligibility\": {\"score\": 18.0, \"reason\": \"Accepts B.Tech / Bachelor's in engineering without branch restrictions\"}, \"graduation_eligibility\": {\"score\": 8.0, \"reason\": \"Graduation batch unstated (compatible with 2026 batch)\"}, \"experience_eligibility\": {\"score\": 8.0, \"reason\": \"Experience requirements unstated\"}, \"location_eligibility\": {\"score\": 10.0, \"reason\": \"Location verified in India: 'Noida'\"}, \"skills_match\": {\"score\": 4.0, \"matched_skills\": [\"Python\", \"SQL\"]}, \"employment_type\": {\"score\": 2.0, \"type\": \"Full-time Employment\"}}",
     "eligibility_notes": "Review required: Graduation batch unstated, Exact years of experience unstated",
-    "notification_status": "NOTIFIED",
+    "notification_status": "PENDING",
     "first_discovered_at": "2026-11-17T11:21:23.861406",
     "last_seen_at": "2026-11-17T14:14:23.318782"
   },
@@ -2382,7 +2382,7 @@
     "match_score": 65.0,
     "score_reasons_json": "{\"role_relevance\": {\"score\": 15.0, \"reason\": \"Title is generic but description indicates software engineering responsibilities\"}, \"degree_eligibility\": {\"score\": 18.0, \"reason\": \"Accepts B.Tech / Bachelor's in engineering without branch restrictions\"}, \"graduation_eligibility\": {\"score\": 8.0, \"reason\": \"Graduation batch unstated (compatible with 2026 batch)\"}, \"experience_eligibility\": {\"score\": 8.0, \"reason\": \"Experience requirements unstated\"}, \"location_eligibility\": {\"score\": 5.0, \"reason\": \"Location unstated or unverified\"}, \"skills_match\": {\"score\": 6.0, \"matched_skills\": [\"C\", \"Python\", \"SQL\"]}, \"employment_type\": {\"score\": 5.0, \"type\": \"Full-time\"}}",
     "eligibility_notes": "Review required: Graduation batch unstated, Exact years of experience unstated, Location unverified",
-    "notification_status": "NOTIFIED",
+    "notification_status": "PENDING",
     "first_discovered_at": "2026-11-17T11:20:45.800693",
     "last_seen_at": "2026-11-17T05:57:54.903837"
   },
@@ -2413,7 +2413,7 @@
     "match_score": 64.0,
     "score_reasons_json": "{\"role_relevance\": {\"score\": 15.0, \"reason\": \"Title is generic but description indicates software engineering responsibilities\"}, \"degree_eligibility\": {\"score\": 10.0, \"reason\": \"Specific engineering branch requirements are unstated\"}, \"graduation_eligibility\": {\"score\": 15.0, \"reason\": \"Explicitly mentions eligible graduation batch 2027\"}, \"experience_eligibility\": {\"score\": 8.0, \"reason\": \"Experience requirements unstated\"}, \"location_eligibility\": {\"score\": 5.0, \"reason\": \"Location unstated or unverified\"}, \"skills_match\": {\"score\": 6.0, \"matched_skills\": [\"C\", \"Java\", \"Python\"]}, \"employment_type\": {\"score\": 5.0, \"type\": \"Full-time\"}}",
     "eligibility_notes": "Review required: Degree requirements unstated, Exact years of experience unstated, Location unverified",
-    "notification_status": "NOTIFIED",
+    "notification_status": "PENDING",
     "first_discovered_at": "2026-11-17T11:19:48.588389",
     "last_seen_at": "2026-11-17T05:57:39.817185"
   },
@@ -2444,7 +2444,7 @@
     "match_score": 64.0,
     "score_reasons_json": "{\"role_relevance\": {\"score\": 15.0, \"reason\": \"Title is generic but description indicates software engineering responsibilities\"}, \"degree_eligibility\": {\"score\": 10.0, \"reason\": \"Specific engineering branch requirements are unstated\"}, \"graduation_eligibility\": {\"score\": 15.0, \"reason\": \"Explicitly mentions eligible graduation batch 2027\"}, \"experience_eligibility\": {\"score\": 8.0, \"reason\": \"Experience requirements unstated\"}, \"location_eligibility\": {\"score\": 5.0, \"reason\": \"Location unstated or unverified\"}, \"skills_match\": {\"score\": 6.0, \"matched_skills\": [\"C\", \"Java\", \"Python\"]}, \"employment_type\": {\"score\": 5.0, \"type\": \"Full-time\"}}",
     "eligibility_notes": "Review required: Degree requirements unstated, Exact years of experience unstated, Location unverified",
-    "notification_status": "NOTIFIED",
+    "notification_status": "PENDING",
     "first_discovered_at": "2026-11-17T11:19:48.518528",
     "last_seen_at": "2026-11-17T05:57:39.800858"
   },
@@ -2475,7 +2475,7 @@
     "match_score": 63.0,
     "score_reasons_json": "{\"role_relevance\": {\"score\": 15.0, \"reason\": \"Title is generic but description indicates software engineering responsibilities\"}, \"degree_eligibility\": {\"score\": 18.0, \"reason\": \"Accepts B.Tech / Bachelor's in engineering without branch restrictions\"}, \"graduation_eligibility\": {\"score\": 8.0, \"reason\": \"Graduation batch unstated (compatible with 2026 batch)\"}, \"experience_eligibility\": {\"score\": 8.0, \"reason\": \"Experience requirements unstated\"}, \"location_eligibility\": {\"score\": 5.0, \"reason\": \"Location unstated or unverified\"}, \"skills_match\": {\"score\": 4.0, \"matched_skills\": [\"C\", \"Python\"]}, \"employment_type\": {\"score\": 5.0, \"type\": \"Full-time\"}}",
     "eligibility_notes": "Review required: Graduation batch unstated, Exact years of experience unstated, Location unverified",
-    "notification_status": "NOTIFIED",
+    "notification_status": "PENDING",
     "first_discovered_at": "2026-11-17T11:20:45.909032",
     "last_seen_at": "2026-11-17T05:57:54.940356"
   },
@@ -2506,7 +2506,7 @@
     "match_score": 61.0,
     "score_reasons_json": "{\"role_relevance\": {\"score\": 25.0, \"reason\": \"Matches standard Software/AI engineering title pattern\"}, \"degree_eligibility\": {\"score\": 10.0, \"reason\": \"Specific engineering branch requirements are unstated\"}, \"graduation_eligibility\": {\"score\": 8.0, \"reason\": \"Graduation batch unstated (compatible with 2026 batch)\"}, \"experience_eligibility\": {\"score\": 8.0, \"reason\": \"Experience requirements unstated\"}, \"location_eligibility\": {\"score\": 5.0, \"reason\": \"Location unstated or unverified\"}, \"skills_match\": {\"score\": 0.0, \"matched_skills\": []}, \"employment_type\": {\"score\": 5.0, \"type\": \"Internship\"}}",
     "eligibility_notes": "Review required: Degree requirements unstated, Graduation batch unstated, Exact years of experience unstated, Location unverified",
-    "notification_status": "NOTIFIED",
+    "notification_status": "PENDING",
     "first_discovered_at": "2026-11-17T11:19:16.292695",
     "last_seen_at": "2026-11-17T11:35:57.698436"
   },
@@ -2537,7 +2537,7 @@
     "match_score": 61.0,
     "score_reasons_json": "{\"role_relevance\": {\"score\": 25.0, \"reason\": \"Matches standard Software/AI engineering title pattern\"}, \"degree_eligibility\": {\"score\": 10.0, \"reason\": \"Specific engineering branch requirements are unstated\"}, \"graduation_eligibility\": {\"score\": 8.0, \"reason\": \"Graduation batch unstated (compatible with 2026 batch)\"}, \"experience_eligibility\": {\"score\": 8.0, \"reason\": \"Experience requirements unstated\"}, \"location_eligibility\": {\"score\": 5.0, \"reason\": \"Location unstated or unverified\"}, \"skills_match\": {\"score\": 0.0, \"matched_skills\": []}, \"employment_type\": {\"score\": 5.0, \"type\": \"Internship\"}}",
     "eligibility_notes": "Review required: Degree requirements unstated, Graduation batch unstated, Exact years of experience unstated, Location unverified",
-    "notification_status": "NOTIFIED",
+    "notification_status": "PENDING",
     "first_discovered_at": "2026-11-17T11:19:16.281644",
     "last_seen_at": "2026-11-17T11:35:57.686072"
   },
@@ -2568,7 +2568,7 @@
     "match_score": 59.0,
     "score_reasons_json": "{\"role_relevance\": {\"score\": 15.0, \"reason\": \"Title is generic but description indicates software engineering responsibilities\"}, \"degree_eligibility\": {\"score\": 18.0, \"reason\": \"Accepts B.Tech / Bachelor's in engineering without branch restrictions\"}, \"graduation_eligibility\": {\"score\": 8.0, \"reason\": \"Graduation batch unstated (compatible with 2026 batch)\"}, \"experience_eligibility\": {\"score\": 8.0, \"reason\": \"Experience requirements unstated\"}, \"location_eligibility\": {\"score\": 5.0, \"reason\": \"Location unstated or unverified\"}, \"skills_match\": {\"score\": 0.0, \"matched_skills\": []}, \"employment_type\": {\"score\": 5.0, \"type\": \"Full-time\"}}",
     "eligibility_notes": "Review required: Graduation batch unstated, Exact years of experience unstated, Location unverified",
-    "notification_status": "NOTIFIED",
+    "notification_status": "PENDING",
     "first_discovered_at": "2026-11-17T11:20:41.732578",
     "last_seen_at": "2026-11-17T05:57:53.498884"
   }

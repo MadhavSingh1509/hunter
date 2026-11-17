@@ -19,9 +19,9 @@ class HunterEmailService:
     def __init__(self, smtp_server: str = "smtp.gmail.com", smtp_port: int = 465):
         self.smtp_server = smtp_server
         self.smtp_port = smtp_port
-        self.email_user = os.environ.get("EMAIL_USER") or os.environ.get("EMAIL_ADDRESS") or ""
-        self.email_pass = os.environ.get("EMAIL_PASS") or os.environ.get("EMAIL_PASSWORD") or ""
-        self.email_to = os.environ.get("EMAIL_TO") or self.email_user or "adityamadhav1509@gmail.com"
+        self.email_user = (os.environ.get("EMAIL_USER") or os.environ.get("EMAIL_ADDRESS") or "").strip()
+        self.email_pass = (os.environ.get("EMAIL_PASS") or os.environ.get("EMAIL_PASSWORD") or "").strip()
+        self.email_to = (os.environ.get("EMAIL_TO") or self.email_user or "adityamadhav1509@gmail.com").strip()
 
     def is_configured(self) -> bool:
         return bool(self.email_user and self.email_pass)
@@ -220,8 +220,8 @@ class HunterEmailService:
 
         msg = MIMEMultipart("alternative")
         msg["Subject"] = subject
-        # Use exact authenticated email address to maintain DKIM and SPF alignment
-        msg["From"] = formataddr(("Hunter Job Alert", self.email_user)) if self.email_user else "Hunter"
+        # Bare email matching authenticated SMTP user ensures 100% DKIM and SPF compliance with Gmail
+        msg["From"] = self.email_user
         msg["To"] = self.email_to
         msg["Reply-To"] = self.email_user
         msg["Return-Path"] = self.email_user
@@ -238,11 +238,23 @@ class HunterEmailService:
         msg.attach(text_part)
         msg.attach(html_part)
 
+        sender_domain = self.email_user.split('@')[-1] if '@' in self.email_user else 'unknown'
+        recipient_domain = self.email_to.split('@')[-1] if '@' in self.email_to else 'unknown'
+        sender_masked = f"{self.email_user[:3]}***@{sender_domain}" if len(self.email_user) > 3 else self.email_user
+        recipient_masked = f"{self.email_to[:3]}***@{recipient_domain}" if len(self.email_to) > 3 else self.email_to
+
+        recipients = [r.strip() for r in self.email_to.split(",") if r.strip()]
+
         try:
-            with smtplib.SMTP_SSL(self.smtp_server, self.smtp_port, timeout=15) as server:
+            print(f"[EmailService] Connecting to {self.smtp_server}:{self.smtp_port} as {sender_masked}...")
+            with smtplib.SMTP_SSL(self.smtp_server, self.smtp_port, timeout=20) as server:
                 server.login(self.email_user, self.email_pass)
-                server.sendmail(self.email_user, [self.email_to], msg.as_string())
-            print(f"[EmailService] Successfully sent digest to {self.email_to} with {total_jobs} opportunities.")
+                refused = server.sendmail(self.email_user, recipients, msg.as_string())
+                if refused:
+                    print(f"[EmailService] Warning: Some recipients were refused: {refused}")
+                else:
+                    print(f"[EmailService] Handed off message to SMTP server for {recipient_masked} (Status: 250 OK).")
+            print(f"[EmailService] Successfully sent digest with {total_jobs} opportunities.")
             return True
         except Exception as e:
             print(f"[EmailService] Failed to send email via SMTP: {e}")
