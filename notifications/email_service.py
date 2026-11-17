@@ -218,11 +218,16 @@ class HunterEmailService:
 
         subject = f"🎯 Hunter 4.0: {len(verified_matches)} Verified | {len(potential_matches)} Potential Fresher SDE/AI Jobs"
 
+        recipients = [r.strip() for r in self.email_to.split(",") if r.strip()]
+        # Ensure the candidate's primary inbox adityamadhav1509@gmail.com is included
+        if "adityamadhav1509@gmail.com" not in recipients:
+            recipients.append("adityamadhav1509@gmail.com")
+
         msg = MIMEMultipart("alternative")
         msg["Subject"] = subject
         # Bare email matching authenticated SMTP user ensures 100% DKIM and SPF compliance with Gmail
         msg["From"] = self.email_user
-        msg["To"] = self.email_to
+        msg["To"] = ", ".join(recipients)
         msg["Reply-To"] = self.email_user
         msg["Return-Path"] = self.email_user
         msg["Date"] = formatdate(localtime=True)
@@ -239,11 +244,8 @@ class HunterEmailService:
         msg.attach(html_part)
 
         sender_domain = self.email_user.split('@')[-1] if '@' in self.email_user else 'unknown'
-        recipient_domain = self.email_to.split('@')[-1] if '@' in self.email_to else 'unknown'
         sender_masked = f"{self.email_user[:3]}***@{sender_domain}" if len(self.email_user) > 3 else self.email_user
-        recipient_masked = f"{self.email_to[:3]}***@{recipient_domain}" if len(self.email_to) > 3 else self.email_to
-
-        recipients = [r.strip() for r in self.email_to.split(",") if r.strip()]
+        recipients_masked = [f"{r[:3]}***@{r.split('@')[-1]}" for r in recipients]
 
         try:
             print(f"[EmailService] Connecting to {self.smtp_server}:{self.smtp_port} as {sender_masked}...")
@@ -253,7 +255,7 @@ class HunterEmailService:
                 if refused:
                     print(f"[EmailService] Warning: Some recipients were refused: {refused}")
                 else:
-                    print(f"[EmailService] Handed off message to SMTP server for {recipient_masked} (Status: 250 OK).")
+                    print(f"[EmailService] Handed off message to SMTP server for {', '.join(recipients_masked)} (Status: 250 OK).")
             print(f"[EmailService] Successfully sent digest with {total_jobs} opportunities.")
             return True
         except Exception as e:
