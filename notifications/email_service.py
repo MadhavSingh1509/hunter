@@ -11,6 +11,7 @@ import os
 import smtplib
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
+from email.utils import formatdate, make_msgid, formataddr
 from datetime import datetime
 from typing import List, Dict, Any, Optional
 
@@ -219,14 +220,20 @@ class HunterEmailService:
 
         msg = MIMEMultipart("alternative")
         msg["Subject"] = subject
-        msg["From"] = f"Hunter 4.0 <{self.email_user}>"
+        # Use exact authenticated email address to maintain DKIM and SPF alignment
+        msg["From"] = formataddr(("Hunter Job Alert", self.email_user)) if self.email_user else "Hunter"
         msg["To"] = self.email_to
+        msg["Reply-To"] = self.email_user
+        msg["Return-Path"] = self.email_user
+        msg["Date"] = formatdate(localtime=True)
+        msg["Message-ID"] = make_msgid(domain="gmail.com" if "gmail.com" in self.email_user.lower() else None)
 
         text_part = MIMEText(
             f"Hunter 4.0 Job Alert\nVerified: {len(verified_matches)}\nPotential: {len(potential_matches)}\nPlease view the HTML version for direct application links.",
-            "plain"
+            "plain",
+            "utf-8"
         )
-        html_part = MIMEText(html_content, "html")
+        html_part = MIMEText(html_content, "html", "utf-8")
 
         msg.attach(text_part)
         msg.attach(html_part)
