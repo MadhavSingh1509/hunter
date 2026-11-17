@@ -1,0 +1,1039 @@
+[
+  {
+    "company_id": "amazon",
+    "company_name": "Amazon / AWS",
+    "priority_tier": "Priority A",
+    "recurrence": "RECURRING",
+    "evidence": [
+      {
+        "institute": "NIT Patna",
+        "season": "2023-2024",
+        "software_roles": true,
+        "type": "Full-time & Internship",
+        "offers": 12
+      },
+      {
+        "institute": "IIT Bombay",
+        "season": "2023-2024",
+        "software_roles": true,
+        "type": "Full-time & Internship",
+        "offers": 25
+      },
+      {
+        "institute": "IIT Delhi",
+        "season": "2023-2024",
+        "software_roles": true,
+        "type": "Full-time & Internship",
+        "offers": 28
+      }
+    ]
+  },
+  {
+    "company_id": "microsoft",
+    "company_name": "Microsoft",
+    "priority_tier": "Priority A",
+    "recurrence": "RECURRING",
+    "evidence": [
+      {
+        "institute": "NIT Patna",
+        "season": "2023-2024",
+        "software_roles": true,
+        "type": "Full-time & Internship",
+        "offers": 8
+      },
+      {
+        "institute": "IIT Kharagpur",
+        "season": "2023-2024",
+        "software_roles": true,
+        "type": "Full-time",
+        "offers": 20
+      }
+    ]
+  },
+  {
+    "company_id": "google",
+    "company_name": "Google",
+    "priority_tier": "Priority A",
+    "recurrence": "RECURRING",
+    "evidence": [
+      {
+        "institute": "IIT Delhi",
+        "season": "2023-2024",
+        "software_roles": true,
+        "type": "Full-time & Internship",
+        "offers": 15
+      },
+      {
+        "institute": "IIT Bombay",
+        "season": "2023-2024",
+        "software_roles": true,
+        "type": "Full-time",
+        "offers": 18
+      }
+    ]
+  },
+  {
+    "company_id": "adobe",
+    "company_name": "Adobe",
+    "priority_tier": "Priority A",
+    "recurrence": "RECURRING",
+    "evidence": [
+      {
+        "institute": "NIT Patna",
+        "season": "2023-2024",
+        "software_roles": true,
+        "type": "Full-time & Internship",
+        "offers": 6
+      },
+      {
+        "institute": "IIT Roorkee",
+        "season": "2023-2024",
+        "software_roles": true,
+        "type": "Full-time",
+        "offers": 10
+      }
+    ]
+  },
+  {
+    "company_id": "oracle",
+    "company_name": "Oracle",
+    "priority_tier": "Priority A",
+    "recurrence": "RECURRING",
+    "evidence": [
+      {
+        "institute": "NIT Patna",
+        "season": "2023-2024",
+        "software_roles": true,
+        "type": "Full-time",
+        "offers": 14
+      },
+      {
+        "institute": "NIT Trichy",
+        "season": "2023-2024",
+        "software_roles": true,
+        "type": "Full-time",
+        "offers": 18
+      }
+    ]
+  },
+  {
+    "company_id": "qualcomm",
+    "company_name": "Qualcomm",
+    "priority_tier": "Priority A",
+    "recurrence": "RECURRING",
+    "evidence": [
+      {
+        "institute": "NIT Patna",
+        "season": "2023-2024",
+        "software_roles": true,
+        "type": "Full-time & Internship (EE eligible)",
+        "offers": 9
+      },
+      {
+        "institute": "IIT Madras",
+        "season": "2023-2024",
+        "software_roles": true,
+        "type": "Full-time",
+        "offers": 16
+      }
+    ]
+  },
+  {
+    "company_id": "intel",
+    "company_name": "Intel",
+    "priority_tier": "Priority A",
+    "recurrence": "RECURRING",
+    "evidence": [
+      {
+        "institute": "NIT Warangal",
+        "season": "2023-2024",
+        "software_roles": true,
+        "type": "Full-time",
+        "offers": 12
+      },
+      {
+        "institute": "IIT Kanpur",
+        "season": "2023-2024",
+        "software_roles": true,
+        "type": "Full-time",
+        "offers": 15
+      }
+    ]
+  },
+  {
+    "company_id": "texas_instruments",
+    "company_name": "Texas Instruments",
+    "priority_tier": "Priority A",
+    "recurrence": "RECURRING",
+    "evidence": [
+      {
+        "institute": "NIT Patna",
+        "season": "2023-2024",
+        "software_roles": true,
+        "type": "Full-time & Internship (EE eligible)",
+        "offers": 5
+      },
+      {
+        "institute": "IIT Kharagpur",
+        "season": "2023-2024",
+        "software_roles": true,
+        "type": "Full-time",
+        "offers": 14
+      }
+    ]
+  },
+  {
+    "company_id": "nvidia",
+    "company_name": "NVIDIA",
+    "priority_tier": "Priority A",
+    "recurrence": "RECURRING",
+    "evidence": [
+      {
+        "institute": "IIT Bombay",
+        "season": "2023-2024",
+        "software_roles": true,
+        "type": "Full-time & Internship",
+        "offers": 12
+      },
+      {
+        "institute": "IIT Delhi",
+        "season": "2023-2024",
+        "software_roles": true,
+        "type": "Full-time",
+        "offers": 14
+      }
+    ]
+  },
+  {
+    "company_id": "amd",
+    "company_name": "AMD",
+    "priority_tier": "Priority A",
+    "recurrence": "OCCASIONAL",
+    "evidence": [
+      {
+        "institute": "IIT Hyderabad",
+        "season": "2023-2024",
+        "software_roles": true,
+        "type": "Full-time",
+        "offers": 8
+      }
+    ]
+  },
+  {
+    "company_id": "samsung_rd",
+    "company_name": "Samsung R&D",
+    "priority_tier": "Priority A",
+    "recurrence": "RECURRING",
+    "evidence": [
+      {
+        "institute": "NIT Patna",
+        "season": "2023-2024",
+        "software_roles": true,
+        "type": "Full-time & Internship",
+        "offers": 20
+      },
+      {
+        "institute": "IIT Guwahati",
+        "season": "2023-2024",
+        "software_roles": true,
+        "type": "Full-time",
+        "offers": 22
+      }
+    ]
+  },
+  {
+    "company_id": "goldman_sachs",
+    "company_name": "Goldman Sachs",
+    "priority_tier": "Priority A",
+    "recurrence": "RECURRING",
+    "evidence": [
+      {
+        "institute": "NIT Patna",
+        "season": "2023-2024",
+        "software_roles": true,
+        "type": "Full-time & Internship",
+        "offers": 7
+      },
+      {
+        "institute": "IIT Bombay",
+        "season": "2023-2024",
+        "software_roles": true,
+        "type": "Full-time",
+        "offers": 16
+      }
+    ]
+  },
+  {
+    "company_id": "jpmorgan_chase",
+    "company_name": "JPMorgan Chase",
+    "priority_tier": "Priority A",
+    "recurrence": "RECURRING",
+    "evidence": [
+      {
+        "institute": "NIT Surathkal",
+        "season": "2023-2024",
+        "software_roles": true,
+        "type": "Full-time & Internship",
+        "offers": 18
+      },
+      {
+        "institute": "IIT Roorkee",
+        "season": "2023-2024",
+        "software_roles": true,
+        "type": "Full-time",
+        "offers": 20
+      }
+    ]
+  },
+  {
+    "company_id": "morgan_stanley",
+    "company_name": "Morgan Stanley",
+    "priority_tier": "Priority A",
+    "recurrence": "RECURRING",
+    "evidence": [
+      {
+        "institute": "IIT Delhi",
+        "season": "2023-2024",
+        "software_roles": true,
+        "type": "Full-time & Internship",
+        "offers": 11
+      },
+      {
+        "institute": "NIT Trichy",
+        "season": "2023-2024",
+        "software_roles": true,
+        "type": "Full-time",
+        "offers": 14
+      }
+    ]
+  },
+  {
+    "company_id": "barclays",
+    "company_name": "Barclays",
+    "priority_tier": "Priority A",
+    "recurrence": "RECURRING",
+    "evidence": [
+      {
+        "institute": "NIT Patna",
+        "season": "2023-2024",
+        "software_roles": true,
+        "type": "Full-time & Internship",
+        "offers": 15
+      },
+      {
+        "institute": "NIT Rourkela",
+        "season": "2023-2024",
+        "software_roles": true,
+        "type": "Full-time",
+        "offers": 18
+      }
+    ]
+  },
+  {
+    "company_id": "american_express",
+    "company_name": "American Express",
+    "priority_tier": "Priority A",
+    "recurrence": "RECURRING",
+    "evidence": [
+      {
+        "institute": "IIT Roorkee",
+        "season": "2023-2024",
+        "software_roles": true,
+        "type": "Full-time & Internship",
+        "offers": 10
+      },
+      {
+        "institute": "NIT Calicut",
+        "season": "2023-2024",
+        "software_roles": true,
+        "type": "Full-time",
+        "offers": 12
+      }
+    ]
+  },
+  {
+    "company_id": "accenture",
+    "company_name": "Accenture",
+    "priority_tier": "Priority A",
+    "recurrence": "RECURRING",
+    "evidence": [
+      {
+        "institute": "NIT Patna",
+        "season": "2023-2024",
+        "software_roles": true,
+        "type": "Full-time (ASE / FSE)",
+        "offers": 45
+      },
+      {
+        "institute": "NIT Jamshedpur",
+        "season": "2023-2024",
+        "software_roles": true,
+        "type": "Full-time",
+        "offers": 60
+      }
+    ]
+  },
+  {
+    "company_id": "flipkart",
+    "company_name": "Flipkart",
+    "priority_tier": "Priority A",
+    "recurrence": "RECURRING",
+    "evidence": [
+      {
+        "institute": "NIT Patna",
+        "season": "2023-2024",
+        "software_roles": true,
+        "type": "Full-time & Internship",
+        "offers": 6
+      },
+      {
+        "institute": "IIT Kharagpur",
+        "season": "2023-2024",
+        "software_roles": true,
+        "type": "Full-time",
+        "offers": 15
+      }
+    ]
+  },
+  {
+    "company_id": "meesho",
+    "company_name": "Meesho",
+    "priority_tier": "Priority A",
+    "recurrence": "OCCASIONAL",
+    "evidence": [
+      {
+        "institute": "IIT Delhi",
+        "season": "2023-2024",
+        "software_roles": true,
+        "type": "Full-time",
+        "offers": 8
+      },
+      {
+        "institute": "NIT Warangal",
+        "season": "2023-2024",
+        "software_roles": true,
+        "type": "Full-time",
+        "offers": 5
+      }
+    ]
+  },
+  {
+    "company_id": "salesforce",
+    "company_name": "Salesforce",
+    "priority_tier": "Priority A",
+    "recurrence": "RECURRING",
+    "evidence": [
+      {
+        "institute": "NIT Surathkal",
+        "season": "2023-2024",
+        "software_roles": true,
+        "type": "Full-time & Internship",
+        "offers": 10
+      },
+      {
+        "institute": "IIT Hyderabad",
+        "season": "2023-2024",
+        "software_roles": true,
+        "type": "Full-time",
+        "offers": 12
+      }
+    ]
+  },
+  {
+    "company_id": "de_shaw",
+    "company_name": "DE Shaw",
+    "priority_tier": "Priority A",
+    "recurrence": "RECURRING",
+    "evidence": [
+      {
+        "institute": "IIT Delhi",
+        "season": "2023-2024",
+        "software_roles": true,
+        "type": "Full-time & Internship",
+        "offers": 6
+      },
+      {
+        "institute": "IIT Bombay",
+        "season": "2023-2024",
+        "software_roles": true,
+        "type": "Full-time",
+        "offers": 7
+      }
+    ]
+  },
+  {
+    "company_id": "atlassian",
+    "company_name": "Atlassian",
+    "priority_tier": "Priority A",
+    "recurrence": "RECURRING",
+    "evidence": [
+      {
+        "institute": "IIT Roorkee",
+        "season": "2023-2024",
+        "software_roles": true,
+        "type": "Full-time & Internship",
+        "offers": 8
+      },
+      {
+        "institute": "NIT Trichy",
+        "season": "2023-2024",
+        "software_roles": true,
+        "type": "Full-time",
+        "offers": 10
+      }
+    ]
+  },
+  {
+    "company_id": "visa",
+    "company_name": "Visa",
+    "priority_tier": "Priority A",
+    "recurrence": "RECURRING",
+    "evidence": [
+      {
+        "institute": "IIT Kanpur",
+        "season": "2023-2024",
+        "software_roles": true,
+        "type": "Full-time & Internship",
+        "offers": 12
+      },
+      {
+        "institute": "NIT Warangal",
+        "season": "2023-2024",
+        "software_roles": true,
+        "type": "Full-time",
+        "offers": 14
+      }
+    ]
+  },
+  {
+    "company_id": "paypal",
+    "company_name": "PayPal",
+    "priority_tier": "Priority A",
+    "recurrence": "RECURRING",
+    "evidence": [
+      {
+        "institute": "NIT Surathkal",
+        "season": "2023-2024",
+        "software_roles": true,
+        "type": "Full-time & Internship",
+        "offers": 9
+      },
+      {
+        "institute": "IIT Madras",
+        "season": "2023-2024",
+        "software_roles": true,
+        "type": "Full-time",
+        "offers": 11
+      }
+    ]
+  },
+  {
+    "company_id": "cisco",
+    "company_name": "Cisco",
+    "priority_tier": "Priority A",
+    "recurrence": "RECURRING",
+    "evidence": [
+      {
+        "institute": "NIT Patna",
+        "season": "2023-2024",
+        "software_roles": true,
+        "type": "Full-time & Internship",
+        "offers": 16
+      },
+      {
+        "institute": "NIT Calicut",
+        "season": "2023-2024",
+        "software_roles": true,
+        "type": "Full-time",
+        "offers": 20
+      }
+    ]
+  },
+  {
+    "company_id": "micron",
+    "company_name": "Micron",
+    "priority_tier": "Priority A",
+    "recurrence": "OCCASIONAL",
+    "evidence": [
+      {
+        "institute": "NIT Warangal",
+        "season": "2023-2024",
+        "software_roles": true,
+        "type": "Full-time (EE/ECE/CS)",
+        "offers": 10
+      }
+    ]
+  },
+  {
+    "company_id": "oracle_financial_services",
+    "company_name": "Oracle Financial Services",
+    "priority_tier": "Priority A",
+    "recurrence": "RECURRING",
+    "evidence": [
+      {
+        "institute": "NIT Patna",
+        "season": "2023-2024",
+        "software_roles": true,
+        "type": "Full-time",
+        "offers": 12
+      },
+      {
+        "institute": "NIT Durgapur",
+        "season": "2023-2024",
+        "software_roles": true,
+        "type": "Full-time",
+        "offers": 15
+      }
+    ]
+  },
+  {
+    "company_id": "databricks",
+    "company_name": "Databricks",
+    "priority_tier": "Priority B",
+    "recurrence": "OCCASIONAL",
+    "evidence": [
+      {
+        "institute": "IIT Bombay",
+        "season": "2023-2024",
+        "software_roles": true,
+        "type": "Full-time",
+        "offers": 4
+      }
+    ]
+  },
+  {
+    "company_id": "deutsche_bank",
+    "company_name": "Deutsche Bank",
+    "priority_tier": "Priority B",
+    "recurrence": "RECURRING",
+    "evidence": [
+      {
+        "institute": "IIT Roorkee",
+        "season": "2023-2024",
+        "software_roles": true,
+        "type": "Full-time",
+        "offers": 14
+      }
+    ]
+  },
+  {
+    "company_id": "wells_fargo",
+    "company_name": "Wells Fargo",
+    "priority_tier": "Priority B",
+    "recurrence": "RECURRING",
+    "evidence": [
+      {
+        "institute": "NIT Patna",
+        "season": "2023-2024",
+        "software_roles": true,
+        "type": "Full-time & Internship",
+        "offers": 10
+      }
+    ]
+  },
+  {
+    "company_id": "icici_bank",
+    "company_name": "ICICI Bank",
+    "priority_tier": "Priority B",
+    "recurrence": "RECURRING",
+    "evidence": [
+      {
+        "institute": "NIT Patna",
+        "season": "2023-2024",
+        "software_roles": true,
+        "type": "Full-time",
+        "offers": 25
+      }
+    ]
+  },
+  {
+    "company_id": "npci",
+    "company_name": "NPCI",
+    "priority_tier": "Priority B",
+    "recurrence": "OCCASIONAL",
+    "evidence": [
+      {
+        "institute": "NIT Calicut",
+        "season": "2023-2024",
+        "software_roles": true,
+        "type": "Full-time",
+        "offers": 8
+      }
+    ]
+  },
+  {
+    "company_id": "payu",
+    "company_name": "PayU",
+    "priority_tier": "Priority B",
+    "recurrence": "OCCASIONAL",
+    "evidence": [
+      {
+        "institute": "IIT Delhi",
+        "season": "2023-2024",
+        "software_roles": true,
+        "type": "Full-time",
+        "offers": 6
+      }
+    ]
+  },
+  {
+    "company_id": "sprinklr",
+    "company_name": "Sprinklr",
+    "priority_tier": "Priority B",
+    "recurrence": "RECURRING",
+    "evidence": [
+      {
+        "institute": "IIT Kharagpur",
+        "season": "2023-2024",
+        "software_roles": true,
+        "type": "Full-time",
+        "offers": 10
+      }
+    ]
+  },
+  {
+    "company_id": "thoughtspot",
+    "company_name": "ThoughtSpot",
+    "priority_tier": "Priority B",
+    "recurrence": "OCCASIONAL",
+    "evidence": [
+      {
+        "institute": "IIT Bombay",
+        "season": "2023-2024",
+        "software_roles": true,
+        "type": "Full-time",
+        "offers": 5
+      }
+    ]
+  },
+  {
+    "company_id": "cohesity",
+    "company_name": "Cohesity",
+    "priority_tier": "Priority B",
+    "recurrence": "OCCASIONAL",
+    "evidence": [
+      {
+        "institute": "IIT Madras",
+        "season": "2023-2024",
+        "software_roles": true,
+        "type": "Full-time",
+        "offers": 5
+      }
+    ]
+  },
+  {
+    "company_id": "devrev",
+    "company_name": "DevRev",
+    "priority_tier": "Priority B",
+    "recurrence": "OCCASIONAL",
+    "evidence": [
+      {
+        "institute": "IIT Madras",
+        "season": "2023-2024",
+        "software_roles": true,
+        "type": "Full-time",
+        "offers": 4
+      }
+    ]
+  },
+  {
+    "company_id": "shiprocket",
+    "company_name": "Shiprocket",
+    "priority_tier": "Priority B",
+    "recurrence": "OCCASIONAL",
+    "evidence": [
+      {
+        "institute": "IIT Delhi",
+        "season": "2023-2024",
+        "software_roles": true,
+        "type": "Full-time",
+        "offers": 4
+      }
+    ]
+  },
+  {
+    "company_id": "games24x7",
+    "company_name": "Games24x7",
+    "priority_tier": "Priority B",
+    "recurrence": "OCCASIONAL",
+    "evidence": [
+      {
+        "institute": "IIT Roorkee",
+        "season": "2023-2024",
+        "software_roles": true,
+        "type": "Full-time",
+        "offers": 5
+      }
+    ]
+  },
+  {
+    "company_id": "cars24",
+    "company_name": "Cars24",
+    "priority_tier": "Priority B",
+    "recurrence": "OCCASIONAL",
+    "evidence": [
+      {
+        "institute": "IIT Delhi",
+        "season": "2023-2024",
+        "software_roles": true,
+        "type": "Full-time",
+        "offers": 5
+      }
+    ]
+  },
+  {
+    "company_id": "porter",
+    "company_name": "Porter",
+    "priority_tier": "Priority B",
+    "recurrence": "OCCASIONAL",
+    "evidence": [
+      {
+        "institute": "IIT Kanpur",
+        "season": "2023-2024",
+        "software_roles": true,
+        "type": "Full-time",
+        "offers": 4
+      }
+    ]
+  },
+  {
+    "company_id": "myntra",
+    "company_name": "Myntra",
+    "priority_tier": "Priority B",
+    "recurrence": "OCCASIONAL",
+    "evidence": [
+      {
+        "institute": "IIT Bombay",
+        "season": "2023-2024",
+        "software_roles": true,
+        "type": "Full-time",
+        "offers": 6
+      }
+    ]
+  },
+  {
+    "company_id": "media_net",
+    "company_name": "Media.net",
+    "priority_tier": "Priority B",
+    "recurrence": "RECURRING",
+    "evidence": [
+      {
+        "institute": "IIT Kharagpur",
+        "season": "2023-2024",
+        "software_roles": true,
+        "type": "Full-time",
+        "offers": 8
+      }
+    ]
+  },
+  {
+    "company_id": "publicis_sapient",
+    "company_name": "Publicis Sapient",
+    "priority_tier": "Priority B",
+    "recurrence": "RECURRING",
+    "evidence": [
+      {
+        "institute": "NIT Patna",
+        "season": "2023-2024",
+        "software_roles": true,
+        "type": "Full-time",
+        "offers": 15
+      }
+    ]
+  },
+  {
+    "company_id": "ibm",
+    "company_name": "IBM",
+    "priority_tier": "Priority B",
+    "recurrence": "RECURRING",
+    "evidence": [
+      {
+        "institute": "NIT Patna",
+        "season": "2023-2024",
+        "software_roles": true,
+        "type": "Full-time",
+        "offers": 18
+      }
+    ]
+  },
+  {
+    "company_id": "deloitte",
+    "company_name": "Deloitte",
+    "priority_tier": "Priority B",
+    "recurrence": "RECURRING",
+    "evidence": [
+      {
+        "institute": "NIT Patna",
+        "season": "2023-2024",
+        "software_roles": true,
+        "type": "Full-time",
+        "offers": 30
+      }
+    ]
+  },
+  {
+    "company_id": "ey",
+    "company_name": "EY",
+    "priority_tier": "Priority B",
+    "recurrence": "RECURRING",
+    "evidence": [
+      {
+        "institute": "NIT Durgapur",
+        "season": "2023-2024",
+        "software_roles": true,
+        "type": "Full-time",
+        "offers": 20
+      }
+    ]
+  },
+  {
+    "company_id": "pwc",
+    "company_name": "PwC",
+    "priority_tier": "Priority B",
+    "recurrence": "RECURRING",
+    "evidence": [
+      {
+        "institute": "NIT Jamshedpur",
+        "season": "2023-2024",
+        "software_roles": true,
+        "type": "Full-time",
+        "offers": 22
+      }
+    ]
+  },
+  {
+    "company_id": "future_first",
+    "company_name": "Future First",
+    "priority_tier": "Priority B",
+    "recurrence": "OCCASIONAL",
+    "evidence": [
+      {
+        "institute": "IIT Roorkee",
+        "season": "2023-2024",
+        "software_roles": true,
+        "type": "Full-time",
+        "offers": 6
+      }
+    ]
+  },
+  {
+    "company_id": "arcesium",
+    "company_name": "Arcesium",
+    "priority_tier": "Priority B",
+    "recurrence": "RECURRING",
+    "evidence": [
+      {
+        "institute": "IIT Delhi",
+        "season": "2023-2024",
+        "software_roles": true,
+        "type": "Full-time",
+        "offers": 8
+      }
+    ]
+  },
+  {
+    "company_id": "graviton_research",
+    "company_name": "Graviton Research Capital",
+    "priority_tier": "Priority B",
+    "recurrence": "RECURRING",
+    "evidence": [
+      {
+        "institute": "IIT Bombay",
+        "season": "2023-2024",
+        "software_roles": true,
+        "type": "Full-time",
+        "offers": 6
+      }
+    ]
+  },
+  {
+    "company_id": "squarepoint_capital",
+    "company_name": "Squarepoint Capital",
+    "priority_tier": "Priority B",
+    "recurrence": "OCCASIONAL",
+    "evidence": [
+      {
+        "institute": "IIT Delhi",
+        "season": "2023-2024",
+        "software_roles": true,
+        "type": "Full-time",
+        "offers": 4
+      }
+    ]
+  },
+  {
+    "company_id": "quadeye",
+    "company_name": "Quadeye",
+    "priority_tier": "Priority B",
+    "recurrence": "RECURRING",
+    "evidence": [
+      {
+        "institute": "IIT Delhi",
+        "season": "2023-2024",
+        "software_roles": true,
+        "type": "Full-time",
+        "offers": 7
+      }
+    ]
+  },
+  {
+    "company_id": "tcs_research",
+    "company_name": "TCS Research & Innovation",
+    "priority_tier": "Priority B",
+    "recurrence": "RECURRING",
+    "evidence": [
+      {
+        "institute": "NIT Patna",
+        "season": "2023-2024",
+        "software_roles": true,
+        "type": "Full-time",
+        "offers": 25
+      }
+    ]
+  },
+  {
+    "company_id": "hcl_technologies",
+    "company_name": "HCL Technologies",
+    "priority_tier": "Priority B",
+    "recurrence": "RECURRING",
+    "evidence": [
+      {
+        "institute": "NIT Patna",
+        "season": "2023-2024",
+        "software_roles": true,
+        "type": "Full-time",
+        "offers": 20
+      }
+    ]
+  },
+  {
+    "company_id": "infosys",
+    "company_name": "Infosys",
+    "priority_tier": "Priority B",
+    "recurrence": "RECURRING",
+    "evidence": [
+      {
+        "institute": "NIT Patna",
+        "season": "2023-2024",
+        "software_roles": true,
+        "type": "Full-time",
+        "offers": 35
+      }
+    ]
+  },
+  {
+    "company_id": "wipro",
+    "company_name": "Wipro",
+    "priority_tier": "Priority B",
+    "recurrence": "RECURRING",
+    "evidence": [
+      {
+        "institute": "NIT Patna",
+        "season": "2023-2024",
+        "software_roles": true,
+        "type": "Full-time",
+        "offers": 28
+      }
+    ]
+  }
+]

@@ -1,303 +1,231 @@
 """
-HUNTER 2.0 — Intelligent Job Hunting & Verification Assistant
-Orchestrates job discovery, qualification, URL verification, tracking, and email alerts.
+HUNTER 4.0 — Automated India-Based Fresher SDE & AI/ML Job Discovery System
+Main orchestrator for:
+- Registry management (167 companies & 57 campus recruiters)
+- Multi-source ATS discovery (Amazon, Salesforce, Barclays, Accenture, Greenhouse, Lever, SmartRecruiters, Ashby)
+- 7-Dimension eligibility classification (B.Tech Electrical Engineering, 2026 Batch, 0 yrs exp)
+- 100-Point scoring system with hard rejection gates
+- Persistent SQLite storage & state transition tracking (data/hunter.db)
+- Source health diagnostics (HEALTHY, DEGRADED, FAILED, NOT_CONFIGURED)
+- 4-Section responsive email notification digest
+- Synchronized CSV & JSON exports (applications.csv, job_tracker.json)
 """
 
 import os
 import sys
 import json
 import time
-import hashlib
-import re
+import logging
 from typing import List, Dict, Any, Tuple, Optional
 
-from config import load_candidate_profile
-from qualification_engine import QualificationEngine, JobPosting, QualificationResult
-from authenticity_verifier import AuthenticityVerifier
-from ats_providers import ATSProvider
-from application_tracker import ApplicationTracker
-from email_sender import build_email_digest, send_email_digest
+# Core & Service Imports
+from core.database import HunterDatabase
+from core.classifier import EligibilityClassifier
+from core.health import SourceHealthMonitor
+from scrapers.ats_engine import ATSDiscoveryEngine
+from notifications.email_service import HunterEmailService
 
-STATE_FILE = "state.json"
-COMPANIES_FILE = "companies.json"
+# Setup Logging
+logging.basicConfig(
+    level=logging.INFO,
+    format="[%(asctime)s] [%(levelname)s] %(message)s",
+    datefmt="%H:%M:%S"
+)
+logger = logging.getLogger("hunter")
 
+CONFIG_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "config")
+COMPANY_REGISTRY_PATH = os.path.join(CONFIG_DIR, "company_registry.json")
+CAMPUS_REGISTRY_PATH = os.path.join(CONFIG_DIR, "campus_recruiter_registry.json")
+CANDIDATE_PROFILE_PATH = os.path.join(CONFIG_DIR, "candidate_profile.json")
 
-def load_json(path: str, default: Any) -> Any:
-    if os.path.exists(path):
+def run_hunter():
+    start_time = time.time()
+    print("=" * 75)
+    print("🎯 HUNTER 4.0 — AUTOMATED FRESHER SDE & AI/ML JOB DISCOVERY SYSTEM")
+    print("=" * 75)
+
+    # 1. Initialize Database & Seed Registries
+    db = HunterDatabase()
+    db.seed_registries(COMPANY_REGISTRY_PATH, CAMPUS_REGISTRY_PATH)
+    classifier = EligibilityClassifier(CANDIDATE_PROFILE_PATH)
+    ats_engine = ATSDiscoveryEngine(timeout=12)
+    email_service = HunterEmailService()
+    health_monitor = SourceHealthMonitor(db)
+
+    # Print Candidate Profile Summary
+    candidate = classifier.candidate
+    print(f"👤 Candidate: {candidate.get('name')} | Degree: {candidate.get('degree')} {candidate.get('branch')}")
+    print(f"🎓 Graduation Batch: {candidate.get('graduation_year')} | Max Experience: {candidate.get('experience_years_max')} years (Fresher)")
+    print(f"📍 Preferred Locations: India Only | Target Compensation: >= 12 LPA (Undisclosed accepted)")
+    print("=" * 75)
+
+    # Load Companies from Registry
+    with open(COMPANY_REGISTRY_PATH, "r", encoding="utf-8") as f:
+        companies = json.load(f)
+
+    # Sort companies: mandatory priority first, then high priority, then normal
+    companies.sort(key=lambda c: (not c.get("is_mandatory_priority", False), c.get("priority") != "high", c["name"]))
+
+    total_companies_scanned = 0
+    total_jobs_retrieved = 0
+    total_new_discovered = 0
+    total_verified_matches = 0
+    total_potential_matches = 0
+
+    print(f"\n[DISCOVERY] Beginning scan across {len(companies)} registered employers...\n")
+
+    for idx, comp in enumerate(companies, 1):
+        comp_id = comp["id"]
+        comp_name = comp["name"]
+        ats_type = comp.get("ats_type", "custom")
+        ats_id = comp.get("ats_identifier", "")
+        is_mandatory = comp.get("is_mandatory_priority", False)
+
+        retrieved_jobs: List[Dict[str, Any]] = []
+        health_status = "HEALTHY"
+        http_code = 200
+        error_msg = None
+
         try:
-            with open(path, "r", encoding="utf-8") as f:
-                return json.load(f)
+            # Dispatch to appropriate scraper adapter
+            if ats_type == "amazon_api":
+                retrieved_jobs = ats_engine.fetch_amazon_jobs(max_pages=2)
+            elif ats_type == "salesforce_workday":
+                retrieved_jobs = ats_engine.fetch_salesforce_jobs(max_pages=2)
+            elif ats_type == "barclays_talentbrew":
+                retrieved_jobs = ats_engine.fetch_barclays_jobs(max_pages=2)
+            elif ats_type == "accenture_api":
+                retrieved_jobs = ats_engine.fetch_accenture_jobs()
+            elif ats_type == "greenhouse" and ats_id:
+                retrieved_jobs = ats_engine.fetch_greenhouse_jobs(ats_id, comp_name, comp_id)
+            elif ats_type == "lever" and ats_id:
+                retrieved_jobs = ats_engine.fetch_lever_jobs(ats_id, comp_name, comp_id)
+            elif ats_type == "smartrecruiters" and ats_id:
+                retrieved_jobs = ats_engine.fetch_smartrecruiters_jobs(ats_id, comp_name, comp_id)
+            elif ats_type == "ashby" and ats_id:
+                retrieved_jobs = ats_engine.fetch_ashby_jobs(ats_id, comp_name, comp_id)
+            else:
+                health_status = "NOT_CONFIGURED"
+
+            if health_status != "NOT_CONFIGURED":
+                total_companies_scanned += 1
+                total_jobs_retrieved += len(retrieved_jobs)
+
         except Exception as e:
-            print(f"[WARN] Error loading {path}: {e}")
-            return default
-    return default
+            health_status = "FAILED"
+            http_code = 500
+            error_msg = str(e)
+            logger.error(f"[{comp_name}] Scanner failed: {e}")
 
+        # Evaluate and record jobs
+        comp_relevant_count = 0
+        comp_verified_count = 0
+        comp_potential_count = 0
+        comp_new_count = 0
 
-def save_json(path: str, data: Any):
-    with open(path, "w", encoding="utf-8") as f:
-        json.dump(data, f, indent=2)
+        for raw_job in retrieved_jobs:
+            eval_result = classifier.evaluate_job(raw_job)
 
+            # Skip rejected roles from cluttering notifications, but record statistics
+            if eval_result["classification"] == "REJECTED":
+                continue
 
-def slugify(name: str) -> str:
-    name = re.sub(r"\(.*?\)", "", name)
-    name = re.sub(r"[^a-zA-Z0-9]+", "-", name).strip("-").lower()
-    return name
+            comp_relevant_count += 1
+            if eval_result["classification"] == "VERIFIED MATCH":
+                comp_verified_count += 1
+                total_verified_matches += 1
+            else:
+                comp_potential_count += 1
+                total_potential_matches += 1
 
+            # Combine job data
+            merged_job = {**raw_job, **eval_result}
+            job_key, transition = db.record_job(merged_job)
 
-def guessed_slugs(name: str) -> List[str]:
-    base = slugify(name)
-    candidates = [base, base.split("-")[0], base.replace("-", "")]
-    seen = []
-    for c in candidates:
-        if c and c not in seen:
-            seen.append(c)
-    return seen
+            if transition == "NEW":
+                comp_new_count += 1
+                total_new_discovered += 1
+                prefix = "★ [NEW VERIFIED]" if eval_result["classification"] == "VERIFIED MATCH" else "• [NEW POTENTIAL]"
+                print(f"  {prefix} {comp_name} — {raw_job['title']} (Score: {eval_result['match_score']}/100)")
+            elif transition == "VERIFIED_UPGRADE":
+                print(f"  ▲ [UPGRADE] {comp_name} — {raw_job['title']} upgraded to VERIFIED MATCH")
 
-
-def fetch_from_ats(provider: ATSProvider, company: Dict[str, Any]) -> List[JobPosting]:
-    name = company["name"]
-    slugs = company.get("slugs") or []
-    slugs = slugs + [s for s in guessed_slugs(name) if s not in slugs]
-
-    for slug in slugs:
-        # Try Greenhouse
-        try:
-            jobs = provider.fetch_greenhouse(name, slug)
-            if jobs:
-                print(f"[ATS] Found {len(jobs)} jobs for {name} on Greenhouse (slug: {slug})")
-                return jobs
-        except Exception:
-            pass
-
-        # Try Lever
-        try:
-            jobs = provider.fetch_lever(name, slug)
-            if jobs:
-                print(f"[ATS] Found {len(jobs)} jobs for {name} on Lever (slug: {slug})")
-                return jobs
-        except Exception:
-            pass
-
-        # Try SmartRecruiters
-        try:
-            jobs = provider.fetch_smartrecruiters(name, slug)
-            if jobs:
-                print(f"[ATS] Found {len(jobs)} jobs for {name} on SmartRecruiters (slug: {slug})")
-                return jobs
-        except Exception:
-            pass
-
-        # Try Ashby
-        try:
-            jobs = provider.fetch_ashby(name, slug)
-            if jobs:
-                print(f"[ATS] Found {len(jobs)} jobs for {name} on Ashby (slug: {slug})")
-                return jobs
-        except Exception:
-            pass
-
-    return []
-
-
-def fetch_generic_career_page(company: Dict[str, Any]) -> Tuple[List[JobPosting], Optional[str]]:
-    """
-    Fallback for custom career pages without direct ATS JSON endpoints.
-    Uses Playwright when available, or HTTP requests, to extract real job links.
-    Avoids chopping arbitrary single text lines from pages.
-    """
-    url = company.get("careers_url", "")
-    if not url:
-        return [], None
-
-    name = company["name"]
-    content_hash = None
-    postings: List[JobPosting] = []
-
-    try:
-        from playwright.sync_api import sync_playwright
-        with sync_playwright() as p:
-            browser = p.chromium.launch()
-            page = browser.new_page(user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) Hunter/2.0")
-            page.goto(url, timeout=25000, wait_until="domcontentloaded")
-            page.wait_for_timeout(2000)
-
-            # Extract job links
-            links = page.eval_on_selector_all(
-                "a[href]",
-                """elements => elements.map(e => ({
-                    text: e.innerText.trim(),
-                    href: e.href
-                }))"""
+        # Record source health
+        if health_status != "NOT_CONFIGURED":
+            db.update_source_health(
+                company_id=comp_id,
+                company_name=comp_name,
+                source_url=comp.get("careers_url", ""),
+                scanner_type=ats_type,
+                health_status=health_status,
+                http_status=http_code,
+                jobs_retrieved=len(retrieved_jobs),
+                new_jobs=comp_new_count,
+                relevant_jobs=comp_relevant_count,
+                verified_matches=comp_verified_count,
+                potential_matches=comp_potential_count,
+                pagination_completed=True,
+                error_msg=error_msg
             )
-            body_text = page.inner_text("body")
-            content_hash = hashlib.sha256(body_text.encode("utf-8", errors="ignore")).hexdigest()
-            browser.close()
+            print(f"[{idx}/{len(companies)}] {comp_name}: {len(retrieved_jobs)} jobs retrieved, {comp_relevant_count} relevant ({comp_verified_count} verified, {comp_potential_count} potential)")
 
-            # Filter links that represent actual individual job postings
-            job_link_cues = ["/job/", "/jobs/", "/careers/", "/position/", "/requisition/", "/posting/"]
-            for l in links:
-                t = l.get("text", "")
-                h = l.get("href", "")
-                if 10 < len(t) < 120 and any(cue in h.lower() for cue in job_link_cues):
-                    postings.append(JobPosting(
-                        company=name,
-                        title=t,
-                        url=h,
-                        location="India",
-                        description=f"Extracted job link: {t} at {h}",
-                        job_id=f"page-{hashlib.sha1(h.encode()).hexdigest()[:10]}"
-                    ))
+    # 2. Gather Unnotified Jobs for the 4 Email Sections
+    unnotified_jobs = db.get_unnotified_jobs()
+    verified_section = []
+    potential_section = []
+    below_target_section = []
+    new_updated_section = []
 
-    except Exception as e:
-        # Playwright not available or failed; fallback to lightweight requests
-        try:
-            import requests
-            r = requests.get(url, timeout=12, headers={"User-Agent": "Hunter/2.0"})
-            if r.status_code == 200:
-                content_hash = hashlib.sha256(r.text.encode("utf-8", errors="ignore")).hexdigest()
-        except Exception:
-            pass
+    for j in unnotified_jobs:
+        classification = j.get("classification")
+        comp_status = j.get("compensation_status")
+        
+        if classification == "VERIFIED MATCH":
+            if comp_status == "BELOW_12_LPA":
+                below_target_section.append(j)
+            else:
+                verified_section.append(j)
+        elif classification == "POTENTIAL MATCH":
+            if comp_status == "BELOW_12_LPA":
+                below_target_section.append(j)
+            else:
+                potential_section.append(j)
 
-    return postings, content_hash
+    scan_summary = {
+        "companies_scanned": total_companies_scanned,
+        "jobs_retrieved": total_jobs_retrieved,
+        "verified_count": len(verified_section),
+        "potential_count": len(potential_section),
+        "duration_seconds": round(time.time() - start_time, 2)
+    }
 
+    # 3. Deliver Email Notification Digest
+    email_sent = email_service.send_digest(
+        verified_matches=verified_section,
+        potential_matches=potential_section,
+        below_target_jobs=below_target_section,
+        new_updated_jobs=new_updated_section,
+        scan_summary=scan_summary
+    )
 
-def run_pipeline():
-    print("=" * 70)
-    print("HUNTER 2.0 — Automated Candidate Job Qualification & Verification")
-    print("=" * 70)
+    if email_sent:
+        notified_keys = [j["job_key"] for j in unnotified_jobs]
+        db.mark_notified(notified_keys)
+        print(f"[EMAIL] Marked {len(notified_keys)} opportunities as NOTIFIED.")
 
-    profile = load_candidate_profile()
-    candidate = profile.get("candidate", {})
-    print(f"[PROFILE] Candidate: {candidate.get('name')}")
-    print(f"[PROFILE] Degree & Branch: {candidate.get('degree')} in {candidate.get('branch')}")
-    print(f"[PROFILE] Graduation Batch: {candidate.get('graduation_year')}")
-    print(f"[PROFILE] Max Experience: {candidate.get('experience_years_max')} years")
-    print(f"[PROFILE] Target Location: {candidate.get('location_country')}")
-    print("=" * 70)
+    # 4. Synchronize and Export Persistent Artifacts
+    db.export_artifacts(csv_path="applications.csv", json_path="job_tracker.json")
+    print(f"\n[STORAGE] Successfully synchronized database to applications.csv and job_tracker.json.")
 
-    engine = QualificationEngine(profile)
-    verifier = AuthenticityVerifier()
-    ats_provider = ATSProvider()
-    tracker = ApplicationTracker()
+    # 5. Output Source Health Report
+    print("\n" + "=" * 75)
+    print(health_monitor.format_markdown_table(limit_not_configured=True))
+    print("=" * 75)
+    print(f"✨ Hunter 4.0 scan completed in {scan_summary['duration_seconds']}s.")
+    print("=" * 75 + "\n")
 
-    companies = load_json(COMPANIES_FILE, [])
-    state = load_json(STATE_FILE, {})
-
-    verified_findings: List[QualificationResult] = []
-    potential_findings: List[QualificationResult] = []
-
-    total_scanned = 0
-    total_evaluated = 0
-
-    for idx, company in enumerate(companies, 1):
-        name = company["name"]
-        print(f"\n[{idx}/{len(companies)}] Scanning {name}...")
-        prev_state = state.get(name, {"seen_ids": [], "emailed_ids": [], "hash": None})
-        seen_ids = set(prev_state.get("seen_ids", []))
-        emailed_ids = set(prev_state.get("emailed_ids", []))
-
-        # Fetch job postings
-        postings = fetch_from_ats(ats_provider, company)
-        mode = "api"
-
-        if not postings:
-            # Fallback to generic career page
-            postings, content_hash = fetch_generic_career_page(company)
-            mode = "generic"
-            prev_hash = prev_state.get("hash")
-            if content_hash == prev_hash and not postings:
-                print(f"[{name}] Page content unchanged since last scan.")
-                continue
-            prev_state["hash"] = content_hash
-
-        total_scanned += len(postings)
-
-        company_relevant_ids = []
-
-        for job in postings:
-            total_evaluated += 1
-            # Stage 2 to 8: Multi-Stage Qualification
-            eval_result = engine.evaluate(job)
-
-            if eval_result.verdict == "REJECTED":
-                # Concise logging of rejection
-                reasons_str = "; ".join(eval_result.rejection_reasons[:2])
-                print(f"  [REJECT] {job.title[:35]} — {reasons_str}")
-                continue
-
-            # Stage 7 Verification: Verify Official Application Link
-            print(f"  [VERIFYING] {job.title} (Score: {eval_result.score}/100)...")
-            is_valid, verify_reason, canonical_url = verifier.verify_application_url(job.url)
-            if not is_valid:
-                print(f"  [CLOSED/INVALID] {job.title} — {verify_reason}")
-                continue
-
-            if canonical_url:
-                job.url = canonical_url
-
-            company_relevant_ids.append(job.job_id)
-
-            # Stage 9: Deduplication
-            if job.job_id in emailed_ids:
-                print(f"  [DEDUP] Previously emailed: {job.title} ({job.job_id})")
-                continue
-
-            # Record in Application Tracker
-            tracker.record_job(
-                job_id=job.job_id,
-                company=name,
-                title=job.title,
-                url=job.url,
-                match_score=eval_result.score,
-                status="Interested",
-                notes=f"{eval_result.verdict}; Highlights: {'; '.join(eval_result.match_highlights[:3])}"
-            )
-
-            if eval_result.verdict == "VERIFIED MATCH":
-                print(f"  [MATCH ★] Verified: {job.title} (Score: {eval_result.score}/100)")
-                verified_findings.append(eval_result)
-                emailed_ids.add(job.job_id)
-            elif eval_result.verdict == "POTENTIAL MATCH":
-                print(f"  [POTENTIAL ?] Review needed: {job.title} (Score: {eval_result.score}/100)")
-                potential_findings.append(eval_result)
-
-            seen_ids.add(job.job_id)
-
-        # Update company state
-        state[name] = {
-            "seen_ids": list(seen_ids),
-            "emailed_ids": list(emailed_ids),
-            "hash": prev_state.get("hash"),
-            "mode": mode,
-            "last_checked": time.strftime("%Y-%m-%d %H:%M:%S")
-        }
-
-        # Polite interval
-        time.sleep(0.5)
-
-    # Save state and tracker records
-    save_json(STATE_FILE, state)
-    tracker.save()
-
-    print("\n" + "=" * 70)
-    print(f"[SUMMARY] Total postings scanned: {total_scanned}")
-    print(f"[SUMMARY] Total evaluated: {total_evaluated}")
-    print(f"[SUMMARY] Verified matches to email: {len(verified_findings)}")
-    print(f"[SUMMARY] Potential matches: {len(potential_findings)}")
-    print("=" * 70)
-
-    # Stage 10: Email Alert Delivery
-    subject, plain_text, html_body = build_email_digest(verified_findings, potential_findings)
-    print(f"[EMAIL] Prepared digest: '{subject}'")
-
-    send_success = send_email_digest(subject, plain_text, html_body)
-    if send_success:
-        print("[EMAIL] Alert successfully sent.")
-    else:
-        print("[EMAIL] Email alert step completed (skipped if secrets not in environment).")
-
-    print("\nHunter 2.0 scan complete.\n")
-
+# Alias for backward compatibility
+run_pipeline = run_hunter
 
 if __name__ == "__main__":
-    run_pipeline()
+    run_hunter()

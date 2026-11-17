@@ -1,110 +1,84 @@
-# HUNTER 2.0 — Personal Job Hunting Assistant
+# HUNTER 4.0 — Automated India Fresher SDE & AI/ML Job Discovery System
 
-Hunter 2.0 transforms simple keyword-based job alerting into an intelligent, deterministic qualification and verification system.
-
-Its core objective: **Find real, active job opportunities that you are genuinely eligible for, and deliver direct official application links.**
+**Hunter 4.0** is an automated, production-grade job discovery, verification, and notification system designed to find genuine, currently open fresher software engineering and AI/ML opportunities across 167 top employers in India.
 
 ---
 
-## Key Highlights in Hunter 2.0
+## 🎯 Candidate Profile & Targeting
 
-1. **Centralized Candidate Profile (`candidate_profile.json`)**
-   - Degree: B.Tech in Electrical Engineering (EE).
-   - Strict 0-year professional experience filter (personal MERN and DSA projects are distinguished from mandatory professional employment).
-   - Configurable graduation batch and location preferences.
-
-2. **10-Stage Deterministic Qualification Engine (`qualification_engine.py`)**
-   - **Stage 1 (Discovery)**: Official ATS APIs (Greenhouse, Lever, SmartRecruiters, Ashby) and career portals.
-   - **Stage 2 (Title Classification)**: Tier 1 primary targets (SDE, Software Engineer, Backend/Full Stack/Frontend, etc.) and Tier 2 targets (GET software track, QA Automation, Internships). Rejects non-dev, sales, HR, and core electrical roles.
-   - **Stage 3 (Experience Analysis)**: Rejects mandatory 2+ years requirements. Flags 0–2 years as borderline.
-   - **Stage 4 (Educational Eligibility)**: Verifies that Electrical Engineering is eligible (accepts any engineering branch / EE explicit; rejects CSE/IT-only restrictions and mandatory Master's degrees).
-   - **Stage 5 (Location Analysis)**: Enforces India location (rejects foreign roles in US/UK/Singapore).
-   - **Stage 6 (Description & Skills Alignment)**: Analyzes skills (C++, Java, Python, JS, React, Node, Express, Mongo, SQL, DSA, REST APIs) and rejects work-auth restrictions.
-   - **Stage 7 (Graduation Year & Internship Filter)**: Validates batch year (e.g. 2026) and student eligibility.
-   - **Stage 8 (Scoring & Rejection Gates)**: Transparent 100-point scoring. Mandatory rejection gates (Experience, Branch, Batch, Location, Closed status) override scoring.
-   - **Stage 9 (Deduplication)**: Eliminates repeated alerts across 12-hour runs.
-   - **Stage 10 (Email Delivery)**: Sends verified opportunities with match breakdown and direct apply links.
-
-3. **Authenticity & Application Verification (`authenticity_verifier.py`)**
-   - Verifies that listings are currently active and not expired, filled, or closed (404/410 checks and closure notice parsing).
-   - Provides direct links to official ATS application forms.
-
-4. **Integrated Application Tracker (`tracker.py` & `application_tracker.py`)**
-   - Tracks your application pipeline: `Interested` &rarr; `Applied` &rarr; `Online Assessment` &rarr; `Interview Scheduled` &rarr; `Selected/Rejected`.
-   - Maintains `job_tracker.json` and auto-exports to `applications.csv`.
+Configured in `config/candidate_profile.json`:
+- **Candidate:** Madhav Singh
+- **Degree:** B.Tech in Electrical Engineering (EE)
+- **Graduation Batch:** 2026 (Configurable)
+- **Experience Level:** Fresher (0 years full-time software industry employment)
+- **Target Compensation:** $\ge 12$ LPA (Undisclosed accepted; below 12 LPA classified separately)
+- **Location:** India (Bengaluru, Hyderabad, Pune, Chennai, Mumbai, Delhi NCR, Noida, Gurgaon, Kolkata, Ahmedabad, Jaipur, Patna, etc.)
+- **Roles:** Software Development Engineer (SDE I), Graduate Engineer, Backend/Frontend/Full-Stack, AI/ML Engineer, GenAI/LLM, Computer Vision, Internships
 
 ---
 
-## CLI Usage
+## 🏛️ Centralized Registries
 
-### View Tracked Applications
-```bash
-python tracker.py list
-```
+1. **Company Registry (`config/company_registry.json`):**
+   - **167 Employers** across 7 major sectors:
+     - Section A: Global Big Tech (Microsoft, Amazon, AWS, Google, Adobe, Apple, NVIDIA, Uber, Walmart, Salesforce, etc.)
+     - Section B: Banking, Finance & FinTech (Goldman Sachs, JPMorgan Chase, Morgan Stanley, Barclays, Amex, Visa, Stripe, DE Shaw, etc.)
+     - Section C: Indian Product & Unicorns (Flipkart, Swiggy, Zomato, CRED, Razorpay, Freshworks, Postman, Groww, Meesho, etc.)
+     - Section D: Enterprise SaaS & DevTools (Hasura, Zeta, Druva, Whatfix, Harness, Composio, TrueFoundry, Nanonets, etc.)
+     - Section E: AI, GenAI & Deep-Tech (Sarvam AI, Krutrim, Neysa, Qure.ai, Pixxel, Skyroot, Fractal, etc.)
+     - Section F: Semiconductor & Hardware (Synopsys, Cadence, Texas Instruments, Micron, AMD, Intel, Samsung R&D)
+     - Section G: Additional Campus & Tech Recruiters (Accenture, Deloitte, EY, PwC, Publicis Sapient, TCS Research, etc.)
+   - **Mandatory Priority Integrations:** **Amazon, Salesforce, Barclays, Accenture**.
 
-### Mark a Job as Applied
-```bash
-python tracker.py apply <job_id> "Applied via referral"
-```
+2. **Campus Recruiter Watchlist (`config/campus_recruiter_registry.json`):**
+   - **57 Campus Recruiters** with recorded recruitment history at IITs & NITs (including NIT Patna).
+   - Priority A (27 companies) & Priority B (30 companies) with recurrence tracking (`RECURRING`, `OCCASIONAL`, `UNVERIFIED`).
 
-### Update Status
-```bash
-python tracker.py status <job_id> "Online Assessment" "OA link received"
-python tracker.py status <job_id> "Interview Scheduled" "Round 1 on Monday"
-```
+---
 
-### Export to CSV
-```bash
-python tracker.py export
-```
+## ⚙️ 7-Dimension Eligibility & Scoring Architecture
 
-### Run Test Suite (36 Automated Tests)
+Every discovered opportunity is evaluated across 7 independent dimensions with hard rejection gates:
+1. **Role Relevance (25 pts):** SDE and AI/ML positions. Hard rejection of Senior, Management, HR, and core electrical wiring/substation roles.
+2. **Degree Eligibility (20 pts):** Evaluates non-CS background. Accepts "any engineering branch", "circuit branches", or explicit Electrical Engineering. Rejects "CSE/IT only" and mandatory Master's/Ph.D.
+3. **Graduation Eligibility (15 pts):** Matches 2026 batch / final-year students. Rejects prior batches (2022/2023) or junior-year restrictions.
+4. **Experience Eligibility (15 pts):** Accepts 0-1 years, freshers, interns. Rejects mandatory $\ge 2$ years full-time professional experience.
+5. **Location Eligibility (10 pts):** Requires India location or India-eligible remote. Rejects non-India positions.
+6. **Skills Alignment (10 pts):** Matches C++, Java, Python, JavaScript, React, Node.js, Express, MongoDB, SQL, DSA, REST APIs.
+7. **Employment Type Preference (5 pts):** Full-time, Internship, PPO.
+
+---
+
+## 📬 4-Section Email Digest
+
+Responsive HTML digest delivered via SMTP SSL:
+- **Section 1: VERIFIED MATCHES** — Confirmed fresher, EE eligible, open in India.
+- **Section 2: POTENTIAL MATCHES** — Technical opportunities with review notes highlighting unstated details.
+- **Section 3: BELOW-TARGET COMPENSATION** — Relevant opportunities $< 12$ LPA displayed separately.
+- **Section 4: NEW & UPDATED OPPORTUNITIES** — Newly discovered jobs and status upgrades.
+- **Zero Empty Emails:** Never sends misleading "0 openings" alerts when potential matches exist.
+
+---
+
+## 📊 Source Health & Diagnostics
+
+Tracks real-time health across every company scanner:
+- `HEALTHY`: Endpoint responsive, jobs parsed successfully.
+- `DEGRADED`: Partial response or required fallbacks.
+- `FAILED`: Endpoint returned HTTP error or timeout.
+- `NOT_CONFIGURED`: Company in watchlist awaiting direct endpoint adapter.
+
+---
+
+## 🚀 Running Hunter 4.0 Locally
+
 ```bash
+# 1. Install dependencies
+pip install -r requirements.txt
+
+# 2. Run automated test suite (57 tests)
 pytest -v
-```
 
-### Run Monitor Manually
-```bash
+# 3. Run Hunter 4.0 Discovery & Verification
 python monitor.py
 ```
-
----
-
-## Configuration (`candidate_profile.json`)
-
-You can edit your candidate profile, target categories, or scoring weights anytime in `candidate_profile.json` without modifying application code:
-
-```json
-{
-  "candidate": {
-    "name": "Madhav Singh",
-    "degree": "B.Tech",
-    "branch": "Electrical Engineering",
-    "graduation_year": 2026,
-    "experience_years_max": 0,
-    "location_country": "India"
-  }
-}
-```
-
-You can also override graduation year via the environment variable `HUNTER_GRADUATION_YEAR`.
-
----
-
-## GitHub Actions & Automation
-
-The repository runs automatically every 12 hours via GitHub Actions (`.github/workflows/job_monitor.yml`).
-
-### Required GitHub Secrets:
-Set these under **Settings &rarr; Secrets and variables &rarr; Actions &rarr; Repository secrets**:
-
-| Secret Name | Value |
-|---|---|
-| `EMAIL_ADDRESS` | Your Gmail address |
-| `EMAIL_PASSWORD` | 16-character Google App Password |
-| `EMAIL_TO` | Target recipient email address |
-| `SMTP_SERVER` | `smtp.gmail.com` |
-| `SMTP_PORT` | `465` |
-
-### Persistence Across GitHub Actions Runs:
-The workflow automatically commits updated `state.json`, `job_tracker.json`, and `applications.csv` back to your GitHub repository with `[skip ci]`, ensuring history and application statuses survive ephemeral GitHub Actions runners.
