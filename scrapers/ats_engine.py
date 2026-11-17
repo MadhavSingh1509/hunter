@@ -237,7 +237,7 @@ class ATSDiscoveryEngine:
     # ---------------------------------------------------------
     def fetch_greenhouse_jobs(self, slug: str, company_name: str, company_id: str) -> List[Dict[str, Any]]:
         """
-        Fetches jobs from official Greenhouse API.
+        Fetches jobs from official Greenhouse API filtered to India.
         Endpoint: https://boards-api.greenhouse.io/v1/boards/{slug}/jobs?content=true
         """
         url = f"https://boards-api.greenhouse.io/v1/boards/{slug}/jobs?content=true"
@@ -254,6 +254,14 @@ class ATSDiscoveryEngine:
             jobs = data.get("jobs", [])
             for j in jobs:
                 loc_name = (j.get("location") or {}).get("name", "")
+                loc_lower = loc_name.lower()
+                
+                # Filter for India locations
+                india_cities = ["india", "bengaluru", "bangalore", "hyderabad", "pune", "chennai", "mumbai", "delhi", "gurgaon", "gurugram", "noida", "kolkata", "ahmedabad", "patna"]
+                is_india = any(c in loc_lower for c in india_cities)
+                if not is_india:
+                    continue
+
                 canonical_url = j.get("absolute_url", "")
                 desc = j.get("content", "")
 
@@ -264,7 +272,7 @@ class ATSDiscoveryEngine:
                     "title": j.get("title", ""),
                     "canonical_url": canonical_url,
                     "location": loc_name or "India",
-                    "is_india_eligible": any(c in loc_name.lower() for c in ["india", "bengaluru", "bangalore", "hyderabad", "pune", "delhi", "remote"]),
+                    "is_india_eligible": True,
                     "employment_type": "Full-time",
                     "description": desc,
                     "application_status": "OPEN",
@@ -280,7 +288,7 @@ class ATSDiscoveryEngine:
     # ---------------------------------------------------------
     def fetch_lever_jobs(self, slug: str, company_name: str, company_id: str) -> List[Dict[str, Any]]:
         """
-        Fetches jobs from Lever public postings API.
+        Fetches jobs from Lever public postings API filtered to India.
         Endpoint: https://api.lever.co/v0/postings/{slug}?mode=json
         """
         url = f"https://api.lever.co/v0/postings/{slug}?mode=json"
@@ -293,6 +301,14 @@ class ATSDiscoveryEngine:
             for p in postings:
                 cats = p.get("categories", {})
                 loc = cats.get("location", "")
+                loc_lower = loc.lower()
+                
+                # Filter for India locations
+                india_cities = ["india", "bengaluru", "bangalore", "hyderabad", "pune", "chennai", "mumbai", "delhi", "gurgaon", "gurugram", "noida", "kolkata", "ahmedabad", "patna"]
+                is_india = any(c in loc_lower for c in india_cities)
+                if not is_india:
+                    continue
+
                 canonical_url = p.get("hostedUrl", "")
                 desc = f"{p.get('descriptionPlain', '')} {p.get('additionalPlain', '')}"
 
@@ -303,7 +319,7 @@ class ATSDiscoveryEngine:
                     "title": p.get("text", ""),
                     "canonical_url": canonical_url,
                     "location": loc or "India",
-                    "is_india_eligible": any(c in loc.lower() for c in ["india", "bengaluru", "bangalore", "hyderabad", "pune", "delhi", "remote"]),
+                    "is_india_eligible": True,
                     "employment_type": cats.get("commitment", "Full-time"),
                     "description": desc,
                     "application_status": "OPEN",
@@ -333,6 +349,10 @@ class ATSDiscoveryEngine:
             for item in content:
                 location = item.get("location", {})
                 loc_str = f"{location.get('city', '')}, {location.get('country', '')}"
+                is_india = "in" == str(location.get("country", "")).lower() or "india" in loc_str.lower()
+                if not is_india:
+                    continue
+
                 job_id = item.get("id", "")
                 canonical_url = f"https://jobs.smartrecruiters.com/{slug}/{job_id}"
 
@@ -343,7 +363,7 @@ class ATSDiscoveryEngine:
                     "title": item.get("name", ""),
                     "canonical_url": canonical_url,
                     "location": loc_str,
-                    "is_india_eligible": "in" in location.get("country", "").lower() or "india" in loc_str.lower(),
+                    "is_india_eligible": True,
                     "employment_type": (item.get("typeOfEmployment") or {}).get("label", "Full-time"),
                     "description": item.get("name", ""),
                     "application_status": "OPEN",
@@ -371,8 +391,13 @@ class ATSDiscoveryEngine:
             data = resp.json()
             jobs = data.get("jobs", [])
             for j in jobs:
-                canonical_url = j.get("jobUrl", "")
                 loc = j.get("location", "")
+                loc_lower = loc.lower()
+                is_india = any(c in loc_lower for c in ["india", "bengaluru", "bangalore", "hyderabad", "pune", "delhi", "gurgaon", "noida", "chennai", "mumbai"])
+                if not is_india:
+                    continue
+
+                canonical_url = j.get("jobUrl", "")
                 all_jobs.append({
                     "company_id": company_id,
                     "company_name": company_name,
@@ -380,7 +405,7 @@ class ATSDiscoveryEngine:
                     "title": j.get("title", ""),
                     "canonical_url": canonical_url,
                     "location": loc or "India",
-                    "is_india_eligible": any(c in loc.lower() for c in ["india", "bengaluru", "bangalore", "remote"]),
+                    "is_india_eligible": True,
                     "employment_type": j.get("employmentType", "Full-time"),
                     "description": j.get("descriptionHtml", ""),
                     "application_status": "OPEN",

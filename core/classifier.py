@@ -226,32 +226,46 @@ class EligibilityClassifier:
 
     def classify_location_eligibility(self, location_text: str, full_text: str = "") -> Tuple[str, float, str]:
         """
-        Evaluates India location eligibility.
+        Evaluates India location eligibility according to Part 2 specifications.
         Returns (verdict: 'INDIA' | 'OUTSIDE_INDIA' | 'UNKNOWN', score_points, reason).
         """
-        loc = f"{location_text} {full_text}".lower()
+        loc_str = location_text.lower() if location_text else ""
+        desc_lower = full_text.lower() if full_text else ""
 
-        # India Cities and Regions
-        india_indicators = [
+        # 1. India Cities and Regions in location text
+        india_cities = [
             "india", "bengaluru", "bangalore", "hyderabad", "pune", "chennai", "mumbai",
             "delhi", "noida", "gurgaon", "gurugram", "kolkata", "ahmedabad", "jaipur", "patna"
         ]
-        for city in india_indicators:
-            if re.search(rf"\b{re.escape(city)}\b", loc):
+        for city in india_cities:
+            if re.search(rf"\b{re.escape(city)}\b", loc_str):
                 return "INDIA", 10.0, f"Location verified in India: '{city.title()}'"
 
-        # Remote check
-        if "remote" in loc:
-            # Check if restricted to US/Europe
-            if re.search(r"\b(?:us\s+only|usa\s+only|united\s+states\s+only|emea\s+only|north\s+america)\b", loc):
-                return "OUTSIDE_INDIA", 0.0, "Remote role restricted to candidates outside India"
-            return "INDIA", 8.0, "Remote position (no explicit non-India restrictions detected)"
-
-        # Definite foreign locations without India mention
-        foreign_indicators = ["united states", "usa", "canada", "united kingdom", "london", "germany", "singapore", "australia"]
+        # 2. Definite Foreign Locations (US, UK, Europe, etc.) -> OUTSIDE_INDIA
+        foreign_indicators = [
+            "united states", "usa", "u.s.", "canada", "united kingdom", "london", "germany",
+            "singapore", "australia", "poland", "warsaw", "montreal", "toronto", "vancouver",
+            "ireland", "dublin", "france", "paris", "netherlands", "amsterdam", "switzerland",
+            "zurich", "san francisco", "new york", "seattle", "austin", "chicago", "boston"
+        ]
         for f_ind in foreign_indicators:
-            if re.search(rf"\b{re.escape(f_ind)}\b", loc):
-                return "OUTSIDE_INDIA", 0.0, f"Location is outside India: '{f_ind.title()}'"
+            if re.search(rf"\b{re.escape(f_ind)}\b", loc_str):
+                return "OUTSIDE_INDIA", 0.0, f"Location is outside India: '{location_text}'"
+
+        # 3. Remote Position check
+        if "remote" in loc_str:
+            # Reject if restricted to US/Europe/Americas
+            if re.search(r"\b(?:us\s+only|usa\s+only|united\s+states\s+only|emea\s+only|north\s+america|americas)\b", f"{loc_str} {desc_lower}"):
+                return "OUTSIDE_INDIA", 0.0, "Remote position restricted to non-India regions"
+            # If explicit India remote
+            if any(c in loc_str or c in desc_lower for c in ["india", "apac", "worldwide", "anywhere"]):
+                return "INDIA", 9.0, "Remote position eligible for candidates in India"
+            return "UNKNOWN", 5.0, "Remote position without confirmed India eligibility"
+
+        # 4. Check description for India cities if location_text was empty
+        for city in india_cities:
+            if re.search(rf"\b{re.escape(city)}\b", desc_lower):
+                return "INDIA", 8.0, f"Location inferred in India from posting details: '{city.title()}'"
 
         return "UNKNOWN", 5.0, "Location unstated or unverified"
 
