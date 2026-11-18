@@ -162,9 +162,13 @@ class PortalScanner:
         return True
 
     def _preliminary_check(self, title: str, location: str) -> bool:
-        """Fast pre-filter before fetching individual JD pages (Role Title + India Location)."""
+        """Fast pre-filter before fetching individual JD pages (Role Title + India Location + Title Experience)."""
         role_ok, _ = self.filter.check_role(title)
         if not role_ok:
+            return False
+        # Skip titles that explicitly demand multi-year experience (e.g. "(5-9 Years)", "4+ years")
+        t_clean = re.sub(r"\b0\s*(?:-|–|to)\s*[12]\s*(?:years?|yrs?)\b", " ", (title or "").lower())
+        if re.search(r"\b(?:([2-9]|\d{2,})\s*(?:\+|(?:-|–|to)\s*\d+)?|1\s*\+)\s*(?:years?|yrs?)\b", t_clean):
             return False
         # Allow unknown/empty location through to JD check only if not explicitly foreign
         loc_lower = (location or "").lower()
@@ -257,6 +261,7 @@ class PortalScanner:
         report.total_retrieved = len(raw_postings)
 
         # Pre-filter candidates and fetch individual full JDs
+        consecutive_429 = 0
         for site, p in raw_postings:
             title = p.get("title", "")
             loc = p.get("locationsText", "")
@@ -267,11 +272,20 @@ class PortalScanner:
             # Fetch individual job details from Workday CXS
             detail_url = f"https://{host}/wday/cxs/{tenant}/{site}{ext_path}"
             report.candidate_jds_checked += 1
-            d_resp = self._request("GET", detail_url)
+            d_resp = self._request("GET", detail_url, retries=1)
             description = ""
             posted_raw = p.get("postedOn", "")
             canonical_url = f"https://{host}/en-US/{site}{ext_path}"
             job_id = str((p.get("bulletFields") or [ext_path])[0])
+
+            if d_resp is not None and d_resp.status_code == 429:
+                consecutive_429 += 1
+                if consecutive_429 >= 3:
+                    report.status = "PARTIAL"
+                    report.error = "Rate-limited (HTTP 429) during JD detail fetch"
+                    break
+                continue
+            consecutive_429 = 0
 
             if d_resp is not None and d_resp.status_code == 200:
                 info = d_resp.json().get("jobPostingInfo", {})
