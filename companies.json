@@ -4,56 +4,96 @@
     "category": "Big Tech",
     "ctc": "30-44 LPA",
     "careers_url": "https://careers.microsoft.com",
-    "slugs": []
+    "slugs": [],
+    "scanner": {
+      "type": "eightfold_pcsx",
+      "host": "apply.careers.microsoft.com",
+      "domain": "microsoft.com"
+    }
   },
   {
     "name": "Amazon",
     "category": "Big Tech",
     "ctc": "28-36 LPA",
     "careers_url": "https://www.amazon.jobs",
-    "slugs": []
+    "slugs": [],
+    "scanner": {
+      "type": "amazon_api"
+    }
   },
   {
     "name": "Adobe",
     "category": "Big Tech",
     "ctc": "24-32 LPA",
     "careers_url": "https://www.adobe.com/careers.html",
-    "slugs": []
+    "slugs": [],
+    "scanner": {
+      "type": "workday",
+      "host": "adobe.wd5.myworkdayjobs.com",
+      "tenant": "adobe",
+      "sites": [
+        "external_university",
+        "external_experienced"
+      ]
+    }
   },
   {
     "name": "Google",
     "category": "Big Tech",
     "ctc": "30-45 LPA",
     "careers_url": "https://careers.google.com",
-    "slugs": []
+    "slugs": [],
+    "scanner": {
+      "type": "google_careers"
+    }
   },
   {
     "name": "Apple",
     "category": "Big Tech",
     "ctc": "20-35 LPA",
     "careers_url": "https://www.apple.com/careers",
-    "slugs": []
+    "slugs": [],
+    "scanner": {
+      "type": "apple_api"
+    }
   },
   {
     "name": "Uber",
     "category": "Big Tech",
     "ctc": "20-30 LPA",
     "careers_url": "https://www.uber.com/careers",
-    "slugs": []
+    "slugs": [],
+    "scanner": {
+      "type": "uber_api"
+    }
   },
   {
     "name": "Walmart Global Tech",
     "category": "Big Tech",
     "ctc": "18-26 LPA",
     "careers_url": "https://careers.walmart.com/global-tech",
-    "slugs": []
+    "slugs": [],
+    "scanner": {
+      "type": "portal_html",
+      "urls": [
+        "https://careers.walmart.com/results?q=software&page=1&sort=rank&jobCareerArea=all"
+      ]
+    }
   },
   {
     "name": "Salesforce",
     "category": "Big Tech",
     "ctc": "18-26 LPA",
     "careers_url": "https://careers.salesforce.com",
-    "slugs": []
+    "slugs": [],
+    "scanner": {
+      "type": "workday",
+      "host": "salesforce.wd12.myworkdayjobs.com",
+      "tenant": "salesforce",
+      "sites": [
+        "External_Career_Site"
+      ]
+    }
   },
   {
     "name": "ServiceNow",
@@ -62,42 +102,83 @@
     "careers_url": "https://careers.servicenow.com",
     "slugs": [
       "servicenow"
-    ]
+    ],
+    "scanner": {
+      "type": "smartrecruiters",
+      "slug": "ServiceNow"
+    }
   },
   {
     "name": "Oracle",
     "category": "Big Tech",
     "ctc": "14-20 LPA",
     "careers_url": "https://www.oracle.com/careers",
-    "slugs": []
+    "slugs": [],
+    "scanner": {
+      "type": "oracle_hcm",
+      "host": "eeho.fa.us2.oraclecloud.com",
+      "site": "CX_45001"
+    }
   },
   {
     "name": "SAP Labs",
     "category": "Big Tech",
     "ctc": "16-22 LPA",
     "careers_url": "https://jobs.sap.com",
-    "slugs": []
+    "slugs": [],
+    "scanner": {
+      "type": "portal_html",
+      "urls": [
+        "https://jobs.sap.com/search/?createNewAlert=false&q=Software&locationsearch=India",
+        "https://jobs.sap.com/search/?createNewAlert=false&q=Intern&locationsearch=India"
+      ]
+    }
   },
   {
     "name": "VMware / Broadcom",
     "category": "Big Tech",
     "ctc": "16-22 LPA",
     "careers_url": "https://careers.broadcom.com",
-    "slugs": []
+    "slugs": [],
+    "scanner": {
+      "type": "workday",
+      "host": "broadcom.wd1.myworkdayjobs.com",
+      "tenant": "broadcom",
+      "sites": [
+        "External_Career"
+      ]
+    }
   },
   {
     "name": "Cisco",
     "category": "Big Tech",
     "ctc": "18-26 LPA",
     "careers_url": "https://jobs.cisco.com",
-    "slugs": []
+    "slugs": [],
+    "scanner": {
+      "type": "workday",
+      "host": "cisco.wd5.myworkdayjobs.com",
+      "tenant": "cisco",
+      "sites": [
+        "Cisco_Careers"
+      ]
+    }
   },
   {
     "name": "Juniper Networks",
     "category": "Big Tech",
     "ctc": "16-22 LPA",
     "careers_url": "https://careers.juniper.net",
-    "slugs": []
+    "slugs": [],
+    "scanner": {
+      "type": "workday",
+      "host": "hpe.wd5.myworkdayjobs.com",
+      "tenant": "hpe",
+      "sites": [
+        "Jobsathpe"
+      ],
+      "query_prefix": "Juniper"
+    }
   },
   {
     "name": "Arista Networks",
@@ -106,7 +187,11 @@
     "careers_url": "https://www.arista.com/en/company/careers",
     "slugs": [
       "aristanetworks"
-    ]
+    ],
+    "scanner": {
+      "type": "smartrecruiters",
+      "slug": "AristaNetworks"
+    }
   },
   {
     "name": "Nutanix",
@@ -115,35 +200,69 @@
     "careers_url": "https://www.nutanix.com/company/careers",
     "slugs": [
       "nutanix"
-    ]
+    ],
+    "scanner": {
+      "type": "portal_html",
+      "urls": [
+        "https://careers.nutanix.com/en/jobs/?search=India",
+        "https://careers.nutanix.com/en/"
+      ]
+    }
   },
   {
     "name": "Dell Technologies",
     "category": "Big Tech",
     "ctc": "15-20 LPA",
     "careers_url": "https://jobs.dell.com",
-    "slugs": []
+    "slugs": [],
+    "scanner": {
+      "type": "oracle_hcm",
+      "host": "enterpriseplatform.dell.com",
+      "site": "CX_1001"
+    }
   },
   {
     "name": "NVIDIA",
     "category": "Big Tech",
     "ctc": "20-30 LPA",
     "careers_url": "https://www.nvidia.com/en-us/about-nvidia/careers",
-    "slugs": []
+    "slugs": [],
+    "scanner": {
+      "type": "workday",
+      "host": "nvidia.wd5.myworkdayjobs.com",
+      "tenant": "nvidia",
+      "sites": [
+        "NVIDIAExternalCareerSite"
+      ]
+    }
   },
   {
     "name": "Qualcomm",
     "category": "Big Tech",
     "ctc": "18-25 LPA",
     "careers_url": "https://www.qualcomm.com/company/careers",
-    "slugs": []
+    "slugs": [],
+    "scanner": {
+      "type": "eightfold_pcsx",
+      "host": "careers.qualcomm.com",
+      "domain": "qualcomm.com"
+    }
   },
   {
     "name": "Intuit",
     "category": "Big Tech",
     "ctc": "18-26 LPA",
     "careers_url": "https://www.intuit.com/careers",
-    "slugs": []
+    "slugs": [],
+    "scanner": {
+      "type": "talentbrew",
+      "base_url": "https://jobs.intuit.com",
+      "search_paths": [
+        "/search-jobs/India",
+        "/search-jobs/intern/India",
+        "/search-jobs/software/India"
+      ]
+    }
   },
   {
     "name": "Atlassian",
@@ -152,14 +271,23 @@
     "careers_url": "https://www.atlassian.com/company/careers",
     "slugs": [
       "atlassian"
-    ]
+    ],
+    "scanner": {
+      "type": "atlassian_api"
+    }
   },
   {
     "name": "Akamai",
     "category": "Big Tech",
     "ctc": "16-22 LPA",
     "careers_url": "https://www.akamai.com/careers",
-    "slugs": []
+    "slugs": [],
+    "scanner": {
+      "type": "portal_html",
+      "urls": [
+        "https://www.akamai.com/careers"
+      ]
+    }
   },
   {
     "name": "Rubrik",
@@ -168,14 +296,27 @@
     "careers_url": "https://www.rubrik.com/company/careers",
     "slugs": [
       "rubrik"
-    ]
+    ],
+    "scanner": {
+      "type": "greenhouse",
+      "slug": "rubrik"
+    }
   },
   {
     "name": "Splunk",
     "category": "Big Tech",
     "ctc": "16-22 LPA",
     "careers_url": "https://www.splunk.com/en_us/careers.html",
-    "slugs": []
+    "slugs": [],
+    "scanner": {
+      "type": "workday",
+      "host": "cisco.wd5.myworkdayjobs.com",
+      "tenant": "cisco",
+      "sites": [
+        "Cisco_Careers"
+      ],
+      "query_prefix": "Splunk"
+    }
   },
   {
     "name": "Palo Alto Networks",
@@ -184,7 +325,16 @@
     "careers_url": "https://jobs.paloaltonetworks.com",
     "slugs": [
       "paloaltonetworks"
-    ]
+    ],
+    "scanner": {
+      "type": "workday",
+      "host": "paloaltonetworks.wd5.myworkdayjobs.com",
+      "tenant": "paloaltonetworks",
+      "sites": [
+        "panwexternalcareers"
+      ],
+      "fallback_talentbrew": "https://jobs.paloaltonetworks.com/en/search-jobs/India"
+    }
   },
   {
     "name": "CrowdStrike",
@@ -193,49 +343,102 @@
     "careers_url": "https://www.crowdstrike.com/careers",
     "slugs": [
       "crowdstrike"
-    ]
+    ],
+    "scanner": {
+      "type": "workday",
+      "host": "crowdstrike.wd5.myworkdayjobs.com",
+      "tenant": "crowdstrike",
+      "sites": [
+        "crowdstrikecareers"
+      ]
+    }
   },
   {
     "name": "Visa",
     "category": "Fintech/Payments",
     "ctc": "18-26 LPA",
     "careers_url": "https://usa.visa.com/careers.html",
-    "slugs": []
+    "slugs": [],
+    "scanner": {
+      "type": "workday",
+      "host": "visa.wd5.myworkdayjobs.com",
+      "tenant": "visa",
+      "sites": [
+        "Visa"
+      ]
+    }
   },
   {
     "name": "Mastercard",
     "category": "Fintech/Payments",
     "ctc": "18-24 LPA",
     "careers_url": "https://careers.mastercard.com",
-    "slugs": []
+    "slugs": [],
+    "scanner": {
+      "type": "workday",
+      "host": "mastercard.wd1.myworkdayjobs.com",
+      "tenant": "mastercard",
+      "sites": [
+        "CorporateCareers"
+      ]
+    }
   },
   {
     "name": "PayPal",
     "category": "Fintech/Payments",
     "ctc": "18-24 LPA",
     "careers_url": "https://careers.pypl.com",
-    "slugs": []
+    "slugs": [],
+    "scanner": {
+      "type": "workday",
+      "host": "paypal.wd1.myworkdayjobs.com",
+      "tenant": "paypal",
+      "sites": [
+        "jobs"
+      ]
+    }
   },
   {
     "name": "American Express",
     "category": "Fintech/Payments",
     "ctc": "15-20 LPA",
     "careers_url": "https://www.americanexpress.com/en-us/careers",
-    "slugs": []
+    "slugs": [],
+    "scanner": {
+      "type": "eightfold_pcsx",
+      "host": "aexp.eightfold.ai",
+      "domain": "aexp.com"
+    }
   },
   {
     "name": "Fiserv",
     "category": "Fintech/Payments",
     "ctc": "15-20 LPA",
     "careers_url": "https://www.fiserv.com/en/about-fiserv/careers.html",
-    "slugs": []
+    "slugs": [],
+    "scanner": {
+      "type": "workday",
+      "host": "fiserv.wd5.myworkdayjobs.com",
+      "tenant": "fiserv",
+      "sites": [
+        "EXT"
+      ]
+    }
   },
   {
     "name": "FIS",
     "category": "Fintech/Payments",
     "ctc": "15-20 LPA",
     "careers_url": "https://jobs.fisglobal.com",
-    "slugs": []
+    "slugs": [],
+    "scanner": {
+      "type": "workday",
+      "host": "fis.wd5.myworkdayjobs.com",
+      "tenant": "fis",
+      "sites": [
+        "SearchJobs"
+      ]
+    }
   },
   {
     "name": "Stripe",
@@ -244,77 +447,146 @@
     "careers_url": "https://stripe.com/jobs",
     "slugs": [
       "stripe"
-    ]
+    ],
+    "scanner": {
+      "type": "greenhouse",
+      "slug": "stripe"
+    }
   },
   {
     "name": "Goldman Sachs (Tech)",
     "category": "Banking/Finance Tech",
     "ctc": "15-22 LPA",
     "careers_url": "https://www.goldmansachs.com/careers",
-    "slugs": []
+    "slugs": [],
+    "scanner": {
+      "type": "goldman_api"
+    }
   },
   {
     "name": "JPMorgan Chase (Tech)",
     "category": "Banking/Finance Tech",
     "ctc": "15-20 LPA",
     "careers_url": "https://careers.jpmorgan.com",
-    "slugs": []
+    "slugs": [],
+    "scanner": {
+      "type": "oracle_hcm",
+      "host": "jpmc.fa.oraclecloud.com",
+      "site": "CX_1001"
+    }
   },
   {
     "name": "Morgan Stanley (Tech)",
     "category": "Banking/Finance Tech",
     "ctc": "15-20 LPA",
     "careers_url": "https://www.morganstanley.com/careers",
-    "slugs": []
+    "slugs": [],
+    "scanner": {
+      "type": "workday",
+      "host": "ms.wd5.myworkdayjobs.com",
+      "tenant": "ms",
+      "sites": [
+        "External"
+      ]
+    }
   },
   {
     "name": "Citi (Tech)",
     "category": "Banking/Finance Tech",
     "ctc": "15-18 LPA",
     "careers_url": "https://jobs.citi.com",
-    "slugs": []
+    "slugs": [],
+    "scanner": {
+      "type": "workday",
+      "host": "citi.wd5.myworkdayjobs.com",
+      "tenant": "citi",
+      "sites": [
+        "2"
+      ]
+    }
   },
   {
     "name": "Deutsche Bank (Tech)",
     "category": "Banking/Finance Tech",
     "ctc": "15-18 LPA",
     "careers_url": "https://careers.db.com",
-    "slugs": []
+    "slugs": [],
+    "scanner": {
+      "type": "workday",
+      "host": "db.wd3.myworkdayjobs.com",
+      "tenant": "db",
+      "sites": [
+        "DBWebsite"
+      ]
+    }
   },
   {
     "name": "Barclays (Tech)",
     "category": "Banking/Finance Tech",
     "ctc": "15-18 LPA",
     "careers_url": "https://search.jobs.barclays",
-    "slugs": []
+    "slugs": [],
+    "scanner": {
+      "type": "talentbrew",
+      "base_url": "https://search.jobs.barclays",
+      "search_paths": [
+        "/search-jobs/India",
+        "/search-jobs/graduate",
+        "/search-jobs/developer",
+        "/search-jobs/software"
+      ]
+    }
   },
   {
     "name": "Wells Fargo (Tech)",
     "category": "Banking/Finance Tech",
     "ctc": "15-18 LPA",
     "careers_url": "https://www.wellsfargojobs.com",
-    "slugs": []
+    "slugs": [],
+    "scanner": {
+      "type": "oracle_hcm",
+      "host": "fa-etjb-saasfaprod1.fa.ocs.oraclecloud.com",
+      "site": "CX_1"
+    }
   },
   {
     "name": "Nomura",
     "category": "Banking/Finance Tech",
     "ctc": "15-18 LPA",
     "careers_url": "https://www.nomura.com/careers",
-    "slugs": []
+    "slugs": [],
+    "scanner": {
+      "type": "portal_html",
+      "urls": [
+        "https://www.nomura.com/careers"
+      ]
+    }
   },
   {
     "name": "Flipkart",
     "category": "Indian Product/Unicorn",
     "ctc": "15-25 LPA",
     "careers_url": "https://www.flipkartcareers.com",
-    "slugs": []
+    "slugs": [],
+    "scanner": {
+      "type": "portal_html",
+      "urls": [
+        "https://www.flipkartcareers.com"
+      ]
+    }
   },
   {
     "name": "Zomato",
     "category": "Indian Product/Unicorn",
     "ctc": "16-22 LPA",
     "careers_url": "https://www.zomato.com/careers",
-    "slugs": []
+    "slugs": [],
+    "scanner": {
+      "type": "portal_html",
+      "urls": [
+        "https://www.eternal.com/careers/"
+      ]
+    }
   },
   {
     "name": "Swiggy",
@@ -323,7 +595,11 @@
     "careers_url": "https://careers.swiggy.com",
     "slugs": [
       "swiggy"
-    ]
+    ],
+    "scanner": {
+      "type": "smartrecruiters",
+      "slug": "Swiggy"
+    }
   },
   {
     "name": "Razorpay",
@@ -332,7 +608,11 @@
     "careers_url": "https://razorpay.com/jobs",
     "slugs": [
       "razorpay"
-    ]
+    ],
+    "scanner": {
+      "type": "greenhouse",
+      "slug": "razorpaysoftwareprivatelimited"
+    }
   },
   {
     "name": "CRED",
@@ -341,14 +621,24 @@
     "careers_url": "https://careers.cred.club",
     "slugs": [
       "cred"
-    ]
+    ],
+    "scanner": {
+      "type": "lever",
+      "slug": "cred"
+    }
   },
   {
     "name": "PhonePe",
     "category": "Indian Product/Unicorn",
     "ctc": "16-22 LPA",
     "careers_url": "https://www.phonepe.com/careers",
-    "slugs": []
+    "slugs": [],
+    "scanner": {
+      "type": "portal_html",
+      "urls": [
+        "https://www.phonepe.com/careers/"
+      ]
+    }
   },
   {
     "name": "Freshworks",
@@ -357,7 +647,11 @@
     "careers_url": "https://www.freshworks.com/company/careers",
     "slugs": [
       "freshworks"
-    ]
+    ],
+    "scanner": {
+      "type": "smartrecruiters",
+      "slug": "Freshworks"
+    }
   },
   {
     "name": "Postman",
@@ -366,7 +660,13 @@
     "careers_url": "https://www.postman.com/company/careers",
     "slugs": [
       "postman"
-    ]
+    ],
+    "scanner": {
+      "type": "portal_html",
+      "urls": [
+        "https://www.postman.com/company/careers/open-positions/"
+      ]
+    }
   },
   {
     "name": "BrowserStack",
@@ -375,14 +675,28 @@
     "careers_url": "https://www.browserstack.com/careers",
     "slugs": [
       "browserstack"
-    ]
+    ],
+    "scanner": {
+      "type": "workday",
+      "host": "browserstack.wd3.myworkdayjobs.com",
+      "tenant": "browserstack",
+      "sites": [
+        "External"
+      ]
+    }
   },
   {
     "name": "Zoho",
     "category": "Indian Product/Unicorn",
     "ctc": "6-12 LPA",
     "careers_url": "https://www.zoho.com/careers.html",
-    "slugs": []
+    "slugs": [],
+    "scanner": {
+      "type": "portal_html",
+      "urls": [
+        "https://www.zoho.com/careers/"
+      ]
+    }
   },
   {
     "name": "Groww",
@@ -391,7 +705,11 @@
     "careers_url": "https://groww.in/careers",
     "slugs": [
       "groww"
-    ]
+    ],
+    "scanner": {
+      "type": "greenhouse",
+      "slug": "groww"
+    }
   },
   {
     "name": "Meesho",
@@ -400,14 +718,24 @@
     "careers_url": "https://careers.meesho.com",
     "slugs": [
       "meesho"
-    ]
+    ],
+    "scanner": {
+      "type": "lever",
+      "slug": "meesho"
+    }
   },
   {
     "name": "Zerodha",
     "category": "Indian Product/Unicorn",
     "ctc": "15-20 LPA",
     "careers_url": "https://zerodha.com/careers",
-    "slugs": []
+    "slugs": [],
+    "scanner": {
+      "type": "portal_html",
+      "urls": [
+        "https://careers.zerodha.com/"
+      ]
+    }
   },
   {
     "name": "Paytm",
@@ -416,14 +744,24 @@
     "careers_url": "https://paytm.com/careers",
     "slugs": [
       "paytm"
-    ]
+    ],
+    "scanner": {
+      "type": "lever",
+      "slug": "paytm"
+    }
   },
   {
     "name": "PolicyBazaar",
     "category": "Indian Product/Unicorn",
     "ctc": "12-18 LPA",
     "careers_url": "https://www.policybazaar.com/careers",
-    "slugs": []
+    "slugs": [],
+    "scanner": {
+      "type": "portal_html",
+      "urls": [
+        "https://www.policybazaar.com/careers/"
+      ]
+    }
   },
   {
     "name": "Slice",
@@ -432,77 +770,146 @@
     "careers_url": "https://sliceit.com/careers",
     "slugs": [
       "slice"
-    ]
+    ],
+    "scanner": {
+      "type": "greenhouse",
+      "slug": "slice"
+    }
   },
   {
     "name": "Jupiter",
     "category": "Indian Product/Unicorn",
     "ctc": "15-20 LPA",
     "careers_url": "https://jupiter.money/careers",
-    "slugs": []
+    "slugs": [],
+    "scanner": {
+      "type": "portal_html",
+      "urls": [
+        "https://jupiter.money/careers/"
+      ]
+    }
   },
   {
     "name": "Fi Money",
     "category": "Indian Product/Unicorn",
     "ctc": "15-20 LPA",
     "careers_url": "https://fi.money/careers",
-    "slugs": []
+    "slugs": [],
+    "scanner": {
+      "type": "lever",
+      "slug": "fi"
+    }
   },
   {
     "name": "Synopsys",
     "category": "Semiconductor/Hardware",
     "ctc": "15-20 LPA",
     "careers_url": "https://www.synopsys.com/careers.html",
-    "slugs": []
+    "slugs": [],
+    "scanner": {
+      "type": "talentbrew",
+      "base_url": "https://careers.synopsys.com",
+      "search_paths": [
+        "/search-jobs/India",
+        "/search-jobs/intern/India",
+        "/search-jobs/software/India"
+      ]
+    }
   },
   {
     "name": "Cadence",
     "category": "Semiconductor/Hardware",
     "ctc": "15-20 LPA",
     "careers_url": "https://www.cadence.com/en_US/home/company/careers.html",
-    "slugs": []
+    "slugs": [],
+    "scanner": {
+      "type": "workday",
+      "host": "cadence.wd1.myworkdayjobs.com",
+      "tenant": "cadence",
+      "sites": [
+        "External_Careers"
+      ]
+    }
   },
   {
     "name": "Texas Instruments",
     "category": "Semiconductor/Hardware",
     "ctc": "14-18 LPA",
     "careers_url": "https://careers.ti.com",
-    "slugs": []
+    "slugs": [],
+    "scanner": {
+      "type": "oracle_hcm",
+      "host": "edyy.fa.us2.oraclecloud.com",
+      "site": "CX"
+    }
   },
   {
     "name": "Micron",
     "category": "Semiconductor/Hardware",
     "ctc": "15-20 LPA",
     "careers_url": "https://careers.micron.com",
-    "slugs": []
+    "slugs": [],
+    "scanner": {
+      "type": "workday",
+      "host": "micron.wd1.myworkdayjobs.com",
+      "tenant": "micron",
+      "sites": [
+        "External"
+      ]
+    }
   },
   {
     "name": "AMD",
     "category": "Semiconductor/Hardware",
     "ctc": "16-22 LPA",
     "careers_url": "https://careers.amd.com",
-    "slugs": []
+    "slugs": [],
+    "scanner": {
+      "type": "jibe_api",
+      "host": "careers.amd.com"
+    }
   },
   {
     "name": "Intel",
     "category": "Semiconductor/Hardware",
     "ctc": "15-20 LPA",
     "careers_url": "https://jobs.intel.com",
-    "slugs": []
+    "slugs": [],
+    "scanner": {
+      "type": "workday",
+      "host": "intel.wd1.myworkdayjobs.com",
+      "tenant": "intel",
+      "sites": [
+        "External"
+      ]
+    }
   },
   {
     "name": "Samsung R&D",
     "category": "Semiconductor/Hardware",
     "ctc": "12-18 LPA",
     "careers_url": "https://www.samsung.com/in/careers",
-    "slugs": []
+    "slugs": [],
+    "scanner": {
+      "type": "workday",
+      "host": "sec.wd3.myworkdayjobs.com",
+      "tenant": "sec",
+      "sites": [
+        "Samsung_Careers"
+      ]
+    }
   },
   {
     "name": "Icertis",
     "category": "Enterprise SaaS",
     "ctc": "15-20 LPA",
     "careers_url": "https://www.icertis.com/company/careers",
-    "slugs": []
+    "slugs": [],
+    "scanner": {
+      "type": "oracle_hcm",
+      "host": "iaaviz.fa.ocs.oraclecloud.com",
+      "site": "Jobs-at-Icertis"
+    }
   },
   {
     "name": "Innovaccer",
@@ -511,7 +918,13 @@
     "careers_url": "https://innovaccer.com/careers",
     "slugs": [
       "innovaccer"
-    ]
+    ],
+    "scanner": {
+      "type": "portal_html",
+      "urls": [
+        "https://innovaccer.com/careers"
+      ]
+    }
   },
   {
     "name": "Chargebee",
@@ -520,14 +933,26 @@
     "careers_url": "https://www.chargebee.com/careers",
     "slugs": [
       "chargebee"
-    ]
+    ],
+    "scanner": {
+      "type": "portal_html",
+      "urls": [
+        "https://www.chargebee.com/company/careers/"
+      ]
+    }
   },
   {
     "name": "Darwinbox",
     "category": "Enterprise SaaS",
     "ctc": "12-18 LPA",
     "careers_url": "https://darwinbox.com/careers",
-    "slugs": []
+    "slugs": [],
+    "scanner": {
+      "type": "portal_html",
+      "urls": [
+        "https://darwinbox.com/careers"
+      ]
+    }
   },
   {
     "name": "Highradius",
@@ -536,6 +961,12 @@
     "careers_url": "https://www.highradius.com/careers",
     "slugs": [
       "highradius"
-    ]
+    ],
+    "scanner": {
+      "type": "portal_html",
+      "urls": [
+        "https://www.highradius.com/careers/"
+      ]
+    }
   }
 ]

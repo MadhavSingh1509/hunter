@@ -86,11 +86,18 @@ class HunterDatabase:
                 score_reasons_json TEXT,
                 eligibility_notes TEXT,
                 notification_status TEXT DEFAULT 'PENDING',
+                posted_on TEXT DEFAULT 'Not disclosed',
                 first_discovered_at TEXT NOT NULL,
                 last_seen_at TEXT NOT NULL,
                 FOREIGN KEY (company_id) REFERENCES companies(id)
             )
             """)
+
+            # Safe schema migration for existing hunter.db files
+            cursor.execute("PRAGMA table_info(jobs)")
+            existing_cols = {row[1] for row in cursor.fetchall()}
+            if "posted_on" not in existing_cols:
+                cursor.execute("ALTER TABLE jobs ADD COLUMN posted_on TEXT DEFAULT 'Not disclosed'")
 
             # Job History / State Transitions Table
             cursor.execute("""
@@ -224,8 +231,9 @@ class HunterDatabase:
         job_key = self.generate_job_key(company_id, ats_job_id, canonical_url)
         now_iso = datetime.now().isoformat()
 
-        new_classification = job_data.get("classification", "POTENTIAL MATCH")
+        new_classification = job_data.get("classification", "VERIFIED MATCH")
         new_status = job_data.get("application_status", "OPEN")
+        posted_on = str(job_data.get("posted_on") or "Not disclosed").strip() or "Not disclosed"
         match_score = float(job_data.get("match_score", 0.0))
         score_reasons = json.dumps(job_data.get("score_reasons", {}))
 
@@ -244,8 +252,8 @@ class HunterDatabase:
                     joining_bonus, stock_equity, total_ctc, role_relevance, degree_eligibility,
                     graduation_eligibility, experience_eligibility, application_status,
                     classification, match_score, score_reasons_json, eligibility_notes,
-                    notification_status, first_discovered_at, last_seen_at
-                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                    notification_status, posted_on, first_discovered_at, last_seen_at
+                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
                 """, (
                     job_key, company_id, company_name, ats_job_id,
                     job_data.get("title", ""), job_data.get("normalized_title", job_data.get("title", "")),
@@ -257,11 +265,11 @@ class HunterDatabase:
                     job_data.get("base_salary", ""), job_data.get("variable_comp", ""),
                     job_data.get("joining_bonus", ""), job_data.get("stock_equity", ""),
                     job_data.get("total_ctc", ""), job_data.get("role_relevance", "MATCH"),
-                    job_data.get("degree_eligibility", "UNKNOWN"),
-                    job_data.get("graduation_eligibility", "UNKNOWN"),
-                    job_data.get("experience_eligibility", "UNKNOWN"),
+                    job_data.get("degree_eligibility", "ELIGIBLE"),
+                    job_data.get("graduation_eligibility", "ELIGIBLE"),
+                    job_data.get("experience_eligibility", "ELIGIBLE"),
                     new_status, new_classification, match_score, score_reasons,
-                    job_data.get("eligibility_notes", ""), "PENDING", now_iso, now_iso
+                    job_data.get("eligibility_notes", ""), "PENDING", posted_on, now_iso, now_iso
                 ))
             else:
                 prev_class = existing["classification"]
@@ -279,6 +287,8 @@ class HunterDatabase:
                 else:
                     transition = "OPEN"
                     notif_status = existing["notification_status"]
+
+                final_posted = posted_on if posted_on != "Not disclosed" else (existing["posted_on"] or "Not disclosed")
 
                 cursor.execute("""
                 UPDATE jobs SET
@@ -300,6 +310,7 @@ class HunterDatabase:
                     score_reasons_json = ?,
                     eligibility_notes = ?,
                     notification_status = ?,
+                    posted_on = ?,
                     last_seen_at = ?
                 WHERE job_key = ?
                 """, (
@@ -316,7 +327,7 @@ class HunterDatabase:
                     job_data.get("experience_eligibility", existing["experience_eligibility"]),
                     new_status, new_classification, match_score, score_reasons,
                     job_data.get("eligibility_notes", existing["eligibility_notes"]),
-                    notif_status, now_iso, job_key
+                    notif_status, final_posted, now_iso, job_key
                 ))
 
             # Record history transition
@@ -413,44 +424,45 @@ class HunterDatabase:
             """)
             return [dict(row) for row in cursor.fetchall()]
 
+    def get_unnotified_verified_jobs(self) -> List[Dict[str, Any]]:
+        """Fetches ONLY confirmed fresher-eligible (VERIFIED MATCH) jobs that have not yet been emailed."""
+        with self.get_connection() as conn:
+            cursor = conn.cursor()
+            cursor.execute("""
+            SELECT * FROM jobs
+            WHERE notification_status = 'PENDING' AND classification = 'VERIFIED MATCH'
+            ORDER BY company_name ASC, first_discovered_at DESC
+            """)
+            return [dict(row) for row in cursor.fetchall()]
+
     def get_all_jobs(self) -> List[Dict[str, Any]]:
         """Fetches all active jobs in the database."""
         with self.get_connection() as conn:
             cursor = conn.cursor()
-            cursor.execute("SELECT * FROM jobs ORDER BY match_score DESC, first_discovered_at DESC")
+            cursor.execute("SELECT * FROM jobs ORDER BY company_name ASC, first_discovered_at DESC")
             return [dict(row) for row in cursor.fetchall()]
 
     def export_artifacts(self, csv_path: str = "applications.csv", json_path: str = "job_tracker.json"):
         """Exports SQLite database records to applications.csv and job_tracker.json for visibility and git persistence."""
         jobs = self.get_all_jobs()
-        
+
         # Export JSON
         with open(json_path, "w", encoding="utf-8") as f:
             json.dump(jobs, f, indent=2)
 
-        # Export CSV
+        # Export simple clean CSV
         import csv
-        fieldnames = [
-            "Company", "Role", "Classification", "Match Score", "Location", "Compensation",
-            "Degree Eligibility", "Graduation Eligibility", "Experience", "Application Status",
-            "URL", "Discovered Date", "Last Checked"
-        ]
+        fieldnames = ["Company", "Position Name", "Posted On", "Apply Link", "Location", "Status", "Discovered Date"]
         with open(csv_path, "w", newline="", encoding="utf-8") as f:
             writer = csv.DictWriter(f, fieldnames=fieldnames)
             writer.writeheader()
             for j in jobs:
                 writer.writerow({
                     "Company": j.get("company_name"),
-                    "Role": j.get("title"),
-                    "Classification": j.get("classification"),
-                    "Match Score": f"{j.get('match_score', 0):.1f}",
+                    "Position Name": j.get("title"),
+                    "Posted On": j.get("posted_on") or "Not disclosed",
+                    "Apply Link": j.get("canonical_url"),
                     "Location": j.get("location"),
-                    "Compensation": j.get("compensation_text"),
-                    "Degree Eligibility": j.get("degree_eligibility"),
-                    "Graduation Eligibility": j.get("graduation_eligibility"),
-                    "Experience": j.get("experience_eligibility"),
-                    "Application Status": j.get("application_status"),
-                    "URL": j.get("canonical_url"),
+                    "Status": j.get("notification_status"),
                     "Discovered Date": j.get("first_discovered_at", "")[:10],
-                    "Last Checked": j.get("last_seen_at", "")[:10]
                 })

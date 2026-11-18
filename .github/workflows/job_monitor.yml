@@ -1,4 +1,4 @@
-name: Hunter 4.0 Job Discovery & Alert System
+name: Hunter — Fresher Job Monitor
 
 on:
   schedule:
@@ -8,6 +8,7 @@ on:
 jobs:
   run-hunter:
     runs-on: ubuntu-latest
+    timeout-minutes: 30
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -24,11 +25,11 @@ jobs:
         run: |
           pip install -r requirements.txt
 
-      - name: Run automated test suite (57 tests)
+      - name: Run automated test suite
         run: |
           pytest -v
 
-      - name: Execute Hunter 4.0 Monitor
+      - name: Execute Hunter Fresher Monitor
         env:
           EMAIL_ADDRESS: ${{ secrets.EMAIL_ADDRESS }}
           EMAIL_PASSWORD: ${{ secrets.EMAIL_PASSWORD }}
@@ -38,14 +39,13 @@ jobs:
           SMTP_SERVER: ${{ secrets.SMTP_SERVER }}
           SMTP_PORT: ${{ secrets.SMTP_PORT }}
           HUNTER_GRADUATION_YEAR: ${{ vars.HUNTER_GRADUATION_YEAR }}
-          HUNTER_LOCATION: ${{ vars.HUNTER_LOCATION }}
         run: python monitor.py
 
-      - name: Commit and persist SQLite database, state, and application tracker
+      - name: Commit and persist job records
         run: |
           git config user.name "hunter-bot"
           git config user.email "actions@github.com"
-          git add data/hunter.db state.json job_tracker.json applications.csv config/
-          git diff --quiet && git diff --staged --quiet || git commit -m "Update Hunter 4.0 database and application tracker [skip ci]"
+          git add data/hunter.db job_tracker.json applications.csv
+          git diff --quiet && git diff --staged --quiet || git commit -m "Update Hunter fresher job records [skip ci]"
           git pull --rebase origin main
           git push origin main

@@ -1,31 +1,24 @@
 """
-HUNTER 4.0 — Automated India-Based Fresher SDE & AI/ML Job Discovery System
-Main orchestrator for:
-- Registry management (167 companies & 57 campus recruiters)
-- Multi-source ATS discovery (Amazon, Salesforce, Barclays, Accenture, Greenhouse, Lever, SmartRecruiters, Ashby)
-- 7-Dimension eligibility classification (B.Tech Electrical Engineering, 2026 Batch, 0 yrs exp)
-- 100-Point scoring system with hard rejection gates
-- Persistent SQLite storage & state transition tracking (data/hunter.db)
-- Source health diagnostics (HEALTHY, DEGRADED, FAILED, NOT_CONFIGURED)
-- 4-Section responsive email notification digest
-- Synchronized CSV & JSON exports (applications.csv, job_tracker.json)
+HUNTER — Simple Fresher Software Engineering & AI/ML Job Monitor
+Scans all companies in companies.json thoroughly with pagination and full JD inspection,
+applies the strict fresher filter (B.Tech Electrical Engineering, 2027, India-only),
+deduplicates against SQLite (data/hunter.db), and sends a minimal 4-field email:
+Company | Position Name | Posted On | Apply Link
 """
 
 import os
-import sys
+import re
 import json
 import time
 import logging
-from typing import List, Dict, Any, Tuple, Optional
+from concurrent.futures import ThreadPoolExecutor, as_completed
+from typing import List, Dict, Any
 
-# Core & Service Imports
 from core.database import HunterDatabase
-from core.classifier import EligibilityClassifier
-from core.health import SourceHealthMonitor
-from scrapers.ats_engine import ATSDiscoveryEngine
+from core.fresher_filter import StrictFresherFilter
+from scrapers.portal_scanner import PortalScanner, CompanyScanReport
 from notifications.email_service import HunterEmailService
 
-# Setup Logging
 logging.basicConfig(
     level=logging.INFO,
     format="[%(asctime)s] [%(levelname)s] %(message)s",
@@ -33,198 +26,185 @@ logging.basicConfig(
 )
 logger = logging.getLogger("hunter")
 
-CONFIG_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "config")
-COMPANY_REGISTRY_PATH = os.path.join(CONFIG_DIR, "company_registry.json")
-CAMPUS_REGISTRY_PATH = os.path.join(CONFIG_DIR, "campus_recruiter_registry.json")
-CANDIDATE_PROFILE_PATH = os.path.join(CONFIG_DIR, "candidate_profile.json")
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+COMPANIES_FILE = os.path.join(BASE_DIR, "companies.json")
+PROFILE_FILE = os.path.join(BASE_DIR, "candidate_profile.json")
 
-def run_hunter():
+
+def slugify(name: str) -> str:
+    return re.sub(r"[^a-z0-9]+", "_", name.lower()).strip("_")
+
+
+def load_graduation_year() -> int:
+    env_yr = os.environ.get("HUNTER_GRADUATION_YEAR", "").strip()
+    if env_yr.isdigit():
+        return int(env_yr)
+    if os.path.exists(PROFILE_FILE):
+        try:
+            with open(PROFILE_FILE, "r", encoding="utf-8") as f:
+                prof = json.load(f)
+            return int(prof.get("candidate", {}).get("graduation_year", 2027))
+        except Exception:
+            pass
+    return 2027
+
+
+def scan_single_company(comp: Dict[str, Any], grad_year: int) -> CompanyScanReport:
+    """Thread-safe scanner worker (each worker uses its own requests Session)."""
+    flt = StrictFresherFilter(graduation_year=grad_year)
+    scanner = PortalScanner(flt, timeout=12)
+    report = scanner.scan_company(comp)
+
+    # Verify each candidate's official apply URL before returning
+    verified_matches = []
+    for job in report.fresher_matches:
+        if scanner.verify_application_url(job.get("canonical_url", "")):
+            verified_matches.append(job)
+    report.fresher_matches = verified_matches
+    return report
+
+
+def run_hunter() -> Dict[str, Any]:
     start_time = time.time()
-    print("=" * 75)
-    print("🎯 HUNTER 4.0 — AUTOMATED FRESHER SDE & AI/ML JOB DISCOVERY SYSTEM")
-    print("=" * 75)
+    grad_year = load_graduation_year()
 
-    # 1. Initialize Database & Seed Registries
-    db = HunterDatabase()
-    db.seed_registries(COMPANY_REGISTRY_PATH, CAMPUS_REGISTRY_PATH)
-    classifier = EligibilityClassifier(CANDIDATE_PROFILE_PATH)
-    ats_engine = ATSDiscoveryEngine(timeout=12)
-    email_service = HunterEmailService()
-    health_monitor = SourceHealthMonitor(db)
+    print("=" * 72)
+    print(f"HUNTER — Fresher Software & AI/ML Job Scan (B.Tech EE | Batch {grad_year} | India)")
+    print("=" * 72)
 
-    # Print Candidate Profile Summary
-    candidate = classifier.candidate
-    print(f"👤 Candidate: {candidate.get('name')} | Degree: {candidate.get('degree')} {candidate.get('branch')}")
-    print(f"🎓 Graduation Batch: {candidate.get('graduation_year')} | Max Experience: {candidate.get('experience_years_max')} years (Fresher)")
-    print(f"📍 Preferred Locations: India Only | Target Compensation: >= 12 LPA (Undisclosed accepted)")
-    print("=" * 75)
-
-    # Load Companies from Registry
-    with open(COMPANY_REGISTRY_PATH, "r", encoding="utf-8") as f:
+    with open(COMPANIES_FILE, "r", encoding="utf-8") as f:
         companies = json.load(f)
 
-    # Sort companies: mandatory priority first, then high priority, then normal
-    companies.sort(key=lambda c: (not c.get("is_mandatory_priority", False), c.get("priority") != "high", c["name"]))
+    db = HunterDatabase()
+    email_service = HunterEmailService()
 
-    total_companies_scanned = 0
-    total_jobs_retrieved = 0
-    total_new_discovered = 0
-    total_verified_matches = 0
-    total_potential_matches = 0
+    print(f"[WATCHLIST] Loaded {len(companies)} companies from companies.json")
+    print("[SCAN] Scanning all company portals with pagination and full JD inspection...\n")
 
-    print(f"\n[DISCOVERY] Beginning scan across {len(companies)} registered employers...\n")
+    reports: List[CompanyScanReport] = []
 
-    for idx, comp in enumerate(companies, 1):
-        comp_id = comp["id"]
-        comp_name = comp["name"]
-        ats_type = comp.get("ats_type", "custom")
-        ats_id = comp.get("ats_identifier", "")
-        is_mandatory = comp.get("is_mandatory_priority", False)
+    # Polite concurrency: 5 workers avoids Workday/ATS 429 rate-limit blocks while finishing thoroughly
+    with ThreadPoolExecutor(max_workers=5) as executor:
+        future_map = {executor.submit(scan_single_company, comp, grad_year): comp for comp in companies}
+        completed = 0
+        for future in as_completed(future_map):
+            comp = future_map[future]
+            completed += 1
+            try:
+                rep = future.result()
+            except Exception as e:
+                rep = CompanyScanReport(
+                    company=comp["name"],
+                    scanner_type=comp.get("scanner", {}).get("type", "unknown"),
+                    status="FAILED",
+                    error=str(e),
+                )
+            reports.append(rep)
 
-        retrieved_jobs: List[Dict[str, Any]] = []
-        health_status = "HEALTHY"
-        http_code = 200
-        error_msg = None
-
-        try:
-            # Dispatch to appropriate scraper adapter
-            if ats_type == "amazon_api":
-                retrieved_jobs = ats_engine.fetch_amazon_jobs(max_pages=2)
-            elif ats_type == "salesforce_workday":
-                retrieved_jobs = ats_engine.fetch_salesforce_jobs(max_pages=2)
-            elif ats_type == "barclays_talentbrew":
-                retrieved_jobs = ats_engine.fetch_barclays_jobs(max_pages=2)
-            elif ats_type == "accenture_api":
-                retrieved_jobs = ats_engine.fetch_accenture_jobs()
-            elif ats_type == "greenhouse" and ats_id:
-                retrieved_jobs = ats_engine.fetch_greenhouse_jobs(ats_id, comp_name, comp_id)
-            elif ats_type == "lever" and ats_id:
-                retrieved_jobs = ats_engine.fetch_lever_jobs(ats_id, comp_name, comp_id)
-            elif ats_type == "smartrecruiters" and ats_id:
-                retrieved_jobs = ats_engine.fetch_smartrecruiters_jobs(ats_id, comp_name, comp_id)
-            elif ats_type == "ashby" and ats_id:
-                retrieved_jobs = ats_engine.fetch_ashby_jobs(ats_id, comp_name, comp_id)
+            if rep.status == "SCANNED_OK":
+                print(
+                    f"  [{completed:2d}/{len(companies)}] OK     | {rep.company:24s} ({rep.scanner_type:14s}) | "
+                    f"retrieved={rep.total_retrieved:<4d} jds_read={rep.candidate_jds_checked:<3d} fresher_matches={len(rep.fresher_matches)}",
+                    flush=True
+                )
             else:
-                health_status = "NOT_CONFIGURED"
+                print(
+                    f"  [{completed:2d}/{len(companies)}] FAILED | {rep.company:24s} ({rep.scanner_type:14s}) | {rep.error}",
+                    flush=True
+                )
 
-            if health_status != "NOT_CONFIGURED":
-                total_companies_scanned += 1
-                total_jobs_retrieved += len(retrieved_jobs)
+    # Sort reports alphabetically for clean recording & summary
+    reports.sort(key=lambda r: r.company.lower())
 
-        except Exception as e:
-            health_status = "FAILED"
-            http_code = 500
-            error_msg = str(e)
-            logger.error(f"[{comp_name}] Scanner failed: {e}")
+    total_retrieved = sum(r.total_retrieved for r in reports)
+    total_jds_checked = sum(r.candidate_jds_checked for r in reports)
+    ok_companies = [r for r in reports if r.status == "SCANNED_OK"]
+    failed_companies = [r for r in reports if r.status != "SCANNED_OK"]
 
-        # Evaluate and record jobs
-        comp_relevant_count = 0
-        comp_verified_count = 0
-        comp_potential_count = 0
-        comp_new_count = 0
+    new_recorded = 0
+    seen_urls_this_run = set()
 
-        for raw_job in retrieved_jobs:
-            eval_result = classifier.evaluate_job(raw_job)
+    for rep in reports:
+        comp_id = slugify(rep.company)
+        db.update_source_health(
+            company_id=comp_id,
+            company_name=rep.company,
+            source_url="",
+            scanner_type=rep.scanner_type,
+            health_status="HEALTHY" if rep.status == "SCANNED_OK" else "FAILED",
+            http_status=200 if rep.status == "SCANNED_OK" else 0,
+            jobs_retrieved=rep.total_retrieved,
+            new_jobs=0,
+            relevant_jobs=len(rep.fresher_matches),
+            verified_matches=len(rep.fresher_matches),
+            potential_matches=0,
+            pagination_completed=(rep.status == "SCANNED_OK"),
+            error_msg=rep.error or None,
+        )
 
-            # Skip rejected roles from cluttering notifications, but record statistics
-            if eval_result["classification"] == "REJECTED":
+        for job in rep.fresher_matches:
+            url_norm = job["canonical_url"].strip().split("?")[0].rstrip("/")
+            dedup_key = f"{comp_id}::{job.get('ats_job_id', '')}::{url_norm}"
+            if dedup_key in seen_urls_this_run:
                 continue
+            seen_urls_this_run.add(dedup_key)
 
-            comp_relevant_count += 1
-            if eval_result["classification"] == "VERIFIED MATCH":
-                comp_verified_count += 1
-                total_verified_matches += 1
-            else:
-                comp_potential_count += 1
-                total_potential_matches += 1
+            _, transition = db.record_job({
+                "company_id": comp_id,
+                "company_name": rep.company,
+                "ats_job_id": job.get("ats_job_id", ""),
+                "title": job["title"],
+                "canonical_url": job["canonical_url"],
+                "location": job.get("location", "India"),
+                "posted_on": job.get("posted_on", "Not disclosed"),
+                "classification": "VERIFIED MATCH",
+                "application_status": "OPEN",
+                "eligibility_notes": job.get("reason", "Confirmed fresher-eligible"),
+            })
+            if transition in ("NEW", "REOPENED"):
+                new_recorded += 1
 
-            # Combine job data
-            merged_job = {**raw_job, **eval_result}
-            job_key, transition = db.record_job(merged_job)
+    # Fetch ONLY unnotified confirmed fresher jobs
+    jobs_to_email = db.get_unnotified_verified_jobs()
 
-            if transition == "NEW":
-                comp_new_count += 1
-                total_new_discovered += 1
-                prefix = "★ [NEW VERIFIED]" if eval_result["classification"] == "VERIFIED MATCH" else "• [NEW POTENTIAL]"
-                print(f"  {prefix} {comp_name} — {raw_job['title']} (Score: {eval_result['match_score']}/100)")
-            elif transition == "VERIFIED_UPGRADE":
-                print(f"  ▲ [UPGRADE] {comp_name} — {raw_job['title']} upgraded to VERIFIED MATCH")
+    print("\n" + "=" * 72)
+    print(f"SCAN SUMMARY ({round(time.time() - start_time, 1)}s)")
+    print(f"  Companies attempted : {len(reports)}/{len(companies)}")
+    print(f"  Portals scanned OK  : {len(ok_companies)}")
+    print(f"  Portals failed      : {len(failed_companies)}")
+    print(f"  Total listings seen : {total_retrieved}")
+    print(f"  JDs inspected       : {total_jds_checked}")
+    print(f"  New fresher matches : {new_recorded}")
+    print(f"  Queued for email    : {len(jobs_to_email)}")
+    print("=" * 72)
 
-        # Record source health
-        if health_status != "NOT_CONFIGURED":
-            db.update_source_health(
-                company_id=comp_id,
-                company_name=comp_name,
-                source_url=comp.get("careers_url", ""),
-                scanner_type=ats_type,
-                health_status=health_status,
-                http_status=http_code,
-                jobs_retrieved=len(retrieved_jobs),
-                new_jobs=comp_new_count,
-                relevant_jobs=comp_relevant_count,
-                verified_matches=comp_verified_count,
-                potential_matches=comp_potential_count,
-                pagination_completed=True,
-                error_msg=error_msg
-            )
-            print(f"[{idx}/{len(companies)}] {comp_name}: {len(retrieved_jobs)} jobs retrieved, {comp_relevant_count} relevant ({comp_verified_count} verified, {comp_potential_count} potential)")
+    if jobs_to_email:
+        print("\nConfirmed Fresher Opportunities (Company | Position Name | Posted On | Apply Link):")
+        for j in jobs_to_email:
+            print(f"  {j['company_name']} | {j['title']} | {j.get('posted_on') or 'Not disclosed'} | {j['canonical_url']}")
 
-    # 2. Gather Unnotified Jobs for the 4 Email Sections
-    unnotified_jobs = db.get_unnotified_jobs()
-    verified_section = []
-    potential_section = []
-    below_target_section = []
-    new_updated_section = []
+    # Send simple 4-field email ONLY if there are new confirmed fresher jobs
+    email_sent = email_service.send_simple_digest(jobs_to_email)
+    if email_sent:
+        db.mark_notified([j["job_key"] for j in jobs_to_email])
+        print(f"[EMAIL] Marked {len(jobs_to_email)} jobs as NOTIFIED.")
 
-    for j in unnotified_jobs:
-        classification = j.get("classification")
-        comp_status = j.get("compensation_status")
-        
-        if classification == "VERIFIED MATCH":
-            if comp_status == "BELOW_12_LPA":
-                below_target_section.append(j)
-            else:
-                verified_section.append(j)
-        elif classification == "POTENTIAL MATCH":
-            if comp_status == "BELOW_12_LPA":
-                below_target_section.append(j)
-            else:
-                potential_section.append(j)
+    # Export clean CSV & JSON
+    db.export_artifacts(csv_path="applications.csv", json_path="job_tracker.json")
 
-    scan_summary = {
-        "companies_scanned": total_companies_scanned,
-        "jobs_retrieved": total_jobs_retrieved,
-        "verified_count": len(verified_section),
-        "potential_count": len(potential_section),
-        "duration_seconds": round(time.time() - start_time, 2)
+    return {
+        "attempted": len(reports),
+        "ok": [r.company for r in ok_companies],
+        "failed": [(r.company, r.error) for r in failed_companies],
+        "total_retrieved": total_retrieved,
+        "jds_checked": total_jds_checked,
+        "fresher_matches": sum(len(r.fresher_matches) for r in reports),
+        "queued_for_email": len(jobs_to_email),
+        "email_sent": email_sent,
     }
 
-    # 3. Deliver Email Notification Digest
-    email_sent = email_service.send_digest(
-        verified_matches=verified_section,
-        potential_matches=potential_section,
-        below_target_jobs=below_target_section,
-        new_updated_jobs=new_updated_section,
-        scan_summary=scan_summary
-    )
 
-    if email_sent:
-        notified_keys = [j["job_key"] for j in unnotified_jobs]
-        db.mark_notified(notified_keys)
-        print(f"[EMAIL] Marked {len(notified_keys)} opportunities as NOTIFIED.")
-
-    # 4. Synchronize and Export Persistent Artifacts
-    db.export_artifacts(csv_path="applications.csv", json_path="job_tracker.json")
-    print(f"\n[STORAGE] Successfully synchronized database to applications.csv and job_tracker.json.")
-
-    # 5. Output Source Health Report
-    print("\n" + "=" * 75)
-    print(health_monitor.format_markdown_table(limit_not_configured=True))
-    print("=" * 75)
-    print(f"✨ Hunter 4.0 scan completed in {scan_summary['duration_seconds']}s.")
-    print("=" * 75 + "\n")
-
-# Alias for backward compatibility
+# Backward-compatible alias
 run_pipeline = run_hunter
 
 if __name__ == "__main__":

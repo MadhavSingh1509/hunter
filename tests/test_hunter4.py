@@ -205,25 +205,21 @@ def test_15_potential_to_verified_transition(tmp_db):
     _, trans2 = tmp_db.record_job(job)
     assert trans2 == "VERIFIED_UPGRADE"
 
-# 16. Email formatting (4 sections)
+# 16. Email formatting (minimal 4-field format)
 def test_16_email_formatting():
     service = HunterEmailService()
-    ver = [{"title": "SDE 1", "company_name": "Amazon", "match_score": 88, "canonical_url": "http://ex.com"}]
-    pot = [{"title": "Backend Dev", "company_name": "Cred", "match_score": 65, "canonical_url": "http://ex.com"}]
-    below = [{"title": "Graduate Engineer", "company_name": "TCS", "compensation_text": "₹7.0 LPA", "match_score": 70, "canonical_url": "http://ex.com"}]
-    updates = [{"title": "SDE Intern", "company_name": "Stripe", "transition_type": "VERIFIED_UPGRADE", "canonical_url": "http://ex.com"}]
-
-    html = service.generate_html_digest(ver, pot, below, updates, {"companies_scanned": 167, "jobs_retrieved": 4})
-    assert "SECTION 1: VERIFIED MATCHES" in html
-    assert "SECTION 2: POTENTIAL MATCHES" in html
-    assert "SECTION 3: BELOW ₹12 LPA" in html
-    assert "SECTION 4: NEW & UPDATED STATUS" in html
+    jobs = [{"title": "SDE 1", "company_name": "Amazon", "posted_on": "17 Nov 2026", "canonical_url": "http://ex.com"}]
+    subject, plain, html = service.build_simple_digest(jobs)
+    assert subject == "Hunter — New Fresher Job Opportunities"
+    assert "Company | Position Name | Posted On | Apply Link" in plain
+    assert "Amazon" in html
+    assert "SDE 1" in html
+    assert "17 Nov 2026" in html
 
 # 17. Empty digest prevention
 def test_17_empty_digest_prevention():
     service = HunterEmailService()
-    # Sending with 0 jobs should return False and not send
-    sent = service.send_digest([], [], [], [], {})
+    sent = service.send_simple_digest([])
     assert sent is False
 
 # 18. Notification deduplication
