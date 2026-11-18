@@ -19,6 +19,7 @@ import re
 import time
 import html
 import logging
+import threading
 import requests
 from bs4 import BeautifulSoup
 from datetime import datetime, timedelta
@@ -29,6 +30,8 @@ from urllib.parse import urljoin
 from core.fresher_filter import StrictFresherFilter
 
 logger = logging.getLogger("hunter.scanner")
+WORKDAY_SEMAPHORE = threading.Semaphore(2)
+PLAYWRIGHT_SEMAPHORE = threading.Semaphore(1)
 
 DEFAULT_HEADERS = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36",
@@ -183,6 +186,10 @@ class PortalScanner:
     # 1. WORKDAY CXS ADAPTER (Full Pagination + Individual JD Detail Fetch)
     # =========================================================================
     def scan_workday(self, company: str, cfg: Dict[str, Any]) -> CompanyScanReport:
+        with WORKDAY_SEMAPHORE:
+            return self._scan_workday_impl(company, cfg)
+
+    def _scan_workday_impl(self, company: str, cfg: Dict[str, Any]) -> CompanyScanReport:
         host = cfg["host"]
         tenant = cfg["tenant"]
         sites = cfg.get("sites", ["External"])
@@ -272,7 +279,7 @@ class PortalScanner:
             # Fetch individual job details from Workday CXS
             detail_url = f"https://{host}/wday/cxs/{tenant}/{site}{ext_path}"
             report.candidate_jds_checked += 1
-            d_resp = self._request("GET", detail_url, retries=1)
+            d_resp = self._request("GET", detail_url, retries=2)
             description = ""
             posted_raw = p.get("postedOn", "")
             canonical_url = f"https://{host}/en-US/{site}{ext_path}"
@@ -314,12 +321,12 @@ class PortalScanner:
                     "canonical_url": canonical_url,
                     "reason": decision.reason,
                 })
-            time.sleep(0.15)
+            time.sleep(0.35)
 
         return report
 
     # =========================================================================
-    # 2. ORACLE CLOUD HCM ADAPTER (Pagination + Individual Requisition Details)
+    # 2. ORACLE CLOUD HCM ADAPTER (Dynamic India Facet + Full Pagination + JD Fetch)
     # =========================================================================
     def scan_oracle_hcm(self, company: str, cfg: Dict[str, Any]) -> CompanyScanReport:
         host = cfg["host"]
@@ -331,16 +338,40 @@ class PortalScanner:
         any_success = False
         last_err = ""
 
-        # Search India-focused & fresher keywords so India roles aren't buried behind US listings
-        keywords = ["India", "India%20Software", "India%20Intern", "India%20Graduate", "Intern", "Graduate"]
-        for kw in keywords:
+        # Step 1: Dynamically discover this tenant's exact India location facet ID
+        india_facet_id = None
+        facet_url = (
+            f"https://{host}/hcmRestApi/resources/latest/recruitingCEJobRequisitions"
+            f"?onlyData=true&expand=locationsFacet&finder=findReqs;siteNumber={site},facetsList=LOCATIONS,limit=1,offset=0"
+        )
+        f_resp = self._request("GET", facet_url)
+        if f_resp is not None and f_resp.status_code == 200:
+            any_success = True
+            f_items = f_resp.json().get("items", [])
+            if f_items:
+                for loc_f in (f_items[0].get("locationsFacet") or []):
+                    lname = str(loc_f.get("Name", "")).strip().lower()
+                    if lname == "india":
+                        india_facet_id = str(loc_f.get("Id"))
+                        break
+
+        # Step 2: Build targeted finder queries (exact India facet if found, plus fresher keywords)
+        finder_queries = []
+        if india_facet_id:
+            finder_queries.append(f"siteNumber={site},selectedLocationsFacet={india_facet_id}")
+        else:
+            for kw in ["Intern", "Graduate", "Engineer", "Software", "Analyst"]:
+                finder_queries.append(f"siteNumber={site},keyword={kw}")
+
+        for fq in finder_queries:
             offset = 0
             limit = 25
-            for page in range(10):  # Up to 250 per keyword
+            max_pages = 20 if india_facet_id else 8  # Up to 500 India jobs when India facet is known!
+            for page in range(max_pages):
                 url = (
                     f"https://{host}/hcmRestApi/resources/latest/recruitingCEJobRequisitions"
                     f"?onlyData=true&expand=requisitionList.secondaryLocations"
-                    f"&finder=findReqs;siteNumber={site},limit={limit},offset={offset},keyword={kw}"
+                    f"&finder=findReqs;{fq},limit={limit},offset={offset}"
                 )
                 resp = self._request("GET", url)
                 if resp is None:
@@ -1247,15 +1278,20 @@ class PortalScanner:
                         if 4 < len(title) < 130:
                             candidates.append((full_url, title))
 
-        if not any_http_ok:
-            report.status = "FAILED"
-            report.error = f"Portal unreachable ({last_err})"
-            return report
-
         if len(candidates) == 0:
-            report.status = "FAILED"
-            report.error = "JS-rendered/SPA portal or bot-protected (0 static job links accessible via HTTP)"
-            return report
+            # Try Playwright headless Chromium fallback if installed (renders JS/SPA portals!)
+            pw_candidates = self._playwright_extract_links(urls)
+            if pw_candidates:
+                candidates = pw_candidates
+                report.scanner_type = "playwright"
+            else:
+                if not any_http_ok:
+                    report.status = "FAILED"
+                    report.error = f"Portal unreachable ({last_err})"
+                else:
+                    report.status = "FAILED"
+                    report.error = "JS-rendered/SPA portal or bot-protected (0 job links extracted)"
+                return report
 
         report.total_retrieved = len(candidates)
 
@@ -1264,14 +1300,16 @@ class PortalScanner:
                 continue
             report.candidate_jds_checked += 1
             d_resp = self._request("GET", job_url, allow_redirects=True)
-            if d_resp is None or d_resp.status_code != 200:
-                continue
-            soup = BeautifulSoup(d_resp.text, "html.parser")
-            desc_text = soup.get_text(" ", strip=True)
+            desc_text = ""
             posted_raw = None
-            m_date = re.search(r'"datePosted"\s*:\s*"([^"]+)"', d_resp.text)
-            if m_date:
-                posted_raw = m_date.group(1)
+            if d_resp is not None and d_resp.status_code == 200:
+                soup = BeautifulSoup(d_resp.text, "html.parser")
+                desc_text = soup.get_text(" ", strip=True)
+                m_date = re.search(r'"datePosted"\s*:\s*"([^"]+)"', d_resp.text)
+                if m_date:
+                    posted_raw = m_date.group(1)
+            if len(desc_text) < 120 and report.scanner_type == "playwright":
+                desc_text = self._playwright_read_page(job_url)
 
             loc_hint = "India" if "india" in desc_text.lower() else ""
             decision = self.filter.evaluate(title, loc_hint, desc_text)
@@ -1288,6 +1326,71 @@ class PortalScanner:
             time.sleep(0.2)
 
         return report
+
+    @staticmethod
+    def _playwright_extract_links(urls: List[str]) -> List[Tuple[str, str]]:
+        """Uses Playwright headless Chromium (when installed) to render JS/SPA career pages and extract job links."""
+        try:
+            from playwright.sync_api import sync_playwright
+        except ImportError:
+            return []
+
+        found: List[Tuple[str, str]] = []
+        seen = set()
+        cues = ["/job/", "/jobs/", "/position/", "/requisition/", "/opening/", "/careers/details/", "/role/", "gh_jid=", "jobid="]
+
+        with PLAYWRIGHT_SEMAPHORE:
+            try:
+                with sync_playwright() as p:
+                    browser = p.chromium.launch(headless=True)
+                    ctx = browser.new_context(user_agent=DEFAULT_HEADERS["User-Agent"])
+                    page = ctx.new_page()
+                    for u in urls[:2]:
+                        try:
+                            page.goto(u, timeout=20000, wait_until="domcontentloaded")
+                            page.wait_for_timeout(3500)
+                            anchors = page.eval_on_selector_all(
+                                "a[href]",
+                                "els => els.map(e => ({text: (e.innerText || '').trim(), href: e.href}))"
+                            )
+                            for a in anchors:
+                                href = (a.get("href") or "").split("#")[0]
+                                text = re.sub(r"\s+", " ", a.get("text") or "").strip()
+                                if not href.startswith("http") or href in seen:
+                                    continue
+                                if not any(c in href.lower() for c in cues):
+                                    continue
+                                if re.search(r"/(?:jobs|careers|search|search-jobs|open-positions)/?$", href.split("?")[0].lower()):
+                                    continue
+                                if 4 < len(text) < 140:
+                                    seen.add(href)
+                                    found.append((href, text))
+                        except Exception:
+                            continue
+                    browser.close()
+            except Exception:
+                return []
+        return found
+
+    @staticmethod
+    def _playwright_read_page(url: str) -> str:
+        """Reads rendered text of an individual JS-rendered job description page."""
+        try:
+            from playwright.sync_api import sync_playwright
+        except ImportError:
+            return ""
+        with PLAYWRIGHT_SEMAPHORE:
+            try:
+                with sync_playwright() as p:
+                    browser = p.chromium.launch(headless=True)
+                    page = browser.new_page(user_agent=DEFAULT_HEADERS["User-Agent"])
+                    page.goto(url, timeout=18000, wait_until="domcontentloaded")
+                    page.wait_for_timeout(2500)
+                    txt = page.inner_text("body")
+                    browser.close()
+                    return txt or ""
+            except Exception:
+                return ""
 
     # =========================================================================
     # DISPATCHER FOR ANY COMPANY IN companies.json
