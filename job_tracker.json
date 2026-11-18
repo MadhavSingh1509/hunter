@@ -90,7 +90,7 @@
     "eligibility_notes": "Verified Fresher Software/AI Match (Score 87.0/100)",
     "notification_status": "NOTIFIED",
     "first_discovered_at": "2026-11-17T11:18:39.840714",
-    "last_seen_at": "2026-11-17T20:35:42.045196"
+    "last_seen_at": "2026-11-18T06:26:55.719814"
   },
   {
     "job_key": "02d3e7795ad9ce94a7f478e5",
@@ -121,7 +121,7 @@
     "eligibility_notes": "Verified Fresher Software/AI Match (Score 87.0/100)",
     "notification_status": "NOTIFIED",
     "first_discovered_at": "2026-11-17T11:18:39.821399",
-    "last_seen_at": "2026-11-17T20:35:42.038810"
+    "last_seen_at": "2026-11-18T06:26:55.713772"
   },
   {
     "job_key": "f00481e5709ac6f1038bc39a",
@@ -152,7 +152,7 @@
     "eligibility_notes": "Review required: Graduation batch unstated, Exact years of experience unstated",
     "notification_status": "NOTIFIED",
     "first_discovered_at": "2026-11-17T11:21:33.546136",
-    "last_seen_at": "2026-11-17T20:36:00.267734"
+    "last_seen_at": "2026-11-18T06:27:24.800081"
   },
   {
     "job_key": "80451edcd24be182cbb3def7",
@@ -183,7 +183,7 @@
     "eligibility_notes": "Review required: Degree requirements unstated",
     "notification_status": "NOTIFIED",
     "first_discovered_at": "2026-11-17T11:20:18.585315",
-    "last_seen_at": "2026-11-17T20:35:48.793928"
+    "last_seen_at": "2026-11-18T06:27:15.566060"
   },
   {
     "job_key": "41dfaffb0ca50fd199de601b",
@@ -214,7 +214,7 @@
     "eligibility_notes": "Verified Fresher Software/AI Match (Score 85.0/100)",
     "notification_status": "NOTIFIED",
     "first_discovered_at": "2026-11-17T11:20:40.970536",
-    "last_seen_at": "2026-11-17T20:35:49.932046"
+    "last_seen_at": "2026-11-18T06:27:16.777171"
   },
   {
     "job_key": "6a2e7f6d9ba81bf9370beb3c",
@@ -307,7 +307,7 @@
     "eligibility_notes": "Verified Fresher Software/AI Match (Score 83.0/100)",
     "notification_status": "NOTIFIED",
     "first_discovered_at": "2026-11-17T11:18:40.612001",
-    "last_seen_at": "2026-11-17T20:35:42.326015"
+    "last_seen_at": "2026-11-18T06:26:55.969795"
   },
   {
     "job_key": "94edd5d2af2ed69164ecc762",
@@ -338,7 +338,7 @@
     "eligibility_notes": "Verified Fresher Software/AI Match (Score 83.0/100)",
     "notification_status": "NOTIFIED",
     "first_discovered_at": "2026-11-17T11:18:40.565285",
-    "last_seen_at": "2026-11-17T20:35:42.303816"
+    "last_seen_at": "2026-11-18T06:26:55.952370"
   },
   {
     "job_key": "91b1d1e3be71c67ef16e5a8f",
@@ -369,7 +369,7 @@
     "eligibility_notes": "Verified Fresher Software/AI Match (Score 83.0/100)",
     "notification_status": "NOTIFIED",
     "first_discovered_at": "2026-11-17T11:18:39.954166",
-    "last_seen_at": "2026-11-17T20:35:42.086257"
+    "last_seen_at": "2026-11-18T06:26:55.757016"
   },
   {
     "job_key": "2937fc4071bc8d4368127432",
@@ -400,7 +400,7 @@
     "eligibility_notes": "Review required: Graduation batch unstated, Exact years of experience unstated",
     "notification_status": "NOTIFIED",
     "first_discovered_at": "2026-11-17T20:35:39.358201",
-    "last_seen_at": "2026-11-17T20:35:42.109396"
+    "last_seen_at": "2026-11-18T06:26:55.778460"
   },
   {
     "job_key": "44cc5395449d4d31bf6f7e41",
@@ -431,7 +431,38 @@
     "eligibility_notes": "Review required: Graduation batch unstated, Exact years of experience unstated",
     "notification_status": "NOTIFIED",
     "first_discovered_at": "2026-11-17T20:35:39.339317",
-    "last_seen_at": "2026-11-17T20:35:42.091164"
+    "last_seen_at": "2026-11-18T06:26:55.761493"
+  },
+  {
+    "job_key": "9360dc02bde26b6f5ad27f62",
+    "company_id": "amazon",
+    "company_name": "Amazon",
+    "ats_job_id": "10607822",
+    "title": "Software Development Engineer, Last Mile Platform Services, SDE",
+    "normalized_title": "Software Development Engineer, Last Mile Platform Services, SDE",
+    "canonical_url": "https://www.amazon.jobs/en/jobs/10607822/software-development-engineer-last-mile-platform-services-sde",
+    "location": "Gurugram, IND",
+    "is_india_eligible": 1,
+    "employment_type": "Full-time",
+    "compensation_text": "Not disclosed",
+    "compensation_status": "UNDISCLOSED",
+    "base_salary": "",
+    "variable_comp": "",
+    "joining_bonus": "",
+    "stock_equity": "",
+    "total_ctc": "",
+    "role_relevance": "MATCH",
+    "degree_eligibility": "ELIGIBLE",
+    "graduation_eligibility": "UNKNOWN",
+    "experience_eligibility": "ELIGIBLE",
+    "application_status": "OPEN",
+    "classification": "VERIFIED MATCH",
+    "match_score": 81.0,
+    "score_reasons_json": "{\"role_relevance\": {\"score\": 25.0, \"reason\": \"Direct title match: 'software development engineer'\"}, \"degree_eligibility\": {\"score\": 18.0, \"reason\": \"Accepts B.Tech / Bachelor's in engineering without branch restrictions\"}, \"graduation_eligibility\": {\"score\": 8.0, \"reason\": \"Graduation batch unstated (compatible with 2026 batch)\"}, \"experience_eligibility\": {\"score\": 15.0, \"reason\": \"Explicitly accepts 0-1 years / freshers / interns\"}, \"location_eligibility\": {\"score\": 10.0, \"reason\": \"Location verified in India: 'Gurugram'\"}, \"skills_match\": {\"score\": 0.0, \"matched_skills\": []}, \"employment_type\": {\"score\": 5.0, \"type\": \"Full-time\"}}",
+    "eligibility_notes": "Verified Fresher Software/AI Match (Score 81.0/100)",
+    "notification_status": "NOTIFIED",
+    "first_discovered_at": "2026-11-18T06:26:53.063082",
+    "last_seen_at": "2026-11-18T06:26:55.602194"
   },
   {
     "job_key": "4a50238adbd988af301ee9c2",
@@ -462,7 +493,7 @@
     "eligibility_notes": "Verified Fresher Software/AI Match (Score 81.0/100)",
     "notification_status": "NOTIFIED",
     "first_discovered_at": "2026-11-17T20:35:39.177817",
-    "last_seen_at": "2026-11-17T20:35:41.926771"
+    "last_seen_at": "2026-11-18T06:26:55.595804"
   },
   {
     "job_key": "5c51c56d49aa7348ed2d554d",
@@ -493,7 +524,7 @@
     "eligibility_notes": "Verified Fresher Software/AI Match (Score 81.0/100)",
     "notification_status": "NOTIFIED",
     "first_discovered_at": "2026-11-17T11:18:40.336904",
-    "last_seen_at": "2026-11-17T20:35:42.220922"
+    "last_seen_at": "2026-11-18T06:26:55.879367"
   },
   {
     "job_key": "ebd814fbbc10ee50790631c1",
@@ -524,7 +555,7 @@
     "eligibility_notes": "Verified Fresher Software/AI Match (Score 81.0/100)",
     "notification_status": "NOTIFIED",
     "first_discovered_at": "2026-11-17T11:18:40.193332",
-    "last_seen_at": "2026-11-17T20:35:42.171181"
+    "last_seen_at": "2026-11-18T06:26:55.835574"
   },
   {
     "job_key": "19543f96c0700a847ab2f84e",
@@ -555,7 +586,7 @@
     "eligibility_notes": "Verified Fresher Software/AI Match (Score 81.0/100)",
     "notification_status": "NOTIFIED",
     "first_discovered_at": "2026-11-17T11:18:40.170451",
-    "last_seen_at": "2026-11-17T20:35:42.166478"
+    "last_seen_at": "2026-11-18T06:26:55.830975"
   },
   {
     "job_key": "4af120cbc2b8aa9cf82d0360",
@@ -586,7 +617,7 @@
     "eligibility_notes": "Verified Fresher Software/AI Match (Score 81.0/100)",
     "notification_status": "NOTIFIED",
     "first_discovered_at": "2026-11-17T11:18:40.134045",
-    "last_seen_at": "2026-11-17T20:35:42.159848"
+    "last_seen_at": "2026-11-18T06:26:55.824719"
   },
   {
     "job_key": "c70951f626d07b7050b3e0a4",
@@ -617,7 +648,7 @@
     "eligibility_notes": "Verified Fresher Software/AI Match (Score 81.0/100)",
     "notification_status": "NOTIFIED",
     "first_discovered_at": "2026-11-17T11:18:40.076616",
-    "last_seen_at": "2026-11-17T20:35:42.142783"
+    "last_seen_at": "2026-11-18T06:26:55.808783"
   },
   {
     "job_key": "c3b83f4c565640e6048e55c9",
@@ -648,7 +679,7 @@
     "eligibility_notes": "Verified Fresher Software/AI Match (Score 81.0/100)",
     "notification_status": "NOTIFIED",
     "first_discovered_at": "2026-11-17T11:18:40.051964",
-    "last_seen_at": "2026-11-17T20:35:42.137792"
+    "last_seen_at": "2026-11-18T06:26:55.803975"
   },
   {
     "job_key": "b4201956f9fe1f13d7e23456",
@@ -679,7 +710,7 @@
     "eligibility_notes": "Verified Fresher Software/AI Match (Score 81.0/100)",
     "notification_status": "NOTIFIED",
     "first_discovered_at": "2026-11-17T11:18:39.895482",
-    "last_seen_at": "2026-11-17T20:35:42.064873"
+    "last_seen_at": "2026-11-18T06:26:55.737990"
   },
   {
     "job_key": "fb157cd11acd379a7e8e7d64",
@@ -710,7 +741,7 @@
     "eligibility_notes": "Verified Fresher Software/AI Match (Score 81.0/100)",
     "notification_status": "NOTIFIED",
     "first_discovered_at": "2026-11-17T11:18:39.740119",
-    "last_seen_at": "2026-11-17T20:35:42.006323"
+    "last_seen_at": "2026-11-18T06:26:55.685397"
   },
   {
     "job_key": "76bbded0fcfcadccce22bb6a",
@@ -741,7 +772,7 @@
     "eligibility_notes": "Verified Fresher Software/AI Match (Score 81.0/100)",
     "notification_status": "NOTIFIED",
     "first_discovered_at": "2026-11-17T11:18:39.722106",
-    "last_seen_at": "2026-11-17T20:35:42.001245"
+    "last_seen_at": "2026-11-18T06:26:55.680836"
   },
   {
     "job_key": "fb40b3b6f1a0f185ef9a33b5",
@@ -772,7 +803,7 @@
     "eligibility_notes": "Verified Fresher Software/AI Match (Score 81.0/100)",
     "notification_status": "NOTIFIED",
     "first_discovered_at": "2026-11-17T11:18:39.704618",
-    "last_seen_at": "2026-11-17T20:35:41.996250"
+    "last_seen_at": "2026-11-18T06:26:55.675806"
   },
   {
     "job_key": "968686f5de9babfa4c0bbc36",
@@ -803,7 +834,7 @@
     "eligibility_notes": "Verified Fresher Software/AI Match (Score 81.0/100)",
     "notification_status": "NOTIFIED",
     "first_discovered_at": "2026-11-17T11:18:39.597626",
-    "last_seen_at": "2026-11-17T20:35:41.952730"
+    "last_seen_at": "2026-11-18T06:26:55.633724"
   },
   {
     "job_key": "a565c8c064c5743af56b865f",
@@ -834,7 +865,7 @@
     "eligibility_notes": "Verified Fresher Software/AI Match (Score 81.0/100)",
     "notification_status": "NOTIFIED",
     "first_discovered_at": "2026-11-17T11:18:39.573266",
-    "last_seen_at": "2026-11-17T20:35:41.943851"
+    "last_seen_at": "2026-11-18T06:26:55.617912"
   },
   {
     "job_key": "9dda8c4b7a9161c97ee93f9c",
@@ -865,7 +896,7 @@
     "eligibility_notes": "Verified Fresher Software/AI Match (Score 81.0/100)",
     "notification_status": "NOTIFIED",
     "first_discovered_at": "2026-11-17T11:18:39.554065",
-    "last_seen_at": "2026-11-17T20:35:41.938675"
+    "last_seen_at": "2026-11-18T06:26:55.612562"
   },
   {
     "job_key": "c9a3607a796c04ee021e414f",
@@ -927,7 +958,7 @@
     "eligibility_notes": "Review required: Graduation batch unstated, Exact years of experience unstated",
     "notification_status": "NOTIFIED",
     "first_discovered_at": "2026-11-17T20:35:48.818058",
-    "last_seen_at": "2026-11-17T20:35:48.818058"
+    "last_seen_at": "2026-11-18T06:27:15.588835"
   },
   {
     "job_key": "ee1af85be01857d49320be36",
@@ -989,7 +1020,7 @@
     "eligibility_notes": "Review required: Graduation batch unstated, Exact years of experience unstated",
     "notification_status": "NOTIFIED",
     "first_discovered_at": "2026-11-17T11:20:23.288331",
-    "last_seen_at": "2026-11-17T20:35:49.492365"
+    "last_seen_at": "2026-11-18T06:27:16.355445"
   },
   {
     "job_key": "354faa7cac4a2b7f2fd3cc6d",
@@ -1206,7 +1237,7 @@
     "eligibility_notes": "Review required: Graduation batch unstated, Exact years of experience unstated",
     "notification_status": "NOTIFIED",
     "first_discovered_at": "2026-11-17T11:20:18.667014",
-    "last_seen_at": "2026-11-17T20:35:48.806229"
+    "last_seen_at": "2026-11-18T06:27:15.577828"
   },
   {
     "job_key": "c2f86d05ab795cd8a7f244e2",
@@ -1237,7 +1268,7 @@
     "eligibility_notes": "Review required: Graduation batch unstated, Exact years of experience unstated",
     "notification_status": "NOTIFIED",
     "first_discovered_at": "2026-11-17T11:20:18.514447",
-    "last_seen_at": "2026-11-17T20:35:48.778600"
+    "last_seen_at": "2026-11-18T06:27:15.551810"
   },
   {
     "job_key": "b63fe132c31c529f8ef008f2",
@@ -1299,7 +1330,7 @@
     "eligibility_notes": "Review required: Graduation batch unstated, Exact years of experience unstated",
     "notification_status": "NOTIFIED",
     "first_discovered_at": "2026-11-17T11:19:40.959585",
-    "last_seen_at": "2026-11-17T20:35:47.455056"
+    "last_seen_at": "2026-11-18T06:27:14.152837"
   },
   {
     "job_key": "5924f91a5ad05af5a3bea55c",
@@ -1361,7 +1392,7 @@
     "eligibility_notes": "Review required: Graduation batch unstated, Exact years of experience unstated",
     "notification_status": "NOTIFIED",
     "first_discovered_at": "2026-11-17T11:18:40.234199",
-    "last_seen_at": "2026-11-17T20:35:42.183012"
+    "last_seen_at": "2026-11-18T06:26:55.846194"
   },
   {
     "job_key": "4361a1e253c49a76bd27374e",
@@ -1609,7 +1640,7 @@
     "eligibility_notes": "Review required: Degree requirements unstated, Graduation batch unstated",
     "notification_status": "NOTIFIED",
     "first_discovered_at": "2026-11-17T11:18:25.051351",
-    "last_seen_at": "2026-11-17T20:35:37.135161"
+    "last_seen_at": "2026-11-18T06:26:51.097732"
   },
   {
     "job_key": "8f17fffb60a87b821044b160",
@@ -1764,7 +1795,7 @@
     "eligibility_notes": "Review required: Graduation batch unstated",
     "notification_status": "NOTIFIED",
     "first_discovered_at": "2026-11-17T11:18:39.933597",
-    "last_seen_at": "2026-11-17T20:35:42.079764"
+    "last_seen_at": "2026-11-18T06:26:55.750734"
   },
   {
     "job_key": "f7a2b2da9463cb82726423a5",
@@ -1795,7 +1826,7 @@
     "eligibility_notes": "Review required: Degree requirements unstated, Graduation batch unstated, Exact years of experience unstated",
     "notification_status": "NOTIFIED",
     "first_discovered_at": "2026-11-17T11:20:23.256185",
-    "last_seen_at": "2026-11-17T20:35:49.488919"
+    "last_seen_at": "2026-11-18T06:27:16.352029"
   },
   {
     "job_key": "21780f6a263393f93df2d906",
@@ -1981,7 +2012,7 @@
     "eligibility_notes": "Review required: Graduation batch unstated, Exact years of experience unstated",
     "notification_status": "NOTIFIED",
     "first_discovered_at": "2026-11-17T11:20:22.802948",
-    "last_seen_at": "2026-11-17T20:35:49.460491"
+    "last_seen_at": "2026-11-18T06:27:16.325413"
   },
   {
     "job_key": "1ec4f37275368fdbc89ef040",
@@ -2012,7 +2043,7 @@
     "eligibility_notes": "Review required: Graduation batch unstated, Exact years of experience unstated",
     "notification_status": "NOTIFIED",
     "first_discovered_at": "2026-11-17T11:18:40.498411",
-    "last_seen_at": "2026-11-17T20:35:42.278703"
+    "last_seen_at": "2026-11-18T06:26:55.930168"
   },
   {
     "job_key": "ebfaa1c4ed0af8db560e82b1",
@@ -2105,7 +2136,7 @@
     "eligibility_notes": "Review required: Degree requirements unstated, Graduation batch unstated, Exact years of experience unstated",
     "notification_status": "NOTIFIED",
     "first_discovered_at": "2026-11-17T14:14:09.534028",
-    "last_seen_at": "2026-11-17T20:35:46.183536"
+    "last_seen_at": "2026-11-18T06:26:59.981061"
   },
   {
     "job_key": "4127c1bb49758b4597e717b1",
@@ -2136,7 +2167,7 @@
     "eligibility_notes": "Review required: Degree requirements unstated, Graduation batch unstated, Exact years of experience unstated",
     "notification_status": "NOTIFIED",
     "first_discovered_at": "2026-11-17T11:19:09.847154",
-    "last_seen_at": "2026-11-17T20:35:46.198071"
+    "last_seen_at": "2026-11-18T06:26:59.995543"
   },
   {
     "job_key": "5d7e40f6e22339bf158d566b",
@@ -2167,7 +2198,7 @@
     "eligibility_notes": "Review required: Degree requirements unstated, Graduation batch unstated, Exact years of experience unstated",
     "notification_status": "NOTIFIED",
     "first_discovered_at": "2026-11-17T11:19:09.838605",
-    "last_seen_at": "2026-11-17T20:35:46.196847"
+    "last_seen_at": "2026-11-18T06:26:59.994263"
   },
   {
     "job_key": "f9d125f3fb4e210dba4b3472",
@@ -2198,7 +2229,7 @@
     "eligibility_notes": "Review required: Degree requirements unstated, Graduation batch unstated, Exact years of experience unstated",
     "notification_status": "NOTIFIED",
     "first_discovered_at": "2026-11-17T11:19:09.828650",
-    "last_seen_at": "2026-11-17T20:35:46.195205"
+    "last_seen_at": "2026-11-18T06:26:59.992900"
   },
   {
     "job_key": "50bbe50321a02c5709a9433f",
@@ -2229,7 +2260,7 @@
     "eligibility_notes": "Review required: Degree requirements unstated, Graduation batch unstated, Exact years of experience unstated",
     "notification_status": "NOTIFIED",
     "first_discovered_at": "2026-11-17T11:19:09.820133",
-    "last_seen_at": "2026-11-17T20:35:46.193852"
+    "last_seen_at": "2026-11-18T06:26:59.991629"
   },
   {
     "job_key": "8aa76ae599a4c8b45f622432",
@@ -2260,7 +2291,7 @@
     "eligibility_notes": "Review required: Degree requirements unstated, Graduation batch unstated, Exact years of experience unstated",
     "notification_status": "NOTIFIED",
     "first_discovered_at": "2026-11-17T11:19:09.810765",
-    "last_seen_at": "2026-11-17T20:35:46.192282"
+    "last_seen_at": "2026-11-18T06:26:59.990048"
   },
   {
     "job_key": "29eda25889c2da4a8a14e23b",
@@ -2291,7 +2322,7 @@
     "eligibility_notes": "Review required: Degree requirements unstated, Graduation batch unstated, Exact years of experience unstated",
     "notification_status": "NOTIFIED",
     "first_discovered_at": "2026-11-17T11:19:09.802014",
-    "last_seen_at": "2026-11-17T20:35:46.190775"
+    "last_seen_at": "2026-11-18T06:26:59.988851"
   },
   {
     "job_key": "1ad1707da34535edb218ff25",
@@ -2322,7 +2353,7 @@
     "eligibility_notes": "Review required: Degree requirements unstated, Graduation batch unstated, Exact years of experience unstated",
     "notification_status": "NOTIFIED",
     "first_discovered_at": "2026-11-17T11:19:09.792689",
-    "last_seen_at": "2026-11-17T20:35:46.189470"
+    "last_seen_at": "2026-11-18T06:26:59.987571"
   },
   {
     "job_key": "aa0018d76826e161a8ce4b41",
@@ -2353,7 +2384,7 @@
     "eligibility_notes": "Review required: Degree requirements unstated, Graduation batch unstated, Exact years of experience unstated",
     "notification_status": "NOTIFIED",
     "first_discovered_at": "2026-11-17T11:19:09.783938",
-    "last_seen_at": "2026-11-17T20:35:46.188194"
+    "last_seen_at": "2026-11-18T06:26:59.986038"
   },
   {
     "job_key": "d41a865cda59db30b9fba2b6",
@@ -2384,7 +2415,7 @@
     "eligibility_notes": "Review required: Degree requirements unstated, Graduation batch unstated, Exact years of experience unstated",
     "notification_status": "NOTIFIED",
     "first_discovered_at": "2026-11-17T11:19:09.773893",
-    "last_seen_at": "2026-11-17T20:35:46.186898"
+    "last_seen_at": "2026-11-18T06:26:59.984651"
   },
   {
     "job_key": "9d8a04b6c1801749fec83280",
@@ -2415,7 +2446,7 @@
     "eligibility_notes": "Review required: Degree requirements unstated, Graduation batch unstated, Exact years of experience unstated",
     "notification_status": "NOTIFIED",
     "first_discovered_at": "2026-11-17T11:19:09.764185",
-    "last_seen_at": "2026-11-17T20:35:46.185511"
+    "last_seen_at": "2026-11-18T06:26:59.983144"
   },
   {
     "job_key": "3c4886c755dd9df4868d7822",
@@ -2446,7 +2477,7 @@
     "eligibility_notes": "Review required: Degree requirements unstated, Graduation batch unstated, Exact years of experience unstated",
     "notification_status": "NOTIFIED",
     "first_discovered_at": "2026-11-17T11:19:09.750199",
-    "last_seen_at": "2026-11-17T20:35:46.181179"
+    "last_seen_at": "2026-11-18T06:26:59.978114"
   },
   {
     "job_key": "49adc9af433da8b2e043b96e",
@@ -2477,7 +2508,7 @@
     "eligibility_notes": "Review required: Graduation batch unstated, Exact years of experience unstated",
     "notification_status": "NOTIFIED",
     "first_discovered_at": "2026-11-17T11:21:23.861406",
-    "last_seen_at": "2026-11-17T20:35:56.074231"
+    "last_seen_at": "2026-11-18T06:27:22.028495"
   },
   {
     "job_key": "468ff1470d1f053d4f7c8bb7",
@@ -2632,7 +2663,7 @@
     "eligibility_notes": "Review required: Degree requirements unstated, Graduation batch unstated, Exact years of experience unstated, Location unverified",
     "notification_status": "NOTIFIED",
     "first_discovered_at": "2026-11-17T11:19:16.292695",
-    "last_seen_at": "2026-11-17T14:28:43.741745"
+    "last_seen_at": "2026-11-18T06:27:01.350702"
   },
   {
     "job_key": "7aa5fc1ea10d95fe4934cd5b",
@@ -2663,7 +2694,7 @@
     "eligibility_notes": "Review required: Degree requirements unstated, Graduation batch unstated, Exact years of experience unstated, Location unverified",
     "notification_status": "NOTIFIED",
     "first_discovered_at": "2026-11-17T11:19:16.281644",
-    "last_seen_at": "2026-11-17T14:28:43.571812"
+    "last_seen_at": "2026-11-18T06:27:01.348047"
   },
   {
     "job_key": "014eb7d9f0b447862b4909d7",
