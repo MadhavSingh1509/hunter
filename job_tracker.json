@@ -28,7 +28,7 @@
     "eligibility_notes": "Confirmed fresher-eligible (Internship role in title; Currently pursuing Bachelor's in JD)",
     "notification_status": "NOTIFIED",
     "first_discovered_at": "2026-11-18T16:27:16.441143",
-    "last_seen_at": "2026-11-18T20:12:49.214946",
+    "last_seen_at": "2026-11-19T06:41:18.273178",
     "posted_on": "23 Oct 2026"
   },
   {
@@ -60,7 +60,7 @@
     "eligibility_notes": "Confirmed fresher-eligible (Internship role in title; Currently pursuing Bachelor's in JD)",
     "notification_status": "NOTIFIED",
     "first_discovered_at": "2026-11-18T16:27:16.440448",
-    "last_seen_at": "2026-11-18T20:12:49.213861",
+    "last_seen_at": "2026-11-19T06:41:18.274267",
     "posted_on": "26 Oct 2026"
   },
   {
@@ -92,7 +92,7 @@
     "eligibility_notes": "Confirmed fresher-eligible (Campus hiring in title)",
     "notification_status": "NOTIFIED",
     "first_discovered_at": "2026-11-18T20:12:49.226897",
-    "last_seen_at": "2026-11-18T20:12:49.226897",
+    "last_seen_at": "2026-11-19T06:41:18.286910",
     "posted_on": "30 Sep 2026"
   },
   {
@@ -124,8 +124,40 @@
     "eligibility_notes": "Confirmed fresher-eligible (Internship role in title; 2026/2027 batch in JD)",
     "notification_status": "NOTIFIED",
     "first_discovered_at": "2026-11-18T07:46:59.729616",
-    "last_seen_at": "2026-11-18T20:12:49.229614",
+    "last_seen_at": "2026-11-19T06:41:18.289893",
     "posted_on": "06 Sep 2026"
+  },
+  {
+    "job_key": "a132de7773caa33f50b0d0ab",
+    "company_id": "stripe",
+    "company_name": "Stripe",
+    "ats_job_id": "8130876",
+    "title": "Software Engineer, New Grad",
+    "normalized_title": "Software Engineer, New Grad",
+    "canonical_url": "https://stripe.com/jobs/search?gh_jid=8130876",
+    "location": "Bangalore",
+    "is_india_eligible": 1,
+    "employment_type": "Full-time",
+    "compensation_text": "Not disclosed",
+    "compensation_status": "UNDISCLOSED",
+    "base_salary": "",
+    "variable_comp": "",
+    "joining_bonus": "",
+    "stock_equity": "",
+    "total_ctc": "",
+    "role_relevance": "MATCH",
+    "degree_eligibility": "ELIGIBLE",
+    "graduation_eligibility": "ELIGIBLE",
+    "experience_eligibility": "ELIGIBLE",
+    "application_status": "OPEN",
+    "classification": "VERIFIED MATCH",
+    "match_score": 0.0,
+    "score_reasons_json": "{}",
+    "eligibility_notes": "Confirmed fresher-eligible (New Grad in title; New grad in JD)",
+    "notification_status": "NOTIFIED",
+    "first_discovered_at": "2026-11-19T06:41:18.299164",
+    "last_seen_at": "2026-11-19T06:41:18.299164",
+    "posted_on": "28 Oct 2026"
   },
   {
     "job_key": "41dfaffb0ca50fd199de601b",
@@ -156,7 +188,7 @@
     "eligibility_notes": "Confirmed fresher-eligible (Internship role in title)",
     "notification_status": "NOTIFIED",
     "first_discovered_at": "2026-11-18T07:46:59.737506",
-    "last_seen_at": "2026-11-18T20:12:49.236945",
+    "last_seen_at": "2026-11-19T06:41:18.298000",
     "posted_on": "10 Jul 2026"
   }
 ]
