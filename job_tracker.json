@@ -1,5 +1,37 @@
 [
   {
+    "job_key": "7bbeae8f6af87a43f447174e",
+    "company_id": "citi_tech",
+    "company_name": "Citi (Tech)",
+    "ats_job_id": "261005495",
+    "title": "Full Stack Java and Angular Developer",
+    "normalized_title": "Full Stack Java and Angular Developer",
+    "canonical_url": "https://citi.wd5.myworkdayjobs.com/2/job/Pune-Maharashtra-India/Full-Stack-Java-and-Angular-Developer_261005495-1",
+    "location": "Pune Maharashtra India Pune Maharashtra India",
+    "is_india_eligible": 1,
+    "employment_type": "Full-time",
+    "compensation_text": "Not disclosed",
+    "compensation_status": "UNDISCLOSED",
+    "base_salary": "",
+    "variable_comp": "",
+    "joining_bonus": "",
+    "stock_equity": "",
+    "total_ctc": "",
+    "role_relevance": "MATCH",
+    "degree_eligibility": "ELIGIBLE",
+    "graduation_eligibility": "ELIGIBLE",
+    "experience_eligibility": "ELIGIBLE",
+    "application_status": "OPEN",
+    "classification": "VERIFIED MATCH",
+    "match_score": 0.0,
+    "score_reasons_json": "{}",
+    "eligibility_notes": "Confirmed fresher-eligible (Entry-level in JD; 0-2 years experience in JD)",
+    "notification_status": "NOTIFIED",
+    "first_discovered_at": "2026-11-20T19:48:14.094038",
+    "last_seen_at": "2026-11-20T19:48:14.094038",
+    "posted_on": "19 Nov 2026"
+  },
+  {
     "job_key": "e1ee0a68ab6127815355583b",
     "company_id": "microsoft",
     "company_name": "Microsoft",
@@ -28,7 +60,7 @@
     "eligibility_notes": "Confirmed fresher-eligible (Internship role in title; Currently pursuing Bachelor's in JD)",
     "notification_status": "NOTIFIED",
     "first_discovered_at": "2026-11-18T16:27:16.441143",
-    "last_seen_at": "2026-11-20T06:19:05.698830",
+    "last_seen_at": "2026-11-20T19:48:14.117600",
     "posted_on": "23 Oct 2026"
   },
   {
@@ -60,7 +92,7 @@
     "eligibility_notes": "Confirmed fresher-eligible (Internship role in title; Currently pursuing Bachelor's in JD)",
     "notification_status": "NOTIFIED",
     "first_discovered_at": "2026-11-18T16:27:16.440448",
-    "last_seen_at": "2026-11-20T06:19:05.700021",
+    "last_seen_at": "2026-11-20T19:48:14.118606",
     "posted_on": "26 Oct 2026"
   },
   {
@@ -92,7 +124,7 @@
     "eligibility_notes": "Confirmed fresher-eligible (Campus hiring in title)",
     "notification_status": "NOTIFIED",
     "first_discovered_at": "2026-11-18T20:12:49.226897",
-    "last_seen_at": "2026-11-20T06:19:05.714953",
+    "last_seen_at": "2026-11-20T19:48:14.132466",
     "posted_on": "30 Sep 2026"
   },
   {
@@ -124,7 +156,7 @@
     "eligibility_notes": "Confirmed fresher-eligible (Internship role in title; 2026/2027 batch in JD)",
     "notification_status": "NOTIFIED",
     "first_discovered_at": "2026-11-20T06:19:05.719424",
-    "last_seen_at": "2026-11-20T06:19:05.719424",
+    "last_seen_at": "2026-11-20T19:48:14.136293",
     "posted_on": "06 Sep 2026"
   },
   {
@@ -156,7 +188,7 @@
     "eligibility_notes": "Confirmed fresher-eligible (Internship role in title; 2026/2027 batch in JD)",
     "notification_status": "NOTIFIED",
     "first_discovered_at": "2026-11-18T07:46:59.729616",
-    "last_seen_at": "2026-11-20T06:19:05.718265",
+    "last_seen_at": "2026-11-20T19:48:14.135275",
     "posted_on": "06 Sep 2026"
   },
   {
@@ -188,7 +220,7 @@
     "eligibility_notes": "Confirmed fresher-eligible (New Grad in title; New grad in JD)",
     "notification_status": "NOTIFIED",
     "first_discovered_at": "2026-11-19T06:41:18.299164",
-    "last_seen_at": "2026-11-20T06:19:05.729547",
+    "last_seen_at": "2026-11-20T19:48:14.144713",
     "posted_on": "28 Oct 2026"
   },
   {
@@ -220,7 +252,7 @@
     "eligibility_notes": "Confirmed fresher-eligible (Internship role in title)",
     "notification_status": "NOTIFIED",
     "first_discovered_at": "2026-11-18T07:46:59.737506",
-    "last_seen_at": "2026-11-20T06:19:05.728365",
+    "last_seen_at": "2026-11-20T19:48:14.143633",
     "posted_on": "10 Jul 2026"
   }
 ]
