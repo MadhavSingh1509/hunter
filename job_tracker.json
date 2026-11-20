@@ -28,7 +28,7 @@
     "eligibility_notes": "Confirmed fresher-eligible (Internship role in title; Currently pursuing Bachelor's in JD)",
     "notification_status": "NOTIFIED",
     "first_discovered_at": "2026-11-18T16:27:16.441143",
-    "last_seen_at": "2026-11-19T20:12:57.326510",
+    "last_seen_at": "2026-11-20T06:19:05.698830",
     "posted_on": "23 Oct 2026"
   },
   {
@@ -60,7 +60,7 @@
     "eligibility_notes": "Confirmed fresher-eligible (Internship role in title; Currently pursuing Bachelor's in JD)",
     "notification_status": "NOTIFIED",
     "first_discovered_at": "2026-11-18T16:27:16.440448",
-    "last_seen_at": "2026-11-19T20:12:57.325392",
+    "last_seen_at": "2026-11-20T06:19:05.700021",
     "posted_on": "26 Oct 2026"
   },
   {
@@ -92,8 +92,40 @@
     "eligibility_notes": "Confirmed fresher-eligible (Campus hiring in title)",
     "notification_status": "NOTIFIED",
     "first_discovered_at": "2026-11-18T20:12:49.226897",
-    "last_seen_at": "2026-11-19T20:12:57.339387",
+    "last_seen_at": "2026-11-20T06:19:05.714953",
     "posted_on": "30 Sep 2026"
+  },
+  {
+    "job_key": "65694967b8d2c6bca660ec50",
+    "company_id": "rubrik",
+    "company_name": "Rubrik",
+    "ats_job_id": "8166523",
+    "title": "Software Engineer - Winter Intern",
+    "normalized_title": "Software Engineer - Winter Intern",
+    "canonical_url": "https://www.rubrik.com/company/careers/departments/job.8166523?gh_jid=8166523",
+    "location": "Bangalore",
+    "is_india_eligible": 1,
+    "employment_type": "Full-time",
+    "compensation_text": "Not disclosed",
+    "compensation_status": "UNDISCLOSED",
+    "base_salary": "",
+    "variable_comp": "",
+    "joining_bonus": "",
+    "stock_equity": "",
+    "total_ctc": "",
+    "role_relevance": "MATCH",
+    "degree_eligibility": "ELIGIBLE",
+    "graduation_eligibility": "ELIGIBLE",
+    "experience_eligibility": "ELIGIBLE",
+    "application_status": "OPEN",
+    "classification": "VERIFIED MATCH",
+    "match_score": 0.0,
+    "score_reasons_json": "{}",
+    "eligibility_notes": "Confirmed fresher-eligible (Internship role in title; 2026/2027 batch in JD)",
+    "notification_status": "NOTIFIED",
+    "first_discovered_at": "2026-11-20T06:19:05.719424",
+    "last_seen_at": "2026-11-20T06:19:05.719424",
+    "posted_on": "06 Sep 2026"
   },
   {
     "job_key": "80451edcd24be182cbb3def7",
@@ -124,7 +156,7 @@
     "eligibility_notes": "Confirmed fresher-eligible (Internship role in title; 2026/2027 batch in JD)",
     "notification_status": "NOTIFIED",
     "first_discovered_at": "2026-11-18T07:46:59.729616",
-    "last_seen_at": "2026-11-19T20:12:57.342747",
+    "last_seen_at": "2026-11-20T06:19:05.718265",
     "posted_on": "06 Sep 2026"
   },
   {
@@ -156,7 +188,7 @@
     "eligibility_notes": "Confirmed fresher-eligible (New Grad in title; New grad in JD)",
     "notification_status": "NOTIFIED",
     "first_discovered_at": "2026-11-19T06:41:18.299164",
-    "last_seen_at": "2026-11-19T20:12:57.358158",
+    "last_seen_at": "2026-11-20T06:19:05.729547",
     "posted_on": "28 Oct 2026"
   },
   {
@@ -188,7 +220,7 @@
     "eligibility_notes": "Confirmed fresher-eligible (Internship role in title)",
     "notification_status": "NOTIFIED",
     "first_discovered_at": "2026-11-18T07:46:59.737506",
-    "last_seen_at": "2026-11-19T20:12:57.357124",
+    "last_seen_at": "2026-11-20T06:19:05.728365",
     "posted_on": "10 Jul 2026"
   }
 ]
