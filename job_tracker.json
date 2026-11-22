@@ -1,5 +1,37 @@
 [
   {
+    "job_key": "adef9055f79a598cf7b9f1d0",
+    "company_id": "cisco",
+    "company_name": "Cisco",
+    "ats_job_id": "2025113",
+    "title": "Software Engineer",
+    "normalized_title": "Software Engineer",
+    "canonical_url": "https://cisco.wd5.myworkdayjobs.com/Cisco_Careers/job/Hyderabad-India/Software-Engineer_2025113-1",
+    "location": "2 Locations Hyderabad, India Bangalore, India",
+    "is_india_eligible": 1,
+    "employment_type": "Full-time",
+    "compensation_text": "Not disclosed",
+    "compensation_status": "UNDISCLOSED",
+    "base_salary": "",
+    "variable_comp": "",
+    "joining_bonus": "",
+    "stock_equity": "",
+    "total_ctc": "",
+    "role_relevance": "MATCH",
+    "degree_eligibility": "ELIGIBLE",
+    "graduation_eligibility": "ELIGIBLE",
+    "experience_eligibility": "ELIGIBLE",
+    "application_status": "OPEN",
+    "classification": "VERIFIED MATCH",
+    "match_score": 0.0,
+    "score_reasons_json": "{}",
+    "eligibility_notes": "Confirmed fresher-eligible (0 years experience in JD)",
+    "notification_status": "NOTIFIED",
+    "first_discovered_at": "2026-11-22T19:15:28.842377",
+    "last_seen_at": "2026-11-22T19:15:28.842377",
+    "posted_on": "17 Nov 2026"
+  },
+  {
     "job_key": "7bbeae8f6af87a43f447174e",
     "company_id": "citi_tech",
     "company_name": "Citi (Tech)",
@@ -60,7 +92,7 @@
     "eligibility_notes": "Confirmed fresher-eligible (Internship role in title; Currently pursuing Bachelor's in JD)",
     "notification_status": "NOTIFIED",
     "first_discovered_at": "2026-11-18T16:27:16.441143",
-    "last_seen_at": "2026-11-22T05:44:36.106547",
+    "last_seen_at": "2026-11-22T19:15:28.871325",
     "posted_on": "23 Oct 2026"
   },
   {
@@ -92,7 +124,7 @@
     "eligibility_notes": "Confirmed fresher-eligible (Internship role in title; Currently pursuing Bachelor's in JD)",
     "notification_status": "NOTIFIED",
     "first_discovered_at": "2026-11-18T16:27:16.440448",
-    "last_seen_at": "2026-11-22T05:44:36.107610",
+    "last_seen_at": "2026-11-22T19:15:28.870153",
     "posted_on": "26 Oct 2026"
   },
   {
@@ -124,7 +156,7 @@
     "eligibility_notes": "Confirmed fresher-eligible (Campus hiring in title)",
     "notification_status": "NOTIFIED",
     "first_discovered_at": "2026-11-18T20:12:49.226897",
-    "last_seen_at": "2026-11-22T05:44:36.119382",
+    "last_seen_at": "2026-11-22T19:15:28.884151",
     "posted_on": "30 Sep 2026"
   },
   {
@@ -156,7 +188,7 @@
     "eligibility_notes": "Confirmed fresher-eligible (Internship role in title; 2026/2027 batch in JD)",
     "notification_status": "NOTIFIED",
     "first_discovered_at": "2026-11-20T06:19:05.719424",
-    "last_seen_at": "2026-11-22T05:44:36.123337",
+    "last_seen_at": "2026-11-22T19:15:28.888751",
     "posted_on": "06 Sep 2026"
   },
   {
@@ -188,7 +220,7 @@
     "eligibility_notes": "Confirmed fresher-eligible (Internship role in title; 2026/2027 batch in JD)",
     "notification_status": "NOTIFIED",
     "first_discovered_at": "2026-11-18T07:46:59.729616",
-    "last_seen_at": "2026-11-22T05:44:36.122301",
+    "last_seen_at": "2026-11-22T19:15:28.887551",
     "posted_on": "06 Sep 2026"
   },
   {
@@ -220,7 +252,7 @@
     "eligibility_notes": "Confirmed fresher-eligible (New Grad in title; New grad in JD)",
     "notification_status": "NOTIFIED",
     "first_discovered_at": "2026-11-19T06:41:18.299164",
-    "last_seen_at": "2026-11-22T05:44:36.131978",
+    "last_seen_at": "2026-11-22T19:15:28.901835",
     "posted_on": "28 Oct 2026"
   },
   {
@@ -252,7 +284,7 @@
     "eligibility_notes": "Confirmed fresher-eligible (Internship role in title)",
     "notification_status": "NOTIFIED",
     "first_discovered_at": "2026-11-18T07:46:59.737506",
-    "last_seen_at": "2026-11-22T05:44:36.130942",
+    "last_seen_at": "2026-11-22T19:15:28.900746",
     "posted_on": "10 Jul 2026"
   }
 ]
