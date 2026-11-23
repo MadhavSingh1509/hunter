@@ -64,6 +64,38 @@
     "posted_on": "19 Nov 2026"
   },
   {
+    "job_key": "54cd1b8ce91d075220cf7c1e",
+    "company_id": "microsoft",
+    "company_name": "Microsoft",
+    "ats_job_id": "1970393557022190",
+    "title": "Software Engineer Apprenticeship",
+    "normalized_title": "Software Engineer Apprenticeship",
+    "canonical_url": "https://apply.careers.microsoft.com/careers/job/1970393557022190",
+    "location": "India, Multiple Locations, Multiple Locations",
+    "is_india_eligible": 1,
+    "employment_type": "Full-time",
+    "compensation_text": "Not disclosed",
+    "compensation_status": "UNDISCLOSED",
+    "base_salary": "",
+    "variable_comp": "",
+    "joining_bonus": "",
+    "stock_equity": "",
+    "total_ctc": "",
+    "role_relevance": "MATCH",
+    "degree_eligibility": "ELIGIBLE",
+    "graduation_eligibility": "ELIGIBLE",
+    "experience_eligibility": "ELIGIBLE",
+    "application_status": "OPEN",
+    "classification": "VERIFIED MATCH",
+    "match_score": 0.0,
+    "score_reasons_json": "{}",
+    "eligibility_notes": "Confirmed fresher-eligible (2026/2027 batch in JD)",
+    "notification_status": "NOTIFIED",
+    "first_discovered_at": "2026-11-23T23:37:11.522451",
+    "last_seen_at": "2026-11-23T23:37:11.522451",
+    "posted_on": "23 Nov 2026"
+  },
+  {
     "job_key": "e1ee0a68ab6127815355583b",
     "company_id": "microsoft",
     "company_name": "Microsoft",
@@ -92,7 +124,7 @@
     "eligibility_notes": "Confirmed fresher-eligible (Internship role in title; Currently pursuing Bachelor's in JD)",
     "notification_status": "NOTIFIED",
     "first_discovered_at": "2026-11-18T16:27:16.441143",
-    "last_seen_at": "2026-11-23T06:28:44.845893",
+    "last_seen_at": "2026-11-23T23:37:11.524484",
     "posted_on": "23 Oct 2026"
   },
   {
@@ -121,11 +153,11 @@
     "classification": "VERIFIED MATCH",
     "match_score": 0.0,
     "score_reasons_json": "{}",
-    "eligibility_notes": "Confirmed fresher-eligible (Internship role in title; Currently pursuing Bachelor's in JD)",
+    "eligibility_notes": "Confirmed fresher-eligible (Internship role in title)",
     "notification_status": "NOTIFIED",
     "first_discovered_at": "2026-11-18T16:27:16.440448",
-    "last_seen_at": "2026-11-23T06:28:44.847453",
-    "posted_on": "26 Oct 2026"
+    "last_seen_at": "2026-11-23T23:37:11.523474",
+    "posted_on": "23 Nov 2026"
   },
   {
     "job_key": "92b7e04ac25aea5f1d53a051",
@@ -156,7 +188,7 @@
     "eligibility_notes": "Confirmed fresher-eligible (Campus hiring in title)",
     "notification_status": "NOTIFIED",
     "first_discovered_at": "2026-11-18T20:12:49.226897",
-    "last_seen_at": "2026-11-23T06:28:44.866484",
+    "last_seen_at": "2026-11-23T23:37:11.536556",
     "posted_on": "30 Sep 2026"
   },
   {
@@ -220,7 +252,7 @@
     "eligibility_notes": "Confirmed fresher-eligible (Internship role in title; 2026/2027 batch in JD)",
     "notification_status": "NOTIFIED",
     "first_discovered_at": "2026-11-18T07:46:59.729616",
-    "last_seen_at": "2026-11-23T06:28:44.871027",
+    "last_seen_at": "2026-11-23T23:37:11.539514",
     "posted_on": "06 Sep 2026"
   },
   {
@@ -252,7 +284,7 @@
     "eligibility_notes": "Confirmed fresher-eligible (New Grad in title; New grad in JD)",
     "notification_status": "NOTIFIED",
     "first_discovered_at": "2026-11-19T06:41:18.299164",
-    "last_seen_at": "2026-11-23T06:28:44.885549",
+    "last_seen_at": "2026-11-23T23:37:11.548021",
     "posted_on": "28 Oct 2026"
   },
   {
@@ -284,7 +316,7 @@
     "eligibility_notes": "Confirmed fresher-eligible (Internship role in title)",
     "notification_status": "NOTIFIED",
     "first_discovered_at": "2026-11-18T07:46:59.737506",
-    "last_seen_at": "2026-11-23T06:28:44.884066",
+    "last_seen_at": "2026-11-23T23:37:11.546939",
     "posted_on": "10 Jul 2026"
   }
 ]
